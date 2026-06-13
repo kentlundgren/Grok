@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vårdköer i Sverige 2022–2026 • Analys</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #0f172a;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .section-header {
+            font-family: 'Space Grotesk', 'Inter', sans-serif;
+            letter-spacing: -0.025em;
+        }
+
+        .data-card {
+            transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+        }
+        
+        .data-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .metric-value {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .nav-link {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link.active {
+            color: #0f172a;
+            font-weight: 600;
+            border-bottom: 3px solid #0f172a;
+        }
+
+        .chart-container {
+            position: relative;
+        }
+
+        .fact-check {
+            border-left: 4px solid;
+        }
+
+        .fact-check.gov {
+            border-left-color: #15803d;
+        }
+        
+        .fact-check.opp {
+            border-left-color: #b91c1c;
+        }
+
+        .fact-check.neutral {
+            border-left-color: #334155;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: -12px;
+            width: 2px;
+            background: #cbd5e1;
+        }
+        
+        .timeline-item:last-child:before {
+            display: none;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+            font-feature-settings: "tnum";
+        }
+
+        .source-link {
+            color: #475569;
+            text-decoration: underline;
+            text-decoration-color: #94a3b8;
+        }
+
+        .swedish-flag {
+            background: linear-gradient(to right, #0055a4 33%, #fff 33%, #fff 66%, #ffcc00 66%);
+        }
+
+        .presentation-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        
+        th, td {
+            padding: 0.75rem 1rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+    <!-- Top Navigation -->
+    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-x-3">
+                    <div class="w-9 h-9 bg-slate-900 text-white rounded-xl flex items-center justify-center">
+                        <i class="fa-solid fa-hospital-user text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="font-display text-2xl font-semibold tracking-tighter">Vårdköer</span>
+                        <span class="text-slate-500 text-sm ml-1">2022–2026</span>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-x-8 text-sm">
+                    <a href="#data" class="nav-link px-3 py-2 text-slate-600 hover:text-slate-900" onclick="document.getElementById('data').scrollIntoView({ behavior: 'smooth' })">Data &amp; Trender</a>
+                    <a href="#claims" class="nav-link px-3 py-2 text-slate-600 hover:text-slate-900" onclick="document.getElementById('claims').scrollIntoView({ behavior: 'smooth' })">Politiska påståenden</a>
+                    <a href="#causes" class="nav-link px-3 py-2 text-slate-600 hover:text-slate-900" onclick="document.getElementById('causes').scrollIntoView({ behavior: 'smooth' })">Orsaker</a>
+                    <a href="#conclusion" class="nav-link px-3 py-2 text-slate-600 hover:text-slate-900" onclick="document.getElementById('conclusion').scrollIntoView({ behavior: 'smooth' })">Slutsatser</a>
+                </div>
+                
+                <div class="flex items-center gap-x-3">
+                    <div class="px-3 py-1.5 bg-slate-100 rounded-full text-xs font-medium flex items-center gap-x-1.5">
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></div>
+                        <span class="text-slate-600">Uppdaterad juni 2026</span>
+                    </div>
+                    <a href="https://github.com/kentlundgren/Grok/tree/main/vardkoer" target="_blank" 
+                       class="inline-flex items-center gap-x-2 text-sm font-medium px-4 py-2 bg-white border border-slate-300 rounded-xl hover:bg-slate-50">
+                        <i class="fa-brands fa-github"></i>
+                        <span class="hidden sm:inline">GitHub</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="bg-white border-b">
+        <div class="max-w-7xl mx-auto px-6 pt-12 pb-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-x-2 px-4 py-1 bg-red-50 text-red-700 rounded-full text-sm font-medium mb-4">
+                    <i class="fa-solid fa-exclamation-triangle"></i>
+                    <span>Politiskt omstridd fråga</span>
+                </div>
+                
+                <h1 class="section-header text-6xl tracking-tighter font-semibold leading-none mb-4">
+                    Har vårdköerna<br>kortats eller förlängts?
+                </h1>
+                <p class="text-2xl text-slate-600 font-light tracking-tight">
+                    En faktabaserad analys av väntetider i svensk hälso- och sjukvård<br>
+                    mellan 2022 och 2026.
+                </p>
+                
+                <div class="flex items-center gap-x-4 mt-6 text-sm">
+                    <div class="flex items-center gap-x-2">
+                        <i class="fa-solid fa-database text-slate-400"></i>
+                        <span class="text-slate-500">Källor: SKR, Socialstyrelsen, Vårdanalys, Riksrevisionen</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-8 space-y-16 presentation-container">
+
+        <!-- DISCLAIMER -->
+        <div class="bg-amber-50 border border-amber-200 rounded-3xl p-5 text-sm flex gap-x-4">
+            <div class="text-amber-600 mt-0.5">
+                <i class="fa-solid fa-info-circle text-lg"></i>
+            </div>
+            <div class="text-amber-800">
+                <strong>Viktigt:</strong> Data bygger på offentligt tillgänglig statistik från SKR:s väntetidsdatabas (t.o.m. ~april/juni 2026) och Socialstyrelsen (från juli 2025). 
+                Övergången av databas samt journalsystembyten i flera regioner gör exakta jämförelser över tid osäkra. Siffror är aggregerade och kan skilja sig mellan källor beroende på definition och säsongsrensning.
+                <span class="font-semibold">Alltid kontrollera senaste siffrorna direkt hos källorna.</span>
+            </div>
+        </div>
+
+        <!-- KEY METRICS - LATEST -->
+        <div id="data">
+            <div class="flex items-end justify-between mb-6">
+                <div>
+                    <span class="uppercase tracking-[2px] text-xs font-semibold text-slate-500">Steg 1 • Rådata</span>
+                    <h2 class="section-header text-4xl tracking-tighter font-semibold">Senaste tillgängliga siffror (april 2026)</h2>
+                </div>
+                <div class="text-right text-sm text-slate-500 hidden md:block">
+                    Källa: Socialstyrelsen / SKR Väntetider i vården
+                </div>
+            </div>
+
+            <div class="metric-grid">
+                <!-- Primary care -->
+                <div class="data-card bg-white border border-slate-200 rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-sm font-medium text-emerald-700">PRIMÄRVÅRD</div>
+                        <i class="fa-solid fa-stethoscope text-emerald-600"></i>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="text-4xl font-semibold stat-number">93%</div>
+                            <div class="text-sm text-slate-600">Kontakt samma dag</div>
+                        </div>
+                        <div>
+                            <div class="text-4xl font-semibold stat-number">90%</div>
+                            <div class="text-sm text-slate-600">Medicinsk bedömning inom 3 dagar</div>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-xs text-emerald-600">Stabilt hög nivå sedan före pandemin</div>
+                </div>
+
+                <!-- Specialist visit -->
+                <div class="data-card bg-white border border-slate-200 rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-sm font-medium text-blue-700">SPECIALISTVÅRD – FÖRSTA BESÖK</div>
+                        <i class="fa-solid fa-user-md text-blue-600"></i>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-semibold stat-number">81%</div>
+                        <div class="text-sm text-slate-600 mt-1">Fick besök inom 90 dagar</div>
+                    </div>
+                    <div class="mt-6 text-xs bg-blue-50 inline-flex px-3 py-1 rounded-full text-blue-700 font-medium">April 2026</div>
+                </div>
+
+                <!-- Operations -->
+                <div class="data-card bg-white border border-slate-200 rounded-3xl p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="text-sm font-medium text-violet-700">OPERATION / ÅTGÄRD</div>
+                        <i class="fa-solid fa-procedures text-violet-600"></i>
+                    </div>
+                    <div>
+                        <div class="text-5xl font-semibold stat-number">71–73%</div>
+                        <div class="text-sm text-slate-600 mt-1">Fick operation inom 90 dagar</div>
+                        <div class="mt-1 text-xs text-slate-500">Genomsnittlig väntetid ~130 dagar (sent 2025)</div>
+                    </div>
+                    <div class="mt-6 text-xs bg-violet-50 inline-flex px-3 py-1 rounded-full text-violet-700 font-medium">April 2026 • SKR/Socialstyrelsen</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Time series charts -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-8">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-semibold">Utveckling över tid – Operation/åtgärd inom 90 dagar</h3>
+                <div class="flex gap-x-2 text-sm">
+                    <button onclick="updateChartView('compliance')" class="px-4 py-1.5 text-xs font-medium rounded-xl bg-slate-900 text-white">Andel inom 90 dagar</button>
+                    <button onclick="updateChartView('longWaiters')" class="px-4 py-1.5 text-xs font-medium rounded-xl bg-slate-100 hover:bg-slate-200">Antal som väntat &gt;90 dagar</button>
+                </div>
+            </div>
+            
+            <div class="chart-container h-80">
+                <canvas id="trendChart"></canvas>
+            </div>
+            
+            <div class="text-xs text-slate-500 mt-4 flex items-center gap-x-2">
+                <i class="fa-solid fa-info-circle"></i>
+                <span>Notera: Siffror är ungefärliga baserat på offentlig statistik. 2024 toppnotering ~89 400 personer &gt;90 dagar för operation. Minskning rapporterad 2025–2026.</span>
+            </div>
+        </div>
+
+        <!-- Comparison table -->
+        <div>
+            <h3 class="text-xl font-semibold mb-4">Sammanfattande nyckeltal – nationellt</h3>
+            <div class="overflow-x-auto rounded-2xl border border-slate-200">
+                <table class="w-full text-sm bg-white">
+                    <thead class="bg-slate-100">
+                        <tr>
+                            <th class="text-left font-medium px-6 py-4">Mått</th>
+                            <th class="text-center font-medium px-4 py-4">2022</th>
+                            <th class="text-center font-medium px-4 py-4">2023</th>
+                            <th class="text-center font-medium px-4 py-4">2024</th>
+                            <th class="text-center font-medium px-4 py-4">2025</th>
+                            <th class="text-center font-medium px-4 py-4 bg-emerald-50">2026 (april)</th>
+                            <th class="text-center font-medium px-4 py-4">Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Andel operation inom 90 dagar</td>
+                            <td class="text-center px-4 py-4">~62–65%</td>
+                            <td class="text-center px-4 py-4">~58–63%</td>
+                            <td class="text-center px-4 py-4">~55–60% (lägsta)</td>
+                            <td class="text-center px-4 py-4">~68–70%</td>
+                            <td class="text-center px-4 py-4 font-semibold bg-emerald-50">71–73%</td>
+                            <td class="text-center px-4 py-4"><span class="inline-flex items-center px-3 py-0.5 rounded-full text-emerald-700 bg-emerald-100 text-xs font-medium">Förbättring 2025–26</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Genomsnittlig väntetid operation</td>
+                            <td class="text-center px-4 py-4">~150–155 dagar</td>
+                            <td class="text-center px-4 py-4">~155–165 dagar</td>
+                            <td class="text-center px-4 py-4">Högst</td>
+                            <td class="text-center px-4 py-4">~130 dagar</td>
+                            <td class="text-center px-4 py-4 font-semibold bg-emerald-50">~3 veckor kortare än 2022</td>
+                            <td class="text-center px-4 py-4"><span class="inline-flex items-center px-3 py-0.5 rounded-full text-emerald-700 bg-emerald-100 text-xs font-medium">−14 % (enligt regering)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Antal väntande &gt;90 dagar (op/åtgärd)</td>
+                            <td class="text-center px-4 py-4">~70–80k</td>
+                            <td class="text-center px-4 py-4">~75–85k</td>
+                            <td class="text-center px-4 py-4">~89 400 (aug, rekord)</td>
+                            <td class="text-center px-4 py-4">Minskande</td>
+                            <td class="text-center px-4 py-4 font-semibold bg-emerald-50">~44 000 färre än okt 2022</td>
+                            <td class="text-center px-4 py-4"><span class="inline-flex items-center px-3 py-0.5 rounded-full text-emerald-700 bg-emerald-100 text-xs font-medium">−30 % (säsongsjusterat)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="px-6 py-4 font-medium">Primärvård – bedömning inom 3 dagar</td>
+                            <td class="text-center px-4 py-4">~80–85%</td>
+                            <td class="text-center px-4 py-4">~82–87%</td>
+                            <td class="text-center px-4 py-4">~85%</td>
+                            <td class="text-center px-4 py-4">~88–90%</td>
+                            <td class="text-center px-4 py-4 font-semibold bg-emerald-50">90%</td>
+                            <td class="text-center px-4 py-4"><span class="inline-flex items-center px-3 py-0.5 rounded-full text-emerald-700 bg-emerald-100 text-xs font-medium">Stabil / lätt förbättring</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-xs text-slate-500 mt-3">Siffror är sammanställda från flera offentliga rapporter (SKR, Socialstyrelsen, regeringsunderlag, Vårdföretagarna). Exakta värden varierar något beroende på mätmetod och om privata vårdgivare ingår.</div>
+        </div>
+
+        <!-- POLITISKA PÅSTÅENDEN -->
+        <div id="claims" class="scroll-mt-16">
+            <div class="mb-6">
+                <span class="uppercase tracking-[2px] text-xs font-semibold text-slate-500">Steg 2</span>
+                <h2 class="section-header text-4xl tracking-tighter font-semibold">Politiska påståenden granskade</h2>
+                <p class="text-slate-600 mt-1">Olika mått och tidpunkter ger olika bilder.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Government -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="flex items-center gap-x-2 mb-4">
+                        <div class="px-3 py-1 text-xs font-semibold bg-emerald-100 text-emerald-700 rounded-full">REGERINGEN / KD</div>
+                    </div>
+                    <div class="space-y-5 text-sm">
+                        <div class="fact-check gov pl-5 py-1">
+                            <div class="font-medium">"Möjligt trendbrott. Genomsnittlig väntetid för operationer ner 14 % sedan 2022."</div>
+                            <div class="text-emerald-700 text-xs mt-1">SVT dec 2025, baserat på SKR-data</div>
+                        </div>
+                        <div class="fact-check gov pl-5 py-1">
+                            <div class="font-medium">"Väntetiderna till operation har varit kortare varje enskild månad 2025 än motsvarande månad 2022."</div>
+                            <div class="text-emerald-700 text-xs mt-1">TT-pressmeddelande nov 2025 (även Region Stockholm-specifikt)</div>
+                        </div>
+                        <div class="fact-check gov pl-5 py-1">
+                            <div class="font-medium">"Säsongsjusterat: −30 % färre som väntat &gt;90 dagar okt 2022–mars 2026. 44 000 färre i jan 2026 jämfört med okt 2022."</div>
+                        </div>
+                        <div class="text-xs bg-emerald-50 p-3 rounded-2xl">
+                            Starkt fokus på relativa förbättringar 2025–2026 samt specifika ingrepp (höft, knä, framfall, ljumskbråck).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opposition -->
+                <div class="bg-white border border-slate-200 rounded-3xl p-7">
+                    <div class="flex items-center gap-x-2 mb-4">
+                        <div class="px-3 py-1 text-xs font-semibold bg-red-100 text-red-700 rounded-full">OPPOSITIONEN (S m.fl.)</div>
+                    </div>
+                    <div class="space-y-5 text-sm">
+                        <div class="fact-check opp pl-5 py-1">
+                            <div class="font-medium">"Rekordlånga vårdköer. I augusti 2024 väntade rekordmånga – 89 435 personer längre än vårdgarantin på operation."</div>
+                            <div class="text-red-700 text-xs mt-1">Regeringsdokument + medier</div>
+                        </div>
+                        <div class="fact-check opp pl-5 py-1">
+                            <div class="font-medium">"Köerna är fortfarande historiskt långa. Andelen som får vård inom 90 dagar är långt under tidigare nivåer."</div>
+                        </div>
+                        <div class="fact-check opp pl-5 py-1">
+                            <div class="font-medium">Fokus på absoluta tal och att man inte uppnår vårdgarantin (90 dagar) för en stor andel patienter.</div>
+                        </div>
+                        <div class="text-xs bg-red-50 p-3 rounded-2xl">
+                            Betonar att förbättringarna är små i förhållande till behovet och att pandemi-effekten fortfarande märks.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-slate-900 text-white rounded-3xl p-7 text-sm">
+                <div class="font-medium mb-2">Vad visar rådata egentligen?</div>
+                <ul class="space-y-2 text-slate-300 list-disc pl-5">
+                    <li>Båda sidor har rätt beroende på vilket mått och vilken jämförelsetidpunkt som väljs.</li>
+                    <li>2024 var ett bottenår (topp i antal långväntare).</li>
+                    <li>2025–2026 visar tydlig förbättring i både andel och antal som väntar över 90 dagar enligt flera oberoende sammanställningar.</li>
+                    <li>Primärvården har hela tiden haft betydligt bättre tillgänglighet än specialistvården.</li>
+                    <li>Regionala skillnader är mycket stora (vissa regioner har &lt;50 % inom 90 dagar, andra &gt;85 %).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CAUSES -->
+        <div id="causes" class="scroll-mt-16">
+            <div class="mb-6">
+                <span class="uppercase tracking-[2px] text-xs font-semibold text-slate-500">Steg 3</span>
+                <h2 class="section-header text-4xl tracking-tighter font-semibold">Orsaksanalys – varför ser det ut så här?</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <div class="timeline-item pl-9">
+                        <div class="font-semibold">COVID-19-pandemin (2020–2022)</div>
+                        <div class="text-sm text-slate-600">Massiv uppbyggnad av köer p.g.a. inställda operationer och vård. Många regioner hade redan växande köer före pandemin (2014–2019).</div>
+                    </div>
+                    <div class="timeline-item pl-9">
+                        <div class="font-semibold">Statliga satsningar 2022–2026</div>
+                        <div class="text-sm text-slate-600">Regeringen har avsatt betydande medel (uppskattningsvis 18+ miljarder under mandatperioden + nya förslag om 6,6 mdkr) för att korta köer, inkl. prestationsbundna medel och planerad nationell vårdförmedling.</div>
+                    </div>
+                    <div class="timeline-item pl-9">
+                        <div class="font-semibold">SVF (Standardiserade vårdförlopp) för cancer</div>
+                        <div class="text-sm text-slate-600">Enligt Riksrevisionen (2023) har prioritering av cancerlettider i vissa fall trängt undan patienter med godartade tillstånd (t.ex. prostataförstoring, njursten) med kraftigt förlängda väntetider som följd.</div>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <div class="timeline-item pl-9">
+                        <div class="font-semibold">Databas- och rapporteringsförändringar</div>
+                        <div class="text-sm text-slate-600">SKR drev väntetidsdatabasen fram till juni 2025. Socialstyrelsen tog över 1 juli 2025. Flera regioner har bytt journalsystem vilket påverkat rapporteringen (9 av 21 regioner nämnda 2026).</div>
+                    </div>
+                    <div class="timeline-item pl-9">
+                        <div class="font-semibold">Personalbrist &amp; kapacitet</div>
+                        <div class="text-sm text-slate-600">20 av 21 regioner rapporterade brist på specialistläkare redan 2022. Fortsatt utmaning trots satsningar.</div>
+                    </div>
+                    <div class="timeline-item pl-9">
+                        <div class="font-semibold">Efterfrågan</div>
+                        <div class="text-sm text-slate-600">Åldrande befolkning, ökat vårdbehov och eftersläpning efter pandemin har ökat trycket på systemet.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONCLUSIONS -->
+        <div id="conclusion" class="scroll-mt-16 bg-white border border-slate-200 rounded-3xl p-8">
+            <div class="mb-6">
+                <span class="uppercase tracking-[2px] text-xs font-semibold text-slate-500">Steg 4</span>
+                <h2 class="section-header text-4xl tracking-tighter font-semibold">Slutsatser</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="uppercase text-xs tracking-widest font-semibold mb-3 text-emerald-700">A. Vad visar den samlade statistiken mest sannolikt?</div>
+                    <div class="prose text-[15px] text-slate-700 leading-relaxed">
+                        Vårdköerna (särskilt till operation/åtgärd i specialistvården) ökade kraftigt under pandemin och nådde en topp under 2024. 
+                        Under 2025 och första halvan av 2026 syns en tydlig förbättring både i andelen som får vård inom 90 dagar och i antalet som väntar längre än vårdgarantin.
+                        <br><br>
+                        Förbättringen är dock från en mycket låg nivå. Den lagstadgade vårdgarantin på 90 dagar uppfylls fortfarande långt ifrån för alla patienter. 
+                        Primärvården har betydligt bättre tillgänglighet. Regionala skillnader är stora.
+                    </div>
+                </div>
+                <div>
+                    <div class="uppercase text-xs tracking-widest font-semibold mb-3 text-slate-600">B. Varför uppstår de motstridiga bilderna i debatten?</div>
+                    <div class="prose text-[15px] text-slate-700 leading-relaxed">
+                        Olika aktörer väljer olika jämförelsetidpunkter och mått:
+                        <br><br>
+                        • Regeringen lyfter gärna relativa förbättringar sedan 2022 och säsongsrensade siffror 2025–2026.<br>
+                        • Oppositionen lyfter absoluta rekordnoteringar 2024 och att man fortfarande ligger långt under vårdgarantin.<br>
+                        • Datakvalitet, ofullständig täckning av privata aktörer och övergången av statistikansvar bidrar till tolkningsutrymme.<br>
+                        • Fokus på specifika diagnoser (t.ex. cancer-SVF) ger olika bilder beroende på vad man mäter.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SOURCES -->
+        <div>
+            <h3 class="font-semibold mb-4">Viktiga källor (primära)</h3>
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-3 text-sm">
+                <div>
+                    <a href="https://extra.skr.se/vantetiderivarden.46246.html" target="_blank" class="source-link">SKR – Väntetider i vården (historisk databas + aktuellt vårdgarantiläge)</a><br>
+                    <a href="https://www.socialstyrelsen.se/statistik-och-data/statistik/alla-statistikamnen/lagesbild-och-statistik-tillganglighet-vantetider-och-vardgaranti-i-halso-och-sjukvard/" target="_blank" class="source-link">Socialstyrelsen – Lägesbild tillgänglighet och vårdgaranti (data från juli 2025+)</a>
+                </div>
+                <div>
+                    <a href="https://www.riksrevisionen.se/granskningsrapporter/2023/i-vantan-pa-vard---ineffektiv-statlig-styrning-for-kortare-koer.html" target="_blank" class="source-link">Riksrevisionen (2023): I väntan på vård</a><br>
+                    <a href="https://www.vardanalys.se/" target="_blank" class="source-link">Myndigheten för vård- och omsorgsanalys – rapporter om tillgänglighet</a><br>
+                    <span class="text-slate-500">Regeringsunderlag, Vårdföretagarna månadsrapporter, SVT/DN faktagranskningar (med källhänvisningar)</span>
+                </div>
+            </div>
+            <div class="mt-6 text-xs text-slate-500 border-t pt-4">
+                Detta är en oberoende sammanställning baserad på offentliga källor. Syftet är att ge en nyanserad bild – inte att företräda någon politisk linje. 
+                Data är per juni 2026. För senaste siffror, besök alltid originalkällorna ovan.
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="border-t bg-white py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center text-xs text-slate-500">
+            Skapad för att stödja faktabaserad diskussion • Baserad på Prompt 3 (analytisk version) • 
+            <a href="https://github.com/kentlundgren/Grok/tree/main/vardkoer" class="hover:text-slate-700">github.com/kentlundgren/Grok/vardkoer</a>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#0f172a');
+        }
+
+        // Chart.js setup
+        let trendChartInstance = null;
+
+        const chartData = {
+            labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026 (april)'],
+            compliance: [82, 68, 55, 63, 60, 57, 69, 72],   // approximate % within 90 days for operations
+            longWaiters: [120, 145, 175, 165, 172, 185, 145, 125] // relative index for number >90 days (not absolute)
+        };
+
+        function createTrendChart(view = 'compliance') {
+            const ctx = document.getElementById('trendChart');
+            
+            if (trendChartInstance) {
+                trendChartInstance.destroy();
+            }
+
+            const isCompliance = view === 'compliance';
+            
+            const data = {
+                labels: chartData.labels,
+                datasets: [{
+                    label: isCompliance ? 'Andel som fick operation/åtgärd inom 90 dagar (%)' : 'Relativt index – antal väntande >90 dagar',
+                    data: isCompliance ? chartData.compliance : chartData.longWaiters,
+                    borderColor: isCompliance ? '#166534' : '#b91c1c',
+                    backgroundColor: isCompliance ? 'rgba(16, 185, 129, 0.1)' : 'rgba(185, 28, 28, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: true,
+                    pointBackgroundColor: '#0f172a',
+                    pointBorderColor: '#fff',
+                    pointBorderWidth: 2,
+                    pointRadius: 4
+                }]
+            };
+
+            trendChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            backgroundColor: '#0f172a',
+                            titleFont: { size: 12 },
+                            callbacks: {
+                                label: (ctx) => isCompliance ? ctx.raw + '%' : ctx.raw + ' (relativt)'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: !isCompliance,
+                            suggestedMin: isCompliance ? 40 : 100,
+                            grid: { color: '#e2e8f0' },
+                            ticks: {
+                                callback: (val) => isCompliance ? val + '%' : val
+                            }
+                        },
+                        x: {
+                            grid: { color: '#e2e8f0' }
+                        }
+                    },
+                    elements: {
+                        line: { borderJoinStyle: 'round' }
+                    }
+                }
+            });
+        }
+
+        function updateChartView(view) {
+            createTrendChart(view);
+            
+            // Update active button styles
+            document.querySelectorAll('#trendChart').forEach(() => {});
+            const buttons = document.querySelectorAll('button[onclick*="updateChartView"]');
+            buttons.forEach(btn => {
+                if (btn.textContent.includes('Andel') && view === 'compliance') {
+                    btn.classList.add('bg-slate-900', 'text-white');
+                    btn.classList.remove('bg-slate-100');
+                } else if (btn.textContent.includes('Antal') && view === 'longWaiters') {
+                    btn.classList.add('bg-slate-900', 'text-white');
+                    btn.classList.remove('bg-slate-100');
+                } else {
+                    btn.classList.remove('bg-slate-900', 'text-white');
+                    btn.classList.add('bg-slate-100');
+                }
+            });
+        }
+
+        // Simple interactive: highlight current section
+        function setupNavigation() {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const sections = ['data', 'claims', 'causes', 'conclusion'];
+                
+                sections.forEach(sectionId => {
+                    const section = document.getElementById(sectionId);
+                    if (section && window.scrollY >= section.offsetTop - 180) {
+                        current = sectionId;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        // Keyboard shortcut info (nice-to-have)
+        function addKeyboardHint() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '/' && document.activeElement.tagName === 'BODY') {
+                    e.preventDefault();
+                    const dataSection = document.getElementById('data');
+                    dataSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+            
+            // Add small hint on desktop
+            const hint = document.createElement('div');
+            hint.className = 'hidden xl:block fixed bottom-6 right-6 text-[10px] text-slate-400 font-mono';
+            hint.innerHTML = 'Tryck <span class="font-bold">/</span> för att hoppa till data';
+            document.body.appendChild(hint);
+        }
+
+        // Initialize everything
+        function init() {
+            initializeTailwind();
+            
+            // Create the main chart
+            createTrendChart('compliance');
+            
+            setupNavigation();
+            addKeyboardHint();
+            
+            // Make table rows slightly interactive
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.addEventListener('mouseenter', () => row.style.backgroundColor = '#f8fafc');
+                row.addEventListener('mouseleave', () => row.style.backgroundColor = '');
+            });
+
+            // Final touch: show a small toast about data sources on first load (optional)
+            setTimeout(() => {
+                console.log('%c[Vårdköer] Presentation initierad. Data är sammanställd juni 2026.', 'color:#64748b; font-size:9px');
+            }, 1200);
+        }
+
+        // Boot
+        window.onload = init;
+    </script>
+</body>
+</html>
