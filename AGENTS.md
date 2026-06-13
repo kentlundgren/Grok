@@ -89,6 +89,17 @@ main        # Huvudgren, direkt tillgänglig via GitHub Pages
 GitHub Pages serverar `/vardkoer/index.html` på:  
 `https://kentlundgren.github.io/Grok/vardkoer/`
 
+### Commit och push – Kent har kontrollen
+
+Kent vill **själv** committa och pusha till GitHub via Cursor. Det ger kontroll över vad som faktiskt överförs till remote – vilka filer, vilket commit-meddelande och när.
+
+**Standard för agenter:**
+- Gör filändringar lokalt, men **committa och pusha inte** på egen hand.
+- Efter ändringar: informera vad som ändrats och att Kent kan committa och pusha i Cursor när han vill.
+
+**Undantag:**
+- Om Kent **uttryckligen** ber om att committa och pusha ska agenten göra det.
+
 ## Viktigt för agenter
 
 1. Fråga alltid om befintlig fil ska uppdateras **eller** om en ny versionsfil (`filnamn_verX`) ska skapas.
@@ -96,6 +107,7 @@ GitHub Pages serverar `/vardkoer/index.html` på:
 3. Använd PowerShell-syntax (inte `&&` för att kedja kommandon – dela upp i separata steg).
 4. Lägg alltid till `.gitignore` i nya projekt.
 5. Använd relativa sökvägar i Vite-projekt (`base: './'` i `vite.config.js`).
+6. **Committa och pusha inte** till GitHub utan uttrycklig begäran – se *Commit och push* under Git-flöde.
 
 ## Referenser
 
