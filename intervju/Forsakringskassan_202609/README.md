@@ -1,7 +1,9 @@
 # Försäkringskassans intervju — Controller inom produktionsstyrning
 
 
-> Underlag för att förbereda intervjun till Controller till Bidragsbrottsavdelningens stab på Försäkringskassan. Fokus: produktionsstyrning och att upptäcka bidragsfusk hos sökande — inte hos handläggare.
+> Underlag för att förbereda intervjun till [Controller till Bidragsbrottsavdelningens stab](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/) på Försäkringskassan. Fokus: produktionsstyrning och att upptäcka bidragsfusk hos sökande — inte hos handläggare.
+
+> Här skedde en uppdatering 2026-09-22: länken till annonsen på Vakanser.se lades in.
 
 > Här skedde en uppdatering 2026-09-22: minnesbilden `Bilder/fyra-former.png` lades till, så de fyra formerna syns direkt på den här sidan. Samma dag rättades panel A: ett enda hyresavtal leder till flera ärenden, inte flera avtal.
 
@@ -110,6 +112,8 @@ Försäkringskassan, *Lägesrapport 2026:2*.
 ## 5. Rollens kontext
 
 Tjänsten ligger på den nya **Bidragsbrottsavdelningen** (startad februari 2026), inte på den övergripande Ledningsstöd och analys. Produktionsstyrning handlar här om att styra utredningsflöden — kapacitet, beslutstakt, mönster i ärendehanteringen — inte om tillverkning. Samma verktygslåda som myndighetens totala produktionsstyrning, men ett annat organisatoriskt hem och ett annat uppdrag.
+
+Annonsen: [Controller till Bidragsbrottsavdelningens stab, Malmö](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/).
 
 ---
 
