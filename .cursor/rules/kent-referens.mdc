@@ -1,0 +1,16 @@
+---
+description: Källor anges i Harvardformat enligt skillen kent-referens
+alwaysApply: true
+---
+
+# Källor i Harvardformat
+
+När externa källor, referenser eller en källförteckning anges eller granskas, följ skillen `kent-referens` i `~/.cursor/skills/kent-referens/SKILL.md`.
+
+- Harvardstil, anpassad till källtypen.
+- Första hänvisningen i löptexten länkas, till exempel (Riksrevisionen, 2023).
+- Källförteckning alfabetiskt. Varje post är ett stycke. Hela URL:en skrivs ut och är klickbar. Kursiv parentes direkt efter posten säger vad källan belägger.
+- Hämtdatum för föränderliga webbkällor. Ingen påhittad metadata. En länk som ger 404 byts mot den gällande adressen, och bytet sägs.
+- En synlig men icke klickbar URL är fel.
+
+Här skedde en uppdatering 2026-09-22: regeln lades till tillsammans med skillen.

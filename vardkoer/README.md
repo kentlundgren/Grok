@@ -24,13 +24,19 @@ Prompten bakom analysen är **Prompt 3** (den analytiska + orsaks- och bias-vers
 - Orsaksanalys (COVID, finansiering, SVF, databasövergång, personal, efterfrågan)
 - Nyanserade slutsatser
 
-## Källor (primära)
+## Källförteckning
 
-- SKR – Väntetider i vården (https://extra.skr.se/vantetiderivarden.46246.html)
-- Socialstyrelsen – Lägesbild och statistik om tillgänglighet/vårdgaranti
-- Riksrevisionen (2023): "I väntan på vård"
-- Myndigheten för vård- och omsorgsanalys
-- Regeringsdokument och faktagranskningar (SVT, DN m.fl.) med referenser till ovanstående
+> Här skedde en uppdatering 2026-09-22: listan skrevs om till Harvardformat. Riksrevisionens tidigare adress gav 404 och byttes till den gällande.
+
+Myndigheten för vård- och omsorgsanalys (u.å.) Webbplats. Tillgänglig på: [https://www.vardanalys.se/](https://www.vardanalys.se/) (Hämtad 22 september 2026). *(Myndighetens startsida. Presentationen hänvisar till rapporter om tillgänglighet. Länken är inte en namngiven rapport.)*
+
+Riksrevisionen (2023) *I väntan på vård – ineffektiv statlig styrning för kortare köer*. Tillgänglig på: [https://www.riksrevisionen.se/granskningar/granskningsrapporter/2023/i-vantan-pa-vard---ineffektiv-statlig-styrning-for-kortare-koer.html](https://www.riksrevisionen.se/granskningar/granskningsrapporter/2023/i-vantan-pa-vard---ineffektiv-statlig-styrning-for-kortare-koer.html) (Hämtad 22 september 2026). *(Granskar den statliga styrningen för kortare vårdköer. Titeln är sidans egen.)*
+
+Socialstyrelsen (u.å.) *Lägesbild och statistik om tillgänglighet, väntetider och vårdgaranti i hälso- och sjukvård*. Tillgänglig på: [https://www.socialstyrelsen.se/statistik-och-data/statistik/alla-statistikamnen/lagesbild-och-statistik-tillganglighet-vantetider-och-vardgaranti-i-halso-och-sjukvard/](https://www.socialstyrelsen.se/statistik-och-data/statistik/alla-statistikamnen/lagesbild-och-statistik-tillganglighet-vantetider-och-vardgaranti-i-halso-och-sjukvard/) (Hämtad 22 september 2026). *(Löpande statistik om vårdgarantin från juli 2025.)*
+
+Sveriges Kommuner och Regioner (u.å.) *Väntetider i vården*. Tillgänglig på: [https://extra.skr.se/vantetiderivarden.46246.html](https://extra.skr.se/vantetiderivarden.46246.html) (Hämtad 22 september 2026). *(Historisk väntetidsdatabas och ingång till vårdgarantiläget.)*
+
+Regeringsunderlag, Vårdföretagarnas månadsrapporter samt faktagranskningar i SVT och DN nämns i presentationen men saknar en bestämd skrift med adress. De står därför inte i källförteckningen.
 
 **Viktigt:** Statistiken är sammanställd i juni 2026. Dataövergången från SKR till Socialstyrelsen (juli 2025) samt journalsystembyten i flera regioner påverkar jämförbarheten. Kontrollera alltid de senaste siffrorna direkt hos källorna.
 
