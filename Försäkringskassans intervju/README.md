@@ -22,7 +22,9 @@ En hel grupp, ett område eller en kategori genererar ärenden i en takt som avv
 > Normen behöver inte vara geografisk. Den kan vara individuell: en läkare (Cedersson) som skriver femhundra intyg istället för femtio. Samma metod, annan referenspunkt.
 
 ### D — Davidsson: nätverksanalys
-Flera sökande som är sammanknutna via delad infrastruktur — telefonnummer, bankkonto, adress, ombud — utan att volymen eller underlaget i sig sticker ut. En enskild person syns inte, men tio personer som delar infrastruktur gör det. Spåret: **kartlägga kopplingar** mellan aktörer.
+Flera sökande som är sammanknutna via delad infrastruktur — utan att volymen eller underlaget i sig sticker ut. En enskild person syns inte, men tio personer som delar infrastruktur gör det. Spåret: **kartlägga kopplingar** mellan aktörer.
+
+> **Vad delar de egentligen?** Sällan telefon eller adress — det är för uppenbart. Det som delas är det som är *nödvändigt*: samma **ombud** som lämnar in ansökningarna, samma **bankkonto** som tar emot utbetalningarna, samma **läkare** som skriver intygen, eller samma telefon som ringer in till handläggaren. Det är den typen av kopplingar nätverksanalysen letar efter.
 
 > Används ofta som sista steg: när A är bekräftat men du inte vet om det är tio enskilda misstag eller ett organiserat nätverk.
 
@@ -70,6 +72,10 @@ Metod: jämför flera oberoende datakällor mot varandra. Ökar sjukskrivningarn
 **Fråga 5 (utmaning):** Varför är nätverksanalys inte bara en variant av orealistiska volymer?
 
 *Bra svar:* C mäter en enhet mot en norm — antal ärenden, antal intyg. D mäter kopplingar mellan enheter — vem som delar telefonnummer, konto, adress. Du kan ha helt normal volym men ett tydligt nätverk; då ser C ingenting och D ser allt. ISF 2018:5 beskriver dem som två skilda metodformer.
+
+**Fråga 6 (utmaning):** Vad delar ett nätverk egentligen — är det inte klumpigt att dela bankkonto?
+
+*Bra svar:* Sällan telefon eller adress — det är för uppenbart. Det som delas är det som är nödvändigt: samma ombud, samma bankkonto, samma läkare, samma inringande telefon. Det är den typen av kopplingar nätverksanalysen letar efter.
 
 ---
 
