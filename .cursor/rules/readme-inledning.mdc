@@ -1,20 +1,16 @@
 ---
-description: Varje README börjar med länk till live-sidan och till index.html
+description: Varje README börjar med en länk till live-sidan
 alwaysApply: true
 ---
 
 # README-inledning
 
-I början av varje `README.md`, direkt under rubriken, lägg två länkar:
-
-- **Live:** GitHub Pages-adressen för mappen, `https://kentlundgren.github.io/Grok/<mapp>/`
-- **Sidan:** relativ länk till `index.html`
-
-Mönster från vårdköerna: live är `https://kentlundgren.github.io/Grok/vardkoer/`, sidan är `vardkoer/index.html`.
+I början av varje `README.md`, direkt under rubriken, lägg en länk till live-sidan på GitHub Pages. Det är den renderade sidan Kent vill öppna.
 
 ```markdown
 - **Live:** [https://kentlundgren.github.io/Grok/<mapp>/](https://kentlundgren.github.io/Grok/<mapp>/)
-- **Sidan:** [index.html](index.html)
 ```
 
-Live-adressen fungerar efter commit och push. Här skedde en uppdatering 2026-09-22: regeln lades till. Det fanns ingen `Cursor.md`; den här regeln och `AGENTS.md` är projektminnet.
+Lägg inte en länk till `index.html` eller till filens GitHub-blob i inledningen. Mönster: `https://kentlundgren.github.io/Grok/vardkoer/`.
+
+Live-adressen fungerar efter commit och push. Här skedde en uppdatering 2026-09-22: regeln ändrades från två länkar till enbart live-sidan.

@@ -1,9 +1,8 @@
 # Försäkringskassans intervju — Controller inom produktionsstyrning
 
-> Här skedde en uppdatering 2026-09-22, på eftermiddagen: sidan bär nu det annonsen ber om, produktionsstyrning, effektanalys och stöd till prognoser. A–D ligger kvar som sidospår.
+> Här skedde en uppdatering 2026-09-22, på eftermiddagen: sidan bär nu det annonsen ber om, produktionsstyrning, effektanalys och stöd till prognoser. A–D ligger kvar som sidospår. Länken till `index.html` togs bort från inledningen. Kvar är live-sidan.
 
 - **Live:** [https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/](https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/)
-- **Sidan:** [index.html](index.html)
 
 Underlag inför intervjun till [Controller till Bidragsbrottsavdelningens stab](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/). Controllern ska styra avdelningens produktion, följa effekter i uppdraget, och stötta den andra controllern med finansiell uppföljning och planering. Dit hör uppskattningar av hur mycket ersättning som betalas ut när handläggningen går rätt till. Avdelningen arbetar mot bidragsbrott. Det är ett annat uppdrag än controllerns.
 

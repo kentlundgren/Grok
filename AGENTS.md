@@ -110,14 +110,13 @@ Kent vill **själv** committa och pusha till GitHub via Cursor. Det ger kontroll
 4. Lägg alltid till `.gitignore` i nya projekt.
 5. Använd relativa sökvägar i Vite-projekt (`base: './'` i `vite.config.js`).
 6. **Committa och pusha inte** till GitHub utan uttrycklig begäran – se *Commit och push* under Git-flöde.
-7. **README-inledning:** I början av varje `README.md`, direkt under rubriken, lägg två länkar: live-sidan på GitHub Pages och sidans `index.html`. Mönster, som för vårdköerna (`https://kentlundgren.github.io/Grok/vardkoer/` och `vardkoer/index.html`):
+7. **README-inledning:** I början av varje `README.md`, direkt under rubriken, lägg en länk: live-sidan på GitHub Pages. Det är den renderade sidan Kent vill öppna. Lägg inte en länk till `index.html` eller till filens GitHub-blob där.
 
 ```markdown
 - **Live:** [https://kentlundgren.github.io/Grok/<mapp>/](https://kentlundgren.github.io/Grok/<mapp>/)
-- **Sidan:** [index.html](index.html)
 ```
 
-Live-adressen syns först efter att Kent har committat och pushat. Sökvägen följer mappen i repot, till exempel `intervju/Forsakringskassan_202609/`.
+Live-adressen syns först efter att Kent har committat och pushat. Sökvägen följer mappen i repot, till exempel `intervju/Forsakringskassan_202609/`. Här skedde en uppdatering 2026-09-22: länken till `index.html` i inledningen togs bort.
 
 ## Referenser
 
