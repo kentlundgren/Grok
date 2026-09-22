@@ -24,3 +24,15 @@ En läkare i ett område skriver plötsligt femhundra sjukintyg på ett halvår,
 Varför är nätverksanalys inte bara en variant av orealistiska volymer?
 
 **Svar:** C mäter en enhet mot en norm — antal ärenden, antal intyg, antal personer. D mäter kopplingar mellan enheter — vem som delar telefonnummer, konto, adress. Du kan ha helt normal volym men ett tydligt nätverk; då ser C ingenting och D ser allt. ISF 2018:5 beskriver dem som två skilda metodformer: statistiska riskmodeller som skattar sannolikhet per ärende, och nätverksanalys som letar efter kopplingar mellan personer.
+
+## Fråga 6 (utmaning)
+Vad delar ett nätverk egentligen — är det inte klumpigt att dela bankkonto?
+
+**Svar:** Sällan telefon eller adress — det är för uppenbart och för lätt att upptäcka. Det som delas är det som är *nödvändigt* för att pengarna ska komma fram eller att ansökningarna ska gå igenom:
+- Samma **ombud** som lämnar in ansökningarna åt flera.
+- Samma **bankkonto** som tar emot utbetalningarna.
+- Samma **läkare** som skriver intygen.
+- Samma telefon som ringer in till handläggaren.
+- Samma e-post eller IP-adress digitalt.
+
+Det är den typen av kopplingar nätverksanalysen letar efter — inte att tio personer bor på samma gata, utan att tio personer har samma ombud. Banken är klumpigt, men det är just därför det syns i data när man börjar kartlägga.
