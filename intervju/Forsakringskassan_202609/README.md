@@ -3,6 +3,23 @@
 
 > Underlag för att förbereda intervjun till [Controller till Bidragsbrottsavdelningens stab](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/) på Försäkringskassan. Fokus: produktionsstyrning och att upptäcka bidragsfusk hos sökande — inte hos handläggare.
 
+> Här skedde en uppdatering 2026-09-22: öppna [index.html](index.html) i webbläsaren. Den bygger på `Talepunkter_260922.html`, som är oförändrad, och har ett eget kort för de fyra formerna av bidragsfusk.
+
+## Så väljer du svar
+
+| Om de frågar | Kort |
+|---|---|
+| Erfarenhet av produktionsstyrning | [1. Bakgrund](index.html#tp-1) |
+| Vad rollen är, vad du kan bidra med | [2. Produktionsstyrning](index.html#tp-2) |
+| Ett konkret exempel på fusk i data | [A–D. Bidragsfusk hos sökande](index.html#tp-abcd) |
+| SAS Viya | [3. Teknikskiftet](index.html#tp-3) |
+| Utbildning, licentiaten | [4. Avhandlingen](index.html#tp-4), och [4b](index.html#tp-4b) bara om de frågar om kalkyler |
+| AI | [5. Generativ AI](index.html#tp-5) |
+| Vad du har testat | [6. Det du undersökt](index.html#tp-6) |
+| Din fråga till dem | [7. Fråga tillbaka](index.html#tp-7) |
+
+A–D gäller sökande. Talepunkt 1 gäller fel hos handläggare.
+
 >
 
 > Minnesbilden nedan visar fyra former av bidragsfusk:
@@ -123,7 +140,10 @@ Annonsen: [Controller till Bidragsbrottsavdelningens stab, Malmö](https://vakan
 
 | Fil | Innehåll |
 |---|---|
+| [index.html](index.html) | Sidan att öppna: talepunkterna 1–7 och kortet A–D |
 | [README.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/README.md) | Detta — översikt, ramen, källor, rollens kontext |
+| [Talepunkter_260922.html](Talepunkter_260922.html) | Sufflörsidan, oförändrad |
+| [Talepunkter_260922.md](Talepunkter_260922.md) | De sju meningarna i markdown |
 | [abc-ramen.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/abc-ramen.md) | De fyra formerna med exemplen Andersson, Bengtsson, Ceders och Davidsson |
 | [ovningsfragor.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ovningsfragor.md) | Sex övningsfrågor med svar, för intervjuträning |
 | [checklista.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/checklista.md) | Checklista att ha framför sig på vägen till intervjun |
