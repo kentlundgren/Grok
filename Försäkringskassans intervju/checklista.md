@@ -7,11 +7,12 @@ Använd den här listan dagen innan och på vägen till intervjun. Kryssa av i h
 - [ ] Jag vill lära mig att läsa av mönster i data för att skydda systemet mot missbruk från **utsidan** — alltså sökande, inte handläggare.
 - [ ] Jag vill jobba nära ledningen och ge beslutsunderlag som faktiskt används.
 
-## 2. A-B-C-ramen — de tre formerna av bidragsfusk
+## 2. A-B-C-D-ramen — de fyra formerna av bidragsfusk
 - [ ] **A — Upprepad registrering (Andersson):** en aktör skapar flera ärenden på samma underlag. Fångas med datamatchning.
 - [ ] **B — Återkommande mönster (Bengtsson):** samma person upprepar samma typ av ansökan över tid. Fångas med sekvensanalys.
 - [ ] **C — Orealistiska volymer (Ceders):** en grupp, ett område eller en enskild aktör avviker från sin egen baslinje. Fångas med trend- och tröskelanalys.
-- [ ] Jag kan förklara skillnaden: A spårar en tråd genom flera ärenden, C mäter en avvikelse mot en norm — både geografisk och individuell (t.ex. en läkare).
+- [ ] **D — Nätverksanalys (Davidsson):** flera sökande sammanknutna via delad infrastruktur (telefon, konto, adress, ombud). Fångas med kopplingskartläggning.
+- [ ] Jag kan förklara skillnaden: A spårar en tråd genom flera ärenden, C mäter en avvikelse mot en norm, D kartlägger en koppling mellan aktörer — både geografisk och individuell (t.ex. en läkare).
 
 ## 3. Korsvalidering — så skiljer jag äkta från konstlat
 - [ ] Vid misstänkt volymavvikelse jämför jag med oberoende datakällor: apotek, vårdcentraler, skolfrånvaro.
@@ -20,7 +21,7 @@ Använd den här listan dagen innan och på vägen till intervjun. Kryssa av i h
 
 ## 4. När jag upptäcker något — så här resonerar jag
 - [ ] Validera uppgifterna först — är det verkligen tio registreringar på samma underlag?
-- [ ] Kolla nätverket: samma telefonnummer, bankkonto, adress, ombud mellan de tio.
+- [ ] Kolla nätverket (D): samma telefonnummer, bankkonto, adress, ombud mellan de tio.
 - [ ] Avgör om det är tio enskilda misstag eller ett organiserat nätverk.
 - [ ] Gå till chefen med både fyndet och resonemanget — inte bara misstanken.
 

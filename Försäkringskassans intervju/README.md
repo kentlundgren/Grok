@@ -4,9 +4,9 @@
 
 ---
 
-## 1. Minnesramen: A, B, C
+## 1. Minnesramen: A, B, C, D
 
-Tre bedragare, tre spår. Håll dem i den ordningen — det är lättast att minnas.
+Fyra bedragare, fyra spår. Håll dem i den ordningen — det är lättast att minnas.
 
 ### A — Andersson: upprepad registrering
 Samma aktör skapar flera ärenden på samma underlag. Samma person, samma hyreskontrakt, samma inkomstuppgift — men i två, fem eller tio separata ärenden. Spåret: **datamatchning** (personnummer, bankkonto, adress, ombud).
@@ -21,13 +21,16 @@ En hel grupp, ett område eller en kategori genererar ärenden i en takt som avv
 
 > Normen behöver inte vara geografisk. Den kan vara individuell: en läkare (Cedersson) som skriver femhundra intyg istället för femtio. Samma metod, annan referenspunkt.
 
-### Skillnaden mellan A och C
+### D — Davidsson: nätverksanalys
+Flera sökande som är sammanknutna via delad infrastruktur — telefonnummer, bankkonto, adress, ombud — utan att volymen eller underlaget i sig sticker ut. En enskild person syns inte, men tio personer som delar infrastruktur gör det. Spåret: **kartlägga kopplingar** mellan aktörer.
+
+> Används ofta som sista steg: när A är bekräftat men du inte vet om det är tio enskilda misstag eller ett organiserat nätverk.
+
+### Skillnaderna mellan A, C och D
 - **A** spårar en tråd genom flera ärenden — samma underlag, flera ärenden.
 - **C** mäter en avvikelse mot en norm — många ärenden, inget delat underlag.
-- Antalet avgör inte vilken det är. Enheten gör det.
-
-### Den fjärde metoden (nätverksanalys)
-Kartlägga kopplingar mellan sökande via adresser, konton, telefonnummer och ombud. En enskild person syns inte — men tio personer som delar infrastruktur gör det. Används när valideringen visar att något är fel men du inte vet om det är tio enskilda misstag eller ett organiserat nätverk.
+- **D** kartlägger en koppling mellan aktörer — ingen avvikelse i volym, men ett nätverk.
+- Antalet avgör inte vilken det är. Enheten gör det: underlag (A), norm (C), koppling (D).
 
 ---
 
@@ -49,7 +52,7 @@ Metod: jämför flera oberoende datakällor mot varandra. Ökar sjukskrivningarn
 
 **Fråga 1:** Du har sagt att du är intresserad av produktionsstyrning och att upptäcka missbruk. Kan du ge mig ett konkret exempel på hur du skulle upptäcka bidragsfusk i produktionsdata?
 
-*Bra svar:* Tre former — A, B, C. Andersson (upprepad registrering), Bengtsson (återkommande mönster), Ceders stadsdel (orealistiska volymer). Håll dig till sökandesidan.
+*Bra svar:* Fyra former — A, B, C, D. Andersson (upprepad registrering), Bengtsson (återkommande mönster), Ceders stadsdel (orealistiska volymer), Davidsson (nätverksanalys). Håll dig till sökandesidan.
 
 **Fråga 2:** Hur skulle du skilja en äkta influensaepidemi från organiserat bedrägeri i samma data?
 
@@ -57,13 +60,17 @@ Metod: jämför flera oberoende datakällor mot varandra. Ökar sjukskrivningarn
 
 **Fråga 3:** Du upptäcker att tio personer i samma postnummer har ansökt om bostadsbidrag med samma hyreskontrakt. Hur resonerar du?
 
-*Bra svar:* Validera först att det verkligen är tio separata ärenden med samma underlag. Sedan nätverksanalys — finns det kopplingar (telefon, konto, ombud)? Därefter till chef. Skillnaden: det är inte samma ärende, det är tio ärenden som döljer samma underlag.
+*Bra svar:* Validera först att det verkligen är tio separata ärenden med samma underlag. Sedan nätverksanalys (D) — finns det kopplingar (telefon, konto, ombud)? Därefter till chef. Skillnaden: det är inte samma ärende, det är tio ärenden som döljer samma underlag.
+
+**Fråga 4:** En läkare i ett område skriver plötsligt femhundra sjukintyg på ett halvår, normalt femtio. Vad gör du?
+
+*Bra svar:* Individuell baslinje — Cedersson-läkaren (C). Jämför mot egna historiken och mot patienternas faktiska vårdbesök. Om intygen ökar men vården inte gör det → avvikelse. Därefter nätverksanalys (D) och eskalering.
 
 ---
 
 ## 4. Källor
 
-**Primär källa — metodhandbok för de tre mönstren:**
+**Primär källa — metodhandbok för de fyra mönstren:**
 Försäkringskassan, *Vägledning 2004:1 Kontrollutredning* (version 18). Har en explicit checklista: finns det en systematik som ökar över tid? Har den enskilde lämnat felaktiga uppgifter i andra ärenden? Har den enskilde lämnat olika uppgifter i olika ärenden?
 - https://forsakringskassan.se/download/18.7fc616c01814e179a9f6fb/1781091247031/kontrollutredning-vagledning-2004-1.pdf
 
