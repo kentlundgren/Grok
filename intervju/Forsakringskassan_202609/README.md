@@ -1,13 +1,21 @@
 # Försäkringskassans intervju — Controller inom produktionsstyrning
 
-> Här skedde en uppdatering 2026-09-22: live-sidan och `index.html` ligger överst, på samma sätt som för vårdköerna.
+> Här skedde en uppdatering 2026-09-22, på eftermiddagen: sidan bär nu det annonsen ber om, produktionsstyrning, effektanalys och stöd till prognoser. A–D ligger kvar som sidospår.
 
 - **Live:** [https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/](https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/)
 - **Sidan:** [index.html](index.html)
 
-> Underlag för att förbereda intervjun till [Controller till Bidragsbrottsavdelningens stab](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/) på Försäkringskassan. Fokus: produktionsstyrning och att upptäcka bidragsfusk hos sökande — inte hos handläggare.
+Underlag inför intervjun till [Controller till Bidragsbrottsavdelningens stab](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/). Controllern ska styra avdelningens produktion, följa effekter i uppdraget, och stötta den andra controllern med finansiell uppföljning och planering. Dit hör uppskattningar av hur mycket ersättning som betalas ut när handläggningen går rätt till. Avdelningen arbetar mot bidragsbrott. Det är ett annat uppdrag än controllerns.
 
-> Här skedde en uppdatering 2026-09-22: öppna [index.html](index.html) i webbläsaren. Den bygger på `Talepunkter_260922.html`, som är oförändrad, och har ett eget kort för de fyra formerna av bidragsfusk.
+## Behållningen
+
+På morgonen satt jag med Grok i mobilen och bad den utforska bidragsfusk. Fyra former: Andersson, Bengtsson, Ceder, Davidsson. Jag bad den föra över det till GitHub, i repot Grok, i en mapp för intervjuer och en undermapp för den här tjänsten. Utan att gå via ett lokalt git-repo. Sidan hamnade på [github.com/kentlundgren/Grok/tree/main/intervju/Forsakringskassan_202609](https://github.com/kentlundgren/Grok/tree/main/intervju/Forsakringskassan_202609). Senare tog jag hem materialet med pull, till datorn och till git.
+
+Jag lärde mig en del om bidragsfusk. Det var intressant. Avdelningen heter trots allt så.
+
+Det var ändå inte helt det controllern i annonsen ska jobba med.
+
+Ibland träffar man lite fel. Jag är glad ändå. Både för det jag förstod om fusket, och för att Grok i mobilen kan skriva rakt in i GitHub.
 
 ## Så väljer du svar
 
@@ -15,26 +23,27 @@
 |---|---|
 | Erfarenhet av produktionsstyrning | [1. Bakgrund](index.html#tp-1) |
 | Vad rollen är, vad du kan bidra med | [2. Produktionsstyrning](index.html#tp-2) |
-| Ett konkret exempel på fusk i data | [A–D. Bidragsfusk hos sökande](index.html#tp-abcd) |
+| Prognoser och finansiell uppföljning | [2. Produktionsstyrning](index.html#tp-2), som stöd till den andra controllern |
 | SAS Viya | [3. Teknikskiftet](index.html#tp-3) |
+| Hur avdelningens uppdrag ser ut, om de frågar | [A–D. Sidospår om bidragsfusk](index.html#tp-abcd) |
 | Utbildning, licentiaten | [4. Avhandlingen](index.html#tp-4), och [4b](index.html#tp-4b) bara om de frågar om kalkyler |
 | AI | [5. Generativ AI](index.html#tp-5) |
 | Vad du har testat | [6. Det du undersökt](index.html#tp-6) |
 | Din fråga till dem | [7. Fråga tillbaka](index.html#tp-7) |
 
-A–D gäller sökande. Talepunkt 1 gäller fel hos handläggare.
+A–D är sidospåret, om avdelningens värld. Talepunkt 1 och 2 är controllerns jobb.
 
->
-
-> Minnesbilden nedan visar fyra former av bidragsfusk:
+> Minnesbilden hör till sidospåret, fyra former av bidragsfusk:
 
 ![Fyra former av bidragsfusk: A Andersson samma underlag, B Bengtsson över tid, C Ceder mot normen, D Davidsson nätverket](Bilder/fyra-former.png)
 
 ---
 
-## 1. Minnesramen: A, B, C, D
+## 1. Sidospår: A, B, C, D
 
-Fyra bedragare, fyra spår. Håll dem i den ordningen — det är lättast att minnas.
+> Här skedde en uppdatering 2026-09-22: ramen ligger kvar för att den var värd att lära sig. Den är avdelningens värld, inte controllerns huvuduppgift i annonsen.
+
+Fyra former. Håll dem i den ordningen, det är lättast att minnas.
 
 ### A — Andersson: upprepad registrering
 Samma aktör skapar flera ärenden på samma underlag. Samma person, samma hyreskontrakt, samma inkomstuppgift — men i två, fem eller tio separata ärenden. Spåret: **datamatchning** (personnummer, bankkonto, adress, ombud).
@@ -132,7 +141,9 @@ Försäkringskassan, *Lägesrapport 2026:2*.
 
 ## 5. Rollens kontext
 
-Tjänsten ligger på den nya **Bidragsbrottsavdelningen** (startad februari 2026), inte på den övergripande Ledningsstöd och analys. Produktionsstyrning handlar här om att styra utredningsflöden — kapacitet, beslutstakt, mönster i ärendehanteringen — inte om tillverkning. Samma verktygslåda som myndighetens totala produktionsstyrning, men ett annat organisatoriskt hem och ett annat uppdrag.
+Tjänsten ligger på den nya **Bidragsbrottsavdelningen** (startad februari 2026). Controllern i staben ansvarar för avdelningens produktionsstyrning: processer, flöden och former för styrningen, i samklang med teknikskiftet till SAS Viya. Därtill kommer analyser av effekter i uppdraget, och stöd till den andra controllern kring finansiell uppföljning och planering. Dit hör vanliga uppskattningar av hur mycket ersättning som betalas ut när det går rätt till.
+
+Avdelningen förebygger och motverkar bidragsbrott. Det är uppdraget runt omkring. A–D ovan är en bild av den världen.
 
 Annonsen: [Controller till Bidragsbrottsavdelningens stab, Malmö](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/).
 
@@ -144,7 +155,7 @@ Annonsen: [Controller till Bidragsbrottsavdelningens stab, Malmö](https://vakan
 
 | Fil | Innehåll |
 |---|---|
-| [index.html](index.html) | Sidan att öppna: talepunkterna 1–7 och kortet A–D |
+| [index.html](index.html) | Sidan att öppna: talepunkterna 1–7, A–D som sidospår |
 | [README.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/README.md) | Detta — översikt, ramen, källor, rollens kontext |
 | [Talepunkter_260922.html](Talepunkter_260922.html) | Sufflörsidan, oförändrad |
 | [Talepunkter_260922.md](Talepunkter_260922.md) | De sju meningarna i markdown |
@@ -153,7 +164,7 @@ Annonsen: [Controller till Bidragsbrottsavdelningens stab, Malmö](https://vakan
 | [checklista.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/checklista.md) | Checklista att ha framför sig på vägen till intervjun |
 | [annonser.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/annonser.md) | De två annonserna sida vid sida, med länkar som bevaras över tid |
 | [flashcards.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/flashcards.md) | Flashcards — framsida/baksida för att öva på minnet |
-| [ett-minuts-pitch.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ett-minuts-pitch.md) | En minuts pitch om varför du vill ha rollen |
+| [ett-minuts-pitch.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ett-minuts-pitch.md) | En minuts pitch om produktionsstyrning och prognosstöd |
 | [fyra-former.png](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/Bilder/fyra-former.png) | Minnesbild av de fyra formerna: Andersson, Bengtsson, Ceder, Davidsson |
 
 > **Tips:** Börja med [flashcards.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/flashcards.md) på bussen till intervjun. Avsluta med [ett-minuts-pitch.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ett-minuts-pitch.md) så du har orden klara.

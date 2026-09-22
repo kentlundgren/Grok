@@ -1,13 +1,11 @@
 # Ett-minuts-pitch — varför jag vill ha rollen
 
-> Här skedde en uppdatering 2026-09-22: minnesbilden av de fyra formerna lades in, så pitchen och bilden ligger på samma sida.
+> Här skedde en uppdatering 2026-09-22, på eftermiddagen: pitchen följer annonsen. Produktionsstyrning, effektanalys och stöd till prognoser för ersättning som betalas ut när det går rätt till. A–D är en mening om avdelningens värld.
 
 > Läs högt en gång. Sen en gång till, lite snabbare. Sen en gång till, utan att titta.
 
-![Fyra former av bidragsfusk: A Andersson samma underlag, B Bengtsson över tid, C Ceder mot normen, D Davidsson nätverket](Bilder/fyra-former.png)
+Jag söker den här rollen för att jag vill styra flöden, inte bara räkna dem. Produktionsstyrning handlar om att se hur ärenden rör sig: var kapaciteten sitter, var beslutstakten halkar efter, och hur en regeländring slår igenom. Övergången ska vara kort, och efteråt ska någon följa upp att resultatet blev det som var tänkt.
 
-Jag söker den här rollen för att jag vill styra flöden, inte bara räkna dem. Produktionsstyrning handlar om att se hur ärenden rör sig genom systemet — var kapaciteten sitter, var beslutstakten halkar efter, och var mönstren börjar sticka ut.
+Det jag kan bidra med är att läsa utfall mot förväntan, i den skala SAS Viya ger, och att stötta prognoser för hur mycket ersättning som betalas ut när handläggningen går rätt till. Underlag som ledningen faktiskt använder.
 
-Det som lockar mig mest är att lära mig läsa av de mönstren för att skydda systemet mot missbruk från utsidan. Fyra former, fyra spår: upprepad registrering där samma underlag dyker upp i flera ärenden, återkommande mönster där samma person upprepar sig över tid, orealistiska volymer där en grupp avviker från sin egen norm, och nätverksanalys där flera sökande är sammanknutna via delad infrastruktur — ofta samma ombud eller samma bankkonto, inte sällan telefon eller adress.
-
-Jag vill bygga de system som gör det synligt — och ge ledningen underlag som faktiskt används för beslut. Det är därför jag sitter här.
+Avdelningen arbetar mot bidragsbrott. Jag har tittat på fyra former, A till D. Det är världen runt uppdraget. Controllerns jobb i annonsen är styrningen och uppföljningen. Det är därför jag sitter här.
