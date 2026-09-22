@@ -4,6 +4,10 @@
 
 > Underlag för att förbereda intervjun till Controller till Bidragsbrottsavdelningens stab på Försäkringskassan. Fokus: produktionsstyrning och att upptäcka bidragsfusk hos sökande — inte hos handläggare.
 
+> Här skedde en uppdatering 2026-09-22: minnesbilden `Bilder/fyra-former.png` lades till, så de fyra formerna syns direkt på den här sidan.
+
+![Fyra former av bidragsfusk: A Andersson samma underlag, B Bengtsson över tid, C Ceder mot normen, D Davidsson nätverket](Bilder/fyra-former.png)
+
 ---
 
 ## 1. Minnesramen: A, B, C, D
@@ -123,5 +127,6 @@ Tjänsten ligger på den nya **Bidragsbrottsavdelningen** (startad februari 2026
 | [annonser.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/annonser.md) | De två annonserna sida vid sida, med länkar som bevaras över tid |
 | [flashcards.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/flashcards.md) | Flashcards — framsida/baksida för att öva på minnet |
 | [ett-minuts-pitch.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ett-minuts-pitch.md) | En minuts pitch om varför du vill ha rollen |
+| [fyra-former.png](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/Bilder/fyra-former.png) | Minnesbild av de fyra formerna: Andersson, Bengtsson, Ceder, Davidsson |
 
 > **Tips:** Börja med [flashcards.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/flashcards.md) på bussen till intervjun. Avsluta med [ett-minuts-pitch.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ett-minuts-pitch.md) så du har orden klara.

@@ -1,6 +1,10 @@
 # Ett-minuts-pitch — varför jag vill ha rollen
 
+> Här skedde en uppdatering 2026-09-22: minnesbilden av de fyra formerna lades in, så pitchen och bilden ligger på samma sida.
+
 > Läs högt en gång. Sen en gång till, lite snabbare. Sen en gång till, utan att titta.
+
+![Fyra former av bidragsfusk: A Andersson samma underlag, B Bengtsson över tid, C Ceder mot normen, D Davidsson nätverket](Bilder/fyra-former.png)
 
 Jag söker den här rollen för att jag vill styra flöden, inte bara räkna dem. Produktionsstyrning handlar om att se hur ärenden rör sig genom systemet — var kapaciteten sitter, var beslutstakten halkar efter, och var mönstren börjar sticka ut.
 
