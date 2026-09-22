@@ -1,5 +1,9 @@
 # Försäkringskassans intervju — Controller inom produktionsstyrning
 
+> Här skedde en uppdatering 2026-09-22: live-sidan och `index.html` ligger överst, på samma sätt som för vårdköerna.
+
+- **Live:** [https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/](https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/)
+- **Sidan:** [index.html](index.html)
 
 > Underlag för att förbereda intervjun till [Controller till Bidragsbrottsavdelningens stab](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/) på Försäkringskassan. Fokus: produktionsstyrning och att upptäcka bidragsfusk hos sökande — inte hos handläggare.
 
