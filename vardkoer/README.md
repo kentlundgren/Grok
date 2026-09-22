@@ -1,5 +1,9 @@
 # Vårdköer i Sverige 2022–2026
 
+> Här skedde en uppdatering 2026-09-22: live-sidan lades överst. Den fanns tidigare bara som text längre ner i instruktionen.
+
+- **Live:** [https://kentlundgren.github.io/Grok/vardkoer/](https://kentlundgren.github.io/Grok/vardkoer/)
+
 En interaktiv, faktabaserad HTML-presentation som analyserar hur vårdköerna (väntetider enligt vårdgarantin) i Sverige har utvecklats mellan 2022 och 2026.
 
 ## Bakgrund
