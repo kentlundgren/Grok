@@ -1,6 +1,5 @@
 # Försäkringskassans intervju — Controller inom produktionsstyrning
 
-> Här skedde en uppdatering 2026-09-22: filerna flyttades från `Försäkringskassans intervju` till `intervju/Forsakringskassan_202609`. Innehållet är oförändrat. Översikt över alla intervjuförberedelser finns i [../README.md](../README.md).
 
 > Underlag för att förbereda intervjun till Controller till Bidragsbrottsavdelningens stab på Försäkringskassan. Fokus: produktionsstyrning och att upptäcka bidragsfusk hos sökande — inte hos handläggare.
 
