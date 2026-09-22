@@ -45,6 +45,8 @@ Kent testar Grok Build som en del av ett befintligt flöde med Cloud Cowork (lok
 Grok/
 ├── README.md          # Projektöversikt
 ├── AGENTS.md          # Det här dokumentet – kontext för AI-agenter
+├── intervju/          # Intervjuförberedelser, en undermapp per tillfälle
+│   └── Forsakringskassan_202609/  # Controller, Försäkringskassan (september 2026)
 └── vardkoer/          # Delprojekt: Vårdköer i Sverige 2022–2026
     ├── index.html     # Interaktiv HTML-presentation (Tailwind CSS + Chart.js)
     └── README.md      # Dokumentation för delprojektet
