@@ -31,6 +31,7 @@ Flera sökande som är sammanknutna via delad infrastruktur — telefonnummer, b
 - **C** mäter en avvikelse mot en norm — många ärenden, inget delat underlag.
 - **D** kartlägger en koppling mellan aktörer — ingen avvikelse i volym, men ett nätverk.
 - Antalet avgör inte vilken det är. Enheten gör det: underlag (A), norm (C), koppling (D).
+- **D är inte en variant av C.** C mäter en enhet mot en norm; D mäter kopplingar mellan enheter. Du kan ha helt normal volym men ett tydligt nätverk — då ser C ingenting och D ser allt.
 
 ---
 
@@ -66,6 +67,10 @@ Metod: jämför flera oberoende datakällor mot varandra. Ökar sjukskrivningarn
 
 *Bra svar:* Individuell baslinje — Cedersson-läkaren (C). Jämför mot egna historiken och mot patienternas faktiska vårdbesök. Om intygen ökar men vården inte gör det → avvikelse. Därefter nätverksanalys (D) och eskalering.
 
+**Fråga 5 (utmaning):** Varför är nätverksanalys inte bara en variant av orealistiska volymer?
+
+*Bra svar:* C mäter en enhet mot en norm — antal ärenden, antal intyg. D mäter kopplingar mellan enheter — vem som delar telefonnummer, konto, adress. Du kan ha helt normal volym men ett tydligt nätverk; då ser C ingenting och D ser allt. ISF 2018:5 beskriver dem som två skilda metodformer.
+
 ---
 
 ## 4. Källor
@@ -77,6 +82,10 @@ Försäkringskassan, *Vägledning 2004:1 Kontrollutredning* (version 18). Har en
 **Kompletterande — hur kontrollverksamheten fungerar:**
 ISF (Inspektionen för socialförsäkringen), *Rapport 2025:14 Kontrollutredningar vid misstänkta bidragsbrott*. Beskriver strategiska profiler och riktade kontroller; profilerade ärenden leder till åtgärd i 74 % av fallen.
 - https://isf.se/download/18.64c0dda619afce1ad7d1cbd5/1768374582621/Rapport%202025-14%20Kontrollutredningar%20vid%20misst%C3%A4nkta%20bidragsbrott.pdf
+
+**Nätverksanalys som egen metod — ISF 2018:5:**
+ISF, *Profilering som urvalsmetod för riktade kontroller* (2018:5). Beskriver nätverksanalys som en hypotesdriven metodform som letar efter kopplingar mellan personer — till skillnad från statistiska riskmodeller som skattar sannolikhet per ärende.
+- https://isf.se/download/18.6e75aae16a591304896b99/1565330421562/Profilering%20som%20urvalsmetod%20fo%CC%88r%20riktade%20kontroller-ISF-Rapport%202018-05.pdf
 
 **Lägesrapport — bidragsbrott inom sjukpenning:**
 Försäkringskassan, *Lägesrapport 2026:2*.

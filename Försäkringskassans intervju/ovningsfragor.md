@@ -19,3 +19,8 @@ Du upptäcker att tio personer i samma postnummer har ansökt om bostadsbidrag m
 En läkare i ett område skriver plötsligt femhundra sjukintyg på ett halvår, normalt femtio. Vad gör du?
 
 **Svar:** Individuell baslinje — Cedersson-läkaren (C). Jämför mot egna historiken och mot patienternas faktiska vårdbesök. Om intygen ökar men vården inte gör det → avvikelse. Därefter nätverksanalys (D) och eskalering.
+
+## Fråga 5 (utmaning)
+Varför är nätverksanalys inte bara en variant av orealistiska volymer?
+
+**Svar:** C mäter en enhet mot en norm — antal ärenden, antal intyg, antal personer. D mäter kopplingar mellan enheter — vem som delar telefonnummer, konto, adress. Du kan ha helt normal volym men ett tydligt nätverk; då ser C ingenting och D ser allt. ISF 2018:5 beskriver dem som två skilda metodformer: statistiska riskmodeller som skattar sannolikhet per ärende, och nätverksanalys som letar efter kopplingar mellan personer.

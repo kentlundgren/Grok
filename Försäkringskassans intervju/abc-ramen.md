@@ -27,3 +27,15 @@
 - **C** = en avvikelse mot en norm (många ärenden, inget delat underlag).
 - **D** = en koppling mellan aktörer (ingen avvikelse i volym, men ett nätverk).
 - Antalet avgör inte vilken det är. Enheten gör det: underlag (A), norm (C), koppling (D).
+
+## Varför D inte är en variant av C
+Volymanalys (C) mäter en enhet mot en norm: antal ärenden, antal intyg, antal personer. Nätverksanalys (D) mäter kopplingar mellan enheter: vem som delar telefonnummer, bankkonto, adress eller ombud med vem.
+
+Du kan ha en helt normal volym — tio personer, tio ärenden, inget som sticker ut statistiskt — men om alla tio delar samma telefonnummer har du ett nätverk. Volymanalysen ser ingenting, nätverksanalysen ser allt.
+
+Så de kompletterar varandra snarare än att den ena är en underkategori av den andra:
+- **C** säger: detta är ovanligt mycket.
+- **D** säger: dessa är ovanligt sammanknutna.
+
+ISF:s rapport *Profilering som urvalsmetod för riktade kontroller* (2018:5) beskriver nätverksanalys som en egen metodform — hypotesdriven, som letar efter kopplingar mellan personer som tidigare gjort fel eller mönster i sjukpenninggrundande inkomst och bostadsadress — till skillnad från de statistiska riskmodellerna som skattar sannolikhet per ärende.
+- https://isf.se/download/18.6e75aae16a591304896b99/1565330421562/Profilering%20som%20urvalsmetod%20fo%CC%88r%20riktade%20kontroller-ISF-Rapport%202018-05.pdf

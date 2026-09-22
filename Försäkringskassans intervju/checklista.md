@@ -12,7 +12,7 @@ Använd den här listan dagen innan och på vägen till intervjun. Kryssa av i h
 - [ ] **B — Återkommande mönster (Bengtsson):** samma person upprepar samma typ av ansökan över tid. Fångas med sekvensanalys.
 - [ ] **C — Orealistiska volymer (Ceders):** en grupp, ett område eller en enskild aktör avviker från sin egen baslinje. Fångas med trend- och tröskelanalys.
 - [ ] **D — Nätverksanalys (Davidsson):** flera sökande sammanknutna via delad infrastruktur (telefon, konto, adress, ombud). Fångas med kopplingskartläggning.
-- [ ] Jag kan förklara skillnaden: A spårar en tråd genom flera ärenden, C mäter en avvikelse mot en norm, D kartlägger en koppling mellan aktörer — både geografisk och individuell (t.ex. en läkare).
+- [ ] Jag kan förklara skillnaden: A spårar en tråd genom flera ärenden, C mäter en avvikelse mot en norm, D kartlägger en koppling mellan aktörer — och D är inte en variant av C.
 
 ## 3. Korsvalidering — så skiljer jag äkta från konstlat
 - [ ] Vid misstänkt volymavvikelse jämför jag med oberoende datakällor: apotek, vårdcentraler, skolfrånvaro.
@@ -34,6 +34,7 @@ Använd den här listan dagen innan och på vägen till intervjun. Kryssa av i h
 ## 6. Sista minuten
 - [ ] Jag har läst Vägledning 2004:1 (Kontrollutredning) — den frågar explicit om systematik över tid och olika uppgifter i olika ärenden.
 - [ ] Jag vet att ISF-rapport 2025:14 visar att profilerade ärenden leder till åtgärd i 74 % av fallen.
+- [ ] Jag vet att ISF 2018:5 beskriver nätverksanalys som en egen metodform, inte en variant av volymanalys.
 - [ ] Jag andas, ler, och börjar med varför — inte med vad jag kan.
 
 ---
