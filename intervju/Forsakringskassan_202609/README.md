@@ -112,14 +112,16 @@ Tjänsten ligger på den nya **Bidragsbrottsavdelningen** (startad februari 2026
 
 ## 6. Filerna i mappen
 
+> Här skedde en uppdatering 2026-09-22: filnamnen blev blob-länkar till GitHub, så varje fil går att öppna direkt från listan.
+
 | Fil | Innehåll |
 |---|---|
-| `README.md` | Detta — översikt, ramen, källor, rollens kontext |
-| `abc-ramen.md` | De fyra formerna med exemplen Andersson, Bengtsson, Ceders och Davidsson |
-| `ovningsfragor.md` | Sex övningsfrågor med svar, för intervjuträning |
-| `checklista.md` | Checklista att ha framför sig på vägen till intervjun |
-| `annonser.md` | De två annonserna sida vid sida, med länkar som bevaras över tid |
-| `flashcards.md` | Flashcards — framsida/baksida för att öva på minnet |
-| `ett-minuts-pitch.md` | En minuts pitch om varför du vill ha rollen |
+| [README.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/README.md) | Detta — översikt, ramen, källor, rollens kontext |
+| [abc-ramen.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/abc-ramen.md) | De fyra formerna med exemplen Andersson, Bengtsson, Ceders och Davidsson |
+| [ovningsfragor.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ovningsfragor.md) | Sex övningsfrågor med svar, för intervjuträning |
+| [checklista.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/checklista.md) | Checklista att ha framför sig på vägen till intervjun |
+| [annonser.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/annonser.md) | De två annonserna sida vid sida, med länkar som bevaras över tid |
+| [flashcards.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/flashcards.md) | Flashcards — framsida/baksida för att öva på minnet |
+| [ett-minuts-pitch.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ett-minuts-pitch.md) | En minuts pitch om varför du vill ha rollen |
 
-> **Tips:** Börja med `flashcards.md` på bussen till intervjun. Avsluta med `ett-minuts-pitch.md` så du har orden klara.
+> **Tips:** Börja med [flashcards.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/flashcards.md) på bussen till intervjun. Avsluta med [ett-minuts-pitch.md](https://github.com/kentlundgren/Grok/blob/main/intervju/Forsakringskassan_202609/ett-minuts-pitch.md) så du har orden klara.
