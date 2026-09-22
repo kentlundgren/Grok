@@ -105,3 +105,19 @@ Försäkringskassan, *Lägesrapport 2026:2*.
 ## 5. Rollens kontext
 
 Tjänsten ligger på den nya **Bidragsbrottsavdelningen** (startad februari 2026), inte på den övergripande Ledningsstöd och analys. Produktionsstyrning handlar här om att styra utredningsflöden — kapacitet, beslutstakt, mönster i ärendehanteringen — inte om tillverkning. Samma verktygslåda som myndighetens totala produktionsstyrning, men ett annat organisatoriskt hem och ett annat uppdrag.
+
+---
+
+## 6. Filerna i mappen
+
+| Fil | Innehåll |
+|---|---|
+| `README.md` | Detta — översikt, ramen, källor, rollens kontext |
+| `abc-ramen.md` | De fyra formerna med exemplen Andersson, Bengtsson, Ceders och Davidsson |
+| `ovningsfragor.md` | Sex övningsfrågor med svar, för intervjuträning |
+| `checklista.md` | Checklista att ha framför sig på vägen till intervjun |
+| `annonser.md` | De två annonserna sida vid sida, med länkar som bevaras över tid |
+| `flashcards.md` | Flashcards — framsida/baksida för att öva på minnet |
+| `ett-minuts-pitch.md` | En minuts pitch om varför du vill ha rollen |
+
+> **Tips:** Börja med `flashcards.md` på bussen till intervjun. Avsluta med `ett-minuts-pitch.md` så du har orden klara.
