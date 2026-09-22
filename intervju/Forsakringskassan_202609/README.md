@@ -3,9 +3,9 @@
 
 > Underlag för att förbereda intervjun till [Controller till Bidragsbrottsavdelningens stab](https://vakanser.se/jobb/controller+till+bidragsbrottsavdelningens+stab+malmo/) på Försäkringskassan. Fokus: produktionsstyrning och att upptäcka bidragsfusk hos sökande — inte hos handläggare.
 
-> Här skedde en uppdatering 2026-09-22: länken till annonsen på Vakanser.se lades in.
+>
 
-> Här skedde en uppdatering 2026-09-22: minnesbilden `Bilder/fyra-former.png` lades till, så de fyra formerna syns direkt på den här sidan. Samma dag rättades panel A: ett enda hyresavtal leder till flera ärenden, inte flera avtal.
+> Minnesbilden nedan visar fyra former av bidragsfusk:
 
 ![Fyra former av bidragsfusk: A Andersson samma underlag, B Bengtsson över tid, C Ceder mot normen, D Davidsson nätverket](Bilder/fyra-former.png)
 
