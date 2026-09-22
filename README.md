@@ -69,6 +69,16 @@ En interaktiv, faktabaserad analys av hur vårdköerna (väntetider enligt vård
 
 Projektet är byggt som ett konkret exempel på hur en analytisk prompt kan omvandlas till en levande, delbar webbpresentation.
 
+### Intervjuförberedelse, Försäkringskassan
+
+> Här skedde en uppdatering 2026-09-22: avsnittet lades till. Det beskriver hur materialet kom till, från Grok i mobilen till bestående filer på GitHub.
+
+På morgonen den 22 september 2026 satt jag med Grok i mobilen och förberedde en intervju till controller på Försäkringskassans Bidragsbrottsavdelning. Jag bad Grok utforska ämnet och föra över det till det här repot, utan att gå via ett lokalt git-repo. Filerna blev bestående på GitHub, i [intervju/Forsakringskassan_202609](intervju/Forsakringskassan_202609/). Senare tog jag hem dem med pull.
+
+- **Live:** [https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/](https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/)
+
+Jag lärde mig en del om bidragsfusk på vägen. Avdelningen heter trots allt så. Controllerns uppdrag i annonsen är ett annat: produktionsstyrning, effektanalys och stöd till prognoser för ersättning som betalas ut när handläggningen går rätt till. Ibland träffar man lite fel. Jag är glad ändå, både för det jag förstod om fusket och för att Grok i mobilen kan skriva rakt in i GitHub.
+
 ## Tekniker
 
 - HTML5 + Tailwind CSS (via CDN)
@@ -85,4 +95,4 @@ Projektet är byggt som ett konkret exempel på hur en analytisk prompt kan omva
 
 ---
 
-*Senast uppdaterat: juni 2026*
+*Senast uppdaterat: 22 september 2026*
