@@ -11,7 +11,8 @@ Använd den här listan dagen innan och på vägen till intervjun. Kryssa av i h
 - [ ] **A — Upprepad registrering (Andersson):** en aktör skapar flera ärenden på samma underlag. Fångas med datamatchning.
 - [ ] **B — Återkommande mönster (Bengtsson):** samma person upprepar samma typ av ansökan över tid. Fångas med sekvensanalys.
 - [ ] **C — Orealistiska volymer (Ceders):** en grupp, ett område eller en enskild aktör avviker från sin egen baslinje. Fångas med trend- och tröskelanalys.
-- [ ] **D — Nätverksanalys (Davidsson):** flera sökande sammanknutna via delad infrastruktur (telefon, konto, adress, ombud). Fångas med kopplingskartläggning.
+- [ ] **D — Nätverksanalys (Davidsson):** flera sökande sammanknutna via delad infrastruktur. Fångas med kopplingskartläggning.
+- [ ] Jag vet vad nätverket faktiskt delar: sällan telefon eller adress — det är för uppenbart. Det som delas är det som är nödvändigt: samma **ombud**, samma **bankkonto**, samma **läkare**, samma inringande telefon.
 - [ ] Jag kan förklara skillnaden: A spårar en tråd genom flera ärenden, C mäter en avvikelse mot en norm, D kartlägger en koppling mellan aktörer — och D är inte en variant av C.
 
 ## 3. Korsvalidering — så skiljer jag äkta från konstlat
@@ -21,7 +22,7 @@ Använd den här listan dagen innan och på vägen till intervjun. Kryssa av i h
 
 ## 4. När jag upptäcker något — så här resonerar jag
 - [ ] Validera uppgifterna först — är det verkligen tio registreringar på samma underlag?
-- [ ] Kolla nätverket (D): samma telefonnummer, bankkonto, adress, ombud mellan de tio.
+- [ ] Kolla nätverket (D): samma ombud, bankkonto, läkare, inringande telefon mellan de tio.
 - [ ] Avgör om det är tio enskilda misstag eller ett organiserat nätverk.
 - [ ] Gå till chefen med både fyndet och resonemanget — inte bara misstanken.
 
