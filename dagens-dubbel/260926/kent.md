@@ -4,6 +4,7 @@
 - Inlämnad: 2026-09-26 10:45
 - Kostnad: 45 kr (9 rader × 5 kr)
 - Kupong: [kupong-kent.png](kupong-kent.png)
+- **Utfall:** Ett rätt (DD-2). Ingen utdelning.
 
 ## System
 
@@ -13,3 +14,7 @@
 ## Kort motivering
 
 SM-lördag på Åby. Epic Kronos struken i DD-2. En skräll i DD-1 (Halina S.H.), tunga + värde i DD-2.
+
+## Efter loppet
+
+Vinnare: 6 Run Rhapsody Run / 10 A Fair Day, DD-odds 122. Skrällen Halina S.H. höll inte. Monnier Mearas blev tvåa. A Fair Day vann SM.

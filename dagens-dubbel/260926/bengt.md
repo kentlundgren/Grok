@@ -4,8 +4,8 @@
 - Status: inlämnad 12:06
 - System: 4×1 = 40 kr
 - Insats: 10 kr per häst. De andra satsar 5 kr per häst.
-- Här skedde en uppdatering 2026-09-26: insatsen rättades från 5 kr till 10 kr per häst.
+- **Utfall:** Miss.
 
 - DD-1: 7 C'est Ma Course, 12 Just for Show, 13 Merlene Boko, 15 Halina S.H.
 - DD-2: 2 Kentucky River
-- Här skedde en uppdatering 2026-09-26: DD-2 byttes från strukna 6 Epic Kronos till 2 Kentucky River.
+- Här skedde en uppdatering 2026-09-26: DD-2 byttes från strukna 6 Epic Kronos till 2 Kentucky River. Spiken höll inte — A Fair Day vann SM.

@@ -4,7 +4,7 @@
   "weekday": "lördag",
   "track": "Åby",
   "start": "17:13",
-  "comment": "SM-lördag. 6 Epic Kronos struken i DD-2. Bengt bytte till 2 Kentucky River. Benita bytte till 10 A Fair Day.",
+  "comment": "SM-lördag. 6 Epic Kronos struken i DD-2. Resultat: DD-1 6 Run Rhapsody Run (Thomas Uhrberg, vinnarodds 12,1), DD-2 10 A Fair Day (Oscar Ginman, vinnarodds 11,5). DD-odds 122. Lotta hade DD-1, Kent och Benita hade DD-2. Ingen fullträff.",
   "races": {
     "dd1": {
       "label": "V85-7 / DD-1",
@@ -18,11 +18,25 @@
     }
   },
   "result": {
-    "status": "pending",
-    "dd1Winner": null,
-    "dd2Winner": null,
-    "ddOdds": null,
-    "updated": null
+    "status": "klar",
+    "dd1Winner": 6,
+    "dd2Winner": 10,
+    "dd1Name": "Run Rhapsody Run",
+    "dd2Name": "A Fair Day",
+    "dd1Driver": "Thomas Uhrberg",
+    "dd2Driver": "Oscar Ginman",
+    "dd1WinOdds": 12.1,
+    "dd2WinOdds": 11.5,
+    "ddOdds": 122,
+    "placed": {
+      "dd1": ["6 Run Rhapsody Run", "2 Monnier Mearas", "1 R.K.Augusta"],
+      "dd2": ["10 A Fair Day", "4 Ready Star", "7 High on Pepper"]
+    },
+    "updated": "2026-09-26 21:20",
+    "sources": [
+      "https://www.gratistravtips.se/aby/2026-09-26/dd",
+      "https://www.expressen.se/sport/trav/vinner-sm-guld-efter-jattekross/"
+    ]
   },
   "market": {
     "source": "ATG vinnarodds",
@@ -33,170 +47,35 @@
     "lowUnder": 5,
     "highOver": 12,
     "dd1": [
-      {
-        "no": 1,
-        "name": "R.K.Augusta",
-        "odds": 19.78,
-        "scratched": false
-      },
-      {
-        "no": 2,
-        "name": "Monnier Mearas",
-        "odds": 8.55,
-        "scratched": false
-      },
-      {
-        "no": 3,
-        "name": "Miss Magdalena",
-        "odds": 5.09,
-        "scratched": false
-      },
-      {
-        "no": 4,
-        "name": "Pelshin Boko",
-        "odds": 8.71,
-        "scratched": false
-      },
-      {
-        "no": 5,
-        "name": "Cornelia Palema",
-        "odds": 36.43,
-        "scratched": false
-      },
-      {
-        "no": 6,
-        "name": "Run Rhapsody Run",
-        "odds": 13.23,
-        "scratched": false
-      },
-      {
-        "no": 7,
-        "name": "C'est Ma Course",
-        "odds": 33.51,
-        "scratched": false
-      },
-      {
-        "no": 8,
-        "name": "Janica Zet",
-        "odds": 44.84,
-        "scratched": false
-      },
-      {
-        "no": 9,
-        "name": "Sainz Zon",
-        "odds": 30.23,
-        "scratched": false
-      },
-      {
-        "no": 10,
-        "name": "Piccadilly Pellini",
-        "odds": 10.39,
-        "scratched": false
-      },
-      {
-        "no": 11,
-        "name": "Grace Vendil",
-        "odds": 16.26,
-        "scratched": false
-      },
-      {
-        "no": 12,
-        "name": "Just for Show",
-        "odds": 5.31,
-        "scratched": false
-      },
-      {
-        "no": 13,
-        "name": "Merlene Boko",
-        "odds": 30.48,
-        "scratched": false
-      },
-      {
-        "no": 14,
-        "name": "Can't be Ruled",
-        "odds": 36.06,
-        "scratched": false
-      },
-      {
-        "no": 15,
-        "name": "Halina S.H.",
-        "odds": 9.64,
-        "scratched": false
-      }
+      { "no": 1, "name": "R.K.Augusta", "odds": 19.78, "scratched": false },
+      { "no": 2, "name": "Monnier Mearas", "odds": 8.55, "scratched": false },
+      { "no": 3, "name": "Miss Magdalena", "odds": 5.09, "scratched": false },
+      { "no": 4, "name": "Pelshin Boko", "odds": 8.71, "scratched": false },
+      { "no": 5, "name": "Cornelia Palema", "odds": 36.43, "scratched": false },
+      { "no": 6, "name": "Run Rhapsody Run", "odds": 13.23, "scratched": false },
+      { "no": 7, "name": "C'est Ma Course", "odds": 33.51, "scratched": false },
+      { "no": 8, "name": "Janica Zet", "odds": 44.84, "scratched": false },
+      { "no": 9, "name": "Sainz Zon", "odds": 30.23, "scratched": false },
+      { "no": 10, "name": "Piccadilly Pellini", "odds": 10.39, "scratched": false },
+      { "no": 11, "name": "Grace Vendil", "odds": 16.26, "scratched": false },
+      { "no": 12, "name": "Just for Show", "odds": 5.31, "scratched": false },
+      { "no": 13, "name": "Merlene Boko", "odds": 30.48, "scratched": false },
+      { "no": 14, "name": "Can't be Ruled", "odds": 36.06, "scratched": false },
+      { "no": 15, "name": "Halina S.H.", "odds": 9.64, "scratched": false }
     ],
     "dd2": [
-      {
-        "no": 1,
-        "name": "Boscha Diablo",
-        "odds": 5.47,
-        "scratched": false
-      },
-      {
-        "no": 2,
-        "name": "Kentucky River",
-        "odds": 3.24,
-        "scratched": false
-      },
-      {
-        "no": 3,
-        "name": "Call Me Gleipner",
-        "odds": 23.02,
-        "scratched": false
-      },
-      {
-        "no": 4,
-        "name": "Ready Star",
-        "odds": 8.59,
-        "scratched": false
-      },
-      {
-        "no": 5,
-        "name": "Orosei Boko",
-        "odds": 19.98,
-        "scratched": false
-      },
-      {
-        "no": 6,
-        "name": "Epic Kronos",
-        "odds": null,
-        "scratched": true
-      },
-      {
-        "no": 7,
-        "name": "High on Pepper",
-        "odds": 10.59,
-        "scratched": false
-      },
-      {
-        "no": 8,
-        "name": "Barack Face",
-        "odds": 9.35,
-        "scratched": false
-      },
-      {
-        "no": 9,
-        "name": "H.C.'s Crazy Horse",
-        "odds": 25.42,
-        "scratched": false
-      },
-      {
-        "no": 10,
-        "name": "A Fair Day",
-        "odds": 7.81,
-        "scratched": false
-      },
-      {
-        "no": 11,
-        "name": "Macahan",
-        "odds": 22.38,
-        "scratched": false
-      },
-      {
-        "no": 12,
-        "name": "Fighter Kronos",
-        "odds": 15.72,
-        "scratched": false
-      }
+      { "no": 1, "name": "Boscha Diablo", "odds": 5.47, "scratched": false },
+      { "no": 2, "name": "Kentucky River", "odds": 3.24, "scratched": false },
+      { "no": 3, "name": "Call Me Gleipner", "odds": 23.02, "scratched": false },
+      { "no": 4, "name": "Ready Star", "odds": 8.59, "scratched": false },
+      { "no": 5, "name": "Orosei Boko", "odds": 19.98, "scratched": false },
+      { "no": 6, "name": "Epic Kronos", "odds": null, "scratched": true },
+      { "no": 7, "name": "High on Pepper", "odds": 10.59, "scratched": false },
+      { "no": 8, "name": "Barack Face", "odds": 9.35, "scratched": false },
+      { "no": 9, "name": "H.C.'s Crazy Horse", "odds": 25.42, "scratched": false },
+      { "no": 10, "name": "A Fair Day", "odds": 7.81, "scratched": false },
+      { "no": 11, "name": "Macahan", "odds": 22.38, "scratched": false },
+      { "no": 12, "name": "Fighter Kronos", "odds": 15.72, "scratched": false }
     ]
   },
   "tips": [
@@ -208,31 +87,15 @@
       "stake": 5,
       "rows": 9,
       "system": "3x3",
-      "dd1": [
-        2,
-        12,
-        15
-      ],
-      "dd2": [
-        1,
-        2,
-        10
-      ],
+      "dd1": [2, 12, 15],
+      "dd2": [1, 2, 10],
       "names": {
-        "dd1": {
-          "2": "Monnier Mearas",
-          "12": "Just for Show",
-          "15": "Halina S.H."
-        },
-        "dd2": {
-          "1": "Boscha Diablo",
-          "2": "Kentucky River",
-          "10": "A Fair Day"
-        }
+        "dd1": { "2": "Monnier Mearas", "12": "Just for Show", "15": "Halina S.H." },
+        "dd2": { "1": "Boscha Diablo", "2": "Kentucky River", "10": "A Fair Day" }
       },
       "scratch": "15 Halina S.H. i DD-1",
       "coupon": "260926/kupong-kent.png",
-      "note": "Samma system som skill:et lordags-dagens-dubbel föreslog."
+      "note": "Samma system som skill:et lordags-dagens-dubbel föreslog. Ett rätt (DD-2)."
     },
     {
       "person": "Lotta",
@@ -242,31 +105,15 @@
       "stake": 5,
       "rows": 9,
       "system": "3x3",
-      "dd1": [
-        3,
-        6,
-        12
-      ],
-      "dd2": [
-        2,
-        7,
-        12
-      ],
+      "dd1": [3, 6, 12],
+      "dd2": [2, 7, 12],
       "names": {
-        "dd1": {
-          "3": "Miss Magdalena",
-          "6": "Run Rhapsody Run",
-          "12": "Just for Show"
-        },
-        "dd2": {
-          "2": "Kentucky River",
-          "7": "High on Pepper",
-          "12": "Fighter Kronos"
-        }
+        "dd1": { "3": "Miss Magdalena", "6": "Run Rhapsody Run", "12": "Just for Show" },
+        "dd2": { "2": "Kentucky River", "7": "High on Pepper", "12": "Fighter Kronos" }
       },
       "scratch": null,
       "coupon": null,
-      "note": ""
+      "note": "Ett rätt (DD-1). Enda i sällskapet som hade 6 Run Rhapsody Run."
     },
     {
       "person": "Benita",
@@ -276,29 +123,15 @@
       "stake": 5,
       "rows": 6,
       "system": "3x2",
-      "dd1": [
-        12,
-        13,
-        15
-      ],
-      "dd2": [
-        2,
-        10
-      ],
+      "dd1": [12, 13, 15],
+      "dd2": [2, 10],
       "names": {
-        "dd1": {
-          "12": "Just for Show",
-          "13": "Merlene Boko",
-          "15": "Halina S.H."
-        },
-        "dd2": {
-          "2": "Kentucky River",
-          "10": "A Fair Day"
-        }
+        "dd1": { "12": "Just for Show", "13": "Merlene Boko", "15": "Halina S.H." },
+        "dd2": { "2": "Kentucky River", "10": "A Fair Day" }
       },
       "scratch": "6 Epic Kronos struken i DD-2 — bytt till 10 A Fair Day",
       "coupon": null,
-      "note": "3x2 = 30 kr. Här skedde en uppdatering 2026-09-26: DD-2 byttes från strukna 6 Epic Kronos till 10 A Fair Day."
+      "note": "3x2 = 30 kr. Byte från strukna 6 till 10 A Fair Day gav ett rätt (DD-2)."
     },
     {
       "person": "Bengt",
@@ -308,29 +141,15 @@
       "stake": 10,
       "rows": 4,
       "system": "4x1",
-      "dd1": [
-        7,
-        12,
-        13,
-        15
-      ],
-      "dd2": [
-        2
-      ],
+      "dd1": [7, 12, 13, 15],
+      "dd2": [2],
       "names": {
-        "dd1": {
-          "7": "C'est Ma Course",
-          "12": "Just for Show",
-          "13": "Merlene Boko",
-          "15": "Halina S.H."
-        },
-        "dd2": {
-          "2": "Kentucky River"
-        }
+        "dd1": { "7": "C'est Ma Course", "12": "Just for Show", "13": "Merlene Boko", "15": "Halina S.H." },
+        "dd2": { "2": "Kentucky River" }
       },
       "scratch": "6 Epic Kronos struken i DD-2 — bytt till 2 Kentucky River",
       "coupon": null,
-      "note": "4×1 = 40 kr. Här skedde en uppdatering 2026-09-26: Bengt satsar 10 kr per häst, de andra 5 kr. DD-2 byttes tidigare från strukna 6 Epic Kronos till 2 Kentucky River."
+      "note": "4×1 = 40 kr, 10 kr per häst. Miss — spiken Kentucky River höll inte efter Epic Kronos-strykningen."
     }
   ]
 }
