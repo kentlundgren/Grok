@@ -10,8 +10,10 @@ https://kentlundgren.github.io/Grok/dagens-dubbel/
 
 - Ny lördag: `data/ÅÅMMDD.json` + mapp `ÅÅMMDD/` + rad i `data/weeks.json`.
 - Resultat: fältet `result` i veckans JSON.
-- Tips från Lotta eller Benita: samma JSON, objekten med `"person": "Lotta"` / `"Benita"`. Sätt `status` till `"inlämnad"`.
+- Tips från Lotta, Benita eller Bengt: samma JSON, objekten med `"person": "Lotta"` / `"Benita"` / `"Bengt"`. Sätt `status` till `"inlämnad"`.
 - Utseende: `index.html`, `stil.css`, `app.js`.
+
+Tippare just nu: Kent, Lotta, Benita, Bengt. Listan styrs av `data/weeks.json` → `tipsters`.
 
 ## Vad du inte ska göra utan att fråga
 
