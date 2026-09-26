@@ -10,6 +10,19 @@ Det här dokumentet beskriver repot `kentlundgren/Grok` och ger kontext till AI-
 **Språk:** Svenska (kod och kommentarer på svenska om inget annat anges)  
 **Blogg:** [Kom jag igång med Grok Build](https://klel.wordpress.com/2026/06/13/kom-jag-igang-med-grok-build/) (13 juni 2026)
 
+## Arbetssätt: Claude-kompassen
+
+Ägaren kodar enligt [Claude-kompassen](https://kentlundgren.github.io/AI-teknik/AI_modeller/Claude/olika_Claude_modeller/#claude).
+
+| Fas | Vad det betyder här |
+| --- | --- |
+| 0 PRD | Vad/varför innan större omskrivning. Fråga vid tvekan. |
+| 1 Styrfiler | `AGENTS.md` (denna) + närmaste `CLAUDE.md` + ev. SKILL.md |
+| 2 Yta | Cursor och Claude Code är normal yta. Grok får scaffolde och förklara. |
+| 3 Leverans | Ägaren commit:ar i Cursor och pushar till GitHub Pages, om hen inte uttryckligen bett agenten pusha. |
+
+Agenten är tankepartner, inte ställföreträdande avsändare. Hitta inte på krav, hästar eller resultat.
+
 ## Kontext: Grok Build i praktiken
 
 Kent testar Grok Build som en del av ett befintligt flöde med Cloud Cowork (lokala filer), Cursor (kodredigering) och GitHub (versionshantering och publicering). Grok Build är **inte en ny IDE** utan en terminalbaserad agent som planerar uppgifter, visar diffar för godkännande och kan köra subagenter parallellt.
@@ -22,7 +35,7 @@ Kent testar Grok Build som en del av ett befintligt flöde med Cloud Cowork (lok
 - Autentisering via OAuth med SuperGrok-konto i webbläsaren.
 
 **Vad fungerar bra:**
-- Sömlig integration med Git och befintliga repon.
+- Sömlös integration med Git och befintliga repon.
 - Plan Mode + diff-granskning ger mänsklig kontroll innan filer skrivs.
 - Headless-läge passar repetitiva uppgifter på fritiden.
 - Subagenter som arbetar parallellt delar upp komplexa uppgifter utan manuell steg-för-steg-styrning.
@@ -58,12 +71,12 @@ Grok/
 | Egenskap | Värde |
 |---|---|
 | Typ | Statisk HTML-app (ingen build) |
-| Tekniker | HTML5, Tailwind CSS (CDN), vanilla JS, JSON |
+| Tekniker | HTML5, Tailwind CSS (CDN), vanilla JS, JSON + data.js-fallback |
 | Live URL | https://kentlundgren.github.io/Grok/dagens-dubbel/ |
 | GitHub-källa | https://github.com/kentlundgren/Grok/tree/main/dagens-dubbel |
-| Agentfiler | `dagens-dubbel/CLAUDE.md`, `.cursor/rules/dagens-dubbel.mdc` |
+| Agentfiler | `dagens-dubbel/README.md`, `dagens-dubbel/CLAUDE.md`, `dagens-dubbel/.cursor/rules/` |
 
-Ny lördag = `data/ÅÅMMDD.json` + mapp `ÅÅMMDD/` + id i `data/weeks.json`. Resultat fylls i samma JSON. Commit/push enligt regeln nedan.
+Tippare: Kent, Lotta, Benita, Bengt. Ny lördag = `data/ÅÅMMDD.json` + mapp `ÅÅMMDD/` + id i `data/weeks.json` + spegling i `data.js`. Öppna inte `index.html` som `file://` och förvänta fetch — använd live-URL, lokal server eller `data.js`.
 
 ### vardkoer – Vårdköer i Sverige 2022–2026
 
@@ -109,10 +122,11 @@ Kent vill **själv** committa och pusha till GitHub via Cursor, om han inte uttr
 5. Använd relativa sökvägar.
 6. **Committa och pusha inte** utan uttrycklig begäran.
 7. **README-inledning:** live-länk högst upp: `https://kentlundgren.github.io/Grok/<mapp>/`
-8. Läs `dagens-dubbel/CLAUDE.md` innan större ändringar i den appen. Inför inte Vite/React där utan att fråga.
+8. Läs `dagens-dubbel/README.md` och `dagens-dubbel/CLAUDE.md` innan större ändringar i den appen. Inför inte Vite/React där utan att fråga.
 
 ## Referenser
 
+- Kent Lundgren (2026) *Claude-kompassen*. [https://kentlundgren.github.io/AI-teknik/AI_modeller/Claude/olika_Claude_modeller/](https://kentlundgren.github.io/AI-teknik/AI_modeller/Claude/olika_Claude_modeller/)
 - Kent Lundgren (2026) *Kom jag igång med Grok Build*. [https://klel.wordpress.com/2026/06/13/kom-jag-igang-med-grok-build/](https://klel.wordpress.com/2026/06/13/kom-jag-igang-med-grok-build/)
 - xAI (2026) *Introducing Grok Build*. [https://x.ai/news/grok-build-cli](https://x.ai/news/grok-build-cli)
 - xAI Docs (2026) *Getting Started | Grok Build*. [https://docs.x.ai/build/overview](https://docs.x.ai/build/overview)
