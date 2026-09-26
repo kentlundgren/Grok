@@ -6,18 +6,6 @@
   <title>Familjens lördags-DD</title>
   <meta name="description" content="Kent, Lotta och Benitas Dagens Dubbel på lördagar — tips, resultat och ställning.">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            slip: '#fef9c3',
-            ink: '#1c1917'
-          }
-        }
-      }
-    }
-  </script>
   <link rel="stylesheet" href="stil.css">
 </head>
 <body class="bg-stone-100 text-stone-900">
@@ -43,7 +31,7 @@
           <select id="week-select" class="ml-2 rounded border border-stone-300 bg-yellow-200 px-2 py-1"></select>
         </label>
       </div>
-      <article id="week-view" class="bg-white rounded-xl shadow-sm border border-stone-200 p-4 sm:p-6"></article>
+      <article id="week-view" class="bg-white rounded-xl shadow-sm border border-stone-200 p-4 sm:p-6">Laddar omgång…</article>
     </section>
 
     <section class="text-sm text-stone-600 border-t border-stone-200 pt-6 space-y-2">
@@ -52,6 +40,6 @@
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
