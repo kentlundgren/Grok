@@ -257,8 +257,8 @@ window.DD_WEEKS = [
         person: "Bengt",
         status: "inlämnad",
         submitted: "2026-09-26 12:06",
-        cost: 20,
-        stake: 5,
+        cost: 40,
+        stake: 10,
         rows: 4,
         system: "4x1",
         dd1: [7, 12, 13, 15],
@@ -270,7 +270,7 @@ window.DD_WEEKS = [
         },
         scratch: "6 Epic Kronos struken i DD-2 — bytt till 2 Kentucky River",
         coupon: null,
-        note: "4x1 = 20 kr. Här skedde en uppdatering 2026-09-26: DD-2 byttes från strukna 6 Epic Kronos till 2 Kentucky River."
+        note: "4×1 = 40 kr. Här skedde en uppdatering 2026-09-26: Bengt satsar 10 kr per häst, de andra 5 kr. DD-2 byttes tidigare från strukna 6 Epic Kronos till 2 Kentucky River."
       }
     ]
   }

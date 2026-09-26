@@ -7,8 +7,8 @@
   const selectEl = document.getElementById("week-select");
   const viewEl = document.getElementById("week-view");
   // Här skedde en uppdatering 2026-09-26: cache-nyckel efter analysrutan under korten.
-  // Här skedde en uppdatering 2026-09-26: cache-nyckel efter Benitas byte 6 → 10 i DD-2.
-  const CACHE_BUST = "20260926h";
+  // Här skedde en uppdatering 2026-09-26: cache-nyckel efter Bengts insats 10 kr per häst och favoritrankingen.
+  const CACHE_BUST = "20260926i";
 
   function showError(err) {
     const msg = err && err.message ? err.message : String(err);
@@ -171,7 +171,7 @@
       '<section class="border border-stone-200 rounded-lg p-4">' +
       '<div class="flex items-baseline justify-between gap-2">' +
       '<h4 class="font-semibold">' + escapeHtml(tip.person) + "</h4>" +
-      '<span class="text-sm text-stone-500">' + escapeHtml(String(tip.cost) + " kr \u00b7 " + (tip.system || "")) + "</span>" +
+      '<span class="text-sm text-stone-500">' + escapeHtml(String(tip.cost) + " kr \u00b7 " + (tip.system || "") + " \u00b7 " + (Number(tip.stake) || 5) + " kr/häst") + "</span>" +
       "</div>" +
       '<p class="text-sm text-stone-500">' + (tip.submitted ? "Inlämnad " + escapeHtml(tip.submitted) : "") + "</p>" +
       raceLine("DD-1", tip.dd1, tip.names && tip.names.dd1, res.dd1Winner) +
@@ -431,7 +431,7 @@
       var b = nums(tip.dd2).length;
       rows += a * b;
       cost += Number(tip.cost || 0);
-      return "<li>" + escapeHtml(tip.person + ": " + a + "×" + b + ", " + (tip.cost || 0) + " kr, " + widthPhrase(a, b)) + "</li>";
+      return "<li>" + escapeHtml(tip.person + ": " + a + "×" + b + ", " + (tip.cost || 0) + " kr, " + (Number(tip.stake) || 5) + " kr per häst, " + widthPhrase(a, b)) + "</li>";
     }).join("");
     return (
       "<ul class=\"list-disc pl-5\">" + items +
@@ -487,8 +487,73 @@
     return (
       lines.map(function (line) { return "<p>" + escapeHtml(line) + "</p>"; }).join("") +
       '<ul class="list-disc pl-5 mt-2">' + people + "</ul>" +
+      favoriteRank(week, tips) +
       '<p class="mt-2 text-xs text-stone-500">' + sourceLine(week) + "</p>"
     );
+  }
+
+  function favoriteRank(week, tips) {
+    var fav1 = raceFavorite(week, "dd1");
+    var fav2 = raceFavorite(week, "dd2");
+    if (!fav1 && !fav2) return "";
+    var ranked = tips.map(function (tip, index) {
+      var stake = Number(tip.stake) > 0 ? Number(tip.stake) : 5;
+      var sum = 0;
+      var legs = [];
+      if (fav1 && nums(tip.dd1).indexOf(Number(fav1.no)) !== -1) {
+        sum += stake;
+        legs.push("första");
+      }
+      if (fav2 && nums(tip.dd2).indexOf(Number(fav2.no)) !== -1) {
+        sum += stake;
+        legs.push("andra");
+      }
+      return { person: tip.person, sum: sum, stake: stake, legs: legs, index: index };
+    });
+    ranked.sort(function (a, b) {
+      if (b.sum !== a.sum) return b.sum - a.sum;
+      return a.index - b.index;
+    });
+    var groups = [];
+    ranked.forEach(function (row) {
+      var last = groups[groups.length - 1];
+      if (!last || last.sum !== row.sum) groups.push({ sum: row.sum, people: [row] });
+      else last.people.push(row);
+    });
+    var places = ["Mest", "Näst mest", "Tredje mest", "Fjärde mest"];
+    var items = groups.map(function (group, i) {
+      var place = places[i] || (i + 1) + ":e mest";
+      var who = joinSv(group.people.map(function (p) { return p.person; }));
+      var detail = group.people.map(function (p) {
+        if (!p.legs.length) return p.person + " har ingen favorit";
+        var where = p.legs.length === 2 ? "båda loppen" : p.legs[0] + " loppet";
+        return p.person + " har favoriten i " + where + " à " + p.stake + " kr";
+      }).join(". ");
+      return "<li>" + escapeHtml(place + " på favoriterna: " + who + ", " + group.sum + " kr. " + detail + ".") + "</li>";
+    }).join("");
+    var stakes = [];
+    var seen = {};
+    tips.forEach(function (tip) {
+      var stake = Number(tip.stake) > 0 ? Number(tip.stake) : 5;
+      if (seen[stake]) return;
+      seen[stake] = true;
+      var who = tips.filter(function (t) { return (Number(t.stake) > 0 ? Number(t.stake) : 5) === stake; }).map(function (t) { return t.person; });
+      stakes.push(joinSv(who) + " " + stake + " kr per häst");
+    });
+    return (
+      '<p class="mt-3">' + escapeHtml("Sammantaget, båda loppen. " + joinSv(stakes) + ". Kronorna är insatsen på favoriten i varje lopp, lagda ihop.") + "</p>" +
+      '<ol class="list-decimal pl-5 mt-1">' + items + "</ol>"
+    );
+  }
+
+  function raceFavorite(week, leg) {
+    var fav = null;
+    var minLive = minOdds(week, leg);
+    ((week.market && week.market[leg]) || []).forEach(function (h) {
+      if (h.scratched || !(h.odds > 0)) return;
+      if (minLive != null && Math.abs(h.odds - minLive) < 0.011) fav = h;
+    });
+    return fav;
   }
 
   function favoriteSentence(week, tips, leg, label) {

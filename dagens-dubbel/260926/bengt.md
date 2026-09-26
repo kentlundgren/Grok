@@ -2,7 +2,9 @@
 
 - **Live:** [https://kentlundgren.github.io/Grok/dagens-dubbel/](https://kentlundgren.github.io/Grok/dagens-dubbel/)
 - Status: inlämnad 12:06
-- System: 4×1 = 20 kr
+- System: 4×1 = 40 kr
+- Insats: 10 kr per häst. De andra satsar 5 kr per häst.
+- Här skedde en uppdatering 2026-09-26: insatsen rättades från 5 kr till 10 kr per häst.
 
 - DD-1: 7 C'est Ma Course, 12 Just for Show, 13 Merlene Boko, 15 Halina S.H.
 - DD-2: 2 Kentucky River
