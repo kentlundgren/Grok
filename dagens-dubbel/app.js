@@ -150,6 +150,7 @@
       '<p class="text-sm ' + statusClass + '">' + escapeHtml(statusLabel) + "</p>" +
       "</div>" +
       (week.comment ? '<p class="mt-3 text-stone-700">' + escapeHtml(week.comment) + "</p>" : "") +
+      (week.market ? '<p class="mt-3 text-sm text-stone-600"><span class="horse-fav rounded px-1">Grön</span> är favoriten i loppet. <span class="horse-long rounded px-1">Röd</span> är högst odds bland våra hästar i loppet.</p>' : "") +
       '<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">' +
       (week.tips || []).map(function (tip) { return tipCard(week, tip); }).join("") +
       "</div>" +
@@ -174,8 +175,8 @@
       '<span class="text-sm text-stone-500">' + escapeHtml(String(tip.cost) + " kr \u00b7 " + (tip.system || "") + " \u00b7 " + (Number(tip.stake) || 5) + " kr/häst") + "</span>" +
       "</div>" +
       '<p class="text-sm text-stone-500">' + (tip.submitted ? "Inlämnad " + escapeHtml(tip.submitted) : "") + "</p>" +
-      raceLine("DD-1", tip.dd1, tip.names && tip.names.dd1, res.dd1Winner) +
-      raceLine("DD-2", tip.dd2, tip.names && tip.names.dd2, res.dd2Winner) +
+      raceLine(week, "dd1", "DD-1", tip.dd1, tip.names && tip.names.dd1, res.dd1Winner) +
+      raceLine(week, "dd2", "DD-2", tip.dd2, tip.names && tip.names.dd2, res.dd2Winner) +
       (tip.scratch ? '<p class="text-sm mt-2">' + escapeHtml(tip.scratch) + "</p>" : "") +
       '<p class="text-sm mt-2 font-medium">' + escapeHtml(outcomeText(tip, res)) + "</p>" +
       (tip.coupon ? '<p class="text-sm mt-2"><a class="underline" href="' + escapeHtml(tip.coupon) + '">Visa kupong</a></p>' : "") +
@@ -183,15 +184,57 @@
     );
   }
 
-  function raceLine(label, nums, names, winner) {
+  // Här skedde en uppdatering 2026-09-26: favorit grön, högst odds bland våra hästar röd.
+  function raceLine(week, leg, label, nums, names, winner) {
+    var marks = legColorMarks(week, leg);
     var chips = (nums || []).map(function (n) {
       var name = (names && (names[n] || names[String(n)])) || "";
-      var cls = "inline-block rounded px-2 py-1 text-sm mr-1 mb-1 bg-stone-100";
-      if (winner != null) cls += Number(n) === Number(winner) ? " horse-hit" : " horse-miss";
-      return '<span class="' + cls + '">' + escapeHtml(String(n) + (name ? " " + name : "")) + "</span>";
+      var num = Number(n);
+      var kind = "";
+      if (marks.fav != null && num === marks.fav) kind = "fav";
+      else if (marks.high.indexOf(num) !== -1) kind = "high";
+      var cls = "inline-block rounded px-2 py-1 text-sm mr-1 mb-1";
+      var title = "";
+      if (kind === "fav") {
+        cls += " horse-fav";
+        title = "Favorit i loppet";
+      } else if (kind === "high") {
+        cls += " horse-long";
+        title = "Högst odds bland våra hästar i loppet";
+      } else {
+        cls += " bg-stone-100";
+      }
+      if (winner != null) cls += num === Number(winner) ? " horse-hit" : " horse-miss";
+      return '<span class="' + cls + '"' + (title ? ' title="' + escapeHtml(title) + '"' : "") + ">" +
+        escapeHtml(String(n) + (name ? " " + name : "")) + "</span>";
     }).join("");
     return '<div class="mt-3"><p class="text-xs uppercase tracking-wide text-stone-500">' +
       escapeHtml(label) + '</p><div class="mt-1">' + chips + "</div></div>";
+  }
+
+  function legColorMarks(week, leg) {
+    var fav = raceFavorite(week, leg);
+    var best = null;
+    submittedTips(week).forEach(function (tip) {
+      nums(tip[leg]).forEach(function (no) {
+        var h = findMarket(week, leg, no);
+        if (!h || h.scratched || !(h.odds > 0)) return;
+        if (best == null || h.odds > best) best = h.odds;
+      });
+    });
+    var high = [];
+    if (best != null) {
+      submittedTips(week).forEach(function (tip) {
+        nums(tip[leg]).forEach(function (no) {
+          var h = findMarket(week, leg, no);
+          if (!h || h.scratched || !(h.odds > 0)) return;
+          if (Math.abs(h.odds - best) < 0.011 && high.indexOf(Number(no)) === -1) high.push(Number(no));
+        });
+      });
+    }
+    var favNo = fav ? Number(fav.no) : null;
+    if (favNo != null) high = high.filter(function (no) { return no !== favNo; });
+    return { fav: favNo, high: high };
   }
 
   function outcomeText(tip, res) {

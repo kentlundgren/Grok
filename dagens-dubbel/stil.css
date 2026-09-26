@@ -19,6 +19,13 @@ code {
   padding: 0.1rem 0.3rem;
   border-radius: 0.25rem;
 }
+/* Här skedde en uppdatering 2026-09-26: grön favorit, röd högst odds i tipprutorna. */
+.horse-fav {
+  background: #86efac;
+}
+.horse-long {
+  background: #fca5a5;
+}
 .horse-hit {
   background: #bbf7d0;
 }
