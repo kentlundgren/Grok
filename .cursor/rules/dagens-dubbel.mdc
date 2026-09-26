@@ -1,0 +1,10 @@
+---
+description: Familjens lördags-DD i detta repo
+globs: dagens-dubbel/**
+---
+
+Statisk app. Ingen build. Relativa sökvägar. Live-länk högst upp i README.
+Ny lördag = data/ÅÅMMDD.json + mapp ÅÅMMDD + id i data/weeks.json.
+Gul bakgrund på fält som väntar på ifyllnad.
+Committa och pusha inte utan uttrycklig begäran.
+Läs dagens-dubbel/CLAUDE.md innan större ändringar.

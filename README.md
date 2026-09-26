@@ -29,6 +29,14 @@ En interaktiv, faktabaserad analys av hur vårdköerna (väntetider enligt vård
 
 Projektet är byggt som ett konkret exempel på hur en analytisk prompt kan omvandlas till en levande, delbar webbpresentation.
 
+### Familjens lördags-DD
+
+Tips, kuponger och resultat för Dagens Dubbel på lördagar (Kent, Lotta, Benita). Statisk app utan build.
+
+- **Källkod:** [dagens-dubbel/](dagens-dubbel/)
+- **Live:** [https://kentlundgren.github.io/Grok/dagens-dubbel/](https://kentlundgren.github.io/Grok/dagens-dubbel/)
+- Relaterat skill i repot: [skills/lordags-dagens-dubbel/](skills/lordags-dagens-dubbel/)
+
 ### Intervjuförberedelse, Försäkringskassan
 
 Förberedelsematerial inför en intervju till controller på Försäkringskassan.
@@ -52,4 +60,4 @@ Förberedelsematerial inför en intervju till controller på Försäkringskassan
 
 ---
 
-*Senast uppdaterat: 22 september 2026*
+*Senast uppdaterat: 26 september 2026*
