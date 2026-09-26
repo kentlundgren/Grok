@@ -614,3 +614,27 @@
     return el.innerHTML;
   }
 })();
+
+/* Här skedde en uppdatering 2026-09-26: teknik-modalen nere till höger.
+   Samma mönster som Claude-kompassen: klass .show, kryss, klick utanför, Escape. */
+(function () {
+  var modal = document.getElementById("tech-modal");
+  var openBtn = document.getElementById("tech-open");
+  var closeBtn = document.getElementById("tech-close");
+  if (!modal || !openBtn) return;
+
+  function closeModal() {
+    modal.classList.remove("show");
+  }
+
+  openBtn.addEventListener("click", function () {
+    modal.classList.add("show");
+  });
+  modal.addEventListener("click", function (event) {
+    if (event.target === modal) closeModal();
+  });
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeModal();
+  });
+})();

@@ -7,7 +7,8 @@
   <meta name="description" content="Kent, Lotta, Benita och Bengts Dagens Dubbel på lördagar — tips, resultat och ställning.">
   <meta http-equiv="Cache-Control" content="no-cache">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="stil.css">
+  <!-- Här skedde en uppdatering 2026-09-26: v=2 så modalen ligger över hörnknapparna. -->
+  <link rel="stylesheet" href="stil.css?v=2">
 </head>
 <body class="bg-stone-100 text-stone-900">
   <header class="bg-stone-900 text-amber-100">
@@ -41,8 +42,53 @@
     </section>
   </main>
 
-  <!-- Här skedde en uppdatering 2026-09-26: v=8 så analysens meningar inte fastnar i cache. -->
-  <script src="data.js?v=8"></script>
-  <script src="app.js?v=8"></script>
+  <!-- Här skedde en uppdatering 2026-09-26: GitHub nere till vänster, teknik-modal nere till höger. -->
+  <a class="corner-btn github-btn" href="https://github.com/kentlundgren/Grok/tree/main/dagens-dubbel" target="_blank" rel="noopener" aria-label="GitHub-repot">{ } GitHub</a>
+  <button class="corner-btn tech-btn" id="tech-open" type="button" aria-label="Tekniköversikt">&lt;/&gt; teknik</button>
+
+  <div class="modal-overlay" id="tech-modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tech-title">
+      <button class="modal-close" id="tech-close" type="button" aria-label="Stäng">×</button>
+      <h2 id="tech-title">Hur den här sidan är byggd</h2>
+      <p class="modal-lead">Ingen byggtool. HTML, CSS och JavaScript, publicerat direkt via GitHub Pages.</p>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>HTML5</h3>
+          <p><code>index.html</code> är skalet: <code>header</code>, <code>main</code> och <code>section</code>. Korten och analysen ritas av skriptet.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Tailwind och stil.css</h3>
+          <p>Layouten kommer från Tailwind via CDN. <code>stil.css</code> håller kuponggult, träff och miss, och de här hörnknapparna med <code>backdrop-filter</code>.</p>
+        </div>
+        <div class="tech-card">
+          <h3>JavaScript</h3>
+          <p><code>app.js</code> är vanligt JavaScript, inget ramverk. Det läser <code>data/*.json</code>. Om sidan öppnas som fil används <code>data.js</code> i stället.</p>
+        </div>
+        <div class="tech-card">
+          <h3>En lördag, två filer</h3>
+          <p><code>data/ÅÅMMDD.json</code> är källan. <code>data.js</code> är samma innehåll, så live-sidan och den lokala filen visar samma omgång.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Analys</h3>
+          <p>Rutan under korten räknas ur inlämnade tips. Vinnarodds är en ögonblicksbild i <code>market</code>, inte en live-hämtning i webbläsaren.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Modal</h3>
+          <p>CSS-klass <code>.show</code>. Stängs med krysset, med Escape, eller med klick utanför rutan.</p>
+        </div>
+        <div class="tech-card">
+          <h3>GitHub Pages</h3>
+          <p>Statisk sida från repot. Inget byggsteg. Kent committar och pushar i Cursor, sedan tar GitHub Pages resten.</p>
+        </div>
+      </div>
+      <p class="modal-foot">
+        Källkoden: <a href="https://github.com/kentlundgren/Grok/tree/main/dagens-dubbel" target="_blank" rel="noopener">github.com/kentlundgren/Grok</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Här skedde en uppdatering 2026-09-26: v=9 så teknik-modalen inte fastnar i cache. -->
+  <script src="data.js?v=9"></script>
+  <script src="app.js?v=9"></script>
 </body>
 </html>
