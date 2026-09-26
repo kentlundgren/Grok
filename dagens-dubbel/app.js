@@ -1,7 +1,6 @@
 /**
  * Familjens lördags-DD
- * Läser data/weeks.json och data/<id>.json.
- * Ingen build. Samma filer på GitHub Pages, lokalt, Cursor och Claude Code.
+ * Försöker läsa data/*.json. Om fetch inte går (file://) används window.DD_* från data.js.
  */
 (async function () {
   const stallningEl = document.getElementById("stallning");
@@ -14,11 +13,9 @@
   }
 
   try {
-    const index = await loadJson("data/weeks.json");
-    const weeks = [];
-    for (const id of index.weeks || []) {
-      weeks.push(await loadJson("data/" + id + ".json"));
-    }
+    const loaded = await loadAll();
+    const index = loaded.index;
+    const weeks = loaded.weeks;
     weeks.sort(function (a, b) {
       return String(b.date).localeCompare(String(a.date));
     });
@@ -32,13 +29,32 @@
 
     selectEl.addEventListener("change", function () {
       const week = weeks.filter(function (w) { return w.id === selectEl.value; })[0];
-      const url = new URL(location.href);
-      url.searchParams.set("vecka", week.id);
-      history.replaceState({}, "", url);
+      if (!week) return;
+      try {
+        const url = new URL(location.href);
+        url.searchParams.set("vecka", week.id);
+        history.replaceState({}, "", url);
+      } catch (e) {}
       renderWeek(week);
     });
   } catch (err) {
     showError(err);
+  }
+
+  async function loadAll() {
+    try {
+      const index = await loadJson("data/weeks.json");
+      const weeks = [];
+      for (var i = 0; i < (index.weeks || []).length; i++) {
+        weeks.push(await loadJson("data/" + index.weeks[i] + ".json"));
+      }
+      return { index: index, weeks: weeks };
+    } catch (err) {
+      if (window.DD_INDEX && window.DD_WEEKS && window.DD_WEEKS.length) {
+        return { index: window.DD_INDEX, weeks: window.DD_WEEKS.slice() };
+      }
+      throw err;
+    }
   }
 
   async function loadJson(path) {
