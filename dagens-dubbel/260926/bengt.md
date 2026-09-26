@@ -1,10 +1,8 @@
 # Bengt — 260926 Åby
 
-Status: saknas.
+- **Live:** [https://kentlundgren.github.io/Grok/dagens-dubbel/](https://kentlundgren.github.io/Grok/dagens-dubbel/)
+- Status: inlämnad 12:06
+- System: 4×1 = 20 kr
 
-När tipset kommer, skriv här och uppdatera `../data/260926.json`:
-
-- DD-1:
-- DD-2:
-- Kostnad:
-- System:
+- DD-1: 7 C'est Ma Course, 12 Just for Show, 13 Merlene Boko, 15 Halina S.H.
+- DD-2: 6 Epic Kronos (struken — enda hästen i andra loppet)
