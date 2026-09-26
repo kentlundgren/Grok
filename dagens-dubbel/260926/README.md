@@ -9,5 +9,6 @@ SM-lördag. DD-1 = V85-7 (2140 m volt), DD-2 = V85-8 Svenskt Mästerskap (2640 m
 | Kent | inlämnad 10:45, 45 kr | DD-1: 2 12 15 · DD-2: 1 2 10 | [kent.md](kent.md), [kupong-kent.png](kupong-kent.png) |
 | Lotta | saknas | — | [lotta.md](lotta.md) |
 | Benita | saknas | — | [benita.md](benita.md) |
+| Bengt | saknas | — | [bengt.md](bengt.md) |
 
 Maskinläsbar källa för appen: [`../data/260926.json`](../data/260926.json)
