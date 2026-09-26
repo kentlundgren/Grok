@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Familjens lördags-DD</title>
+  <meta name="description" content="Kent, Lotta och Benitas Dagens Dubbel på lördagar — tips, resultat och ställning.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            slip: '#fef9c3',
+            ink: '#1c1917'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body class="bg-stone-100 text-stone-900">
+  <header class="bg-stone-900 text-amber-100">
+    <div class="max-w-5xl mx-auto px-4 py-8">
+      <p class="text-xs uppercase tracking-widest text-amber-400">ATG Dagens Dubbel · lördagar</p>
+      <h1 class="text-3xl sm:text-4xl font-semibold mt-2">Familjens lördags-DD</h1>
+      <p class="mt-3 max-w-2xl text-amber-100/80">
+        Ett litet system i taget, 35–45 kronor à 5 kr per rad.
+        Tre tippare, en gemensam logg, en live-sida som växer vecka för vecka.
+      </p>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
+    <section id="stallning" class="grid grid-cols-1 sm:grid-cols-3 gap-3"></section>
+
+    <section>
+      <div class="flex flex-wrap items-end justify-between gap-3 mb-3">
+        <h2 class="text-xl font-semibold">Omgångar</h2>
+        <label class="text-sm">
+          Visa
+          <select id="week-select" class="ml-2 rounded border border-stone-300 bg-yellow-200 px-2 py-1"></select>
+        </label>
+      </div>
+      <article id="week-view" class="bg-white rounded-xl shadow-sm border border-stone-200 p-4 sm:p-6"></article>
+    </section>
+
+    <section class="text-sm text-stone-600 border-t border-stone-200 pt-6 space-y-2">
+      <p>18+. Spela bara med pengar som tål att försvinna. <a class="underline" href="https://www.atg.se/spela-med-matta">ATG: Spela med måtta</a>.</p>
+      <p>Källa för appen: JSON i <code>data/</code>. Nya lördagar läggs till som <code>data/ÅÅMMDD.json</code> plus mappen med samma id.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "title": "Familjens lördags-DD",
+  "stakeDefault": 5,
+  "budgetMin": 35,
+  "budgetMax": 45,
+  "tipsters": ["Kent", "Lotta", "Benita"],
+  "weeks": ["260926"]
+}
