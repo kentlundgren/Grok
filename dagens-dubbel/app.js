@@ -6,8 +6,8 @@
   const stallningEl = document.getElementById("stallning");
   const selectEl = document.getElementById("week-select");
   const viewEl = document.getElementById("week-view");
-  // Här skedde en uppdatering 2026-09-26: cache-nyckel efter Bengts byte 6 → 2 i DD-2.
-  const CACHE_BUST = "20260926f";
+  // Här skedde en uppdatering 2026-09-26: cache-nyckel efter analysrutan under korten.
+  const CACHE_BUST = "20260926g";
 
   function showError(err) {
     const msg = err && err.message ? err.message : String(err);
@@ -137,7 +137,8 @@
       (week.comment ? '<p class="mt-3 text-stone-700">' + escapeHtml(week.comment) + "</p>" : "") +
       '<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">' +
       (week.tips || []).map(function (tip) { return tipCard(week, tip); }).join("") +
-      "</div>";
+      "</div>" +
+      analysisSection(week);
   }
 
   function tipCard(week, tip) {
@@ -185,6 +186,426 @@
     if (a && b) return res.ddOdds ? "DD-träff \u00b7 odds " + res.ddOdds : "DD-träff";
     if (a || b) return "Ett rätt \u2014 ingen utdelning.";
     return "Miss.";
+  }
+
+  // Här skedde en uppdatering 2026-09-26: analys under de fyra korten.
+  // Likhet, delade rader och systemform räknas ur inlämnade tips.
+  // Låg = kortast i loppet eller under market.lowUnder. Hög = över market.highOver.
+  function analysisSection(week) {
+    var tips = submittedTips(week);
+    var body;
+    if (tips.length < 2) {
+      body = '<p class="mt-3 text-sm bg-yellow-200 rounded px-2 py-1">Analysen väntar tills minst två tips är inlämnade.</p>';
+    } else {
+      body =
+        '<div class="mt-4 space-y-4 text-sm leading-6">' +
+        block("Likhet",
+          "<p>" + escapeHtml(legStory(week, tips, "dd1", "första loppet")) + "</p>" +
+          "<p class=\"mt-2\">" + escapeHtml(legStory(week, tips, "dd2", "andra loppet")) + "</p>" +
+          "<p class=\"mt-2\">" + escapeHtml(closestSentence(tips, week)) + "</p>") +
+        block("Rader", "<p>" + escapeHtml(rowStory(tips, week)) + "</p>") +
+        block("System", systemList(tips)) +
+        block("Odds", oddsBlock(week, tips)) +
+        block("Hästarna vi spelat", horseTables(week, tips)) +
+        "</div>";
+    }
+    return (
+      '<section class="mt-6 pt-6 border-t border-stone-200">' +
+      '<h3 class="text-xl font-semibold">Analys</h3>' +
+      body +
+      "</section>"
+    );
+  }
+
+  function block(title, inner) {
+    return '<div><h4 class="font-semibold">' + escapeHtml(title) + "</h4>" + inner + "</div>";
+  }
+
+  function submittedTips(week) {
+    return (week.tips || []).filter(function (tip) {
+      if (tip.status !== "inlämnad") return false;
+      return (tip.dd1 && tip.dd1.length) || (tip.dd2 && tip.dd2.length);
+    });
+  }
+
+  function nums(arr) {
+    var out = [];
+    (arr || []).forEach(function (n) {
+      var v = Number(n);
+      if (out.indexOf(v) === -1) out.push(v);
+    });
+    return out;
+  }
+
+  function sharedNums(a, b) {
+    var set = {};
+    nums(b).forEach(function (n) { set[n] = true; });
+    return nums(a).filter(function (n) { return set[n]; });
+  }
+
+  function joinSv(parts) {
+    var list = (parts || []).filter(function (p) { return p; });
+    if (list.length === 0) return "";
+    if (list.length === 1) return list[0];
+    if (list.length === 2) return list[0] + " och " + list[1];
+    return list.slice(0, -1).join(", ") + " och " + list[list.length - 1];
+  }
+
+  function antalOrd(n) {
+    var ord = ["ingen", "en", "två", "tre", "fyra", "fem", "sex", "sju", "åtta"];
+    return ord[n] || String(n);
+  }
+
+  function findMarket(week, leg, no) {
+    var list = (week.market && week.market[leg]) || [];
+    for (var i = 0; i < list.length; i++) {
+      if (Number(list[i].no) === Number(no)) return list[i];
+    }
+    return null;
+  }
+
+  function horseName(week, tips, leg, no) {
+    var h = findMarket(week, leg, no);
+    if (h && h.name) return h.name;
+    for (var i = 0; i < tips.length; i++) {
+      var names = tips[i].names && tips[i].names[leg];
+      if (!names) continue;
+      var found = names[no] || names[String(no)];
+      if (found) return found;
+    }
+    return "";
+  }
+
+  function horseText(week, tips, leg, no) {
+    var h = findMarket(week, leg, no);
+    var name = horseName(week, tips, leg, no);
+    var label = String(no) + (name ? " " + name : "");
+    if (h && h.scratched) label += " (struken)";
+    return label;
+  }
+
+  function horseEntries(week, tips, leg) {
+    var map = {};
+    tips.forEach(function (tip) {
+      nums(tip[leg]).forEach(function (no) {
+        var key = String(no);
+        if (!map[key]) map[key] = { no: no, people: [] };
+        map[key].people.push(tip.person);
+      });
+    });
+    var minLive = minOdds(week, leg);
+    var entries = Object.keys(map).map(function (key) {
+      var item = map[key];
+      var h = findMarket(week, leg, item.no);
+      item.name = horseName(week, tips, leg, item.no);
+      item.odds = h ? h.odds : null;
+      item.scratched = !!(h && h.scratched);
+      item.band = item.scratched ? null : bandOf(item.odds, minLive, week);
+      return item;
+    });
+    entries.sort(function (a, b) {
+      if (a.scratched !== b.scratched) return a.scratched ? 1 : -1;
+      var ao = a.odds == null ? 9999 : a.odds;
+      var bo = b.odds == null ? 9999 : b.odds;
+      if (ao !== bo) return ao - bo;
+      return a.no - b.no;
+    });
+    return entries;
+  }
+
+  function legStory(week, tips, leg, label) {
+    var entries = horseEntries(week, tips, leg);
+    var total = tips.length;
+    var all = entries.filter(function (e) { return e.people.length === total; });
+    var shared = entries.filter(function (e) { return e.people.length > 1 && e.people.length < total; });
+    var alone = entries.filter(function (e) { return e.people.length === 1; });
+    var parts = [];
+    if (!entries.length) {
+      return "Inga hästar i " + label + ".";
+    }
+    if (all.length) {
+      parts.push(finish("Alla " + antalOrd(total) + " har " + joinSv(all.map(function (e) { return horseText(week, tips, leg, e.no); }))));
+    } else {
+      parts.push("Ingen häst i " + label + " finns hos alla.");
+    }
+    shared.forEach(function (e) {
+      parts.push(finish(joinSv(e.people) + " har " + horseText(week, tips, leg, e.no)));
+    });
+    var aloneSentences = [];
+    tips.forEach(function (tip) {
+      var own = alone.filter(function (e) { return e.people[0] === tip.person; });
+      if (!own.length) return;
+      aloneSentences.push(finish(tip.person + " har " + joinSv(own.map(function (e) { return horseText(week, tips, leg, e.no); }))));
+    });
+    if (aloneSentences.length) parts.push("Ensamt: " + aloneSentences.join(" "));
+    return parts.join(" ");
+  }
+
+  function finish(text) {
+    if (!text) return "";
+    var last = text.charAt(text.length - 1);
+    if (last === "." || last === "!" || last === "?") return text;
+    return text + ".";
+  }
+
+  function closestSentence(tips, week) {
+    var best = [];
+    var bestScore = -1;
+    for (var i = 0; i < tips.length; i++) {
+      for (var j = i + 1; j < tips.length; j++) {
+        var d1 = sharedNums(tips[i].dd1, tips[j].dd1);
+        var d2 = sharedNums(tips[i].dd2, tips[j].dd2);
+        var score = d1.length + d2.length;
+        var item = { a: tips[i].person, b: tips[j].person, d1: d1, d2: d2, score: score };
+        if (score > bestScore) {
+          bestScore = score;
+          best = [item];
+        } else if (score === bestScore) {
+          best.push(item);
+        }
+      }
+    }
+    if (bestScore < 1) return "Ingen delar en häst med någon annan.";
+    var lead = best.length > 1 ? "Lika nära varandra är " : "Närmast varandra är ";
+    return lead + best.map(function (item) {
+      return item.a + " och " + item.b + ", med " +
+        horseList(week, tips, "dd1", item.d1) + " i första loppet och " +
+        horseList(week, tips, "dd2", item.d2) + " i andra";
+    }).join("; ") + ".";
+  }
+
+  function horseList(week, tips, leg, numbers) {
+    if (!numbers.length) return "ingen gemensam häst";
+    return joinSv(numbers.map(function (no) { return horseText(week, tips, leg, no); }));
+  }
+
+  function rowStory(tips, week) {
+    var map = {};
+    tips.forEach(function (tip) {
+      nums(tip.dd1).forEach(function (a) {
+        nums(tip.dd2).forEach(function (b) {
+          var key = a + "-" + b;
+          if (!map[key]) map[key] = [];
+          map[key].push(tip.person);
+        });
+      });
+    });
+    var shared = Object.keys(map).filter(function (key) { return map[key].length >= 2; });
+    shared.sort(function (a, b) {
+      if (map[b].length !== map[a].length) return map[b].length - map[a].length;
+      return a.localeCompare(b, "sv");
+    });
+    if (!shared.length) return "Ingen rad delas av två eller fler.";
+    return shared.map(function (key) {
+      var people = map[key];
+      var who = people.length === tips.length ? "Alla " + antalOrd(tips.length) : joinSv(people);
+      return who + " har " + rowLabel(week, tips, key) + ".";
+    }).join(" ");
+  }
+
+  function rowLabel(week, tips, key) {
+    var parts = key.split("-");
+    return horseText(week, tips, "dd1", parts[0]) + "–" + horseText(week, tips, "dd2", parts[1]);
+  }
+
+  function systemList(tips) {
+    var rows = 0;
+    var cost = 0;
+    var items = tips.map(function (tip) {
+      var a = nums(tip.dd1).length;
+      var b = nums(tip.dd2).length;
+      rows += a * b;
+      cost += Number(tip.cost || 0);
+      return "<li>" + escapeHtml(tip.person + ": " + a + "×" + b + ", " + (tip.cost || 0) + " kr, " + widthPhrase(a, b)) + "</li>";
+    }).join("");
+    return (
+      "<ul class=\"list-disc pl-5\">" + items +
+      "<li>" + escapeHtml("Tillsammans " + rows + " rader och " + cost + " kr.") + "</li></ul>"
+    );
+  }
+
+  function widthPhrase(a, b) {
+    if (a === b) return "lika många hästar i båda loppen";
+    if (a > b) return "bredare i första loppet";
+    return "bredare i andra loppet";
+  }
+
+  function minOdds(week, leg) {
+    var list = (week.market && week.market[leg]) || [];
+    var best = null;
+    list.forEach(function (h) {
+      if (h.scratched || !(h.odds > 0)) return;
+      if (best == null || h.odds < best) best = h.odds;
+    });
+    return best;
+  }
+
+  function bandOf(odds, minLive, week) {
+    if (!(odds > 0)) return null;
+    var lowUnder = week.market && week.market.lowUnder != null ? Number(week.market.lowUnder) : 5;
+    var highOver = week.market && week.market.highOver != null ? Number(week.market.highOver) : 12;
+    if (odds < lowUnder || (minLive != null && Math.abs(odds - minLive) < 0.011)) return "låg";
+    if (odds > highOver) return "hög";
+    return "mellan";
+  }
+
+  function formatOdds(n) {
+    return (Math.round(Number(n) * 100) / 100).toFixed(2).replace(".", ",");
+  }
+
+  function oddsBlock(week, tips) {
+    if (!week.market || !week.market.dd1 || !week.market.dd2) {
+      return '<p class="bg-yellow-200 rounded px-2 py-1">Vinnarodds saknas i veckans data, så låg- och högoddsare går inte att säga. Likhet och system ovan räknas ändå.</p>';
+    }
+    var lines = [
+      favoriteSentence(week, tips, "dd1", "första loppet"),
+      favoriteSentence(week, tips, "dd2", "andra loppet"),
+      nearSentence(week, tips, "dd1"),
+      nearSentence(week, tips, "dd2"),
+      oddsCompare(tips, week)
+    ].filter(function (line) { return line; });
+    var people = tips.map(function (tip) {
+      return "<li>" + escapeHtml(
+        tip.person + ". DD-1: " + describeLeg(tip, week, "dd1") + ". DD-2: " + describeLeg(tip, week, "dd2") + "."
+      ) + "</li>";
+    }).join("");
+    return (
+      lines.map(function (line) { return "<p>" + escapeHtml(line) + "</p>"; }).join("") +
+      '<ul class="list-disc pl-5 mt-2">' + people + "</ul>" +
+      '<p class="mt-2 text-xs text-stone-500">' + sourceLine(week) + "</p>"
+    );
+  }
+
+  function favoriteSentence(week, tips, leg, label) {
+    var fav = null;
+    var minLive = minOdds(week, leg);
+    ((week.market && week.market[leg]) || []).forEach(function (h) {
+      if (h.scratched || !(h.odds > 0)) return;
+      if (minLive != null && Math.abs(h.odds - minLive) < 0.011) fav = h;
+    });
+    if (!fav) return "";
+    var who = peopleOn(tips, leg, fav.no);
+    var whoText = who.length === tips.length
+      ? "Alla " + antalOrd(tips.length) + " har den."
+      : (who.length ? joinSv(who) + " har den." : "Ingen av oss har den.");
+    return "Favorit i " + label + " är " + fav.no + " " + fav.name + " till " + formatOdds(fav.odds) + ". " + whoText;
+  }
+
+  function peopleOn(tips, leg, no) {
+    var out = [];
+    tips.forEach(function (tip) {
+      if (nums(tip[leg]).indexOf(Number(no)) !== -1) out.push(tip.person);
+    });
+    return out;
+  }
+
+  function nearSentence(week, tips, leg) {
+    var minLive = minOdds(week, leg);
+    if (minLive == null) return "";
+    var hits = [];
+    horseEntries(week, tips, leg).forEach(function (e) {
+      if (e.scratched || !(e.odds > 0)) return;
+      if (Math.abs(e.odds - minLive) < 0.011) return;
+      if (e.odds - minLive <= 0.5) hits.push(e);
+    });
+    if (!hits.length) return "";
+    return hits.map(function (e) {
+      var who = e.people.length === tips.length ? "Alla " + antalOrd(tips.length) : joinSv(e.people);
+      return e.no + " " + e.name + " till " + formatOdds(e.odds) + " ligger tätt bakom favoriten. " + who + " har den.";
+    }).join(" ");
+  }
+
+  function describeLeg(tip, week, leg) {
+    var counts = { "låg": 0, "mellan": 0, "hög": 0, "saknas": 0 };
+    var dead = [];
+    var minLive = minOdds(week, leg);
+    nums(tip[leg]).forEach(function (no) {
+      var h = findMarket(week, leg, no);
+      if (h && h.scratched) {
+        dead.push(horseText(week, [tip], leg, no).replace(" (struken)", ""));
+        return;
+      }
+      var band = h ? bandOf(h.odds, minLive, week) : null;
+      if (!band) counts.saknas += 1;
+      else counts[band] += 1;
+    });
+    var text = countPhrase(counts);
+    if (dead.length) text += ". Struken på kupongen: " + joinSv(dead);
+    return text;
+  }
+
+  function countPhrase(counts) {
+    var parts = [];
+    ["låg", "mellan", "hög"].forEach(function (key) {
+      if (counts[key]) parts.push(counts[key] + " " + key);
+    });
+    if (counts.saknas) parts.push(counts.saknas + " utan odds");
+    if (!parts.length) return "inga levande hästar";
+    return joinSv(parts);
+  }
+
+  function oddsCompare(tips, week) {
+    var s1 = lowShare(tips, week, "dd1");
+    var s2 = lowShare(tips, week, "dd2");
+    if (!s1.live || !s2.live) return "";
+    var diff = s2.share - s1.share;
+    if (diff >= 0.15) return "Andra loppet ligger tyngre mot korta odds än första.";
+    if (diff <= -0.15) return "Första loppet ligger tyngre mot korta odds än andra.";
+    return "Fördelningen mellan korta och höga odds är liknande i de två loppen.";
+  }
+
+  function lowShare(tips, week, leg) {
+    var live = 0;
+    var low = 0;
+    var minLive = minOdds(week, leg);
+    tips.forEach(function (tip) {
+      nums(tip[leg]).forEach(function (no) {
+        var h = findMarket(week, leg, no);
+        if (!h || h.scratched) return;
+        live += 1;
+        if (bandOf(h.odds, minLive, week) === "låg") low += 1;
+      });
+    });
+    return { live: live, low: low, share: live ? low / live : 0 };
+  }
+
+  function sourceLine(week) {
+    var m = week.market || {};
+    var low = m.lowUnder != null ? formatOdds(m.lowUnder) : "5,00";
+    var high = m.highOver != null ? formatOdds(m.highOver) : "12,00";
+    var when = m.fetched ? " Hämtat " + m.fetched + "." : "";
+    var href = m.url ? '<a class="underline" href="' + escapeHtml(m.url) + '">' + escapeHtml(m.source || "ATG") + "</a>" : escapeHtml(m.source || "ATG");
+    return "Vinnarodds: " + href + "." + escapeHtml(when) +
+      " Låg = kortast i loppet eller under " + escapeHtml(low) +
+      ". Mellan = däremellan. Hög = över " + escapeHtml(high) +
+      ". Ögonblicksbild, oddsen rör sig.";
+  }
+
+  function horseTables(week, tips) {
+    return (
+      '<div class="grid grid-cols-1 md:grid-cols-2 gap-4">' +
+      horseTable(week, tips, "dd1", "DD-1") +
+      horseTable(week, tips, "dd2", "DD-2") +
+      "</div>"
+    );
+  }
+
+  function horseTable(week, tips, leg, title) {
+    var rows = horseEntries(week, tips, leg).map(function (e) {
+      var odds = e.scratched ? "struken" : (e.odds > 0 ? formatOdds(e.odds) + (e.band ? " · " + e.band : "") : "saknas");
+      var who = e.people.length === tips.length ? "alla " + antalOrd(tips.length) : joinSv(e.people);
+      var cls = e.scratched ? "text-stone-400" : "";
+      return "<tr class=\"" + cls + "\"><td class=\"py-1 pr-3\">" + escapeHtml(horseText(week, tips, leg, e.no).replace(" (struken)", "")) +
+        "</td><td class=\"py-1 pr-3 whitespace-nowrap\">" + escapeHtml(odds) +
+        "</td><td class=\"py-1\">" + escapeHtml(who) + "</td></tr>";
+    }).join("");
+    return (
+      '<div class="overflow-x-auto">' +
+      '<p class="text-xs uppercase tracking-wide text-stone-500 mb-1">' + escapeHtml(title) + "</p>" +
+      "<table class=\"w-full text-sm\"><thead><tr class=\"text-left text-stone-500\">" +
+      "<th class=\"py-1 pr-3 font-medium\">Häst</th><th class=\"py-1 pr-3 font-medium\">Odds</th><th class=\"py-1 font-medium\">Vilka</th>" +
+      "</tr></thead><tbody>" + rows + "</tbody></table></div>"
+    );
   }
 
   function escapeHtml(value) {

@@ -24,6 +24,7 @@ Committa och pusha **inte** om ägaren inte uttryckligen bett om det.
 - Visar en omgång i taget (dropdown).
 - Gula kort = tips saknas ännu.
 - Vita kort = inlämnat tips.
+- Under korten: en analys av vad som är gemensamt, vilka rader som delas, hur systemen är formade, och om hästarna är låg-, mellan- eller högoddsare. Oddsdelen kräver `market` i veckans JSON (vinnarodds). Utan den blir den delen gul.
 
 Tippare just nu: Kent, Lotta, Benita, Bengt. Listan styrs av `data/weeks.json` → `tipsters`.
 

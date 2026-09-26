@@ -21,6 +21,182 @@ window.DD_WEEKS = [
       dd2: { label: "V85-8 / DD-2 Svenskt Mästerskap", distance: "2640 m auto", startApprox: "17:35" }
     },
     result: { status: "pending", dd1Winner: null, dd2Winner: null, ddOdds: null, updated: null },
+    // Här skedde en uppdatering 2026-09-26: vinnarodds från ATG, samma ögonblicksbild som i data/260926.json.
+    market: {
+      "source": "ATG vinnarodds",
+      "url": "https://www.atg.se/trav/aby/2026-09-26",
+      "game": "dd_2026-09-26_6_11",
+      "fetched": "2026-09-26 12:40",
+      "note": "Här skedde en uppdatering 2026-09-26: ögonblicksbild av vinnarodds till analysrutan.",
+      "lowUnder": 5,
+      "highOver": 12,
+      "dd1": [
+        {
+          "no": 1,
+          "name": "R.K.Augusta",
+          "odds": 19.78,
+          "scratched": false
+        },
+        {
+          "no": 2,
+          "name": "Monnier Mearas",
+          "odds": 8.55,
+          "scratched": false
+        },
+        {
+          "no": 3,
+          "name": "Miss Magdalena",
+          "odds": 5.09,
+          "scratched": false
+        },
+        {
+          "no": 4,
+          "name": "Pelshin Boko",
+          "odds": 8.71,
+          "scratched": false
+        },
+        {
+          "no": 5,
+          "name": "Cornelia Palema",
+          "odds": 36.43,
+          "scratched": false
+        },
+        {
+          "no": 6,
+          "name": "Run Rhapsody Run",
+          "odds": 13.23,
+          "scratched": false
+        },
+        {
+          "no": 7,
+          "name": "C'est Ma Course",
+          "odds": 33.51,
+          "scratched": false
+        },
+        {
+          "no": 8,
+          "name": "Janica Zet",
+          "odds": 44.84,
+          "scratched": false
+        },
+        {
+          "no": 9,
+          "name": "Sainz Zon",
+          "odds": 30.23,
+          "scratched": false
+        },
+        {
+          "no": 10,
+          "name": "Piccadilly Pellini",
+          "odds": 10.39,
+          "scratched": false
+        },
+        {
+          "no": 11,
+          "name": "Grace Vendil",
+          "odds": 16.26,
+          "scratched": false
+        },
+        {
+          "no": 12,
+          "name": "Just for Show",
+          "odds": 5.31,
+          "scratched": false
+        },
+        {
+          "no": 13,
+          "name": "Merlene Boko",
+          "odds": 30.48,
+          "scratched": false
+        },
+        {
+          "no": 14,
+          "name": "Can't be Ruled",
+          "odds": 36.06,
+          "scratched": false
+        },
+        {
+          "no": 15,
+          "name": "Halina S.H.",
+          "odds": 9.64,
+          "scratched": false
+        }
+      ],
+      "dd2": [
+        {
+          "no": 1,
+          "name": "Boscha Diablo",
+          "odds": 5.47,
+          "scratched": false
+        },
+        {
+          "no": 2,
+          "name": "Kentucky River",
+          "odds": 3.24,
+          "scratched": false
+        },
+        {
+          "no": 3,
+          "name": "Call Me Gleipner",
+          "odds": 23.02,
+          "scratched": false
+        },
+        {
+          "no": 4,
+          "name": "Ready Star",
+          "odds": 8.59,
+          "scratched": false
+        },
+        {
+          "no": 5,
+          "name": "Orosei Boko",
+          "odds": 19.98,
+          "scratched": false
+        },
+        {
+          "no": 6,
+          "name": "Epic Kronos",
+          "odds": null,
+          "scratched": true
+        },
+        {
+          "no": 7,
+          "name": "High on Pepper",
+          "odds": 10.59,
+          "scratched": false
+        },
+        {
+          "no": 8,
+          "name": "Barack Face",
+          "odds": 9.35,
+          "scratched": false
+        },
+        {
+          "no": 9,
+          "name": "H.C.'s Crazy Horse",
+          "odds": 25.42,
+          "scratched": false
+        },
+        {
+          "no": 10,
+          "name": "A Fair Day",
+          "odds": 7.81,
+          "scratched": false
+        },
+        {
+          "no": 11,
+          "name": "Macahan",
+          "odds": 22.38,
+          "scratched": false
+        },
+        {
+          "no": 12,
+          "name": "Fighter Kronos",
+          "odds": 15.72,
+          "scratched": false
+        }
+      ]
+    },
     tips: [
       {
         person: "Kent",
