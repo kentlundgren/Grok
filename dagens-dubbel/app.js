@@ -65,17 +65,27 @@
     return res.json();
   }
 
+  // Här skedde en uppdatering 2026-09-26: ställningen är dold tills ett lopp är kört.
+  // Annars fyller fyra kort med 0 träff hela första skärmen på mobilen.
   function renderStandings(index, weeks) {
     const closed = weeks.filter(function (w) {
       return w.result && w.result.status === "klar";
     });
+    if (!closed.length) {
+      stallningEl.classList.add("hidden");
+      stallningEl.classList.remove("grid");
+      stallningEl.innerHTML = "";
+      return;
+    }
+    stallningEl.classList.remove("hidden");
+    stallningEl.classList.add("grid");
     stallningEl.innerHTML = (index.tipsters || []).map(function (name) {
       const stats = tally(name, closed);
       return (
-        '<div class="bg-white border border-stone-200 rounded-xl p-4">' +
-        '<p class="text-sm text-stone-500">' + escapeHtml(name) + "</p>" +
-        '<p class="text-2xl font-semibold">' + stats.hits + " träff</p>" +
-        '<p class="text-sm text-stone-600">' +
+        '<div class="bg-white border border-stone-200 rounded-xl p-3 sm:p-4">' +
+        '<p class="text-xs sm:text-sm text-stone-500">' + escapeHtml(name) + "</p>" +
+        '<p class="text-lg sm:text-2xl font-semibold">' + stats.hits + " träff</p>" +
+        '<p class="text-xs sm:text-sm text-stone-600">' +
         stats.oneRight + " ett rätt \u00b7 " + stats.played + " spelade \u00b7 " + stats.spent + " kr</p>" +
         "</div>"
       );

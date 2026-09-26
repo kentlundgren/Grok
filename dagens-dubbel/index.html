@@ -12,19 +12,18 @@
 </head>
 <body class="bg-stone-100 text-stone-900">
   <header class="bg-stone-900 text-amber-100">
-    <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="max-w-5xl mx-auto px-4 py-5 sm:py-8">
       <p class="text-xs uppercase tracking-widest text-amber-400">ATG Dagens Dubbel · lördagar</p>
       <h1 class="text-3xl sm:text-4xl font-semibold mt-2">Familjens lördags-DD</h1>
-      <p class="mt-3 max-w-2xl text-amber-100/80">
+      <p class="mt-3 max-w-2xl text-sm sm:text-base text-amber-100/80">
         Ett litet system i taget, 35–45 kronor à 5 kr per rad.
         Fyra tippare, en gemensam logg, en live-sida som växer vecka för vecka.
       </p>
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-8">
-    <section id="stallning" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3"></section>
-
+  <!-- Här skedde en uppdatering 2026-09-26: omgången först. Fyra noll-kort fyllde hela mobilskärmen. -->
+  <main class="max-w-5xl mx-auto px-4 py-5 sm:py-8 space-y-8">
     <section>
       <div class="flex flex-wrap items-end justify-between gap-3 mb-3">
         <h2 class="text-xl font-semibold">Omgångar</h2>
@@ -35,6 +34,8 @@
       </div>
       <article id="week-view" class="bg-white rounded-xl shadow-sm border border-stone-200 p-4 sm:p-6">Laddar omgång…</article>
     </section>
+
+    <section id="stallning" class="hidden grid-cols-2 lg:grid-cols-4 gap-3"></section>
 
     <section class="text-sm text-stone-600 border-t border-stone-200 pt-6 space-y-2">
       <p>18+. Spela bara med pengar som tål att försvinna. <a class="underline" href="https://www.atg.se/spela-med-matta">ATG: Spela med måtta</a>.</p>
@@ -89,6 +90,6 @@
 
   <!-- Här skedde en uppdatering 2026-09-26: v=9 så teknik-modalen inte fastnar i cache. -->
   <script src="data.js?v=9"></script>
-  <script src="app.js?v=9"></script>
+  <script src="app.js?v=10"></script>
 </body>
 </html>
