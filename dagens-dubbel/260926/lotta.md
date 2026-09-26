@@ -1,6 +1,8 @@
-# Lotta — DD 26 september 2026 Åby
+# Lotta — 260926 Åby
 
-- **Live-app:** [https://kentlundgren.github.io/Grok/dagens-dubbel/](https://kentlundgren.github.io/Grok/dagens-dubbel/)
-- Status: saknas
+- **Live:** [https://kentlundgren.github.io/Grok/dagens-dubbel/](https://kentlundgren.github.io/Grok/dagens-dubbel/)
+- Status: inlämnad 12:06
+- System: 3×3 = 45 kr
 
-Fyll i hästar här eller i `../data/260926.json` under tipset `Lotta` när tipset finns.
+- DD-1: 3 Miss Magdalena, 6 Run Rhapsody Run, 12 Just for Show
+- DD-2: 2 Kentucky River, 7 High on Pepper, 12 Fighter Kronos
