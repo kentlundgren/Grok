@@ -1,0 +1,15 @@
+---
+description: Regler för Familjens lördags-DD
+globs: dagens-dubbel/**
+alwaysApply: false
+---
+
+Statisk app. Ingen build. Läs `dagens-dubbel/README.md` och `dagens-dubbel/CLAUDE.md` först.
+
+Ägaren arbetar enligt Claude-kompassen:
+https://kentlundgren.github.io/AI-teknik/AI_modeller/Claude/olika_Claude_modeller/#claude
+
+- Ändra JSON i `data/` och spegla i `data.js`.
+- Gissa inte Lotta/Benita/Bengts hästar.
+- Commit/push bara om ägaren ber om det.
+- Live: https://kentlundgren.github.io/Grok/dagens-dubbel/
