@@ -6,6 +6,7 @@
   const stallningEl = document.getElementById("stallning");
   const selectEl = document.getElementById("week-select");
   const viewEl = document.getElementById("week-view");
+  const CACHE_BUST = "20260926e";
 
   function showError(err) {
     const msg = err && err.message ? err.message : String(err);
@@ -58,7 +59,7 @@
   }
 
   async function loadJson(path) {
-    const res = await fetch(path);
+    const res = await fetch(path + "?v=" + CACHE_BUST, { cache: "no-store" });
     if (!res.ok) throw new Error("Kunde inte läsa " + path + " (" + res.status + ")");
     return res.json();
   }
@@ -158,7 +159,7 @@
       '<p class="text-sm text-stone-500">' + (tip.submitted ? "Inlämnad " + escapeHtml(tip.submitted) : "") + "</p>" +
       raceLine("DD-1", tip.dd1, tip.names && tip.names.dd1, res.dd1Winner) +
       raceLine("DD-2", tip.dd2, tip.names && tip.names.dd2, res.dd2Winner) +
-      (tip.scratch ? '<p class="text-sm mt-2">Skräll: ' + escapeHtml(tip.scratch) + "</p>" : "") +
+      (tip.scratch ? '<p class="text-sm mt-2">' + escapeHtml(tip.scratch) + "</p>" : "") +
       '<p class="text-sm mt-2 font-medium">' + escapeHtml(outcomeText(tip, res)) + "</p>" +
       (tip.coupon ? '<p class="text-sm mt-2"><a class="underline" href="' + escapeHtml(tip.coupon) + '">Visa kupong</a></p>' : "") +
       "</section>"
