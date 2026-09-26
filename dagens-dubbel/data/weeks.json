@@ -3,6 +3,6 @@
   "stakeDefault": 5,
   "budgetMin": 35,
   "budgetMax": 45,
-  "tipsters": ["Kent", "Lotta", "Benita"],
+  "tipsters": ["Kent", "Lotta", "Benita", "Bengt"],
   "weeks": ["260926"]
 }
