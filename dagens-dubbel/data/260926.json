@@ -80,6 +80,21 @@
       "scratch": null,
       "coupon": null,
       "note": "Fylls i när tipset kommer."
+    },
+    {
+      "person": "Bengt",
+      "status": "saknas",
+      "submitted": null,
+      "cost": null,
+      "stake": 5,
+      "rows": null,
+      "system": null,
+      "dd1": [],
+      "dd2": [],
+      "names": {},
+      "scratch": null,
+      "coupon": null,
+      "note": "Kompis som också tippar lördagens DD. Hästar fylls i när tipset kommer."
     }
   ]
 }
