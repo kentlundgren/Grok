@@ -65,22 +65,18 @@
     return res.json();
   }
 
-  // Här skedde en uppdatering 2026-09-26: ställningen är dold tills ett lopp är kört.
-  // Annars fyller fyra kort med 0 träff hela första skärmen på mobilen.
+  // Här skedde en uppdatering 2026-09-26: nollorna förklaras med antal färdigspelade omgångar.
   function renderStandings(index, weeks) {
-    const closed = weeks.filter(function (w) {
+    var closed = weeks.filter(function (w) {
       return w.result && w.result.status === "klar";
     });
-    if (!closed.length) {
-      stallningEl.classList.add("hidden");
-      stallningEl.classList.remove("grid");
-      stallningEl.innerHTML = "";
-      return;
+    var names = index.tipsters || [];
+    var lead = omgangPhrase(closed.length);
+    if (!closed.length && names.length) {
+      lead += ". Därför står det 0 på " + joinSv(names);
     }
-    stallningEl.classList.remove("hidden");
-    stallningEl.classList.add("grid");
-    stallningEl.innerHTML = (index.tipsters || []).map(function (name) {
-      const stats = tally(name, closed);
+    var cards = names.map(function (name) {
+      var stats = tally(name, closed);
       return (
         '<div class="bg-white border border-stone-200 rounded-xl p-3 sm:p-4">' +
         '<p class="text-xs sm:text-sm text-stone-500">' + escapeHtml(name) + "</p>" +
@@ -90,6 +86,14 @@
         "</div>"
       );
     }).join("");
+    stallningEl.innerHTML =
+      '<p class="text-sm text-stone-700">' + escapeHtml(lead) + ".</p>" +
+      '<div class="grid grid-cols-2 lg:grid-cols-4 gap-3">' + cards + "</div>";
+  }
+
+  function omgangPhrase(n) {
+    if (n === 1) return "1 färdigspelad omgång";
+    return n + " färdigspelade omgångar";
   }
 
   function tally(name, closedWeeks) {
