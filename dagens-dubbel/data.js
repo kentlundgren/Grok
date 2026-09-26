@@ -1,7 +1,4 @@
-/* Snapshot av data/ så index.html fungerar både på GitHub Pages och som lokal fil.
- * Källa att redigera: data/weeks.json + data/ÅÅMMDD.json.
- * När du ändrar JSON: uppdatera även denna fil, annars ser file:// den gamla snapshoten.
- */
+/* Snapshot av data/ så index.html fungerar både på GitHub Pages och som lokal fil. */
 window.DD_INDEX = {
   title: "Familjens lördags-DD",
   stakeDefault: 5,
@@ -18,7 +15,7 @@ window.DD_WEEKS = [
     weekday: "lördag",
     track: "Åby",
     start: "17:13",
-    comment: "SM-lördag. 6 Epic Kronos struken i DD-2 (hovböld).",
+    comment: "SM-lördag. 6 Epic Kronos struken i DD-2. Benita och Bengt har 6 kvar på kupongen.",
     races: {
       dd1: { label: "V85-7 / DD-1", distance: "2140 m volt", startApprox: "17:13" },
       dd2: { label: "V85-8 / DD-2 Svenskt Mästerskap", distance: "2640 m auto", startApprox: "17:35" }
@@ -45,48 +42,57 @@ window.DD_WEEKS = [
       },
       {
         person: "Lotta",
-        status: "saknas",
-        submitted: null,
-        cost: null,
+        status: "inlämnad",
+        submitted: "2026-09-26 12:06",
+        cost: 45,
         stake: 5,
-        rows: null,
-        system: null,
-        dd1: [],
-        dd2: [],
-        names: {},
+        rows: 9,
+        system: "3x3",
+        dd1: [3, 6, 12],
+        dd2: [2, 7, 12],
+        names: {
+          dd1: { "3": "Miss Magdalena", "6": "Run Rhapsody Run", "12": "Just for Show" },
+          dd2: { "2": "Kentucky River", "7": "High on Pepper", "12": "Fighter Kronos" }
+        },
         scratch: null,
         coupon: null,
-        note: "Fylls i när tipset kommer."
+        note: ""
       },
       {
         person: "Benita",
-        status: "saknas",
-        submitted: null,
-        cost: null,
+        status: "inlämnad",
+        submitted: "2026-09-26 12:06",
+        cost: 30,
         stake: 5,
-        rows: null,
-        system: null,
-        dd1: [],
-        dd2: [],
-        names: {},
-        scratch: null,
+        rows: 6,
+        system: "3x2",
+        dd1: [12, 13, 15],
+        dd2: [2, 6],
+        names: {
+          dd1: { "12": "Just for Show", "13": "Merlene Boko", "15": "Halina S.H." },
+          dd2: { "2": "Kentucky River", "6": "Epic Kronos" }
+        },
+        scratch: "6 Epic Kronos struken i DD-2 — kvar 2 Kentucky River",
         coupon: null,
-        note: "Fylls i när tipset kommer."
+        note: "3x2 = 30 kr."
       },
       {
         person: "Bengt",
-        status: "saknas",
-        submitted: null,
-        cost: null,
+        status: "inlämnad",
+        submitted: "2026-09-26 12:06",
+        cost: 20,
         stake: 5,
-        rows: null,
-        system: null,
-        dd1: [],
-        dd2: [],
-        names: {},
-        scratch: null,
+        rows: 4,
+        system: "4x1",
+        dd1: [7, 12, 13, 15],
+        dd2: [6],
+        names: {
+          dd1: { "7": "C'est Ma Course", "12": "Just for Show", "13": "Merlene Boko", "15": "Halina S.H." },
+          dd2: { "6": "Epic Kronos" }
+        },
+        scratch: "6 Epic Kronos struken i DD-2 — enda hästen i andra loppet",
         coupon: null,
-        note: "Kompis som också tippar lördagens DD. Hästar fylls i när tipset kommer."
+        note: "4x1 = 20 kr. DD-2 är bara den strukna 6."
       }
     ]
   }
