@@ -117,7 +117,7 @@
       '<p class="text-sm ' + statusClass + '">' + escapeHtml(statusLabel) + "</p>" +
       "</div>" +
       (week.comment ? '<p class="mt-3 text-stone-700">' + escapeHtml(week.comment) + "</p>" : "") +
-      '<div class="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-4">' +
+      '<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">' +
       (week.tips || []).map(function (tip) { return tipCard(week, tip); }).join("") +
       "</div>";
   }
