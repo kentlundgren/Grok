@@ -4,7 +4,7 @@
   "weekday": "lördag",
   "track": "Åby",
   "start": "17:13",
-  "comment": "SM-lördag. 6 Epic Kronos struken i DD-2. Bengt bytte till 2 Kentucky River. Benita har 6 kvar på kupongen.",
+  "comment": "SM-lördag. 6 Epic Kronos struken i DD-2. Bengt bytte till 2 Kentucky River. Benita bytte till 10 A Fair Day.",
   "races": {
     "dd1": {
       "label": "V85-7 / DD-1",
@@ -283,7 +283,7 @@
       ],
       "dd2": [
         2,
-        6
+        10
       ],
       "names": {
         "dd1": {
@@ -293,12 +293,12 @@
         },
         "dd2": {
           "2": "Kentucky River",
-          "6": "Epic Kronos"
+          "10": "A Fair Day"
         }
       },
-      "scratch": "6 Epic Kronos struken i DD-2 — kvar 2 Kentucky River",
+      "scratch": "6 Epic Kronos struken i DD-2 — bytt till 10 A Fair Day",
       "coupon": null,
-      "note": "3x2 = 30 kr."
+      "note": "3x2 = 30 kr. Här skedde en uppdatering 2026-09-26: DD-2 byttes från strukna 6 Epic Kronos till 10 A Fair Day."
     },
     {
       "person": "Bengt",

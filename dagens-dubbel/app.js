@@ -7,7 +7,8 @@
   const selectEl = document.getElementById("week-select");
   const viewEl = document.getElementById("week-view");
   // Här skedde en uppdatering 2026-09-26: cache-nyckel efter analysrutan under korten.
-  const CACHE_BUST = "20260926g";
+  // Här skedde en uppdatering 2026-09-26: cache-nyckel efter Benitas byte 6 → 10 i DD-2.
+  const CACHE_BUST = "20260926h";
 
   function showError(err) {
     const msg = err && err.message ? err.message : String(err);
