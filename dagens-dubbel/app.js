@@ -6,7 +6,8 @@
   const stallningEl = document.getElementById("stallning");
   const selectEl = document.getElementById("week-select");
   const viewEl = document.getElementById("week-view");
-  const CACHE_BUST = "20260926e";
+  // Här skedde en uppdatering 2026-09-26: cache-nyckel efter Bengts byte 6 → 2 i DD-2.
+  const CACHE_BUST = "20260926f";
 
   function showError(err) {
     const msg = err && err.message ? err.message : String(err);

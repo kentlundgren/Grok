@@ -15,7 +15,7 @@ window.DD_WEEKS = [
     weekday: "lördag",
     track: "Åby",
     start: "17:13",
-    comment: "SM-lördag. 6 Epic Kronos struken i DD-2. Benita och Bengt har 6 kvar på kupongen.",
+    comment: "SM-lördag. 6 Epic Kronos struken i DD-2. Bengt bytte till 2 Kentucky River. Benita har 6 kvar på kupongen.",
     races: {
       dd1: { label: "V85-7 / DD-1", distance: "2140 m volt", startApprox: "17:13" },
       dd2: { label: "V85-8 / DD-2 Svenskt Mästerskap", distance: "2640 m auto", startApprox: "17:35" }
@@ -85,14 +85,15 @@ window.DD_WEEKS = [
         rows: 4,
         system: "4x1",
         dd1: [7, 12, 13, 15],
-        dd2: [6],
+        // Här skedde en uppdatering 2026-09-26: DD-2 byttes från strukna 6 till 2 Kentucky River.
+        dd2: [2],
         names: {
           dd1: { "7": "C'est Ma Course", "12": "Just for Show", "13": "Merlene Boko", "15": "Halina S.H." },
-          dd2: { "6": "Epic Kronos" }
+          dd2: { "2": "Kentucky River" }
         },
-        scratch: "6 Epic Kronos struken i DD-2 — enda hästen i andra loppet",
+        scratch: "6 Epic Kronos struken i DD-2 — bytt till 2 Kentucky River",
         coupon: null,
-        note: "4x1 = 20 kr. DD-2 är bara den strukna 6."
+        note: "4x1 = 20 kr. Här skedde en uppdatering 2026-09-26: DD-2 byttes från strukna 6 Epic Kronos till 2 Kentucky River."
       }
     ]
   }
