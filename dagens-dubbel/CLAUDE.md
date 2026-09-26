@@ -1,34 +1,42 @@
 # CLAUDE.md — dagens-dubbel
 
-Detta är en **statisk** GitHub Pages-app i `kentlundgren/Grok`. Ingen npm-build, ingen bundler.
+Statisk GitHub Pages-app i `kentlundgren/Grok`. Ingen npm-build.
 
 ## Live
 
 https://kentlundgren.github.io/Grok/dagens-dubbel/
 
+## Ägarens arbetssätt (Claude-kompassen)
+
+https://kentlundgren.github.io/AI-teknik/AI_modeller/Claude/olika_Claude_modeller/#claude
+
+- Fas 0: kort krav innan större omskrivning (vad/varför), inte kod först.
+- Fas 1: den här filen + `../AGENTS.md` + ev. SKILL.md styr *hur*.
+- Fas 2: yta = Cursor och/eller Claude Code. Grok får scaffolde, inte äga leveransen.
+- Fas 3: ägaren commit:ar och pushar i Cursor om hen inte uttryckligen bett agenten göra det. Live = GitHub Pages.
+
+Du är tankepartner, inte ställföreträdande avsändare.
+
 ## Vad du får ändra
 
-- Ny lördag: `data/ÅÅMMDD.json` + mapp `ÅÅMMDD/` + rad i `data/weeks.json`.
-- Resultat: fältet `result` i veckans JSON.
-- Tips från Lotta, Benita eller Bengt: samma JSON, objekten med `"person": "Lotta"` / `"Benita"` / `"Bengt"`. Sätt `status` till `"inlämnad"`.
+- Ny lördag: `data/ÅÅMMDD.json` + mapp `ÅÅMMDD/` + rad i `data/weeks.json` + spegling i `data.js`.
+- Resultat: fältet `result` i veckans JSON **och** i `data.js`.
+- Tips: objekten `Kent` / `Lotta` / `Benita` / `Bengt`. `status` → `"inlämnad"` bara när startnummer finns.
 - Utseende: `index.html`, `stil.css`, `app.js`.
-
-Tippare just nu: Kent, Lotta, Benita, Bengt. Listan styrs av `data/weeks.json` → `tipsters`.
 
 ## Vad du inte ska göra utan att fråga
 
-- Införa Vite/React/Next utan att användaren bett om det.
-- Committa och pusha (ägaren gör det i Cursor, om hen inte uttryckligen ber agenten).
-- Ta bort utfall eller skriva påhittade vinnare.
+- Vite / React / Next.
+- Commit/push (standard: ägaren i Cursor).
+- Påhittade vinnare eller påhittade hästar.
 
-## Konventioner i Grok-repot
+## Konventioner
 
-- Svenska i UI och kommentarer.
-- Relativa sökvägar (`data/weeks.json`, inte `/Grok/...`).
-- Gul bakgrund (`bg-yellow-200` / `#fef9c3`) på fält som väntar på ifyllnad.
-- README i en mapp med live-sida ska ha live-länken högst upp.
+- Svenska i UI.
+- Relativa sökvägar.
+- Gult = väntar på ifyllnad.
+- README ska ha live-länken högst upp.
 
-## Relaterat skill
+## Relaterat
 
-`skills/lordags-dagens-dubbel/SKILL.md` — hur lördagens 35–45 kr-system tas fram.
-Källkopian som Grok själv kör ligger globalt hos användaren; denna mapp är repo-kopian så Cursor och Claude Code ser samma instruktioner.
+`skills/lordags-dagens-dubbel/SKILL.md` — hur 35–45 kr-systemet tas fram.
