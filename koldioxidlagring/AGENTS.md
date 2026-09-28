@@ -26,6 +26,7 @@ Läs skillet innan du svarar på sakfrågor eller ändrar innehåll på sidorna.
 | `norden.html` | Northern Lights och Greensand, kostnad från bioeldat kraftvärme |
 | `oresund-karta.html` | Varför Öresund-kartan visar mätlinjer, inte ett lager |
 | `sydvastra-ostersjon.html` | Djupseismik och maringeologi söder om Skåne |
+| `sydost-gotland.html` | Faluddensandstenen sydost om Gotland, Nore-borrningarna och tillståndet som stoppar undersökningarna (tillagd 2026-09-28) |
 | `helhet.js` + `helhet.css` | Navigeringsrad, "Visste du …"-rutan på startsidan, Läs vidare, kedjan "Så hänger det ihop" samt GitHub-hörna och teknik-modal på alla sidor |
 | `karta.js` + `karta.css` | Leaflet-kartan på de två kartsidorna (`<div class="sgu-karta" data-vy="skane">`, vyerna är `skane`, `oresund` och `bada`) |
 | `data/sgu-karta.js` | SGU:s öppna data (CC0) omräknad till WGS 84: områden, mätlinjer och borrhål. Genererad, redigera inte för hand |

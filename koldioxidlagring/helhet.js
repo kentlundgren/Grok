@@ -46,6 +46,18 @@
         { fil: "kalkyl.html", varfor: "Varför reservoaren måste ligga där koldioxiden blir superkritisk." }
       ]
     },
+    // Här skedde en uppdatering 2026-09-28: sidan om SGU:s andra kandidatområde.
+    {
+      fil: "sydost-gotland.html",
+      kort: "Sydost om Gotland",
+      titel: "Faluddensandstenen sydost om Gotland",
+      tema: "plats",
+      relaterat: [
+        { fil: "sydvastra-ostersjon.html", varfor: "Det andra kandidatområdet, med en tredjedel av kapaciteten." },
+        { fil: "index.html#hav", varfor: "Varför lagen bara tillåter lagring till havs." },
+        { fil: "norden.html", varfor: "Lagren i Nordsjön som redan tar emot koldioxid med fartyg." }
+      ]
+    },
     {
       fil: "oresund-karta.html",
       kort: "Öresund-kartan",
@@ -114,7 +126,7 @@
     {
       fraga: "Var kan koldioxiden lagras?",
       svar: "Två kandidatområden till havs. Öresund är inte ett av dem.",
-      lankar: ["index.html#omraden", "sydvastra-ostersjon.html", "oresund-karta.html"]
+      lankar: ["index.html#omraden", "sydost-gotland.html", "sydvastra-ostersjon.html", "oresund-karta.html"]
     },
     {
       fraga: "Vad kräver fysiken och lagen?",
@@ -254,7 +266,7 @@
   var GITHUB_URL = "https://github.com/kentlundgren/Grok/tree/main/koldioxidlagring";
 
   var TEKNIK = [
-    { rubrik: "HTML5", text: "Sju statiska sidor, en HTML-fil per ämne. Inget ramverk." },
+    { rubrik: "HTML5", text: "Åtta statiska sidor, en HTML-fil per ämne. Inget ramverk." },
     { rubrik: "Tailwind via CDN", text: "Layouten kommer från Tailwind som laddas från CDN. Inget byggsteg." },
     { rubrik: "helhet.js och helhet.css", text: "En gemensam lista över sidorna ritar navigeringsraden, Visste du-rutan, Läs vidare, kedjan på startsidan och de här hörnknapparna." },
     // Här skedde en uppdatering 2026-09-28: kortet om kartorna.

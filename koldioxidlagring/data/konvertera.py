@@ -152,7 +152,9 @@ print("km per år", {k: round(v) for k, v in langd_km.items()})
 
 # --- Borrhål -----------------------------------------------------------------
 c = sqlite3.connect(os.path.join(BAS, r"borrhal_ccs\borrhal_ccs.gpkg"))
-NYCKEL = {"Lilla Beddinge-1", "Skåre-1", "Faludden-1", "Faludden-2", "Faludden-3", "Nore-1"}
+# SGU:s fyra nya kärnborrningar i regeringsuppdraget (RR 2026:06): två på Gotland 2023, två i Skåne 2024–2025.
+# Här skedde en uppdatering 2026-09-28: Nore-2 in, de äldre Faludden-hålen ut.
+NYCKEL = {"Lilla Beddinge-1", "Skåre-1", "Nore-1", "Nore-2"}
 borrhal = []
 for namn, e, nn, l, start, op in c.execute(
         "select borehole_name, easting, northing, drilled_length, drilled_date_start, operators from borehole"):

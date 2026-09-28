@@ -7,6 +7,7 @@
 - **Norge och Danmark:** [https://kentlundgren.github.io/Grok/koldioxidlagring/norden.html](https://kentlundgren.github.io/Grok/koldioxidlagring/norden.html)
 - **Öresund-kartan:** [https://kentlundgren.github.io/Grok/koldioxidlagring/oresund-karta.html](https://kentlundgren.github.io/Grok/koldioxidlagring/oresund-karta.html)
 - **Sydvästra Östersjön:** [https://kentlundgren.github.io/Grok/koldioxidlagring/sydvastra-ostersjon.html](https://kentlundgren.github.io/Grok/koldioxidlagring/sydvastra-ostersjon.html)
+- **Sydost om Gotland:** [https://kentlundgren.github.io/Grok/koldioxidlagring/sydost-gotland.html](https://kentlundgren.github.io/Grok/koldioxidlagring/sydost-gotland.html)
 
 Anteckningar från SGU-föredraget, BECCS-kalkyl, nordisk jämförelse, beviljade bidrag och EU ETS.
 

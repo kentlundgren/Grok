@@ -7,7 +7,7 @@
  * Data: data/sgu-karta.js (window.SGU_KARTA), genererad ur SGU:s öppna data.
  * Bakgrund: OpenStreetMap via Leaflet (laddas från CDN i HTML-filen).
  * Kartan ritas i varje element med klassen "sgu-karta". Attributet data-vy
- * väljer startläge: "skane" (söder om Skåne), "oresund" eller "bada".
+ * väljer startläge: "skane" (söder om Skåne), "oresund", "gotland" eller "bada".
  * Ingen ES2023-funktionalitet används.
  */
 (function () {
@@ -21,8 +21,8 @@
     skane: [[55.05, 12.6], [55.75, 14.5]],
     oresund: [[55.3, 12.45], [56.15, 13.15]],
     // Här skedde en uppdatering 2026-09-28: vy för SGU:s andra kandidatområde, sydost om Gotland.
-    gotland: [[55.6, 16.4], [58.5, 19.6]],
-    bada: [[54.9, 12.4], [58.2, 19.6]]
+    gotland: [[55.3, 15.7], [59.0, 20.5]],
+    bada: [[54.9, 12.4], [59.0, 20.5]]
   };
 
   // En färg per mätår, så att man ser hur undersökningen byggdes ut.
@@ -69,8 +69,8 @@
       },
       onEachFeature: function (f, lager) {
         lager.bindPopup(popup(f.properties));
-        // Fasta etiketter bara för de nya hålen i Skåne; hålen på Gotland ligger för tätt.
-        var fast = f.properties.namn === "Lilla Beddinge-1" || f.properties.namn === "Skåre-1";
+        // Nore-1 och Nore-2 ligger 250 m isär, så bara Nore-1 får en fast etikett.
+        var fast = ["Lilla Beddinge-1", "Skåre-1", "Nore-1"].indexOf(f.properties.namn) !== -1;
         lager.bindTooltip(f.properties.namn, { permanent: fast, direction: "right", className: "sgu-etikett" });
       }
     }).addTo(karta);

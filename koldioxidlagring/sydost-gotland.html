@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sydost om Gotland – kan koldioxid lagras här?</title>
+  <!-- Här skedde en uppdatering 2026-09-28: sidan skapades om SGU:s andra kandidatområde, Gotland och sydöstra Östersjön -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="helhet.css?v=4" />
+  <script src="helhet.js?v=4" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="karta.css?v=1" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="data/sgu-karta.js?v=2" defer></script>
+  <script src="karta.js?v=3" defer></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <main class="max-w-3xl mx-auto px-4 py-10 space-y-6">
+    <p class="text-sm"><a class="text-sky-700 underline" href="./">Tillbaka till översikten</a></p>
+    <h1 class="text-3xl font-bold text-sky-900">Sydost om Gotland: Faluddensandstenen</h1>
+    <p>Det här är SGU:s andra kandidatområde, <em>Gotland och sydöstra Östersjön</em>. Det är det större av de två: modelleringen ger mer än 300 megaton, tre gånger så mycket som <a class="text-sky-700 underline" href="sydvastra-ostersjon.html">söder om Skåne</a>. Området ligger i Sveriges ekonomiska zon och gränsar från nordost till sydost mot Lettland, Litauen, Ryssland och Polen (<a class="text-sky-700 underline" href="https://resource.sgu.se/dokument/publikation/rr/rr202606rapport/RR2606.pdf">SGU, 2026a</a>).</p>
+
+    <h2 class="text-xl font-semibold text-sky-800" id="karta">Var SGU har undersökt</h2>
+    <p>Kartan är ritad med SGU:s öppna data för koldioxidlagring (<a class="text-sky-700 underline" href="https://www.sgu.se/produkter-och-tjanster/geologiska-data/samhallsplanering--geologiska-data/koldioxidlagring/">SGU, 2026b</a>). Klicka på ett borrhål eller ett område för mer information. Lagren kan slås av och på uppe till höger i kartan.</p>
+    <div>
+      <div class="sgu-karta" data-vy="gotland" role="region" aria-label="Karta över SGU:s undersökningsområde kring Gotland och sydöstra Östersjön"></div>
+      <div class="sgu-vyknappar">
+        <button type="button" data-sgu-vy="gotland">Sydost om Gotland</button>
+        <button type="button" data-sgu-vy="skane">Söder om Skåne</button>
+        <button type="button" data-sgu-vy="bada">Båda områdena</button>
+      </div>
+      <div class="sgu-teckenforklaring">
+        <p><span class="prov" style="border:2px dashed #0c4a6e;background:rgba(56,189,248,.15)"></span>SGU:s område av primärt intresse för koldioxidlagring, <em>Delar av Östersjön med Öland och Gotland</em>.</p>
+        <p><span class="prov" style="background:#16a34a;border-radius:999px;width:.7rem;height:.7rem"></span>SGU:s två kärnborrningar från 2023, Nore-1 och Nore-2, på Sudret längst söderut på Gotland. De ligger 250 m från varandra.</p>
+        <p><span class="prov" style="background:#475569;border-radius:999px;width:.45rem;height:.45rem"></span>Äldre borrhål, de flesta på Gotland från 1970- och 1980-talen. Lagret är avslaget från början.</p>
+      </div>
+    </div>
+    <p>Till havs finns inga nya mätlinjer på kartan. SGU har inte fått göra några nya marina undersökningar här (se <a class="text-sky-700 underline" href="#tillstand">tillståndet</a> nedan). I stället har SGU bearbetat om mer än 5&nbsp;400 km äldre seismik från 1960- till 1990-talet och fått tillgång till ytterligare 1&nbsp;300 km redan bearbetade data.</p>
+
+    <h2 class="text-xl font-semibold text-sky-800">Reservoaren: Faluddensandstenen</h2>
+    <p>Berggrunden består av gamla sedimentära lager från kambrium, ordovicium och silur, avsatta för 539–419 miljoner år sedan. Tidigare studier pekade ut tre möjliga reservoarer: sandsten i Viklauledet, Närsandstenen och Faluddenledet. Nore-borrningarna, tillsammans med äldre data, visade att bara <strong>Faluddensandstenen</strong> uppfyller kraven.</p>
+    <ul class="list-disc pl-6 space-y-1">
+      <li>Porositet 10–20 procent och permeabilitet 100–2&nbsp;000 millidarcy. Det är en god reservoar.</li>
+      <li>21,3 m respektive 23,1 m tjock i borrningarna på södra Gotland. Tjockleken ökar till cirka 50 m i den sydöstra delen av den svenska ekonomiska zonen. SGU:s minimikrav är 20 m.</li>
+      <li>Mycket homogen över hela området, med bara några tunna lager av lersten.</li>
+      <li>Samma lager i Lettland har liknande egenskaper.</li>
+    </ul>
+    <p>Sandstenen sluttar svagt uppåt mot väster och kilar ut mellan två tätare lager. Den räknas i stort som ett sluttande, öppet vattenförande lager, med några mindre kupolformade strukturer.</p>
+
+    <h2 class="text-xl font-semibold text-sky-800">Borrningarna på Gotland</h2>
+    <p>SGU borrade 2023 två kärnhål, Nore-1 och Nore-2, cirka 800 m djupa, på Sudret. Borrningarna gjordes på land, där reservoaren ligger så djupt som möjligt, eftersom det är dyrare och svårare att kärnborra till havs. Enligt rapporten har provtagning i närliggande dricksvattenbrunnar inte visat någon påverkan från borrningen eller återställningen.</p>
+
+    <h2 class="text-xl font-semibold text-sky-800">Modelleringen: mer än 300 megaton</h2>
+    <p>Det kanadensiska företaget GLJ har modellerat reservoaren åt SGU. Tolv brunnar i den djupare delen av området injicerar vardera 1 miljon ton per år i 30 år. Det ger mer än 300 megaton utan att trycket i reservoaren stiger för mycket. Plymen från varje brunn blir i genomsnitt 19 × 15 km efter 500 år. Nio scenarier med olika permeabilitet och andel rörlig koldioxid har körts.</p>
+    <p>Jämfört med <a class="text-sky-700 underline" href="index.html#arnager">Arnagergrönsanden</a> söder om Skåne ger Faluddensandstenen tre gånger så stor kapacitet, främst för att geologin är enklare. Nackdelen är läget: reservoaren ligger långt från land. Injektionen kräver anläggningar till havs, och koldioxiden måste fram med fartyg eller rörledning. Lagen tillåter ändå bara <a class="text-sky-700 underline" href="index.html#hav">lagring till havs</a>.</p>
+
+    <h2 class="text-xl font-semibold text-sky-800" id="tillstand">Tillståndet som stoppar undersökningarna</h2>
+    <p>SGU ansökte i december 2024 om Natura 2000-tillstånd för geofysiska undersökningar i området. Länsstyrelsen gav i september 2025 tillstånd för begränsade delar och satte villkor som bland annat förbjuder frekvenser under 200&nbsp;kHz. Enligt SGU går det då inte att göra några undersökningar för koldioxidlagring i det område som bedöms vara mest intressant. SGU överklagade till Mark- och miljödomstolen i januari 2026. När rapporten kom i mars 2026 var överklagan inte avgjord.</p>
+
+    <h2 class="text-xl font-semibold text-sky-800">Kan koldioxid lagras här?</h2>
+    <p><strong>Geologiskt: ja, som kandidat.</strong> Det är det största av Sveriges två kandidatområden. Reservoaren är homogen och tillräckligt tjock.</p>
+    <p><strong>I drift: nej, inte nu.</strong> Inget lager är godkänt eller byggt. SGU anser att det behövs ny djupseismik, maringeologiska undersökningar, fler djupborrningar och tester av takbergets hållfasthet och av hur berget reagerar med koldioxid. Så länge tillståndet står fast kan ingen göra de undersökningarna på svensk sida.</p>
+
+    <section>
+      <h2 class="text-xl font-semibold text-sky-800">Källförteckning</h2>
+      <div class="mt-3 space-y-3 text-sm leading-relaxed">
+        <p>OpenStreetMap-bidragsgivare (2026) <em>OpenStreetMap</em>. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright</a> (Hämtad 28 september 2026). <em>(Bakgrundskartan.)</em></p>
+        <p>Sveriges geologiska undersökning (2026a) <em>Geologisk lagring av koldioxid i Sverige</em>. RR 2026:06. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://resource.sgu.se/dokument/publikation/rr/rr202606rapport/RR2606.pdf">https://resource.sgu.se/dokument/publikation/rr/rr202606rapport/RR2606.pdf</a> (Hämtad 28 september 2026). <em>(Faluddensandstenens egenskaper, Nore-borrningarna, GLJ:s modellering, tillståndet och SGU:s rekommendationer, s. 5–6, 11 och 14–24.)</em></p>
+        <p>Sveriges geologiska undersökning (2026b) <em>Koldioxidlagring – geologiska data</em>. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.sgu.se/produkter-och-tjanster/geologiska-data/samhallsplanering--geologiska-data/koldioxidlagring/">https://www.sgu.se/produkter-och-tjanster/geologiska-data/samhallsplanering--geologiska-data/koldioxidlagring/</a> (Hämtad 28 september 2026). <em>(Kartans data: områden av primärt intresse och Borrhål CCS, omräknade från SWEREF 99 TM.)</em></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

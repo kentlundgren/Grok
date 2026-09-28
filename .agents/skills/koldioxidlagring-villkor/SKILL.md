@@ -58,8 +58,10 @@ Skillet gäller för Cursor, Claude Code och Grok. Originalet ligger här. `.cla
 
 | Område | Reservoar | Modellerad kapacitet | Svagheter |
 | --- | --- | --- | --- |
-| Sydöstra Östersjön (sydost om Gotland) | Faluddensandstenen | Mer än 300 megaton på 30 år | Kräver fler undersökningar |
+| Sydöstra Östersjön (sydost om Gotland) | Faluddensandstenen: porositet 10–20 %, 21–23 m i Nore-1 och Nore-2, cirka 50 m längre sydost | Mer än 300 megaton på 30 år (12 brunnar à 1 Mt/år) | Långt från land; länsstyrelsens tillstånd (september 2025) stoppar i praktiken nya marina undersökningar, överklagat |
 | Skåne och sydvästra Östersjön | Arnagergrönsanden | Drygt 100 megaton på 30 år | Tunn i Lilla Beddinge, svårborrad i Skåre, djupare kandidater oborrade, plym mot Danmark |
+
+Detaljer: `koldioxidlagring/sydost-gotland.html` och `sydvastra-ostersjon.html`.
 
 SGU:s slutsats i RR 2026:06 (mars 2026): båda områdena är tänkbara, bedömd kapacitet minst 5 miljoner ton per år, mer undersökningar krävs, en anläggning ligger minst ett decennium fram.
 
