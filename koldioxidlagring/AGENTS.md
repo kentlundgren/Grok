@@ -26,6 +26,16 @@ Läs skillet innan du svarar på sakfrågor eller ändrar innehåll på sidorna.
 | `norden.html` | Northern Lights och Greensand, kostnad från bioeldat kraftvärme |
 | `oresund-karta.html` | Varför Öresund-kartan visar mätlinjer, inte ett lager |
 | `sydvastra-ostersjon.html` | Djupseismik och maringeologi söder om Skåne |
+| `helhet.js` + `helhet.css` | Navigeringsrad, Läs vidare och kedjan "Så hänger det ihop" på alla sidor |
+
+## Korsreferenser
+
+Här skedde en uppdatering 2026-09-28: sidorna kopplades ihop via `helhet.js`.
+
+- Listan `SIDOR` i `helhet.js` styr navigeringen, läsordningen (föregående och nästa) och vilka sidor som visas under Läs vidare.
+- Ny sida: lägg in den i `SIDOR` med tema och två eller tre relaterade sidor, och lägg in `helhet.css` och `helhet.js` i `<head>` som på de andra sidorna.
+- Nytt ankare på startsidan som ska länkas: ge avsnittet ett `id` och lägg in namnet i `AVSNITT`.
+- Länka i löptexten när en sida nämner något som en annan sida förklarar.
 
 ## Regler i mappen
 

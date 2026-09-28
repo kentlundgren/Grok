@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Koldioxidlagring i Sverige – anteckningar från SGU</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Här skedde en uppdatering 2026-09-28: navigering, Läs vidare och kedjan kommer från helhet.js -->
+  <link rel="stylesheet" href="helhet.css?v=1" />
+  <script src="helhet.js?v=1" defer></script>
 </head>
 <body class="bg-slate-50 text-slate-800">
   <header class="bg-sky-900 text-white">
@@ -15,7 +18,13 @@
     </div>
   </header>
   <main class="max-w-3xl mx-auto px-4 py-10 space-y-10">
-    <section>
+    <!-- Här skedde en uppdatering 2026-09-28: helhet.js fyller #helhet-karta med kedjan av frågor och sidor -->
+    <section id="helhet">
+      <h2 class="text-2xl font-semibold text-sky-900">Så hänger det ihop</h2>
+      <p class="mt-3">Sidorna svarar på fem frågor i tur och ordning. Börja här, eller hoppa direkt till den fråga du undrar över.</p>
+      <div id="helhet-karta"></div>
+    </section>
+    <section id="mal">
       <h2 class="text-2xl font-semibold text-sky-900">Uppdragets mål</h2>
       <p class="mt-3">Formuleringen kommer från SGU:s regleringsbrev (<a class="text-sky-700 underline" href="https://www.sgu.se/om-sgu/verksamhet/regeringsuppdrag/aktuella-regeringsuppdrag">SGU, u.å.a</a>).</p>
       <ol class="mt-4 list-decimal list-inside space-y-3">
@@ -29,19 +38,19 @@
       <ul class="mt-4 list-disc list-inside space-y-2">
         <li>EU ska vara klimatneutralt 2050. Sverige ska ha nettonollutsläpp 2045.</li>
         <li>CCS är en pusselbit för processutsläpp som är svåra att ta bort på annat sätt.</li>
-        <li>Många svenska företag räknar i dag med lagring i Norge eller Danmark.</li>
+        <li>Många svenska företag räknar i dag med lagring i <a class="text-sky-700 underline" href="norden.html">Norge eller Danmark</a>.</li>
         <li>SGU:s argument: egen lagring skulle sänka transportkostnader och gynna svenskt näringsliv.</li>
       </ul>
     </section>
-    <section>
+    <section id="djup">
       <h2 class="text-2xl font-semibold text-sky-900">Varför djupare än 800 meter?</h2>
-      <p class="mt-3">Koldioxid ska lagras där den blir <em>superkritisk</em> (cirka 31&nbsp;°C och 74 bar). Det nås ungefär 800 meter under ytan. Då tar den cirka 300 gånger mindre plats än vid ytan.</p>
+      <p class="mt-3">Koldioxid ska lagras där den blir <em>superkritisk</em> (cirka 31&nbsp;°C och 74 bar). Det nås ungefär 800 meter under ytan. Då tar den cirka 300 gånger mindre plats än vid ytan. Mer om varför gränsen är en tumregel finns på <a class="text-sky-700 underline" href="kalkyl.html">kalkylsidan</a>.</p>
     </section>
-    <section>
+    <section id="hav">
       <h2 class="text-2xl font-semibold text-sky-900">Varför bara till havs?</h2>
       <p class="mt-3">Det är en juridisk gräns. <a class="text-sky-700 underline" href="https://lagen.nu/2014:21">Förordning (2014:21)</a> 10&nbsp;§ tillåter bara lagring i ekonomisk zon och i territorialhav som inte ingår i fastigheter. Direktivet tillåter landlager, men Sverige byggde aldrig det regelverket (<a class="text-sky-700 underline" href="https://regeringen.se/rattsliga-dokument/proposition/2012/03/prop.-201112125">prop. 2011/12:125</a>). SGU menar att förbudet även träffar injektionsanläggningar på land.</p>
     </section>
-    <section>
+    <section id="omraden">
       <h2 class="text-2xl font-semibold text-sky-900">De två områdena</h2>
       <div class="mt-6 grid sm:grid-cols-2 gap-4">
         <article class="bg-white rounded-xl border border-slate-200 p-5">
@@ -51,10 +60,11 @@
         <article class="bg-white rounded-xl border border-slate-200 p-5">
           <h3 class="font-semibold text-sky-800">Skåne och sydvästra Östersjön</h3>
           <p class="mt-2 text-sm">Arnagergrönsanden. Mer än 100 megaton över 30 år.</p>
+          <p class="mt-2 text-sm"><a class="text-sky-700 underline" href="sydvastra-ostersjon.html">Kartorna över området</a> · <a class="text-sky-700 underline" href="oresund-karta.html">varför inte Öresund</a></p>
         </article>
       </div>
     </section>
-    <section>
+    <section id="arnager">
       <h2 class="text-2xl font-semibold text-sky-900">Arnagergrönsanden och borrningarna i Skåne</h2>
       <p class="mt-3">Föredragets bilder om sydvästra Östersjön handlar om reservoarbergarten och om vad de nya kärnborrningarna träffade.</p>
       <h3 class="mt-6 text-lg font-semibold text-sky-800">Vad grönsand är</h3>
@@ -76,7 +86,7 @@
       </div>
       <p class="mt-6">Takberget ser bra ut. Reservoaren finns. Men den är tunn i Lilla Beddinge, svårborrad i Skåre, och de djupare kandidaterna är oborrade i de nya hålen. Därför ger modelleringen bara drygt 100 megaton på 30 år här, mot mer än 300 megaton i Faludden.</p>
     </section>
-    <section>
+    <section id="slutsats">
       <h2 class="text-2xl font-semibold text-sky-900">Vad SGU kom fram till i mars 2026</h2>
       <p class="mt-3">Båda områdena är tänkbara. Bedömd kapacitet minst 5 miljoner ton per år. Ytterligare undersökningar krävs. En anläggning ligger minst ett decennium fram (<a class="text-sky-700 underline" href="https://resource.sgu.se/dokument/publikation/rr/rr202606rapport/RR2606.pdf">RR 2026:06</a>).</p>
     </section>

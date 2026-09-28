@@ -22,3 +22,5 @@ Anteckningar från SGU-föredraget, BECCS-kalkyl, nordisk jämförelse, beviljad
 ## Teknik
 
 Statisk HTML med Tailwind CSS via CDN. Ingen build.
+
+Här skedde en uppdatering 2026-09-28: sidorna hänger ihop via `helhet.js` och `helhet.css`. Varje sida får en navigeringsrad överst och en Läs vidare-ruta längst ner, och startsidan visar hur sidorna svarar på fem frågor i tur och ordning.

@@ -104,5 +104,5 @@ Avsluta med en mening om vad som saknas innan platsen kan bli ett lager.
 
 - Statisk HTML med Tailwind via CDN, ingen build. Följ sidornas befintliga stil: `bg-sky-900`-header, `max-w-3xl`, källförteckning sist.
 - Varje sida slutar med en källförteckning där den synliga URL:en är klickbar och har hämtdatum.
-- Ny sida: länka från `koldioxidlagring/README.md` med live-adress.
+- Ny sida: länka från `koldioxidlagring/README.md` med live-adress, och lägg in den i `SIDOR` i `koldioxidlagring/helhet.js` så att den kommer med i navigeringen och Läs vidare.
 - Committa och pusha inte utan uttrycklig begäran.
