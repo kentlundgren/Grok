@@ -246,7 +246,92 @@
     return TEMAN.filter(function (t) { return t.id === id; })[0].namn;
   }
 
+  /*
+   * Här skedde en uppdatering 2026-09-28: GitHub-hörna nere till vänster och
+   * teknik-modal nere till höger, samma par som i dagens-dubbel och AI-teknik.
+   * Modalens kort ska bara beskriva sådant som är sant om de här sidorna.
+   */
+  var GITHUB_URL = "https://github.com/kentlundgren/Grok/tree/main/koldioxidlagring";
+
+  var TEKNIK = [
+    { rubrik: "HTML5", text: "Sju statiska sidor, en HTML-fil per ämne. Inget ramverk." },
+    { rubrik: "Tailwind via CDN", text: "Layouten kommer från Tailwind som laddas från CDN. Inget byggsteg." },
+    { rubrik: "helhet.js och helhet.css", text: "En gemensam lista över sidorna ritar navigeringsraden, Läs vidare, kedjan på startsidan och de här hörnknapparna." },
+    { rubrik: "Kalkylen", text: "Räknaren på kalkylsidan är vanlig JavaScript som räknar om när ett fält ändras." },
+    { rubrik: "GitHub Pages", text: "Sidorna publiceras direkt från repot. Kent committar och pushar i Cursor." }
+  ];
+
+  var METOD = [
+    { rubrik: "Underlag", text: "Anteckningar från SGU:s föredrag om regeringsuppdraget, kompletterade med SGU RR 2026:06 och myndighets- och företagskällor." },
+    { rubrik: "Källor", text: "De längre sidorna har en alfabetisk källförteckning i Harvardstil med hämtdatum. De två kartsidorna anger källorna på en rad. Priser och driftstatus gäller vid hämtdatumet." },
+    { rubrik: "AI som verktyg", text: "Kent har skrivit sidorna med hjälp av AI-agenter. Slutsatserna bygger på källorna, inte på modellens egna antaganden." }
+  ];
+
+  function kortGrupp(rubrik, kort) {
+    var del = el("div", "hh-modal-del");
+    del.appendChild(el("h3", "hh-modal-rubrik", rubrik));
+    var grid = el("div", "hh-tech-grid");
+    kort.forEach(function (k) {
+      var c = el("div", "hh-tech-card");
+      c.appendChild(el("h4", null, k.rubrik));
+      c.appendChild(el("p", null, k.text));
+      grid.appendChild(c);
+    });
+    del.appendChild(grid);
+    return del;
+  }
+
+  function byggHorn() {
+    var gh = lank(GITHUB_URL, "hh-corner hh-corner-left", "{ } GitHub");
+    gh.target = "_blank";
+    gh.rel = "noopener";
+    gh.setAttribute("aria-label", "Källkoden på GitHub");
+
+    var knapp = el("button", "hh-corner hh-corner-right", "</> teknik");
+    knapp.type = "button";
+    knapp.setAttribute("aria-label", "Tekniköversikt");
+
+    var overlay = el("div", "hh-modal-overlay");
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "Hur sidorna är byggda");
+    var modal = el("div", "hh-modal");
+    var stang = el("button", "hh-modal-close", "×");
+    stang.type = "button";
+    stang.setAttribute("aria-label", "Stäng");
+    modal.appendChild(stang);
+    modal.appendChild(el("h2", "hh-modal-titel", "Hur sidorna är byggda"));
+    var slut = /[.?!]$/.test(aktuell.titel) ? "" : ".";
+    modal.appendChild(el("p", "hh-modal-lead", "Du läser: " + aktuell.titel + slut));
+    modal.appendChild(kortGrupp("Tekniken", TEKNIK));
+    modal.appendChild(kortGrupp("Metoden", METOD));
+    var fot = el("p", "hh-modal-foot");
+    fot.appendChild(document.createTextNode("Källkoden: "));
+    var fotLank = lank(GITHUB_URL, null, "github.com/kentlundgren/Grok");
+    fotLank.target = "_blank";
+    fotLank.rel = "noopener";
+    fot.appendChild(fotLank);
+    modal.appendChild(fot);
+    overlay.appendChild(modal);
+
+    // Öppna med knappen. Stäng med krysset, Escape eller klick utanför rutan.
+    function oppna() { overlay.classList.add("show"); stang.focus(); }
+    function stangModal() { overlay.classList.remove("show"); knapp.focus(); }
+    knapp.addEventListener("click", oppna);
+    stang.addEventListener("click", stangModal);
+    overlay.addEventListener("click", function (e) { if (e.target === overlay) stangModal(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && overlay.classList.contains("show")) stangModal();
+    });
+
+    document.body.appendChild(gh);
+    document.body.appendChild(knapp);
+    document.body.appendChild(overlay);
+    document.body.classList.add("hh-med-horn");
+  }
+
   byggNav();
   byggLasVidare();
   byggKarta();
+  byggHorn();
 })();

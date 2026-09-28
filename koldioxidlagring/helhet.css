@@ -153,5 +153,86 @@
 }
 .hh-chip:hover { background: #bae6fd; }
 
+/*
+ * Här skedde en uppdatering 2026-09-28: GitHub-hörna och teknik-modal.
+ * Knapparna är dämpade i vila och tydligare vid hover, så att de inte
+ * konkurrerar med innehållet.
+ */
+body.hh-med-horn { padding-bottom: 3.5rem; } /* Knapparna täcker inte sidfoten. */
+.hh-corner {
+  position: fixed;
+  bottom: 14px;
+  z-index: 20;
+  opacity: 0.55;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font: inherit;
+  font-size: 0.75rem;
+  color: #334155;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s;
+}
+.hh-corner:hover,
+.hh-corner:focus-visible { opacity: 1; background: #fff; color: #0c4a6e; }
+.hh-corner-left { left: 14px; }
+.hh-corner-right { right: 14px; }
+
+.hh-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30; /* Över hörnknapparna. */
+  background: rgba(8, 47, 73, 0.55);
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+.hh-modal-overlay.show { display: flex; }
+.hh-modal {
+  position: relative;
+  background: #fff;
+  color: #1e293b;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 36rem;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 1.5rem 1.6rem;
+}
+.hh-modal-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #64748b;
+  cursor: pointer;
+}
+.hh-modal-titel { font-size: 1.25rem; font-weight: 700; color: #0c4a6e; }
+.hh-modal-lead { font-size: 0.875rem; color: #64748b; margin-top: 0.25rem; }
+.hh-modal-del { margin-top: 1.1rem; }
+.hh-modal-rubrik { font-size: 0.95rem; font-weight: 600; color: #0c4a6e; }
+.hh-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+.hh-tech-card {
+  background: #f0f9ff;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+}
+.hh-tech-card h4 { font-size: 0.875rem; font-weight: 600; color: #0369a1; margin-bottom: 0.2rem; }
+.hh-tech-card p { font-size: 0.82rem; line-height: 1.5; color: #1e293b; }
+.hh-modal-foot { font-size: 0.82rem; color: #64748b; margin-top: 1.1rem; }
+.hh-modal-foot a { color: #0369a1; text-decoration: underline; }
+
 /* Ankarmål hamnar inte under kanten när man hoppar till ett avsnitt. */
 section[id] { scroll-margin-top: 1rem; }

@@ -26,7 +26,7 @@ Läs skillet innan du svarar på sakfrågor eller ändrar innehåll på sidorna.
 | `norden.html` | Northern Lights och Greensand, kostnad från bioeldat kraftvärme |
 | `oresund-karta.html` | Varför Öresund-kartan visar mätlinjer, inte ett lager |
 | `sydvastra-ostersjon.html` | Djupseismik och maringeologi söder om Skåne |
-| `helhet.js` + `helhet.css` | Navigeringsrad, Läs vidare och kedjan "Så hänger det ihop" på alla sidor |
+| `helhet.js` + `helhet.css` | Navigeringsrad, Läs vidare, kedjan "Så hänger det ihop" samt GitHub-hörna och teknik-modal på alla sidor |
 
 ## Korsreferenser
 

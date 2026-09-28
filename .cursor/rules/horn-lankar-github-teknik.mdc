@@ -1,0 +1,35 @@
+---
+description: Diskret GitHub-hörna nere till vänster och teknik-modal nere till höger på alla HTML-sidor i Grok-repot
+alwaysApply: true
+---
+
+# Hörnknappar: GitHub och teknik-modal
+
+Varje HTML-sida i repot ska ha **båda** hörnknapparna, tillagda i samma leverans och utan att fråga. Det gäller nya sidor och befintliga sidor som saknar dem.
+
+- Nere **till vänster:** `{ } GitHub`, en länk till mappen på GitHub: `https://github.com/kentlundgren/Grok/tree/main/<mapp>`. Öppnas i ny flik.
+- Nere **till höger:** `</> teknik`, en knapp som öppnar en modal om hur sidan är byggd.
+
+## Utseende
+
+- `position: fixed; bottom: 14px;` till vänster `left: 14px`, till höger `right: 14px`.
+- Diskret: liten text, rundad kant, dämpad i vila (opacity cirka 0,55) och tydligare vid hover. Knapparna får aldrig konkurrera med innehållet.
+- Ge `body` padding i nederkant så att knapparna inte täcker sidfoten.
+- Modalen ligger över knapparna (högre `z-index`). Den stängs med krysset, med Escape och med klick utanför rutan. Använd `addEventListener`, inte inline-`onclick`.
+
+## Modalens innehåll
+
+- Två avsnitt: **Tekniken** och **Metoden**.
+- Bara sanna uppgifter om just den sidan. Inga påhittade bibliotek, promptantal eller citat.
+- Avsluta med en länk till källkoden på GitHub.
+
+## Referenser i repot
+
+- `dagens-dubbel/`: knapparna i `index.html` och klasserna `.corner-btn`, `.github-btn`, `.tech-btn` och `.modal-overlay` i `stil.css`. Live: https://kentlundgren.github.io/Grok/dagens-dubbel/
+- `koldioxidlagring/`: knapparna ritas av `helhet.js` och stylas i `helhet.css`, så att alla sidor i mappen får dem från ett ställe. Live: https://kentlundgren.github.io/Grok/koldioxidlagring/
+
+## Varför regeln finns här
+
+Samma regel finns i Claudes globala skill `kent-bygg-sidor` (regel 6) och i `AI-teknik/.cursor/rules/`. Cursor och Grok ser inte de filerna när de arbetar i det här repot, och därför saknades knapparna i `koldioxidlagring/`.
+
+Här skedde en uppdatering 2026-09-28: regeln lades till.
