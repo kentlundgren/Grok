@@ -20,6 +20,15 @@ Tanken är att undersöka hur Grok Build kan användas för att:
 
 Det finns ett [GitHub-projekt knutet till detta repo](https://github.com/users/kentlundgren/projects/4), där arbetet och uppgifterna i projektet kan följas.
 
+### ML + LLM (compound AI för controlling)
+
+Skill och aktörskatalog för att kombinera ML-artefakter med generativ AI — tal från modell/kalkyl, text från LLM.
+
+- **Mapp:** [ML_LLM/](ML_LLM/)
+- **Skill:** [ML_LLM/SKILL.md](ML_LLM/SKILL.md)
+- **Aktörer och länkar:** [ML_LLM/references/aktorer-processer.md](ML_LLM/references/aktorer-processer.md)
+- Globalt Grok-skill-namn: `ml-llm-kombination`
+
 ### 📊 Vårdköer i Sverige 2022–2026
 
 En interaktiv, faktabaserad analys av hur vårdköerna (väntetider enligt vårdgarantin) i Sverige har utvecklats.
@@ -60,4 +69,4 @@ Förberedelsematerial inför en intervju till controller på Försäkringskassan
 
 ---
 
-*Senast uppdaterat: 26 september 2026*
+*Senast uppdaterat: 28 september 2026*
