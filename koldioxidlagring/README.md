@@ -24,3 +24,9 @@ Anteckningar från SGU-föredraget, BECCS-kalkyl, nordisk jämförelse, beviljad
 Statisk HTML med Tailwind CSS via CDN. Ingen build.
 
 Här skedde en uppdatering 2026-09-28: sidorna hänger ihop via `helhet.js` och `helhet.css`. Varje sida får en navigeringsrad överst och en Läs vidare-ruta längst ner, och startsidan visar hur sidorna svarar på fem frågor i tur och ordning.
+
+Här skedde en uppdatering 2026-09-28:
+
+- De två kartsidorna har en interaktiv karta (Leaflet och OpenStreetMap) med SGU:s öppna data: undersökningsområden, mätlinjer per år och borrhål. Datan skapas av `data/konvertera.py`.
+- Startsidan har rutan "Visste du …" med fem påståenden som byts var sjätte sekund.
+- Startsidan har länkförhandsvisning (Open Graph) med bilden `og-bild.jpg`.

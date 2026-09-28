@@ -256,14 +256,16 @@
   var TEKNIK = [
     { rubrik: "HTML5", text: "Sju statiska sidor, en HTML-fil per ämne. Inget ramverk." },
     { rubrik: "Tailwind via CDN", text: "Layouten kommer från Tailwind som laddas från CDN. Inget byggsteg." },
-    { rubrik: "helhet.js och helhet.css", text: "En gemensam lista över sidorna ritar navigeringsraden, Läs vidare, kedjan på startsidan och de här hörnknapparna." },
+    { rubrik: "helhet.js och helhet.css", text: "En gemensam lista över sidorna ritar navigeringsraden, Visste du-rutan, Läs vidare, kedjan på startsidan och de här hörnknapparna." },
+    // Här skedde en uppdatering 2026-09-28: kortet om kartorna.
+    { rubrik: "Kartorna", text: "Leaflet med OpenStreetMap som bakgrund. Områden, mätlinjer och borrhål är SGU:s öppna data (CC0), omräknade från SWEREF 99 TM till latitud och longitud i data/sgu-karta.js." },
     { rubrik: "Kalkylen", text: "Räknaren på kalkylsidan är vanlig JavaScript som räknar om när ett fält ändras." },
     { rubrik: "GitHub Pages", text: "Sidorna publiceras direkt från repot. Kent committar och pushar i Cursor." }
   ];
 
   var METOD = [
     { rubrik: "Underlag", text: "Anteckningar från SGU:s föredrag om regeringsuppdraget, kompletterade med SGU RR 2026:06 och myndighets- och företagskällor." },
-    { rubrik: "Källor", text: "De längre sidorna har en alfabetisk källförteckning i Harvardstil med hämtdatum. De två kartsidorna anger källorna på en rad. Priser och driftstatus gäller vid hämtdatumet." },
+    { rubrik: "Källor", text: "Varje sida har en alfabetisk källförteckning i Harvardstil med hämtdatum. Priser och driftstatus gäller vid hämtdatumet." },
     { rubrik: "AI som verktyg", text: "Kent har skrivit sidorna med hjälp av AI-agenter. Slutsatserna bygger på källorna, inte på modellens egna antaganden." }
   ];
 
@@ -330,7 +332,94 @@
     document.body.classList.add("hh-med-horn");
   }
 
+  /*
+   * Här skedde en uppdatering 2026-09-28: "Visste du att …" på startsidan.
+   * Fem påståenden byts automatiskt var sjätte sekund. Bytet pausas när
+   * muspekaren eller tangentbordsfokus är i rutan, och sker inte alls om
+   * läsaren har valt minskad rörelse i sitt system.
+   * Varje påstående måste gå att belägga på sidan det länkar till.
+   */
+  var VISSTE = [
+    { text: "att koldioxid blir superkritisk ungefär 800 meter under ytan och då tar upp till 300 gånger mindre plats än vid ytan?", lank: "kalkyl.html" },
+    { text: "att svensk lag bara tillåter lagring av koldioxid till havs, fast EU:s direktiv också tillåter lager på land?", lank: "index.html#hav" },
+    { text: "att SGU:s kärnborrning Lilla Beddinge-1 vid Trelleborg bara hittade cirka 20 meter grönsand, precis SGU:s minimikrav för en reservoar?", lank: "index.html#arnager" },
+    { text: "att Stockholm Exergi får drygt 20 miljarder kronor i statligt stöd, men lagrar sin koldioxid i Norge?", lank: "bidrag.html" },
+    { text: "att koldioxiden från två av sju modellerade brunnar söder om Skåne kan nå danskt område efter 500 år?", lank: "sydvastra-ostersjon.html" }
+  ];
+  var VISSTE_MS = 6000;
+
+  function byggVisste() {
+    var fast = document.getElementById("visste-du-att");
+    if (!fast) return;
+
+    var ruta = el("div", "hh-visste");
+    ruta.setAttribute("aria-roledescription", "karusell");
+    ruta.setAttribute("aria-label", "Visste du att");
+    ruta.appendChild(el("p", "hh-visste-rubrik", "Visste du …"));
+    var text = el("p", "hh-visste-text");
+    text.setAttribute("aria-live", "polite");
+    ruta.appendChild(text);
+    var mer = lank("#", "hh-visste-mer", "Läs mer →");
+    ruta.appendChild(mer);
+
+    var rad = el("div", "hh-visste-rad");
+    var fore = el("button", "hh-visste-pil", "‹");
+    fore.type = "button";
+    fore.setAttribute("aria-label", "Föregående påstående");
+    var prickar = el("div", "hh-visste-prickar");
+    var nasta = el("button", "hh-visste-pil", "›");
+    nasta.type = "button";
+    nasta.setAttribute("aria-label", "Nästa påstående");
+    rad.appendChild(fore);
+    rad.appendChild(prickar);
+    rad.appendChild(nasta);
+    ruta.appendChild(rad);
+
+    var knappar = VISSTE.map(function (v, i) {
+      var p = el("button", "hh-visste-prick");
+      p.type = "button";
+      p.setAttribute("aria-label", "Påstående " + (i + 1) + " av " + VISSTE.length);
+      p.addEventListener("click", function () { visa(i); starta(); });
+      prickar.appendChild(p);
+      return p;
+    });
+
+    var nu = 0;
+    var timer = null;
+    var pausad = false;
+    var minskadRorelse = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function visa(i) {
+      nu = (i + VISSTE.length) % VISSTE.length;
+      text.classList.remove("hh-visste-in");
+      void text.offsetWidth; // Startar om tonings-animationen.
+      text.textContent = VISSTE[nu].text;
+      text.classList.add("hh-visste-in");
+      mer.href = VISSTE[nu].lank;
+      knappar.forEach(function (k, j) {
+        if (j === nu) k.setAttribute("aria-current", "true");
+        else k.removeAttribute("aria-current");
+      });
+    }
+
+    function starta() {
+      clearInterval(timer);
+      if (minskadRorelse) return;
+      timer = setInterval(function () { if (!pausad) visa(nu + 1); }, VISSTE_MS);
+    }
+
+    fore.addEventListener("click", function () { visa(nu - 1); starta(); });
+    nasta.addEventListener("click", function () { visa(nu + 1); starta(); });
+    ["mouseenter", "focusin"].forEach(function (h) { ruta.addEventListener(h, function () { pausad = true; }); });
+    ["mouseleave", "focusout"].forEach(function (h) { ruta.addEventListener(h, function () { pausad = false; }); });
+
+    fast.appendChild(ruta);
+    visa(0);
+    starta();
+  }
+
   byggNav();
+  byggVisste();
   byggLasVidare();
   byggKarta();
   byggHorn();

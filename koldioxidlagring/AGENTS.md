@@ -26,7 +26,16 @@ Läs skillet innan du svarar på sakfrågor eller ändrar innehåll på sidorna.
 | `norden.html` | Northern Lights och Greensand, kostnad från bioeldat kraftvärme |
 | `oresund-karta.html` | Varför Öresund-kartan visar mätlinjer, inte ett lager |
 | `sydvastra-ostersjon.html` | Djupseismik och maringeologi söder om Skåne |
-| `helhet.js` + `helhet.css` | Navigeringsrad, Läs vidare, kedjan "Så hänger det ihop" samt GitHub-hörna och teknik-modal på alla sidor |
+| `helhet.js` + `helhet.css` | Navigeringsrad, "Visste du …"-rutan på startsidan, Läs vidare, kedjan "Så hänger det ihop" samt GitHub-hörna och teknik-modal på alla sidor |
+| `karta.js` + `karta.css` | Leaflet-kartan på de två kartsidorna (`<div class="sgu-karta" data-vy="skane">`, vyerna är `skane`, `oresund` och `bada`) |
+| `data/sgu-karta.js` | SGU:s öppna data (CC0) omräknad till WGS 84: områden, mätlinjer och borrhål. Genererad, redigera inte för hand |
+| `data/konvertera.py` | Skapar `data/sgu-karta.js` ur SGU:s GeoPackage-filer. Instruktion överst i filen |
+| `og-bild.jpg` | Bilden för länkförhandsvisning av startsidan (1200 × 630 pixlar) |
+
+Här skedde en uppdatering 2026-09-28: kartfilerna, Visste du-rutan och länkförhandsvisningen lades till.
+
+- **Visste du:** de fem påståendena står i listan `VISSTE` i `helhet.js`. Varje påstående måste gå att belägga på sidan det länkar till.
+- **Kartorna:** kartsidorna visar sedimentekolodets mätlinjer. Djupseismik, förkastningar och gasutsippringar finns i SGU:s multistrålepaket och visas inte.
 
 ## Korsreferenser
 

@@ -234,5 +234,71 @@ body.hh-med-horn { padding-bottom: 3.5rem; } /* Knapparna täcker inte sidfoten.
 .hh-modal-foot { font-size: 0.82rem; color: #64748b; margin-top: 1.1rem; }
 .hh-modal-foot a { color: #0369a1; text-decoration: underline; }
 
+/* Här skedde en uppdatering 2026-09-28: rutan "Visste du …" på startsidan. */
+.hh-visste {
+  background: linear-gradient(135deg, #0c4a6e, #0369a1);
+  color: #fff;
+  border-radius: 1rem;
+  padding: 1.25rem 1.4rem 1rem;
+  box-shadow: 0 8px 24px rgba(8, 47, 73, 0.18);
+}
+.hh-visste-rubrik {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #bae6fd;
+}
+.hh-visste-text {
+  margin-top: 0.4rem;
+  font-size: 1.2rem;
+  line-height: 1.45;
+  font-weight: 600;
+  min-height: 3.5em; /* Rutan hoppar inte när texten är olika lång. */
+}
+.hh-visste-in { animation: hh-tona-in 0.5s ease; }
+@keyframes hh-tona-in {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: none; }
+}
+.hh-visste-mer {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: #e0f2fe;
+  text-decoration: underline;
+}
+.hh-visste-rad {
+  margin-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.hh-visste-pil {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.hh-visste-pil:hover { background: rgba(255, 255, 255, 0.25); }
+.hh-visste-prickar { display: flex; gap: 0.45rem; }
+.hh-visste-prick {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+.hh-visste-prick[aria-current="true"] { background: #fff; }
+@media (prefers-reduced-motion: reduce) {
+  .hh-visste-in { animation: none; }
+}
+
 /* Ankarmål hamnar inte under kanten när man hoppar till ett avsnitt. */
 section[id] { scroll-margin-top: 1rem; }

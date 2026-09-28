@@ -6,14 +6,33 @@
   <title>Öresund-kartan – datainsamling, inte lager</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Här skedde en uppdatering 2026-09-28: navigering och Läs vidare kommer från helhet.js -->
-  <link rel="stylesheet" href="helhet.css?v=2" />
-  <script src="helhet.js?v=2" defer></script>
+  <link rel="stylesheet" href="helhet.css?v=3" />
+  <script src="helhet.js?v=3" defer></script>
+  <!-- Här skedde en uppdatering 2026-09-28: interaktiv karta med SGU:s öppna data i stället för föredragsbilden -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <link rel="stylesheet" href="karta.css?v=1" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="data/sgu-karta.js?v=1" defer></script>
+  <script src="karta.js?v=1" defer></script>
 </head>
 <body class="bg-slate-50 text-slate-800">
   <main class="max-w-3xl mx-auto px-4 py-10 space-y-6">
     <p class="text-sm"><a class="text-sky-700 underline" href="./">Tillbaka till översikten</a></p>
     <h1 class="text-3xl font-bold text-sky-900">Kartan över Öresund är inte en lagringsplats</h1>
-    <p>Bilden <em>Datainsamling till havs</em> med kartan “CCS MAK Västra Skåne 2025” visar gröna linjer i Öresund, mellan Helsingborg–Helsingør och söderut mot Malmö och Köpenhamn. Det är <strong>mätlinjer</strong>, inte ett beslutat lager.</p>
+    <!-- Här skedde en uppdatering 2026-09-28: texten beskrev en föredragsbild som inte finns på sidan. Kartan nedan visar SGU:s egna mätlinjer. -->
+    <p>Föredragsbilden <em>Datainsamling till havs</em> med kartan “CCS MAK Västra Skåne 2025” visade linjer i Öresund, mellan Helsingborg–Helsingør och söderut mot Malmö och Köpenhamn. Det är <strong>mätlinjer</strong>, inte ett beslutat lager. Kartan nedan visar samma sorts linjer ur SGU:s öppna data (<a class="text-sky-700 underline" href="https://www.sgu.se/produkter-och-tjanster/geologiska-data/samhallsplanering--geologiska-data/koldioxidlagring/">SGU, 2026b</a>).</p>
+    <div>
+      <div class="sgu-karta" data-vy="oresund" role="region" aria-label="Karta över SGU:s mätlinjer i Öresund och söder om Skåne"></div>
+      <div class="sgu-vyknappar">
+        <button type="button" data-sgu-vy="oresund">Öresund</button>
+        <button type="button" data-sgu-vy="skane">Söder om Skåne</button>
+        <button type="button" data-sgu-vy="bada">Båda områdena</button>
+      </div>
+      <div class="sgu-teckenforklaring">
+        <p><span class="prov" style="background:#0369a1"></span><span class="prov" style="background:#c2410c"></span><span class="prov" style="background:#7c3aed"></span>Mätlinjer med sedimentekolod 2023, 2024 och 2025. Lagren kan slås av och på uppe till höger i kartan.</p>
+        <p><span class="prov" style="border:2px dashed #0c4a6e;background:rgba(56,189,248,.15)"></span>SGU:s område av primärt intresse för koldioxidlagring.</p>
+      </div>
+    </div>
     <ul class="list-disc list-inside space-y-2">
       <li>Reflektionsseismik – bild av sediment och berggrund på djupet</li>
       <li>Multibeam echosounder – detaljerad karta över havsbotten</li>
@@ -22,8 +41,15 @@
     <p>SGU samlade 2023–2025 in mer än 3 400 km moderna reflektionsseismiska profiler söder om Skåne och i Öresund. Multistråleekolodet täcker söder om Skånes sydkust ut till EEZ och väster om Skånes kust ut till territorialgränsen mot Danmark.</p>
     <p><strong>Är det aktuellt att lagra koldioxid där kartan visar?</strong> Nej. De två utpekade kandidaterna ligger <a class="text-sky-700 underline" href="sydvastra-ostersjon.html">söder om Skåne</a> och <a class="text-sky-700 underline" href="index.html#omraden">sydost om Gotland</a>. Öresund är för grunt för <a class="text-sky-700 underline" href="kalkyl.html">800-meterskravet</a>, är farled och gränsar mot Danmark. Kartan visar var fartyget har kört för att se hur berggrunden fortsätter från Skåne under vattnet.</p>
     <p>I modelleringen av Arnagergrönsanden riskerar koldioxidplymerna från två av sju injektionsbrunnar att röra sig in på danskt område efter 500 år. Därför behövs data fram till territorialgränsen – inte för att lagra i sundet, utan för att veta var plymen slutar.</p>
-    <p>Helsingborg syns på kartan också för att <a class="text-sky-700 underline" href="bidrag.html">Öresundskrafts Filbornaverk</a> planerar avskiljning. Lagringen därifrån är tänkt i Nordsjön, inte under Öresund.</p>
-    <p class="text-sm text-slate-600">Källor: SGU RR 2026:06; SGU:s öppna CCS-data.</p>
+    <p>Helsingborg syntes på föredragets karta också för att <a class="text-sky-700 underline" href="bidrag.html">Öresundskrafts Filbornaverk</a> planerar avskiljning. Lagringen därifrån är tänkt i Nordsjön, inte under Öresund.</p>
+    <section>
+      <h2 class="text-xl font-semibold text-sky-800">Källförteckning</h2>
+      <div class="mt-3 space-y-3 text-sm leading-relaxed">
+        <p>OpenStreetMap-bidragsgivare (2026) <em>OpenStreetMap</em>. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.openstreetmap.org/copyright">https://www.openstreetmap.org/copyright</a> (Hämtad 28 september 2026). <em>(Bakgrundskartan.)</em></p>
+        <p>Sveriges geologiska undersökning (2026a) <em>Geologisk lagring av koldioxid i Sverige</em>. RR 2026:06. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://resource.sgu.se/dokument/publikation/rr/rr202606rapport/RR2606.pdf">https://resource.sgu.se/dokument/publikation/rr/rr202606rapport/RR2606.pdf</a> (Hämtad 28 september 2026). <em>(Mätningarna 2023–2025 och plymens utbredning mot Danmark.)</em></p>
+        <p>Sveriges geologiska undersökning (2026b) <em>Koldioxidlagring – geologiska data</em>. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.sgu.se/produkter-och-tjanster/geologiska-data/samhallsplanering--geologiska-data/koldioxidlagring/">https://www.sgu.se/produkter-och-tjanster/geologiska-data/samhallsplanering--geologiska-data/koldioxidlagring/</a> (Hämtad 28 september 2026). <em>(Kartans mätlinjer och områden, öppna data under CC0.)</em></p>
+      </div>
+    </section>
   </main>
 </body>
 </html>

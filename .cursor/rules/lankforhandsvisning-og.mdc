@@ -1,0 +1,56 @@
+---
+description: Länkförhandsvisning (Open Graph och Twitter Cards) med egen bild på startsidan i varje mapp i Grok-repot
+alwaysApply: true
+---
+
+# Länkförhandsvisning (Open Graph)
+
+När en länk delas på X, Facebook, LinkedIn, Messenger eller Slack hämtar tjänsten en rubrik, en kort text och en bild ur sidans `<head>`. Tekniken heter **Open Graph** (`og:`-taggar). X läser dessutom sina egna **Twitter Cards** (`twitter:`-taggar).
+
+## Omfattning just nu
+
+- **Startsidan i varje mapp** (`<mapp>/index.html`) ska ha länkförhandsvisning med en egen bild som anknyter till ämnet.
+- Lägg till den när en ny mapp skapas, och när en befintlig startsida saknar den. Fråga Kent om bildens motiv om det inte är självklart.
+- **Kan byggas ut:** undersidor kan få egna taggar och bilder senare. Gör det bara när Kent ber om det.
+
+## Bilden
+
+- 1200 × 630 pixlar (1,91:1), JPG eller PNG, helst under 300 kB.
+- Sparas i mappen som `og-bild.jpg`.
+- Motivet anknyter till ämnet. Sidans rubrik får stå i bilden. Viktig text hålls borta från kanterna, eftersom vissa tjänster beskär.
+- En AI-genererad bild ska inte se ut som ett foto av något som inte finns. Välj illustration.
+
+## Taggarna
+
+Alla adresser ska vara **absoluta** (`https://kentlundgren.github.io/Grok/<mapp>/...`). Relativa sökvägar fungerar inte, eftersom tjänsten läser sidan utifrån.
+
+```html
+<meta name="description" content="…" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="sv_SE" />
+<meta property="og:url" content="https://kentlundgren.github.io/Grok/<mapp>/" />
+<meta property="og:title" content="…" />
+<meta property="og:description" content="…" />
+<meta property="og:image" content="https://kentlundgren.github.io/Grok/<mapp>/og-bild.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="…" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="…" />
+<meta name="twitter:description" content="…" />
+<meta name="twitter:image" content="https://kentlundgren.github.io/Grok/<mapp>/og-bild.jpg" />
+<meta name="twitter:image:alt" content="…" />
+```
+
+- Titeln högst cirka 60 tecken och beskrivningen högst cirka 160, annars kapas de.
+- Beskrivningen får bara lova det som sidan faktiskt innehåller.
+
+## Testa efter push
+
+Förhandsvisningen fungerar först när sidan och bilden är publicerade på GitHub Pages. Tjänsterna sparar gamla förhandsvisningar. Testa med [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) eller [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/). De hämtar även om sidan.
+
+## Referens i repot
+
+- `koldioxidlagring/index.html` och `koldioxidlagring/og-bild.jpg`. Live: https://kentlundgren.github.io/Grok/koldioxidlagring/
+
+Här skedde en uppdatering 2026-09-28: regeln lades till.

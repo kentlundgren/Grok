@@ -140,6 +140,7 @@ Kent vill **själv** committa och pusha till GitHub via Cursor, om han inte uttr
 7. **README-inledning:** live-länk högst upp: `https://kentlundgren.github.io/Grok/<mapp>/`
 8. Läs `dagens-dubbel/README.md` och `dagens-dubbel/CLAUDE.md` innan större ändringar i den appen. Inför inte Vite/React där utan att fråga.
 9. **Hörnknappar på alla HTML-sidor:** diskret `{ } GitHub` nere till vänster (länk till mappen på GitHub) och `</> teknik` nere till höger (modal med avsnitten Tekniken och Metoden). Lägg till båda utan att fråga. Detaljer i `.cursor/rules/horn-lankar-github-teknik.mdc`. Här skedde en uppdatering 2026-09-28: punkten lades till.
+10. **Länkförhandsvisning (Open Graph):** startsidan i varje mapp ska ha `og:`- och `twitter:`-taggar med absoluta adresser och en egen bild `og-bild.jpg` på 1200 × 630 pixlar. Det kan byggas ut till undersidor om Kent ber om det. Detaljer i `.cursor/rules/lankforhandsvisning-og.mdc`. Här skedde en uppdatering 2026-09-28: punkten lades till.
 
 ## Referenser
 
