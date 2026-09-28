@@ -20,6 +20,8 @@
   var VYER = {
     skane: [[55.05, 12.6], [55.75, 14.5]],
     oresund: [[55.3, 12.45], [56.15, 13.15]],
+    // Här skedde en uppdatering 2026-09-28: vy för SGU:s andra kandidatområde, sydost om Gotland.
+    gotland: [[55.6, 16.4], [58.5, 19.6]],
     bada: [[54.9, 12.4], [58.2, 19.6]]
   };
 
@@ -31,7 +33,8 @@
   }
 
   function rita(behallare) {
-    var karta = L.map(behallare, { scrollWheelZoom: false });
+    // zoomSnap 0.5 låter vyerna fylla kartan tätare än hela zoomsteg.
+    var karta = L.map(behallare, { scrollWheelZoom: false, zoomSnap: 0.5 });
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 14,
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> · Data: <a href="https://www.sgu.se/produkter-och-tjanster/geologiska-data/samhallsplanering--geologiska-data/koldioxidlagring/">SGU</a>'
