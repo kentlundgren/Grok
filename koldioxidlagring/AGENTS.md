@@ -52,6 +52,7 @@ Här skedde en uppdatering 2026-09-28: sidorna kopplades ihop via `helhet.js`.
 - Skilj på kandidat, undersökt, godkänt och i drift. Inget svenskt lager är godkänt.
 - Hitta inte på siffror. Daterade uppgifter (ETS-pris, driftstatus, stöd) ska ha hämtdatum och kontrolleras innan de uppdateras.
 - Källförteckning i Harvardstil enligt `kent-referens`. Den synliga URL:en ska vara klickbar.
+- Hänvisa inte till föredragsbilder som om läsaren ser dem ("bilden visar", "föredragets karta"). Skriv vad SGU sa eller visade i föredraget. Här skedde en uppdatering 2026-09-28: punkten lades till.
 - Belopp med hela ord: "miljoner kronor", "miljarder kronor".
 - Ny sida: lägg till live-länken i `README.md`.
 - Fråga om en befintlig sida ska uppdateras eller om en ny `_verX`-fil ska skapas.
