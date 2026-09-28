@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BECCS-kalkyl – kostnad per kWh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-sky-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 py-8">
+      <p class="text-sky-200 text-sm"><a class="underline" href="./">Koldioxidlagring</a></p>
+      <h1 class="text-3xl font-bold mt-2">Varför djupare än 800 meter – och vad kostar det per kWh?</h1>
+      <p class="mt-3 text-sky-100">Uppskattning för bioenergi med avskiljning och lagring (BECCS) vid svenskt kraftvärme. Inte en offert.</p>
+    </div>
+  </header>
+  <main class="max-w-3xl mx-auto px-4 py-10 space-y-10">
+    <section>
+      <h2 class="text-2xl font-semibold text-sky-900">Varför större djup än 800 meter?</h2>
+      <p class="mt-3">Koldioxid blir <em>superkritisk</em> vid cirka 31&nbsp;°C och 74 bar. Med vanlig geotermisk gradient och hydrostatiskt tryck nås det ungefär 800 meter under ytan (<a class="text-sky-700 underline" href="https://www.annualreviews.org/content/journals/10.1146/annurev-chembioeng-093019-075720">Ringrose et al., 2021</a>; <a class="text-sky-700 underline" href="https://www.princeton.edu/~celia/cv4papers/Bruant%20et%20al%20-%20ES&amp;T%20June%202002.html">Bruant et al., 2002</a>).</p>
+      <ul class="mt-4 list-disc list-inside space-y-2">
+        <li>Som gas vid ytan tar CO<sub>2</sub> stor plats. Som superkritisk vätska tar den ungefär 30–300 gånger mindre volym, beroende på hur man räknar referensytan.</li>
+        <li>Densiteten hoppar från gasnivå till några hundra kilo per kubikmeter. I Nordsjön ligger den ofta runt 600–700 kg/m³ på lagringsdjup.</li>
+        <li>800 m är en tumregel, inte en lag. I varm berggrund kan fasövergången komma grundare (cirka 550–750 m). I kall berggrund djupare.</li>
+        <li>Ännu djupare än 800 m ger oftast tätare CO<sub>2</sub> och tjockare takberg – men också dyrare brunnar.</li>
+      </ul>
+      <p class="mt-3">SGU:s hål i Skåne gick till 1&nbsp;260–1&nbsp;290 m just för att nå Arnagergrönsanden under ett tjockt tak, inte för att 800 m skulle vara otillräckligt i sig.</p>
+    </section>
+
+    <section class="bg-white rounded-xl border border-slate-200 p-6">
+      <h2 class="text-2xl font-semibold text-sky-900">Kalkyl: öre per kWh</h2>
+      <p class="mt-2 text-sm text-slate-600">Formel: kedjekostnad (€/ton) × utsläppsintensitet (kg CO<sub>2</sub>/kWh) × avskiljningsgrad ÷ 1&nbsp;000 × växelkurs = kr/kWh.</p>
+
+      <div class="mt-6 grid sm:grid-cols-2 gap-4">
+        <label class="block text-sm">Avskiljning, €/ton
+          <input id="cap" type="number" value="90" class="mt-1 w-full border rounded px-3 py-2" />
+        </label>
+        <label class="block text-sm">Transport, €/ton
+          <input id="tr" type="number" value="40" class="mt-1 w-full border rounded px-3 py-2" />
+        </label>
+        <label class="block text-sm">Lagring, €/ton
+          <input id="st" type="number" value="50" class="mt-1 w-full border rounded px-3 py-2" />
+        </label>
+        <label class="block text-sm">Avskiljningsgrad, %
+          <input id="rate" type="number" value="90" class="mt-1 w-full border rounded px-3 py-2" />
+        </label>
+        <label class="block text-sm">kg CO<sub>2</sub> per kWh (nyttiggjord energi)
+          <input id="int" type="number" step="0.01" value="0.42" class="mt-1 w-full border rounded px-3 py-2" />
+        </label>
+        <label class="block text-sm">SEK per euro
+          <input id="fx" type="number" step="0.1" value="11" class="mt-1 w-full border rounded px-3 py-2" />
+        </label>
+      </div>
+
+      <p class="mt-4 text-sm">Förval: träbränsle 105 kg CO<sub>2</sub>/GJ → 0,378 kg/kWh bränsle. Vid 90 % verkningsgrad i kraftvärme blir det 0,42 kg/kWh värme+el.</p>
+      <div class="mt-3 flex flex-wrap gap-2 text-sm">
+        <button type="button" class="px-3 py-1 rounded bg-sky-100" onclick="preset(90,40,50,90,0.42)">Kraftvärme, nyttig energi</button>
+        <button type="button" class="px-3 py-1 rounded bg-sky-100" onclick="preset(90,40,50,90,1.26)">Bara el (30 % verkningsgrad)</button>
+        <button type="button" class="px-3 py-1 rounded bg-amber-100" onclick="preset(60,25,30,90,0.42)">Billigt NOAK-fall</button>
+        <button type="button" class="px-3 py-1 rounded bg-rose-100" onclick="preset(150,60,80,90,0.42)">Dyrt första anläggning</button>
+      </div>
+
+      <div class="mt-6 p-4 rounded-lg bg-sky-900 text-white">
+        <p class="text-sm text-sky-200">Kedjekostnad</p>
+        <p class="text-2xl font-bold"><span id="ton">180</span> €/ton · <span id="sekton">1 980</span> kr/ton</p>
+        <p class="mt-3 text-sm text-sky-200">Påslag på levererad energi</p>
+        <p class="text-3xl font-bold"><span id="ore">75</span> öre/kWh</p>
+        <p class="text-sky-200"><span id="kr">0,75</span> kr/kWh</p>
+      </div>
+      <p id="note" class="mt-3 text-sm text-slate-600"></p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-sky-900">Vad intervallen bygger på</h2>
+      <ul class="mt-3 list-disc list-inside space-y-2">
+        <li>Avskiljning + lastbil till hamn vid svenska bio-/avfallskraftvärmeverk: cirka 45–125 €/ton (<a class="text-sky-700 underline" href="https://www.sciencedirect.com/science/article/pii/S1750583622001025">Beiron et al., 2022</a>).</li>
+        <li>Fartyg + slutförvaring, t.ex. mot Nordsjön: cirka 30–55 €/ton i äldre nordiska uppskattningar (<a class="text-sky-700 underline" href="https://energiforsk.se/media/30909/teknik-systemintegration-och-kostnader-energiforskrapport-2022-837.pdf">Energiforsk, 2022</a>). Marknaden talar om högre tal för första kontrakten.</li>
+        <li>Hela kedjan för tidiga svenska projekt: ofta över 200 USD/ton när transport och lagring räknas in (<a class="text-sky-700 underline" href="https://www.cdr.fyi/blog/details-on-swedens-beccs-support">Höglund, 2024</a>).</li>
+        <li>Statligt stöd till Stockholm Exergi: 20 miljarder kronor för i storleksordningen 0,8 Mt/år under 15 år – cirka 1 700 kr/ton om volymen levereras fullt ut (<a class="text-sky-700 underline" href="https://www.energimyndigheten.se/">Energimyndigheten, 2025</a>).</li>
+      </ul>
+      <p class="mt-4">För ett typiskt biokraftvärmeverk landar därför påslaget oftast i <strong>50–120 öre/kWh</strong> om kostnaden slås ut på både el och värme. Slås den bara på elen blir talet tre–fyra gånger högre. Avskiljningen stjäl dessutom ånga, så elproduktionen sjunker – den effekten ligger inte i formeln ovan.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-sky-900">Källförteckning</h2>
+      <div class="mt-4 space-y-4 text-sm leading-relaxed">
+        <p>Beiron, J., Normann, F. &amp; Johnsson, F. (2022) A techno-economic assessment of CO2 capture in biomass and waste-fired combined heat and power plants – A Swedish case study. <em>International Journal of Greenhouse Gas Control</em>, 118. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.sciencedirect.com/science/article/pii/S1750583622001025">https://www.sciencedirect.com/science/article/pii/S1750583622001025</a> (Hämtad 28 september 2026). <em>(Avskiljning plus lastbil till hamn, 45–125 €/ton.)</em></p>
+        <p>Bruant, R.G. et al. (2002) Safe storage of CO2 in deep saline aquifers. <em>Environmental Science &amp; Technology</em>, 36(11). Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.princeton.edu/~celia/cv4papers/Bruant%20et%20al%20-%20ES&amp;T%20June%202002.html">https://www.princeton.edu/~celia/cv4papers/Bruant%20et%20al%20-%20ES&amp;T%20June%202002.html</a> (Hämtad 28 september 2026). <em>(Superkritisk CO<sub>2</sub> från cirka 800 m.)</em></p>
+        <p>Energiforsk (2022) <em>Teknik, systemintegration och kostnader för CCS i svensk kraftvärme</em>. Rapport 2022:837. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://energiforsk.se/media/30909/teknik-systemintegration-och-kostnader-energiforskrapport-2022-837.pdf">https://energiforsk.se/media/30909/teknik-systemintegration-och-kostnader-energiforskrapport-2022-837.pdf</a> (Hämtad 28 september 2026). <em>(Fartyg och lagring cirka 30–55 €/ton i den dåvarande kalkylen.)</em></p>
+        <p>Höglund, R. (2024) Details on Sweden's BECCS support. <em>CDR.fyi</em>. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.cdr.fyi/blog/details-on-swedens-beccs-support">https://www.cdr.fyi/blog/details-on-swedens-beccs-support</a> (Hämtad 28 september 2026). <em>(Hel kedja ofta över 200 USD/ton för tidiga projekt.)</em></p>
+        <p>Naturvårdsverket (2025) <em>Biogena utsläpp – emissionsfaktorer</em>. Träbränslen 105 kg CO<sub>2</sub>/GJ. Tillgänglig via underlag till klimatrapporteringen. <em>(Intensitet 0,378 kg/kWh bränsle.)</em></p>
+        <p>Ringrose, P.S. et al. (2021) Storage of carbon dioxide in saline aquifers. <em>Annual Review of Chemical and Biomolecular Engineering</em>, 12, s. 471–494. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.annualreviews.org/content/journals/10.1146/annurev-chembioeng-093019-075720">https://www.annualreviews.org/content/journals/10.1146/annurev-chembioeng-093019-075720</a> (Hämtad 28 september 2026). <em>(Kritiskt djup 550–800 m beroende på temperatur.)</em></p>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-slate-500">Kalkyl i <a class="underline" href="https://github.com/kentlundgren/Grok/tree/main/koldioxidlagring">kentlundgren/Grok</a>. Siffrorna är intervall, inte anbud.</div>
+  </footer>
+  <script>
+    function preset(c,t,s,r,i){
+      cap.value=c; tr.value=t; st.value=s; rate.value=r; int.value=i; calc();
+    }
+    function calc(){
+      const c=+cap.value||0, t=+tr.value||0, s=+st.value||0;
+      const r=(+rate.value||0)/100, i=+int.value||0, fx=+fxEl.value||11;
+      const eur = c+t+s;
+      const krPerKwh = eur * i * r / 1000 * fx;
+      document.getElementById('ton').textContent = eur.toFixed(0);
+      document.getElementById('sekton').textContent = Math.round(eur*fx).toLocaleString('sv-SE');
+      document.getElementById('kr').textContent = krPerKwh.toFixed(2).replace('.', ',');
+      document.getElementById('ore').textContent = Math.round(krPerKwh*100);
+      document.getElementById('note').textContent =
+        'Med '+eur+' €/ton och '+i+' kg/kWh blir påslaget '+Math.round(krPerKwh*100)+' öre/kWh vid '+Math.round(r*100)+' % avskiljning.';
+    }
+    const fxEl = document.getElementById('fx');
+    ['cap','tr','st','rate','int','fx'].forEach(id => document.getElementById(id).addEventListener('input', calc));
+    calc();
+  </script>
+</body>
+</html>
