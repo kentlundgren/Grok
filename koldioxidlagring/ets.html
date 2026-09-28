@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EU ETS och öre per kWh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-sky-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 py-8">
+      <p class="text-sky-200 text-sm"><a class="underline" href="./">Koldioxidlagring</a> · <a class="underline" href="bidrag.html">Bidrag</a> · <a class="underline" href="kalkyl.html">Kalkyl</a></p>
+      <h1 class="text-3xl font-bold mt-2">EU ETS-priset mot bidragen</h1>
+      <p class="mt-3 text-sky-100">Avläst 28 september 2026. Samma omräkning till öre per kWh som på kalkylsidan.</p>
+    </div>
+  </header>
+  <main class="max-w-3xl mx-auto px-4 py-10 space-y-8">
+    <section>
+      <h2 class="text-2xl font-semibold text-sky-900">Vad kostar en utsläppsrätt just nu?</h2>
+      <p class="mt-3">EUA handlades omkring <strong>86 euro per ton</strong> den 28 september 2026 (86,03 euro, minus 0,86 procent på dagen). På en månad plus 3,5 procent, på ett år plus 12 procent. Rekordet är 105,73 euro i februari 2023. Årsmedel 2025 var 74 euro. I januari 2026 nådde priset cirka 90 euro.</p>
+      <p class="mt-3">Vid 11 kronor per euro blir 86 euro cirka <strong>950 kronor per ton</strong>.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-sky-900">Så räknas det till öre per kWh</h2>
+      <p class="mt-3">Öre per kWh = (kronor per ton ÷ 10) × kilo koldioxid per kWh.</p>
+      <ul class="mt-3 list-disc list-inside space-y-1">
+        <li>El + fjärrvärme, 90 procent verkningsgrad: 0,42 kg per kWh</li>
+        <li>Bara el, 30 procent verkningsgrad: 1,26 kg per kWh</li>
+      </ul>
+      <p class="mt-3">Exempel ETS i dag: (950 ÷ 10) × 0,42 = <strong>40 öre per kWh</strong> på el + värme.</p>
+    </section>
+
+    <section>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm bg-white border border-slate-200">
+          <thead class="bg-sky-900 text-white">
+            <tr>
+              <th class="p-2 text-left">Måttstock</th>
+              <th class="p-2 text-left">Kronor per ton</th>
+              <th class="p-2 text-left">El + värme</th>
+              <th class="p-2 text-left">Bara el</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t"><td class="p-2">ETS 86 euro</td><td class="p-2">cirka 950</td><td class="p-2"><strong>40 öre per kWh</strong></td><td class="p-2">120 öre per kWh</td></tr>
+            <tr class="border-t bg-slate-50"><td class="p-2">ETS-rekord 106 euro</td><td class="p-2">cirka 1 170</td><td class="p-2">49 öre per kWh</td><td class="p-2">147 öre per kWh</td></tr>
+            <tr class="border-t"><td class="p-2">Exergi-stöd 20 miljarder kronor</td><td class="p-2">cirka 1 820</td><td class="p-2"><strong>76 öre per kWh</strong></td><td class="p-2">229 öre per kWh</td></tr>
+            <tr class="border-t bg-slate-50"><td class="p-2">Exergi + 180 miljoner euro från EU</td><td class="p-2">cirka 2 000</td><td class="p-2">84 öre per kWh</td><td class="p-2">252 öre per kWh</td></tr>
+            <tr class="border-t"><td class="p-2">Öresundskraft, bara bygbidrag</td><td class="p-2">cirka 287</td><td class="p-2">12 öre per kWh</td><td class="p-2">36 öre per kWh</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-sky-900">Vad jämförelsen betyder</h2>
+      <p class="mt-3">ETS är priset på att släppa ut ett <em>fossilt</em> ton. Bio-CCS-stödet är priset för att ta bort ett <em>biogent</em> ton. Inte samma vara, men samma måttstock.</p>
+      <p class="mt-3">Det statliga tonstödet till Exergi är ungefär dubbelt så högt som EUA-priset. På el + fjärrvärme: 76 öre mot 40 öre per kWh. ETS behöver upp mot cirka 165 euro per ton innan marknadspriset ensamt matchar stödnivån. Dit är det långt från dagens 86 euro.</p>
+      <p class="mt-3">För avfallskraftvärme med fossil andel är ETS en faktisk kostnad. Därför kan ett lägre investeringsbidrag räcka där, medan ren bio-CCS behöver auktionen.</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-semibold text-sky-900">Källförteckning</h2>
+      <div class="mt-4 space-y-4 text-sm leading-relaxed">
+        <p>ESMA (2026) <em>Carbon markets report 2026</em>. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://www.esma.europa.eu/sites/default/files/2026-07/ESMA50-481369926-34622_Carbon_markets_report_2026.pdf">https://www.esma.europa.eu/sites/default/files/2026-07/ESMA50-481369926-34622_Carbon_markets_report_2026.pdf</a> (Hämtad 28 september 2026). <em>(Årsmedel 2025: 74 euro per ton; topp cirka 90 euro i januari 2026.)</em></p>
+        <p>Trading Economics (2026) <em>EU Carbon Permits</em>. Tillgänglig på: <a class="text-sky-700 underline break-all" href="https://tradingeconomics.com/commodity/carbon">https://tradingeconomics.com/commodity/carbon</a> (Hämtad 28 september 2026). <em>(86,03 euro per ton den 28 september 2026.)</em></p>
+      </div>
+    </section>
+  </main>
+  <footer class="border-t border-slate-200">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm text-slate-500"><a class="underline" href="https://github.com/kentlundgren/Grok/tree/main/koldioxidlagring">kentlundgren/Grok</a>. Priset ändras varje börsdag.</div>
+  </footer>
+</body>
+</html>
