@@ -58,6 +58,8 @@ Kent testar Grok Build som en del av ett befintligt flöde med Cloud Cowork (lok
 Grok/
 ├── README.md
 ├── AGENTS.md
+├── .agents/skills/koldioxidlagring-villkor/ # Skill som Cursor och Grok hittar själva
+├── .claude/skills/koldioxidlagring-villkor/ # Pekare för Claude Code till skillet ovan
 ├── skills/lordags-dagens-dubbel/
 ├── dagens-dubbel/     # Familjens lördags-DD (live-app, ingen build)
 ├── intervju/Forsakringskassan_202609/
@@ -98,6 +100,9 @@ Tippare: Kent, Lotta, Benita, Bengt. Ny lördag = `data/ÅÅMMDD.json` + mapp `�
 | Live URL | https://kentlundgren.github.io/Grok/koldioxidlagring/ |
 | GitHub-källa | https://github.com/kentlundgren/Grok/tree/main/koldioxidlagring |
 | Källor | SGU RR 2026:06 och närliggande myndighetsmaterial |
+| Agentfiler | `koldioxidlagring/AGENTS.md`, `koldioxidlagring/CLAUDE.md`, skill `.agents/skills/koldioxidlagring-villkor/` |
+
+Här skedde en uppdatering 2026-09-28: skillet `koldioxidlagring-villkor` och mappens egna agentfiler lades till.
 
 ## Kodkonventioner
 
