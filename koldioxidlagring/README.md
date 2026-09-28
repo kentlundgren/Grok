@@ -8,7 +8,9 @@ Anteckningar från SGU-föredraget *Regeringsuppdraget: Koldioxidlagring i Sveri
 
 - Vad uppdraget enligt regleringsbrevet gick ut på
 - Varför lagring ska ske djupare än 800 meter (superkritiskt tillstånd)
+- Varför svensk lag bara tillåter lagring till havs
 - De två undersökta områdena: sydost om Gotland och söder om Skåne
+- Skillnaden mellan svenska kandidatlager och avskiljningsprojekt som skickar CO₂ utomlands
 - Varför SGU menar att egen lagring vore viktig
 - Vad som är klart 2026 – och vad som fortfarande saknas
 - Källor i Harvardstil
