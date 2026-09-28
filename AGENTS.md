@@ -61,6 +61,7 @@ Grok/
 ├── skills/lordags-dagens-dubbel/
 ├── dagens-dubbel/     # Familjens lördags-DD (live-app, ingen build)
 ├── intervju/Forsakringskassan_202609/
+├── koldioxidlagring/  # Anteckningar från SGU-föredrag om CCS
 └── vardkoer/
 ```
 
@@ -87,6 +88,16 @@ Tippare: Kent, Lotta, Benita, Bengt. Ny lördag = `data/ÅÅMMDD.json` + mapp `�
 | Live URL | https://kentlundgren.github.io/Grok/vardkoer/ |
 | GitHub-källa | https://github.com/kentlundgren/Grok/tree/main/vardkoer |
 | Data | SKR, Socialstyrelsen, Riksrevisionen (t.o.m. april 2026) |
+
+### koldioxidlagring – SGU-uppdraget om CCS
+
+| Egenskap | Värde |
+|---|---|
+| Typ | Statisk HTML-anteckning |
+| Tekniker | HTML5, Tailwind CSS (CDN) |
+| Live URL | https://kentlundgren.github.io/Grok/koldioxidlagring/ |
+| GitHub-källa | https://github.com/kentlundgren/Grok/tree/main/koldioxidlagring |
+| Källor | SGU RR 2026:06 och närliggande myndighetsmaterial |
 
 ## Kodkonventioner
 

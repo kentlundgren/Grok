@@ -52,6 +52,13 @@ Förberedelsematerial inför en intervju till controller på Försäkringskassan
 
 - **Live:** [https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/](https://kentlundgren.github.io/Grok/intervju/Forsakringskassan_202609/)
 
+### Koldioxidlagring i Sverige
+
+Anteckningar från SGU-föredraget om regeringsuppdraget 2023–2025 och slutrapporten RR 2026:06.
+
+- **Källkod:** [koldioxidlagring/](koldioxidlagring/)
+- **Live:** [https://kentlundgren.github.io/Grok/koldioxidlagring/](https://kentlundgren.github.io/Grok/koldioxidlagring/)
+
 ## Tekniker
 
 - HTML5 + Tailwind CSS (via CDN)
