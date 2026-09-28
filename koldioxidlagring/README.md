@@ -10,6 +10,7 @@ Anteckningar från SGU-föredraget *Regeringsuppdraget: Koldioxidlagring i Sveri
 - Varför lagring ska ske djupare än 800 meter (superkritiskt tillstånd)
 - Varför svensk lag bara tillåter lagring till havs
 - De två undersökta områdena: sydost om Gotland och söder om Skåne
+- Arnagergrönsanden, Höllviken/Svedala och de nya hålen Lilla Beddinge-1 och Skåre-1
 - Skillnaden mellan svenska kandidatlager och avskiljningsprojekt som skickar CO₂ utomlands
 - Varför SGU menar att egen lagring vore viktig
 - Vad som är klart 2026 – och vad som fortfarande saknas
