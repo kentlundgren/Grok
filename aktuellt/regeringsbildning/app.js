@@ -32,9 +32,6 @@ function facesHtml(item) {
 }
 
 function renderStage() {
-  const { axes } = state.data;
-  document.querySelector("[data-axis-y]").textContent = axes.y.name + ": " + axes.y.top + " → " + axes.y.bottom;
-  document.querySelector("[data-axis-x]").textContent = axes.x.name + ": " + axes.x.left + " → " + axes.x.right;
   document.querySelector("[data-cells]").innerHTML = state.data.scenarios.map((item) => `
     <button class="cell ${item.id}" data-id="${item.id}" aria-pressed="${item.id === state.selected}">
       <small>${item.quadrant.replaceAll("-", " · ")}</small>
