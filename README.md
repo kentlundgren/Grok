@@ -2,6 +2,16 @@
 
 Det här repot används för att **testa och utforska Grok Build** – xAI:s terminalbaserade kodningsagent som kan planera uppgifter, granska ändringar och köra subagenter.
 
+## 🗂️ Lokalt repo
+
+Repo-rot lokalt:
+
+`C:\Users\kentl\OneDrive\AI\Grok`
+
+På GitHub:
+
+`https://github.com/kentlundgren/Grok`
+
 ## Bakgrund och erfarenheter
 
 Projektet är en del av min utforskning av agentiska verktyg på fritiden, tillsammans med Cloud Cowork, Cursor och GitHub. Jag dokumenterar vad som fungerar, vad som strular och hur verktygen kompletterar varandra.

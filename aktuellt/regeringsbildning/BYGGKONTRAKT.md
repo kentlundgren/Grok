@@ -14,7 +14,9 @@ Sidan ska också tydligt säga att analysen är gjord med AI (vilken modell, vil
 
 Första vyn är en tidsväljare och fyrfältaren. Axlarna är röda linjer, från kompromiss till låsning, och regeringsunderlag, från tydlig koalition till lösare lösning. Ett klick på en ruta visar statsminister, vem som måste avstå, 175-regeln, eftergiften, hindret, tecknet att bevaka och rutans procent över tid. Prompt, video och detta kontrakt ligger bakom scenen, inte framför den.
 
-Fyrfältaren är alltid utgångsläget och ska vara stilla. Ovanför den finns ett val, "Se de fyra alternativen i tur och ordning" (4 sekunder per alternativ, en gång), som ritas av samma data och därför följer varje körning. Det ska alltid gå att stoppa och gå tillbaka (knapp, Escape, bakåtknappen). Ändra inte utgångsläget till att röra sig av sig själv.
+Fyrfältaren är utgångsläget. Den svarta ramen (den valda rutan) flyttas av sig själv var 4:e sekund, i ordningen ruta 1, 2, 3, 4 och sedan om från början (beslut av Kent 2026-10-02, efter att utgångsläget först var stilla). Växlingen ska alltid vara lätt att stoppa: den pausar medan musen eller tangentbordsfokus är på rutorna eller detaljerna, stannar vid klick eller tryck, har en egen paus-knapp, och startar inte alls om besökaren har valt "minska rörelse" i systemet. Ta inte bort de spärrarna.
+
+Ovanför fyrfältaren finns också ett val, "Se de fyra alternativen i tur och ordning" (4 sekunder per alternativ, en gång), som tonar ned de andra rutorna. Båda ritas av samma data och följer därför varje körning. Det ska alltid gå att stoppa och gå tillbaka (knapp, Escape, bakåtknappen).
 
 Den senaste körningen är förvald. En tidigare körning markeras som tidigare. Procenten visas alltid med modell och tidpunkt. En processnotis är inte en körning: den ligger ovanför fyrfältaren och ändrar inte vilken tidpunkt som är vald.
 

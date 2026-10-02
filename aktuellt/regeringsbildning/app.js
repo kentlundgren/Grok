@@ -29,10 +29,63 @@ function showPanel(name) {
   });
 }
 
-// Turläge: de fyra alternativen markeras ett i taget, STEP_MS var, en gång. Allt hämtas ur datan,
-// så läget fungerar för varje körning utan en separat videofil. Fyrfältaren är alltid utgångsläget.
 const STEP_MS = 4000;
 const tour = { active: false, timer: null };
+
+// Automatisk växling: den svarta ramen (den valda rutan) flyttas till nästa ruta var STEP_MS, i ordning
+// 1 -> 2 -> 3 -> 4 -> 1. Den pausar medan musen eller tangentbordsfokus är på fyrfältaren eller
+// detaljerna, stannar när besökaren klickar, och startar inte alls med "minska rörelse" i systemet.
+const auto = { on: false, timer: null, hover: false };
+const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function renderAutoUi() {
+  const toggle = document.querySelector("[data-auto-toggle]");
+  const note = document.querySelector("[data-auto-note]");
+  toggle.textContent = auto.on ? "Pausa växlingen" : "Starta växlingen";
+  toggle.setAttribute("aria-pressed", auto.on ? "true" : "false");
+  note.textContent = auto.on
+    ? `Den svarta ramen flyttas av sig själv var ${STEP_MS / 1000}:e sekund. Den stannar när du klickar eller håller musen över rutorna.`
+    : "Växlingen är pausad. Klicka på en ruta för att välja själv.";
+}
+
+function autoTick() {
+  if (!auto.on || auto.hover || tour.active || document.hidden) return;
+  if (!document.getElementById("scen").classList.contains("active")) return;
+  if (document.getElementById("techModal").classList.contains("show")) return;
+  const ids = data.scenarios.map((item) => item.id);
+  select(ids[(ids.indexOf(state.selected) + 1) % ids.length]);
+}
+
+function startAuto() {
+  clearInterval(auto.timer);
+  auto.on = true;
+  auto.timer = setInterval(autoTick, STEP_MS);
+  renderAutoUi();
+}
+
+function stopAuto() {
+  clearInterval(auto.timer);
+  auto.on = false;
+  renderAutoUi();
+}
+
+function setupAuto() {
+  document.querySelector("[data-auto-toggle]").addEventListener("click", () => (auto.on ? stopAuto() : startAuto()));
+  [".stage", "[data-detail]"].forEach((selector) => {
+    const zone = document.querySelector(selector);
+    const hold = () => { auto.hover = true; };
+    const release = () => { auto.hover = false; if (auto.on) startAuto(); }; // full tid kvar efter att musen lämnat
+    zone.addEventListener("mouseenter", hold);
+    zone.addEventListener("mouseleave", release);
+    zone.addEventListener("focusin", hold);
+    zone.addEventListener("focusout", release);
+    zone.addEventListener("pointerdown", () => stopAuto()); // ett klick eller en tryckning är ett eget val
+  });
+  renderAutoUi();
+}
+
+// Turläge: de fyra alternativen markeras ett i taget, STEP_MS var, en gång. Allt hämtas ur datan,
+// så läget fungerar för varje körning utan en separat videofil. Fyrfältaren är alltid utgångsläget.
 
 function setMode(mode) {
   document.querySelector(".mode").setAttribute("aria-pressed", mode === "tur" ? "true" : "false");
@@ -86,6 +139,7 @@ function startTour(fromHash) {
   showPanel("scen");
   clearTourMarks();
   if (!tour.active && !fromHash) history.pushState(null, "", "#tur");
+  stopAuto();
   tour.active = true;
   setMode("tur");
   document.querySelector(".stage").classList.add("touring");
@@ -313,9 +367,11 @@ function init() {
   renderFacts();
   renderNotices();
   setupModes();
+  setupAuto();
   selectSnapshot(snapshots[snapshots.length - 1].id, true);
   window.addEventListener("hashchange", followHash);
   followHash();
+  if (!tour.active && !reducedMotion()) startAuto();
 }
 
 init();

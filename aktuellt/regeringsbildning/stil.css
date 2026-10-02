@@ -329,6 +329,13 @@ footer {
   font-size: 0.92rem;
 }
 
+/* Automatisk växling: pausknapp och förklaring under fyrfältaren */
+.auto-row { margin: 10px 0 0; font-family: "Segoe UI", sans-serif; font-size: 0.88rem; color: var(--muted); }
+.auto-toggle {
+  border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  cursor: pointer; padding: 4px 10px; border-radius: 999px; font: inherit; margin-right: 8px;
+}
+
 /* Turläge: ett alternativ i taget markeras, de andra tonas ned. Fyrfältaren är utgångsläget. */
 .tabs { flex-wrap: wrap; }
 .tabs .mode { margin-left: auto; }
