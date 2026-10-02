@@ -59,6 +59,17 @@ Anteckningar från SGU-föredraget om regeringsuppdraget 2023–2025 och slutrap
 - **Källkod:** [koldioxidlagring/](koldioxidlagring/)
 - **Live:** [https://kentlundgren.github.io/Grok/koldioxidlagring/](https://kentlundgren.github.io/Grok/koldioxidlagring/)
 
+### Regeringsbildning 2026: fyra utfall
+
+En fyrfältare som visar fyra åtskilda sätt som den svenska regeringsbildningen efter valet 2026 kan falla ut, framtagen med generativ AI (Grok) och därefter omprövad. Poängen är att få fyra möjligheter att hålla i huvudet och diskutera samtidigt, inte att visa exakt matematik. Mandaten är fakta. Procenten är uppskattningar, inte kvalitetssäkrade, och ska kontrolleras mot källorna.
+
+Sidan har en tidsväljare, så att körningar vid olika tidpunkter kan jämföras (hittills en körning, 2 oktober 2026 kl 08:19), och ett turläge som markerar de fyra alternativen ett i taget, 4 sekunder var. Den stilla fyrfältaren är alltid utgångsläget.
+
+- **Källkod:** [aktuellt/regeringsbildning/](aktuellt/regeringsbildning/)
+- **Live:** [https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/](https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/)
+- **Delningslänk för körningen kl 08:19:** [https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/k/2026-10-02-0819/](https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/k/2026-10-02-0819/) (har egen förhandsbild för LinkedIn och X)
+- **Hur man bygger vidare:** [aktuellt/regeringsbildning/BYGGKONTRAKT.md](aktuellt/regeringsbildning/BYGGKONTRAKT.md)
+
 ## Tekniker
 
 - HTML5 + Tailwind CSS (via CDN)
@@ -76,4 +87,4 @@ Anteckningar från SGU-föredraget om regeringsuppdraget 2023–2025 och slutrap
 
 ---
 
-*Senast uppdaterat: 28 september 2026*
+*Senast uppdaterat: 2 oktober 2026*
