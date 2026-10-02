@@ -87,8 +87,14 @@ function renderMethod() {
 }
 
 async function init() {
-  const response = await fetch("scenario.json");
-  state.data = await response.json();
+  const embedded = document.getElementById("scenario-data");
+  try {
+    state.data = embedded ? JSON.parse(embedded.textContent) : await (await fetch("scenario.json")).json();
+  } catch (error) {
+    document.querySelector("[data-thesis]").textContent = "Scenen kunde inte läsa underlaget. scenario.json och den inbäddade kopian saknas eller är trasig.";
+    console.error(error);
+    return;
+  }
   renderFacts();
   renderStage();
   select(state.data.review.chosenId);
@@ -99,7 +105,4 @@ async function init() {
   });
 }
 
-init().catch((error) => {
-  document.querySelector("[data-thesis]").textContent = "Scenen kunde inte läsa scenario.json. Öppna sidan via en webbserver eller GitHub Pages, inte som lokal fil.";
-  console.error(error);
-});
+init();

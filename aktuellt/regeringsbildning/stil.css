@@ -124,11 +124,21 @@ a { color: var(--blue); }
 }
 
 .cells {
+  grid-column: 2;
+  grid-row: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 10px;
   min-height: 520px;
+}
+
+.axis-note {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
 }
 
 .axis-y, .axis-x {
@@ -163,8 +173,10 @@ a { color: var(--blue); }
   grid-column: 2;
   grid-row: 2;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 10px;
+  min-height: 46px;
+  padding-bottom: 4px;
 }
 
 .lock-meter {
@@ -173,7 +185,7 @@ a { color: var(--blue); }
   grid-template-columns: 1fr 1fr 1fr 1.4fr;
   gap: 8px;
   align-items: end;
-  height: 28px;
+  height: 34px;
 }
 
 .lock-meter i {
@@ -197,13 +209,6 @@ a { color: var(--blue); }
 }
 
 .pole.right { color: #8c3a2f; font-weight: 700; }
-
-.axis-note {
-  grid-column: 1 / -1;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.98rem;
-}
 
 .cell.s1, .cell.s2, .cell.s3, .cell.s4 { grid-column: auto; grid-row: auto; }
 
