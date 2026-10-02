@@ -50,6 +50,11 @@
     </nav>
 
     <section id="scen" class="panel active">
+      <div class="modes" role="group" aria-label="Visningsläge">
+        <button type="button" class="mode" data-mode="stabil" aria-pressed="true">Fyrfältaren</button>
+        <button type="button" class="mode" data-mode="tur" aria-pressed="false">Se de fyra alternativen i tur och ordning</button>
+      </div>
+      <p class="tour-bar" data-tour-bar hidden aria-live="polite"></p>
       <div class="stage">
         <div class="axis-y">
           <span class="pole">Uppåt: tydlig koalition</span>
@@ -134,6 +139,10 @@
         <div class="tech-card">
           <h3>Körningar med tidsstämpel</h3>
           <p>Varje körning är en egen post med eget datum och klockslag. Sidan sorterar dem på tid, visar den senaste först och räknar ut skillnaden i procentenheter mot körningen före.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Turläge utan video</h3>
+          <p>Knappen "Se de fyra alternativen i tur och ordning" markerar ett alternativ i taget, 4 sekunder var, en gång. Det ritas av samma data som fyrfältaren, så det följer varje körning. Utgångsläget är den stilla fyrfältaren, och Stoppa, Escape och bakåtknappen tar dig tillbaka. Länken <code>#tur</code> startar det direkt.</p>
         </div>
         <div class="tech-card">
           <h3>Text escapas</h3>

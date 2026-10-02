@@ -88,7 +88,9 @@ def make_frame(index, sc, snap, outdir, fonts):
     right = f"Läget {snap['label']} · {snap['model']}"
     d.text((W - 60 - d.textlength(right, font=small), 30), right, font=small, fill=MUTED)
 
-    x0, y0, x1, y1 = 60, 72, W - 60, 640
+    # Kortet slutar högt (y1=600) och sidtexten ligger direkt under, så att X:s tidsmärke och ljudknapp
+    # nere i bilden inte skymmer raden.
+    x0, y0, x1, y1 = 60, 72, W - 60, 600
     d.rectangle((x0, y0, x1, y1), fill=COL[sc["id"]], outline=LINE, width=2)
     if sc["id"] == "s4":  # låsning: tom ruta med tjock ram
         d.rectangle((x0, y0, x1, y1), outline=INK, width=6)
@@ -106,20 +108,20 @@ def make_frame(index, sc, snap, outdir, fonts):
 
     fx = x0 + 36
     for face in sc["faces"]:
-        img.paste(portrait(face["src"], 170), (fx, y0 + 225))
-        d.text((fx + 85 - d.textlength(face["party"], font=sansb) / 2, y0 + 403), face["party"], font=sansb, fill=INK)
-        fx += 200
+        img.paste(portrait(face["src"], 140), (fx, y0 + 205))
+        d.text((fx + 70 - d.textlength(face["party"], font=sansb) / 2, y0 + 352), face["party"], font=sansb, fill=INK)
+        fx += 170
 
-    d.text((x0 + 36, y1 - 126), f"{sc['p']} %", font=big, fill=INK)
+    d.text((x0 + 36, y1 - 120), f"{sc['p']} %", font=big, fill=INK)
 
     foot = "Uppskattning gjord med AI, inte exakt matematik. Kontrollera mot källan."
     if any(f.get("note") for f in sc["faces"]):
         foot += " Bilden på Kristersson är en illustration."
-    d.text((60, 662), foot, font=small, fill=MUTED)
+    d.text((60, 618), foot, font=small, fill=MUTED)
 
     for k in range(4):  # fyra punkter: vilken ruta som visas
         cx = W - 60 - (3 - k) * 30
-        d.ellipse((cx - 8, 676, cx + 8, 692), fill=INK if k == index else (205, 197, 184))
+        d.ellipse((cx - 8, 622, cx + 8, 638), fill=INK if k == index else (205, 197, 184))
 
     path = os.path.join(outdir, f"f{index + 1}.png")
     img.save(path)

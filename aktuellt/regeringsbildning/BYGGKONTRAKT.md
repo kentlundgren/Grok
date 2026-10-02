@@ -14,6 +14,8 @@ Sidan ska också tydligt säga att analysen är gjord med AI (vilken modell, vil
 
 Första vyn är en tidsväljare och fyrfältaren. Axlarna är röda linjer, från kompromiss till låsning, och regeringsunderlag, från tydlig koalition till lösare lösning. Ett klick på en ruta visar statsminister, vem som måste avstå, 175-regeln, eftergiften, hindret, tecknet att bevaka och rutans procent över tid. Prompt, video och detta kontrakt ligger bakom scenen, inte framför den.
 
+Fyrfältaren är alltid utgångsläget och ska vara stilla. Ovanför den finns ett val, "Se de fyra alternativen i tur och ordning" (4 sekunder per alternativ, en gång), som ritas av samma data och därför följer varje körning. Det ska alltid gå att stoppa och gå tillbaka (knapp, Escape, bakåtknappen). Ändra inte utgångsläget till att röra sig av sig själv.
+
 Den senaste körningen är förvald. En tidigare körning markeras som tidigare. Procenten visas alltid med modell och tidpunkt.
 
 ## Datamodell: en enda källa
@@ -33,7 +35,7 @@ All data ligger i `scenario.js` (`window.SCENARIO`). Det finns ingen kopia i `in
 5. Ändra inte tidigare poster. Sidan sorterar på `asOf` och räknar själv ut skillnaden mot körningen före.
 6. Gör en delningssida för körningen: kopiera `k/2026-10-02-0819/` till `k/<id>/`, byt id, tid, texter och bild i taggarna och i vidarebefordran. Förhandsvisningar ser inte `#`-ankaret, så den adressen är den som delas på LinkedIn och X.
 7. Gör en stillbild för delning, 1200 × 630, till `bilder/og_<id>.jpg`, och byt `og-bild.jpg` och `og:`-taggarna i `index.html` om den nya körningen ska vara den som basadressen visar.
-8. Gör om rotationsvideon: kör `python video/gor_rotation.py` från mappen `aktuellt/regeringsbildning`. Den läser `scenario.js` och ger `video/rotation_fyra_utfall_<ååmmdd>_kl<tt>.mp4`. Videon är en fil och uppdateras inte av sig själv. Kräver Python med Pillow, Node.js och ffmpeg.
+8. Gör om rotationsvideon (den ligger inte på sidan, den är en fil att ladda upp i inlägg på LinkedIn och X, där en stillbild annars är det enda som visas): kör `python video/gor_rotation.py` från mappen `aktuellt/regeringsbildning`. Den läser `scenario.js` och ger `video/rotation_fyra_utfall_<ååmmdd>_kl<tt>.mp4`. Videon är en fil och uppdateras inte av sig själv. Kräver Python med Pillow, Node.js och ffmpeg.
 9. Procenten ska vara tagen fram av den modell som anges i `model`. Skriv aldrig in siffror som någon annan modell eller människa har tagit fram under en annan modells namn.
 
 ## Får ändras

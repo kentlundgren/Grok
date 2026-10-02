@@ -29,6 +29,88 @@ function showPanel(name) {
   });
 }
 
+// Turläge: de fyra alternativen markeras ett i taget, STEP_MS var, en gång. Allt hämtas ur datan,
+// så läget fungerar för varje körning utan en separat videofil. Fyrfältaren är alltid utgångsläget.
+const STEP_MS = 4000;
+const tour = { active: false, timer: null };
+
+function setMode(mode) {
+  document.querySelectorAll(".mode").forEach((button) => {
+    button.setAttribute("aria-pressed", button.dataset.mode === mode ? "true" : "false");
+  });
+}
+
+function clearTourMarks() {
+  clearTimeout(tour.timer);
+  document.querySelector(".stage").classList.remove("touring");
+  document.querySelectorAll(".cell").forEach((cell) => cell.classList.remove("step"));
+}
+
+function tourBar() { return document.querySelector("[data-tour-bar]"); }
+
+function tourStep(index) {
+  const snap = currentSnap();
+  const ids = data.scenarios.map((item) => item.id);
+  if (index >= ids.length) { finishTour(); return; }
+  const item = scenarioAt(ids[index]);
+  document.querySelectorAll(".cell").forEach((cell) => {
+    cell.classList.toggle("step", cell.dataset.id === item.id);
+  });
+  const bar = tourBar();
+  bar.hidden = false;
+  bar.innerHTML = `
+    <span><b>Alternativ ${index + 1} av ${ids.length}:</b> ${esc(item.title)} · ${item.probability} %
+    <small>(uppskattning av ${esc(snap.model)}, ${esc(snap.asOfShort)})</small></span>
+    <span class="progress" aria-hidden="true"><i></i></span>
+    <button type="button" data-tour-stop>Stoppa</button>`;
+  bar.querySelector("[data-tour-stop]").addEventListener("click", () => endTour());
+  const cell = document.querySelector(`.cell[data-id="${item.id}"]`);
+  const box = cell.getBoundingClientRect();
+  if (box.top < 0 || box.bottom > window.innerHeight) {
+    cell.scrollIntoView({ block: "center", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+  }
+  tour.timer = setTimeout(() => tourStep(index + 1), STEP_MS);
+}
+
+function finishTour() {
+  clearTourMarks();
+  const bar = tourBar();
+  bar.hidden = false;
+  bar.innerHTML = `
+    <span><b>Klart.</b> Det var de ${data.scenarios.length} alternativen, ett i taget.</span>
+    <span class="tour-actions"><button type="button" data-tour-again>Spela igen</button>
+    <button type="button" data-tour-back>Tillbaka till fyrfältaren</button></span>`;
+  bar.querySelector("[data-tour-again]").addEventListener("click", () => startTour());
+  bar.querySelector("[data-tour-back]").addEventListener("click", () => endTour());
+}
+
+function startTour(fromHash) {
+  showPanel("scen");
+  clearTourMarks();
+  if (!tour.active && !fromHash) history.pushState(null, "", "#tur");
+  tour.active = true;
+  setMode("tur");
+  document.querySelector(".stage").classList.add("touring");
+  tourStep(0);
+}
+
+function endTour(fromHash) {
+  if (!tour.active) return;
+  tour.active = false;
+  clearTourMarks();
+  tourBar().hidden = true;
+  setMode("stabil");
+  if (!fromHash) history.replaceState(null, "", `#k-${state.snapId}`);
+}
+
+function setupModes() {
+  const seconds = (data.scenarios.length * STEP_MS) / 1000;
+  const turButton = document.querySelector('.mode[data-mode="tur"]');
+  turButton.textContent = `Se de fyra alternativen i tur och ordning · ${seconds} s`;
+  document.querySelector('.mode[data-mode="stabil"]').addEventListener("click", () => endTour());
+  turButton.addEventListener("click", () => startTour());
+}
+
 function renderFacts() {
   const { mandates, meta } = data;
   document.querySelector("[data-thesis]").textContent = meta.thesis;
@@ -153,6 +235,7 @@ function renderMethod() {
 }
 
 function selectSnapshot(id, keepHash) {
+  if (tour.active) endTour(true);
   state.snapId = id;
   if (!keepHash) history.replaceState(null, "", `#k-${id}`);
   state.selected = state.selected || currentSnap().review.chosenId;
@@ -167,6 +250,11 @@ function selectSnapshot(id, keepHash) {
 // En länk som slutar på #k-<körning> öppnar den körningen. Övriga ankare öppnar fliken de ligger i.
 function followHash() {
   const hash = decodeURIComponent(location.hash.slice(1));
+  if (hash === "tur") {
+    if (!tour.active) startTour(true);
+    return;
+  }
+  if (tour.active) endTour(true);
   if (!hash) return;
   if (hash.startsWith("k-")) {
     const snap = snapshots.find((s) => `k-${s.id}` === hash);
@@ -191,7 +279,9 @@ function setupModal() {
   techClose.addEventListener("click", closeModal);
   techModal.addEventListener("click", (event) => { if (event.target === techModal) closeModal(); });
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && techModal.classList.contains("show")) closeModal();
+    if (event.key !== "Escape") return;
+    if (techModal.classList.contains("show")) closeModal();
+    else if (tour.active) endTour();
   });
 }
 
@@ -205,6 +295,7 @@ function init() {
     button.addEventListener("click", () => showPanel(button.dataset.panel));
   });
   renderFacts();
+  setupModes();
   selectSnapshot(snapshots[snapshots.length - 1].id, true);
   window.addEventListener("hashchange", followHash);
   followHash();
