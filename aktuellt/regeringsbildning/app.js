@@ -89,7 +89,7 @@ function renderStage() {
     const delta = deltaText(base.id);
     return `
     <button class="cell ${esc(item.id)}" data-id="${esc(item.id)}" aria-pressed="${item.id === state.selected}">
-      <small>${esc(item.quadrant.replaceAll("-", " · "))}</small>
+      <small>${esc(item.quadrantLabel)}</small>
       <strong>${esc(item.title)}</strong>
       ${facesHtml(item)}
       <em>${item.probability} %</em>

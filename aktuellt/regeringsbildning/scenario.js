@@ -3,7 +3,7 @@
 //
 // Tre nivåer:
 //   meta, mandates, axes  – gäller alla körningar
-//   scenarios             – det som inte ändras mellan körningar (rutans titel, mandatmatematik, vilka som måste avstå)
+//   scenarios             – det som inte ändras mellan körningar (rutans titel och etikett, mandatmatematik, vilka som måste avstå)
 //   snapshots             – en post per körning: procent, hinder, tecken att bevaka, omprövning och förlopp
 //
 // Ny körning = ny post sist i `snapshots`, med eget `asOf`. Skriv aldrig över en tidigare post.
@@ -34,6 +34,7 @@ window.SCENARIO = {
     {
       id: "s1",
       quadrant: "kompromiss-koalition",
+      quadrantLabel: "Kompromiss · koalition",
       title: "S, MP och C i regeringen, V utanför med avtal",
       primeMinister: "Magdalena Andersson (S)",
       inGovernment: ["S", "MP", "C"],
@@ -50,6 +51,7 @@ window.SCENARIO = {
     {
       id: "s2",
       quadrant: "lasning-koalition",
+      quadrantLabel: "Låsning · koalition",
       title: "Tidö åter som koalition",
       primeMinister: "Ulf Kristersson (M)",
       inGovernment: ["M", "KD", "L", "SD"],
@@ -68,6 +70,7 @@ window.SCENARIO = {
     {
       id: "s3",
       quadrant: "kompromiss-lost",
+      quadrantLabel: "Kompromiss · löst underlag",
       title: "M, KD och L i minoritet, C avstår, SD utanför",
       primeMinister: "Ulf Kristersson (M)",
       inGovernment: ["M", "KD", "L"],
@@ -84,6 +87,7 @@ window.SCENARIO = {
     {
       id: "s4",
       quadrant: "lasning-osakerhet",
+      quadrantLabel: "Låsning · osäkerhet",
       title: "Låsning, skarpa prövningar och väg mot extra val",
       primeMinister: "Ingen kandidat tolereras i detta utfall",
       inGovernment: [],
