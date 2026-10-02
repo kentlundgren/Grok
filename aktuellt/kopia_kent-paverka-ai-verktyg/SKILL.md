@@ -3,7 +3,7 @@ name: kent-paverka-ai-verktyg
 description: Kents arbetssätt för att vara med och påverka hur AI-verktyg som Claude utformas — hitta befintligt önskemål på GitHub, rösta (👍) på rätt ställe, kommentera med konkret användning, skapa nytt ärende vid behov, och logga vad som gjorts. Använd när Kent saknar en funktion eller blir irriterad på ett beteende i Claude/Claude Code/Cursor eller annat AI-verktyg, när han nämner "rösta", "feature request", "issue", "önskemål till Anthropic", eller vill följa upp ett tidigare önskemål. Läs LOGG.md för vad som redan gjorts.
 ---
 
-> **KOPIA.** Originalet ligger i `C:\Users\kentl\.claude\skills\kent-paverka-ai-verktyg\`. Den här filen är en kopia gjord 2026-10-02 så att innehållet syns i den här mappen. Ändra originalet, inte kopian. Kopian laddas inte som skill och uppdateras inte automatiskt.
+> **KOPIA.** Originalet ligger i `C:\Users\kentl\.claude\skills\kent-paverka-ai-verktyg\`. Den här filen är en kopia, uppdaterad 2026-10-02, så att innehållet syns i den här mappen. Ändra originalet, inte kopian. Kopian laddas inte som skill och uppdateras inte automatiskt.
 
 # Påverka utvecklingen av AI-verktyg
 
@@ -30,7 +30,9 @@ Bakgrund: 2026-10-02 röstade och kommenterade Kent för första gången på Git
 
 ## Lärdomar hittills
 
-- Kommentar är inte röst. Både behövs, men 👍 på första inlägget är det som räknas.
+- Kommentar är inte röst. 👍 på första inlägget är den röst som räknas i reaktionsantalet och kostar en sekund. En kommentar ger sammanhang. Hur Anthropic väger dem mot varandra är inte känt, så skriv inte att det ena är viktigare. Gör gärna båda när det finns något konkret att tillägga.
+- **Läs de senaste kommentarerna innan du rekommenderar ett ärende.** Ett öppet ärende kan redan vara delvis löst (som #20697, där kommentarer säger att synk av skills delvis finns). Då är en kommentar om vad som återstår värd mer än en ren 👍.
+- Att reaktionsantalet har gått upp med ett och knappen är blåmarkerad på en skärmbild räcker som belägg för att röstningen gick igenom.
 - Rösta på ett ärende per önskemål, inte på alla närliggande.
 - **Kontrollera status innan du rekommenderar ett ärende.** Tidigare önskemål om samma sak (#33034 och #54433) var stängda som "not planned" och låsta, så varken röst eller kommentar går att lägga där. Det går att se med `gh issue view <nummer> --repo anthropics/claude-code --json state,stateReason`. Ett stängt ärende betyder inte att önskemålet är dött: #95125 öppnades senare och är öppet.
 - Skriv kommentaren med egna ord om den egna situationen. Kents första kommentar blev ordagrant lika med en annan användares kommentar dagen före, vilket tillför mindre än en egen mening om hur han arbetar.
@@ -44,3 +46,4 @@ Skillen finns bara i `C:\Users\kentl\.claude\skills\kent-paverka-ai-verktyg\` (C
 ## Uppdateringslogg
 
 - 2026-10-02 (v1): Skapad efter att Kent röstat och kommenterat på `anthropics/claude-code#95125`.
+- 2026-10-02 (v2): Andra posten i loggen, `#20697` (skills mellan Claude Code och Cowork). Lärdomar justerade: påstå inte att en röst väger tyngre än en kommentar, och läs de senaste kommentarerna innan ett ärende rekommenderas.

@@ -1,8 +1,18 @@
-> **KOPIA.** Originalet ligger i `C:\Users\kentl\.claude\skills\kent-paverka-ai-verktyg\`. Den här filen är en kopia gjord 2026-10-02 så att innehållet syns i den här mappen. Ändra originalet, inte kopian. Kopian laddas inte som skill och uppdateras inte automatiskt.
+> **KOPIA.** Originalet ligger i `C:\Users\kentl\.claude\skills\kent-paverka-ai-verktyg\`. Den här filen är en kopia, uppdaterad 2026-10-02, så att innehållet syns i den här mappen. Ändra originalet, inte kopian. Kopian laddas inte som skill och uppdateras inte automatiskt.
 
 # Logg: Kents påverkan på AI-verktyg
 
 Nyaste överst. En post per ärende. Skriv bara det Kent faktiskt har gjort.
+
+## 2026-10-02: Skills ska vara sammanhållna mellan Claude Code och Claude Cowork
+
+- **Ärende:** [anthropics/claude-code#20697](https://github.com/anthropics/claude-code/issues/20697), "[FEATURE] Sync Skills between Claude Desktop and Claude Code CLI"
+- **Behov:** Kent har samma skill (`kent-ekosystem-analys`) i tre separata kopior: Claude Code (`C:\Users\kentl\.claude\skills\`), Cowork-mappen i AppData och kontot på claude.ai. En ändring i en kopia når inte de andra, så han fick uppdatera dem var för sig.
+- **Vad Kent gjorde:** la en 👍 på ärendets första inlägg. Reaktionerna gick från 157 till 158 enligt hans skärmbild, med knappen blåmarkerad. Någon kommentar syns inte på bilden och han har inte sagt att han skrev en, så ingen kommentar är loggad.
+- **Status när det loggades:** öppet, inte låst. Skapat 2026-01-25, senast uppdaterat 2026-09-29. Etiketterna `enhancement` och `area:core`. Vid kontrollen 166 reaktioner och 49 kommentarer. Några kommentarer säger att det delvis är löst (synk av skills och plugins, kortet "Update skill" i Cowork), och en annan att Claude Code-appen inte visar Update-knappen. Det är inte verifierat av oss. Inget svar från Anthropic sågs.
+- **Närliggande ärenden (ingen åtgärd):** öppna [#80407](https://github.com/anthropics/claude-code/issues/80407) (användarskills i `~/.claude/skills` syns inte i Cowork), [#94574](https://github.com/anthropics/claude-code/issues/94574) (lokala skills och kontoskills delar namnrymd utan avstämning) och [#93163](https://github.com/anthropics/claude-code/issues/93163) (ingen programmatisk uppladdning till claude.ai). [#42017](https://github.com/anthropics/claude-code/issues/42017) är stängt och låst.
+- **Egen erfarenhet samma dag:** när Kent klickade Update på Cowork-kortet skrevs filen i Cowork-mappen om. Enligt #93163 (inte testat av oss) rensar Cowork det som inte hämtats från kontot, så en direkt ändring i Cowork-mappen håller troligen inte.
+- **Att följa upp:** kontrollera i november 2026 om ärendet har stängts eller fått svar, och om en kommentar om vad som ännu inte fungerar behövs.
 
 ## 2026-10-02: Enter ska inte skicka meddelandet i Claude-appens Code-flik
 
