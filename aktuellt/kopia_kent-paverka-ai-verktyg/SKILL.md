@@ -21,6 +21,16 @@ Bakgrund: 2026-10-02 röstade och kommenterade Kent för första gången på Git
 6. **Logga i `LOGG.md`** direkt: datum, ärende, vad Kent gjorde och status.
 7. **Följ upp.** Fråga Kent efter någon vecka eller månad om ärendet har fått svar eller stängts, och uppdatera loggen.
 
+## Så har Kent arbetat hittills (bekräftat, 2026-10-02)
+
+Kent har gjort det här två gånger, båda den 2 oktober 2026. Den första gången han röstade på GitHub var på det första ärendet:
+1. **Enter ska inte skicka meddelandet i Claude-appens Code-flik** (#95125): 👍 och en kommentar.
+2. **Skills ska vara sammanhållna mellan Claude Code och Claude Cowork** (#20697): 👍 och en kommentar om hans egen situation (samma skill i tre kopior).
+
+Mönstret var detsamma båda gångerna: Kent beskrev ett eget problem i det dagliga arbetet, Claude sökte och kontrollerade ärenden på GitHub och rekommenderade ett, Kent röstade och kommenterade själv, och Claude loggade det i `LOGG.md`. Kent ser det som att vara delaktig i hur AI-verktygen utformas, och vill komma ihåg vad som gjorts för att bli bättre på det.
+
+**Vad det kan och inte kan ge.** Att rösta och kommentera är vad en användare kan göra på GitHub. Det garanterar inte att Anthropic bygger funktionen eller när. Lova det aldrig. Tills något händer: arbeta runt det (till exempel en kopia som huvudkälla och manuell överföring) och följ upp i loggen.
+
 ## Vad Claude får och inte får göra
 
 - Claude hjälper till att söka, formulera och logga.
@@ -46,4 +56,5 @@ Skillen finns bara i `C:\Users\kentl\.claude\skills\kent-paverka-ai-verktyg\` (C
 ## Uppdateringslogg
 
 - 2026-10-02 (v1): Skapad efter att Kent röstat och kommenterat på `anthropics/claude-code#95125`.
+- 2026-10-02 (v3): Kents kommentar på #20697 loggad (text och länk). Nytt avsnitt "Så har Kent arbetat hittills" med mönstret, och en påminnelse om vad röster och kommentarer kan och inte kan ge.
 - 2026-10-02 (v2): Andra posten i loggen, `#20697` (skills mellan Claude Code och Cowork). Lärdomar justerade: påstå inte att en röst väger tyngre än en kommentar, och läs de senaste kommentarerna innan ett ärende rekommenderas.
