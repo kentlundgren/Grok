@@ -2,20 +2,20 @@
 
 Live-sida, när GitHub Pages är påslaget för `main` och rot: [https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/](https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/)
 
-Poängen: generativ AI kan tvinga fram fyra åtskilda, källbelagda sätt som en svensk regeringsbildning kan falla ut, och därefter ompröva dem. Sidan är ett fall från morgonen den 2 oktober 2026, inte en levande nyhetssida.
+Poängen: generativ AI kan tvinga fram fyra åtskilda, källbelagda sätt som en svensk regeringsbildning kan falla ut, och därefter ompröva dem. Analysen är gjord med AI (Grok) och siffrorna är inte kvalitetssäkrade. Sidan visar körningar vid olika tidpunkter: den senaste är förvald och tidigare går att välja. Hittills finns en körning, från morgonen den 2 oktober 2026 kl 08:19. Sidan är inte en levande nyhetssida.
 
 ## För en annan modell, eller en människa som ska bygga vidare
 
-Läs `BYGGKONTRAKT.md` först. Ändra utfall i `scenario.json`, inte i HTML. Behåll relativa sökvägar så att samma filer fungerar lokalt, på GitHub Pages och på Vercel.
+Läs `BYGGKONTRAKT.md` först. Ändra utfall i `scenario.js`, inte i HTML. Lägg en ny körning som ny post i `snapshots`. Behåll relativa sökvägar så att samma filer fungerar lokalt, på GitHub Pages och på Vercel.
 
 ## Filer
 
 | Fil | Roll |
 | --- | --- |
-| `index.html` | Sidan. Hämtar data, ritar scenen. |
+| `index.html` | Sidan. Innehåller ingen data. |
 | `stil.css` | Utseende. |
-| `app.js` | Klick, panel, metod och kontrakt. |
-| `scenario.json` | Fakta, rutor, procent och omprövning. |
+| `app.js` | Tidsväljare, klick, panel, metod och teknik-modal. |
+| `scenario.js` | Enda datakällan: fakta, rutor, körningar med procent och omprövning. |
 | `metod.md` | Vad som får stå som faktum. |
 | `BYGGKONTRAKT.md` | Regler för nästa bygge. |
 | `prompt1.md` | Den korta beställningen. |
@@ -25,4 +25,4 @@ Läs `BYGGKONTRAKT.md` först. Ändra utfall i `scenario.json`, inte i HTML. Beh
 
 ## Att uppdatera efter ett nytt besked
 
-Lägg ett nytt objekt eller en daterad kopia. Skriv inte över `meta.asOf` för morgonfallet. En ny körning ska ha eget datum och egen video eller bild om sådan finns.
+Lägg en ny post sist i `snapshots` i `scenario.js`, med eget `asOf`. Skriv aldrig över en tidigare post. En ny körning ska ha egen video eller bild om sådan finns. Se `BYGGKONTRAKT.md` för stegen.

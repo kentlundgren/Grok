@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fyra sätt Sverige kan få en regering</title>
-  <meta name="description" content="Ett fall från 2 oktober 2026: hur generativ AI kan ta fram fyra åtskilda, källbelagda regeringsutfall och sedan ompröva dem.">
+  <meta name="description" content="Hur generativ AI kan ta fram fyra åtskilda, källbelagda regeringsutfall, ompröva dem och göra om analysen vid olika tidpunkter.">
   <link rel="stylesheet" href="stil.css">
 </head>
 <body>
@@ -13,16 +13,26 @@
       <span>Fall · regeringsbildning 2026</span>
       <span>Analys, inte mätning</span>
     </header>
-    <p class="stamp" data-stamp>Läser fall…</p>
-    <h1 class="thesis">Fyra sätt regeringen kan falla ut</h1>
+
+    <h1 class="thesis" id="rubrik">Fyra sätt regeringen kan falla ut</h1>
     <p class="lede" data-thesis></p>
+    <p class="ai-note" data-ai></p>
 
     <section class="facts" data-facts></section>
 
+    <section class="picker" aria-labelledby="tidpunkt">
+      <h2 id="tidpunkt">Välj tidpunkt<a class="anchor" href="#tidpunkt" aria-label="Länk till Välj tidpunkt">#</a></h2>
+      <div class="snaps" data-picker></div>
+      <p class="picker-note" data-picker-note></p>
+    </section>
+
+    <p class="stamp" data-stamp>Läser körning…</p>
+    <p class="old" data-old hidden>Det här är en tidigare körning. Den visar läget då och gäller inte längre. Välj den senaste körningen för det senaste troliga utfallet.</p>
+
     <nav class="tabs" aria-label="Sidans delar">
       <button type="button" data-panel="scen" aria-selected="true">Fyrfältaren</button>
-      <button type="button" data-panel="metod">Så togs det fram</button>
-      <button type="button" data-panel="kontrakt">Byggkontrakt</button>
+      <button type="button" data-panel="metod" aria-selected="false">Så togs det fram</button>
+      <button type="button" data-panel="kontrakt" aria-selected="false">Byggkontrakt</button>
     </nav>
 
     <section id="scen" class="panel active">
@@ -49,14 +59,15 @@
     <section id="metod" class="panel">
       <div class="method">
         <div>
-          <h2>Från en kort beställning till fyra rutor</h2>
+          <h2 id="sa-togs-det-fram">Från en kort beställning till fyra rutor<a class="anchor" href="#sa-togs-det-fram" aria-label="Länk till avsnittet">#</a></h2>
+          <p data-method-run></p>
           <p><a href="prompt1.md">prompt1.md</a> bad om en prompt. <a href="prompt2.md">prompt2.md</a> skärpte den: sök dagens datum, använd primärkällor, bygg exakt fyra utfall och ompröva dem innan ett väljs. Videon är körningen. Bilden är fyrfältaren som sparades.</p>
           <video data-video controls preload="metadata"></video>
           <ol class="steps" data-steps></ol>
           <p>Källregeln ligger i <a href="metod.md">metod.md</a>. Mandat: Valmyndigheten, 19 september 2026. Regeln om 175 nej-röster: regeringsformen 6 kap. 4 §.</p>
         </div>
         <figure>
-          <img class="shot" data-shot alt="Sparad bild av fyrfältaren från körningen 2 oktober 2026">
+          <img class="shot" data-shot alt="Sparad bild av fyrfältaren från körningen">
           <figcaption>Originalbilden från körningen, inte sidans interaktiva scen.</figcaption>
         </figure>
       </div>
@@ -65,17 +76,17 @@
     <section id="kontrakt" class="panel">
       <div class="contract">
         <div>
-          <h2>Så kan nästa modell bygga vidare</h2>
-          <p>Poängen ska stå kvar: fyra åtskilda utfall, sedan en omprövning. Procenten är en uppskattning. Morgonfallet den 2 oktober får inte skrivas över av ett senare besked.</p>
+          <h2 id="byggkontrakt">Så kan nästa modell bygga vidare<a class="anchor" href="#byggkontrakt" aria-label="Länk till avsnittet">#</a></h2>
+          <p>Poängen ska stå kvar: fyra åtskilda utfall, sedan en omprövning. Procenten är en uppskattning och visas alltid med tidpunkt. En ny körning läggs till som en ny post. En äldre körning skrivs aldrig över.</p>
           <table class="filetable">
-            <tr><td><a href="scenario.json">scenario.json</a></td><td>Rutor, mandat, omprövning.</td></tr>
-            <tr><td><a href="app.js">app.js</a></td><td>Läser JSON och ritar scenen.</td></tr>
+            <tr><td><a href="scenario.js">scenario.js</a></td><td>Enda datakällan: rutor, mandat, körningar och omprövning.</td></tr>
+            <tr><td><a href="app.js">app.js</a></td><td>Läser scenario.js och ritar scenen.</td></tr>
             <tr><td><a href="BYGGKONTRAKT.md">BYGGKONTRAKT.md</a></td><td>Vad som får och inte får ändras.</td></tr>
             <tr><td><a href="README.md">README.md</a></td><td>Karta och live-länk.</td></tr>
           </table>
         </div>
         <div>
-          <h2>Publicering</h2>
+          <h2 id="publicering">Publicering<a class="anchor" href="#publicering" aria-label="Länk till avsnittet">#</a></h2>
           <p>Statisk sida, relativa länkar, ingen build. Samma mapp kan ligga på GitHub Pages och som Root Directory på Vercel.</p>
           <p>Förväntad live-sida: <a href="https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/">kentlundgren.github.io/Grok/aktuellt/regeringsbildning/</a></p>
         </div>
@@ -83,149 +94,79 @@
     </section>
 
     <footer>
-      Underlag från morgonen den 2 oktober 2026. Porträtten är pressbilder för igenkänning, utom Kristersson som är en illustration. Nytt besked från talmannen efter klockan 11 ingår inte.
+      Avsändare: Kent Lundgren. Analysen är gjord med generativ AI och siffrorna är inte kvalitetssäkrade. Kontrollera mot källan innan något återges. Porträtten är pressbilder för igenkänning, utom Kristersson som är en illustration. Varje körning gäller bara vid sin tidpunkt.
     </footer>
   </main>
-  <script id="scenario-data" type="application/json">
-{
-  "meta": {
-    "caseId": "regeringsbildning-2026-10-02-fm",
-    "asOf": "2026-10-02T08:19:00+02:00",
-    "asOfLabel": "2 oktober 2026, morgon, före talmannens pressträff klockan 11",
-    "electionDay": "2026-09-13",
-    "resultEstablished": "2026-09-19",
-    "model": "Grok",
-    "promptFile": "prompt2.md",
-    "firstPromptFile": "prompt1.md",
-    "video": "video/261002_parlamentarisk_fyrfaltare.mp4",
-    "originalImage": "bilder/Hur_löser_sig_parlamentariska_läget_02_fyrfältare.jpg",
-    "thesis": "Generativ AI kan tvinga fram fyra åtskilda, källbelagda regeringsutfall och därefter ompröva dem. Sidan visar en styrd analys, inte ett mätresultat och inte en prognos som gäller efter nya besked.",
-    "probabilityNote": "Procenten är analytiska uppskattningar från den första fyrfältaren. De summerar till 100 och är inte en objektiv mätning."
-  },
-  "mandates": {
-    "total": 349,
-    "rejectAt": 175,
-    "rule": "Ett statsministerförslag är godkänt om färre än 175 ledamöter röstar nej. Avstående och frånvaro är inte nej.",
-    "left": { "label": "S, V, MP och C", "seats": 176, "parties": { "S": 99, "V": 30, "MP": 22, "C": 25 } },
-    "tido": { "label": "M, SD, KD och L", "seats": 173, "parties": { "M": 70, "SD": 62, "KD": 22, "L": 19 } }
-  },
-  "axes": {
-    "x": {
-      "name": "Röda linjer",
-      "left": "Kompromissvilja",
-      "right": "Låsning"
-    },
-    "y": {
-      "name": "Regeringsunderlag",
-      "top": "Tydlig koalition",
-      "bottom": "Lösare underlag eller institutionell osäkerhet"
-    }
-  },
-  "scenarios": [
-    {
-      "id": "s1",
-      "quadrant": "kompromiss-koalition",
-      "title": "S, MP och C i regeringen, V utanför med avtal",
-      "primeMinister": "Magdalena Andersson (S)",
-      "inGovernment": ["S", "MP", "C"],
-      "governmentSeats": 146,
-      "mustTolerate": "V avstår eller röstar ja. Tidösidans 173 nej räcker då inte.",
-      "math": "Tidö kan ensamt samla 173 nej, två under spärren. V behöver alltså inte rösta ja, bara låta bli att rösta nej.",
-      "concession": "V lägger kravet på statsrådsposter åt sidan. C accepterar ett organiserat stöd från V.",
-      "obstacles": "Den 18–25 september sade båda nej till just detta. V upprepade regeringskravet, C uteslöt V från regeringen.",
-      "watch": "Gemensam pressträff, skriftligt stödavtal, eller att V slutar kräva statsrådsposter.",
-      "faces": [
-        {"src": "bilder/andersson.jpg", "name": "Magdalena Andersson", "party": "S"},
-        {"src": "bilder/mp-sprakror.jpg", "name": "Amanda Lind och Daniel Helldén", "party": "MP"},
-        {"src": "bilder/thand-ringqvist.jpg", "name": "Elisabeth Thand Ringqvist", "party": "C"}
-      ],
-      "probability": 28,
-      "probabilityLabel": "28 %",
-      "chosenAfterReview": false
-    },
-    {
-      "id": "s2",
-      "quadrant": "lasning-koalition",
-      "title": "Tidö åter som koalition",
-      "primeMinister": "Ulf Kristersson (M)",
-      "inGovernment": ["M", "KD", "L", "SD"],
-      "governmentSeats": 173,
-      "mustTolerate": "Minst 24 ledamöter i S, V, MP och C får inte rösta nej.",
-      "math": "S, V och MP har 151 mandat. Tillsammans med C finns 176 möjliga nej-röster, en över spärren.",
-      "concession": "C skulle behöva acceptera SD i regeringen, trots att C utesluter SD-inflytande. Ingen sådan öppning var belagd på morgonen den 2 oktober.",
-      "obstacles": "C:s offentliga linje och en möjlig nej-majoritet på 176. Före valet lovade M och L SD ministerposter, men det skapar inte egna mandat.",
-      "watch": "C säger att SD kan tolereras, eller enskilda C-ledamöter aviserar att de inte röstar nej.",
-      "faces": [
-        {"src": "bilder/kristersson.jpg", "name": "Ulf Kristersson", "party": "M", "note": "illustration"},
-        {"src": "bilder/akesson.jpg", "name": "Jimmie Åkesson", "party": "SD"},
-        {"src": "bilder/busch.jpg", "name": "Ebba Busch", "party": "KD"},
-        {"src": "bilder/mohamsson.jpg", "name": "Simona Mohamsson", "party": "L"}
-      ],
-      "probability": 12,
-      "probabilityLabel": "12 %",
-      "chosenAfterReview": false
-    },
-    {
-      "id": "s3",
-      "quadrant": "kompromiss-lost",
-      "title": "M, KD och L i minoritet, C avstår, SD utanför",
-      "primeMinister": "Ulf Kristersson (M)",
-      "inGovernment": ["M", "KD", "L"],
-      "governmentSeats": 111,
-      "mustTolerate": "C avstår. SD röstar ja eller avstår, utan givna ministerposter.",
-      "math": "S, V och MP har 151 nej. Det är under 175 om C inte röstar nej.",
-      "concession": "C går från processbesked till att inte fälla. SD accepterar att stå utanför trots vallöftet om ministerposter.",
-      "obstacles": "C utesluter SD-inflytande även utifrån. Åkesson ville den 29 september pröva Andersson, inte sondera en försvagad Tidö.",
-      "watch": "Kristersson får sonderingsuppdraget och C talar om passivt stöd.",
-      "faces": [
-        {"src": "bilder/kristersson.jpg", "name": "Ulf Kristersson", "party": "M", "note": "illustration"},
-        {"src": "bilder/busch.jpg", "name": "Ebba Busch", "party": "KD"},
-        {"src": "bilder/mohamsson.jpg", "name": "Simona Mohamsson", "party": "L"}
-      ],
-      "probability": 30,
-      "probabilityLabel": "30 %",
-      "chosenAfterReview": false
-    },
-    {
-      "id": "s4",
-      "quadrant": "lasning-osakerhet",
-      "title": "Låsning, skarpa prövningar och väg mot extra val",
-      "primeMinister": "Ingen kandidat tolereras i detta utfall",
-      "inGovernment": [],
-      "governmentSeats": 0,
-      "mustTolerate": "Inget parti behöver byta linje. Det är själva låsningen.",
-      "math": "Andersson faller om V röstar nej tillsammans med Tidösidan, 203 nej. Kristersson faller om C röstar nej tillsammans med S, V och MP, 176 nej.",
-      "concession": "Ingen eftergift krävs för att utfallet ska inträffa. Extra val följer först efter fyra förkastade statsministerförslag, enligt regeringsformen 6 kap. 5 §.",
-      "obstacles": "Hindret mot en regering är de linjer som ligger kvar. Hindret mot extra val är att ett avstående är billigare än ett val.",
-      "watch": "Första nej-omröstningen, att Åkesson upprepar att extra val vore bra, eller att talmannen närmar sig fjärde försöket.",
-      "probability": 30,
-      "probabilityLabel": "30 %",
-      "chosenAfterReview": true
-    }
-  ],
-  "review": {
-    "chosenId": "s4",
-    "interval": "30–40 %",
-    "point": "30 %",
-    "why": "Ingen belagd öppning räckte till de tre andra utfallen på morgonen den 2 oktober. Närmaste verifierade linjen var Tidösidans krav på en skarp omröstning om Andersson. Den faller om V gör som partiet har sagt.",
-    "objection": "Svenska partier fullföljer sällan ett extra val när ett avstående räcker. V kan låta bli att fälla Andersson utan att sitta i regeringen. C kan låta bli att fälla Kristersson. Därför var ruta 3 och ruta 4 i praktiken jämnstarka tills någon röst aviseras.",
-    "wouldChange": [
-      "Talmannen ger ett sonderingsuppdrag med ett uttalat underlag.",
-      "V säger att partiet kan tolerera en regering utan egna statsråd.",
-      "C säger att partiet inte tänker rösta nej till Kristersson.",
-      "SD avstår skriftligt från ministerposter."
-    ]
-  },
-  "process": [
-    { "date": "2026-09-13", "text": "Valdag." },
-    { "date": "2026-09-18", "text": "Talmannen ger Magdalena Andersson sonderingsuppdrag." },
-    { "date": "2026-09-19", "text": "Valmyndigheten fastställer resultatet: 176 mot 173." },
-    { "date": "2026-09-28", "text": "Andersson lämnar tillbaka uppdraget. Norlén omväljs till talman med stöd av V och Tidösidan." },
-    { "date": "2026-09-30", "text": "Ny samtalsserie. Inget nytt sonderingsuppdrag." },
-    { "date": "2026-10-02", "text": "Analysen görs på morgonen. Pressträff med talmannen är utsatt till klockan 11 och har inte hållits." }
-  ]
-}
-</script>
-<script src="app.js"></script>
+
+  <a class="corner corner-left" href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/regeringsbildning" target="_blank" rel="noopener">{ } GitHub</a>
+  <button type="button" class="corner corner-right" id="techBtn" aria-label="Tekniköversikt">&lt;/&gt; teknik</button>
+
+  <div class="modal-overlay" id="techModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="techTitle">
+      <button type="button" class="modal-close" id="techClose" aria-label="Stäng">&times;</button>
+      <h2 id="techTitle">Hur den här sidan är byggd</h2>
+      <p>Två delar: tekniken i sidan, och metoden som analysen togs fram med.</p>
+
+      <h3 class="tech-section-title">Tekniken</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Vanlig HTML, CSS och JavaScript</h3>
+          <p>Inga ramverk, inga bibliotek och inget byggsteg. Sidan består av <code>index.html</code>, <code>stil.css</code>, <code>app.js</code> och <code>scenario.js</code>.</p>
+        </div>
+        <div class="tech-card">
+          <h3>En enda datakälla</h3>
+          <p>Allt innehåll ligger i <code>scenario.js</code>. Det finns ingen kopia i HTML-filen, så siffror och text kan inte glida isär. Filen är JavaScript och inte JSON, så att sidan fungerar även när den öppnas direkt från disk.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Körningar med tidsstämpel</h3>
+          <p>Varje körning är en egen post med eget datum och klockslag. Sidan sorterar dem på tid, visar den senaste först och räknar ut skillnaden i procentenheter mot körningen före.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Text escapas</h3>
+          <p>Texten från datafilen går genom en escape-funktion innan den ritas, så ett tecken som <code>&lt;</code> aldrig tolkas som kod.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Ingen data skickas någonstans</h3>
+          <p>Sidan pratar inte med någon server och sparar ingenting om besökaren.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Går att länka och styra med tangentbordet</h3>
+          <p>Rutorna och tidpunkterna är knappar. En körning har ett eget ankare, till exempel <code>#k-2026-10-02-0819</code>.</p>
+        </div>
+      </div>
+
+      <h3 class="tech-section-title">Metoden</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Analysen är gjord med AI</h3>
+          <p>Fyrfältaren, procenten och omprövningen togs fram av AI-modellen Grok (xAI). Siffrorna är inte kvalitetssäkrade och ska kontrolleras mot källorna.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Två prompter</h3>
+          <p><a href="prompt1.md">prompt1.md</a> var den korta beställningen. <a href="prompt2.md">prompt2.md</a> var den skärpta prompten som kördes, med krav på dagsaktuella källor och exakt fyra utfall.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Fyrfältare, sedan omprövning</h3>
+          <p>Först fyra åtskilda utfall med procent som summerar till 100. Sedan en separat prövning som väljer ett utfall och redovisar starkaste invändningen.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Granskad efter bygget</h3>
+          <p>Mandatmatematiken räknades om den 2 oktober 2026. Ett fel i ruta 2 rättades: det räcker att två ledamöter avstår, inte 24.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Äldre körningar skrivs aldrig över</h3>
+          <p>Regeln står i <a href="BYGGKONTRAKT.md">BYGGKONTRAKT.md</a>. En ny körning blir en ny post, så att man kan se hur bedömningen ändras.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Bygget i dialog</h3>
+          <p>Sidan byggdes om den 2 oktober 2026 i Claude Code, i dialog med Kent Lundgren.</p>
+        </div>
+      </div>
+      <p style="margin-top:1.4rem"><a href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/regeringsbildning" target="_blank" rel="noopener">Källkoden på GitHub</a></p>
+    </div>
+  </div>
+
+  <script src="scenario.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@ Sidan visar hur en generativ modell kan användas för att ta fram fyra åtskild
 1. `prompt1.md` är beställningen: ta fram en prompt som tvingar fram en fyrfältare och därefter en ny prövning.
 2. `prompt2.md` är den skärpta prompten. Den krävde dagsaktuella källor, negativ parlamentarism och fyra utfall som inte får vara varianter av samma lösning.
 3. Videon visar körningen. Bilden är fyrfältaren som sparades från den körningen.
-4. `scenario.json` är den strukturerade versionen av samma körning, morgonen den 2 oktober 2026, före talmannens pressträff klockan 11.
+4. `scenario.js` är den strukturerade versionen av körningen, morgonen den 2 oktober 2026 kl 08:19, före talmannens pressträff klockan 11. Senare körningar läggs till som nya poster med egen tidsstämpel.
 
 ## Vad som får stå som faktum
 
@@ -19,7 +19,8 @@ Sidan visar hur en generativ modell kan användas för att ta fram fyra åtskild
 ## Vad som inte får stå som faktum
 
 - Citat, mandat, förhandlingskontakter eller sannolikheter som inte finns i källan.
-- En uppdatering som skriver över morgonens fall utan att lägga ett nytt datum i `meta.asOf`.
+- En uppdatering som skriver över en tidigare körning i stället för att lägga en ny post med eget `asOf`.
+- Procent som tagits fram av en annan modell eller människa än den som står i `model`.
 
 ## Primärkällor för detta fall
 

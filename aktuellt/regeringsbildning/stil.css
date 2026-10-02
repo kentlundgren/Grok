@@ -20,6 +20,7 @@ body {
   background:
     radial-gradient(circle at top left, #fff8e8, transparent 36%),
     var(--paper);
+  padding-bottom: 56px; /* så att hörnknapparna inte täcker sidfoten */
 }
 
 button, input { font: inherit; }
@@ -328,9 +329,104 @@ footer {
   font-size: 0.92rem;
 }
 
+/* AI-upplysning, tidsväljare och markering av tidigare körning */
+.ai-note {
+  max-width: 68ch;
+  margin: 12px 0 0;
+  padding: 10px 14px;
+  background: #e8eef7;
+  border-left: 5px solid var(--blue);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.picker { margin: 18px 0 4px; }
+.picker h2 { margin: 0 0 8px; font-size: 1.05rem; font-family: "Segoe UI", sans-serif; }
+.snaps { display: flex; flex-wrap: wrap; gap: 8px; }
+.snap {
+  border: 1px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.snap span { color: var(--muted); font-size: 0.8rem; }
+.snap[aria-pressed="true"] { background: var(--ink); color: white; border-color: var(--ink); }
+.snap[aria-pressed="true"] span { color: #ddd; }
+.picker-note { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; max-width: 68ch; }
+.old {
+  margin: 8px 0 0;
+  padding: 8px 12px;
+  background: #f8e7e3;
+  border-left: 5px solid var(--red);
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.9rem;
+}
+.old[hidden], [hidden] { display: none; }
+.cell .when { font-family: "Segoe UI", sans-serif; font-size: 0.74rem; color: var(--muted); }
+
+/* Ankare vid rubrik: syns vid hover */
+.anchor { margin-left: 8px; text-decoration: none; opacity: 0; font-size: 0.8em; }
+h2:hover .anchor, .anchor:focus { opacity: 0.6; }
+
+/* Hörnknappar: GitHub nere till vänster, teknik-modal nere till höger */
+.corner {
+  position: fixed; bottom: 14px; z-index: 10;
+  font-family: "Courier New", Courier, monospace; font-size: 0.78rem;
+  color: var(--muted); background: var(--card);
+  border: 1px solid var(--line); border-radius: 999px;
+  padding: 0.3rem 0.7rem; text-decoration: none; cursor: pointer;
+  opacity: 0.55; transition: opacity 0.2s ease, color 0.2s ease;
+}
+.corner:hover, .corner:focus-visible { opacity: 1; color: var(--blue); }
+.corner-left { left: 14px; }
+.corner-right { right: 14px; }
+
+.modal-overlay {
+  display: none; position: fixed; inset: 0; z-index: 20; padding: 1rem;
+  background: rgba(28, 25, 21, 0.55); align-items: center; justify-content: center;
+}
+.modal-overlay.show { display: flex; }
+.modal {
+  position: relative; background: var(--card); border-radius: 16px;
+  max-width: 640px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 2rem;
+}
+.modal h2 { color: var(--blue); margin: 0 0 0.5rem; font-size: 1.4rem; }
+.modal > p { color: var(--muted); font-size: 0.92rem; margin: 0 0 1.4rem; }
+.modal a { color: var(--blue); }
+.modal-close {
+  position: absolute; top: 1rem; right: 1rem; background: none; border: none;
+  font-size: 1.4rem; line-height: 1; color: var(--muted); cursor: pointer;
+}
+.tech-section-title { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 1.4rem 0 0.7rem; font-family: "Segoe UI", sans-serif; }
+.tech-section-title:first-of-type { margin-top: 0.4rem; }
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.tech-card h3 { font-size: 0.95rem; color: var(--blue); margin: 0 0 0.3rem; font-family: "Segoe UI", sans-serif; }
+.tech-card p { font-size: 0.85rem; line-height: 1.5; margin: 0; }
+.tech-card code { background: #eef0f3; border-radius: 4px; padding: 0.05rem 0.3rem; font-size: 0.82em; }
+
+@media print {
+  .corner, .modal-overlay { display: none; }
+}
+
+@media (max-width: 640px) {
+  .tech-grid { grid-template-columns: 1fr; }
+  .modal { padding: 1.4rem; }
+}
+
 @media (max-width: 800px) {
   .facts, .method, .contract, .kv { grid-template-columns: 1fr; }
   .stage, .cells { grid-template-columns: 1fr; }
+  /* Utan detta ligger rutorna kvar i kolumn 2 och sidan scrollar sidledes. */
+  .stage > *, .cells { grid-column: 1; grid-row: auto; }
+  .cells { min-height: 0; }
   .axis-y { flex-direction: row; }
   .pyramid { width: 72px; min-height: 46px; }
   .thesis { max-width: none; }
