@@ -21,7 +21,7 @@ function scenarioAt(id, snap = currentSnap()) {
 }
 
 function showPanel(name) {
-  document.querySelectorAll(".tabs button").forEach((button) => {
+  document.querySelectorAll(".tabs button[data-panel]").forEach((button) => {
     button.setAttribute("aria-selected", button.dataset.panel === name ? "true" : "false");
   });
   document.querySelectorAll(".panel").forEach((panel) => {
@@ -35,9 +35,7 @@ const STEP_MS = 4000;
 const tour = { active: false, timer: null };
 
 function setMode(mode) {
-  document.querySelectorAll(".mode").forEach((button) => {
-    button.setAttribute("aria-pressed", button.dataset.mode === mode ? "true" : "false");
-  });
+  document.querySelector(".mode").setAttribute("aria-pressed", mode === "tur" ? "true" : "false");
 }
 
 function clearTourMarks() {
@@ -107,8 +105,8 @@ function setupModes() {
   const seconds = (data.scenarios.length * STEP_MS) / 1000;
   const turButton = document.querySelector('.mode[data-mode="tur"]');
   turButton.textContent = `Se de fyra alternativen i tur och ordning · ${seconds} s`;
-  document.querySelector('.mode[data-mode="stabil"]').addEventListener("click", () => endTour());
-  turButton.addEventListener("click", () => startTour());
+  // Knappen är av/på: ett klick startar turen, ett klick till avbryter och går tillbaka till den stilla fyrfältaren.
+  turButton.addEventListener("click", () => (tour.active ? endTour() : startTour()));
 }
 
 function renderFacts() {
@@ -291,7 +289,7 @@ function init() {
     document.querySelector("[data-thesis]").textContent = "Sidan kunde inte läsa underlaget. scenario.js saknas eller är trasig.";
     return;
   }
-  document.querySelectorAll(".tabs button").forEach((button) => {
+  document.querySelectorAll(".tabs button[data-panel]").forEach((button) => {
     button.addEventListener("click", () => showPanel(button.dataset.panel));
   });
   renderFacts();

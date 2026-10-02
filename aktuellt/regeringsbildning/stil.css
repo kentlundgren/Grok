@@ -330,16 +330,9 @@ footer {
 }
 
 /* Turläge: ett alternativ i taget markeras, de andra tonas ned. Fyrfältaren är utgångsläget. */
-.modes { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 12px; font-family: "Segoe UI", sans-serif; }
-.mode {
-  border: 1px solid var(--line);
-  background: var(--card);
-  color: var(--ink);
-  cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 10px;
-}
-.mode[aria-pressed="true"] { background: var(--ink); color: white; border-color: var(--ink); }
+.tabs { flex-wrap: wrap; }
+.tabs .mode { margin-left: auto; }
+.tabs .mode[aria-pressed="true"] { background: var(--ink); color: white; border-color: var(--ink); }
 
 .tour-bar {
   display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
