@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fyra sätt Sverige kan få en regering</title>
+  <meta name="description" content="Ett fall från 2 oktober 2026: hur generativ AI kan ta fram fyra åtskilda, källbelagda regeringsutfall och sedan ompröva dem.">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <span>Fall · regeringsbildning 2026</span>
+      <span>Analys, inte mätning</span>
+    </header>
+    <p class="stamp" data-stamp>Läser fall…</p>
+    <h1 class="thesis">Fyra sätt regeringen kan falla ut</h1>
+    <p class="lede" data-thesis></p>
+
+    <section class="facts" data-facts></section>
+
+    <nav class="tabs" aria-label="Sidans delar">
+      <button type="button" data-panel="scen" aria-selected="true">Fyrfältaren</button>
+      <button type="button" data-panel="metod">Så togs det fram</button>
+      <button type="button" data-panel="kontrakt">Byggkontrakt</button>
+    </nav>
+
+    <section id="scen" class="panel active">
+      <div class="stage">
+        <div class="axis y" data-axis-y></div>
+        <div data-cells style="display:contents"></div>
+        <div class="axis x" data-axis-x></div>
+      </div>
+      <article class="detail" data-detail></article>
+      <aside class="review" data-review></aside>
+    </section>
+
+    <section id="metod" class="panel">
+      <div class="method">
+        <div>
+          <h2>Från en kort beställning till fyra rutor</h2>
+          <p><a href="prompt1.md">prompt1.md</a> bad om en prompt. <a href="prompt2.md">prompt2.md</a> skärpte den: sök dagens datum, använd primärkällor, bygg exakt fyra utfall och ompröva dem innan ett väljs. Videon är körningen. Bilden är fyrfältaren som sparades.</p>
+          <video data-video controls preload="metadata"></video>
+          <ol class="steps" data-steps></ol>
+          <p>Källregeln ligger i <a href="metod.md">metod.md</a>. Mandat: Valmyndigheten, 19 september 2026. Regeln om 175 nej-röster: regeringsformen 6 kap. 4 §.</p>
+        </div>
+        <figure>
+          <img class="shot" data-shot alt="Sparad bild av fyrfältaren från körningen 2 oktober 2026">
+          <figcaption>Originalbilden från körningen, inte sidans interaktiva scen.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="kontrakt" class="panel">
+      <div class="contract">
+        <div>
+          <h2>Så kan nästa modell bygga vidare</h2>
+          <p>Poängen ska stå kvar: fyra åtskilda utfall, sedan en omprövning. Procenten är en uppskattning. Morgonfallet den 2 oktober får inte skrivas över av ett senare besked.</p>
+          <table class="filetable">
+            <tr><td><a href="scenario.json">scenario.json</a></td><td>Rutor, mandat, omprövning.</td></tr>
+            <tr><td><a href="app.js">app.js</a></td><td>Läser JSON och ritar scenen.</td></tr>
+            <tr><td><a href="BYGGKONTRAKT.md">BYGGKONTRAKT.md</a></td><td>Vad som får och inte får ändras.</td></tr>
+            <tr><td><a href="README.md">README.md</a></td><td>Karta och live-länk.</td></tr>
+          </table>
+        </div>
+        <div>
+          <h2>Publicering</h2>
+          <p>Statisk sida, relativa länkar, ingen build. Samma mapp kan ligga på GitHub Pages och som Root Directory på Vercel.</p>
+          <p>Förväntad live-sida: <a href="https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/">kentlundgren.github.io/Grok/aktuellt/regeringsbildning/</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Underlag från morgonen den 2 oktober 2026. Nytt besked från talmannen efter klockan 11 ingår inte.
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
