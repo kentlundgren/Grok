@@ -109,6 +109,24 @@ function setupModes() {
   turButton.addEventListener("click", () => (tour.active ? endTour() : startTour()));
 }
 
+function renderNotices() {
+  const box = document.querySelector("[data-notices]");
+  const notices = [...(data.notices || [])].sort((a, b) => new Date(a.asOf) - new Date(b.asOf));
+  if (!notices.length) {
+    box.hidden = true;
+    return;
+  }
+  box.hidden = false;
+  box.innerHTML = notices.map((note) => `
+    <p class="process-kicker">Processnotis · inte en ny analys · ${esc(note.asOfLabel)}</p>
+    <h2>${esc(note.title)}</h2>
+    <p>${esc(note.text)}</p>
+    <p>${esc(note.notTheTrigger)}</p>
+    <p><b>När en ny körning blir aktuell.</b> ${esc(note.nextRunWhen)}</p>
+    <p><a href="${esc(note.source)}">${esc(note.sourceLabel)}</a></p>
+  `).join("");
+}
+
 function renderFacts() {
   const { mandates, meta } = data;
   document.querySelector("[data-thesis]").textContent = meta.thesis;
@@ -293,6 +311,7 @@ function init() {
     button.addEventListener("click", () => showPanel(button.dataset.panel));
   });
   renderFacts();
+  renderNotices();
   setupModes();
   selectSnapshot(snapshots[snapshots.length - 1].id, true);
   window.addEventListener("hashchange", followHash);

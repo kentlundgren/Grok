@@ -16,7 +16,20 @@ Första vyn är en tidsväljare och fyrfältaren. Axlarna är röda linjer, frå
 
 Fyrfältaren är alltid utgångsläget och ska vara stilla. Ovanför den finns ett val, "Se de fyra alternativen i tur och ordning" (4 sekunder per alternativ, en gång), som ritas av samma data och därför följer varje körning. Det ska alltid gå att stoppa och gå tillbaka (knapp, Escape, bakåtknappen). Ändra inte utgångsläget till att röra sig av sig själv.
 
-Den senaste körningen är förvald. En tidigare körning markeras som tidigare. Procenten visas alltid med modell och tidpunkt.
+Den senaste körningen är förvald. En tidigare körning markeras som tidigare. Procenten visas alltid med modell och tidpunkt. En processnotis är inte en körning: den ligger ovanför fyrfältaren och ändrar inte vilken tidpunkt som är vald.
+
+## Två sorters uppdateringar
+
+Välj en. Blanda inte ihop dem.
+
+| | Processnotis | Ny körning |
+| --- | --- | --- |
+| När | Ett verifierat besked som inte flyttar en röd linje och inte räcker för nya procent. Exempel: talmannen sätter en tid, ger eller tar tillbaka ett uppdrag, utan ett namngivet underlag. | En modell har gjort en ny prövning och sätter nya procent i sitt eget namn. Eller ett parti har flyttat en linje så att de fyra utfallen måste vägas om. |
+| Var | Ny post sist i `notices` i `scenario.js`. | Ny post sist i `snapshots` i `scenario.js`. |
+| Procent | Inga. Skriv inte 0 och kopiera inte den förra körningens siffror. | Nya. De fyra ska summera till 100. Märkta med modellens namn. |
+| Vad som inte ska göras | Ingen delningssida, ingen ny `og`-bild, ingen ny rotationsvideo. | Skriv inte över en tidigare post. Lägg inte procent under en annan modells namn. |
+
+Om du är osäker: gör en processnotis. Skriv i den vad som skulle krävas för en ny körning. Det är billigare att lägga till en körning senare än att låtsas att ett kalenderbesked är en ny sannolikhet.
 
 ## Datamodell: en enda källa
 
@@ -25,8 +38,18 @@ All data ligger i `scenario.js` (`window.SCENARIO`). Det finns ingen kopia i `in
 - `meta`, `mandates`, `axes`: gäller alla körningar.
 - `scenarios`: det som inte ändras mellan körningar (titel, mandatmatematik, vem som måste avstå, eftergift, porträtt).
 - `snapshots`: en post per körning med `asOf`, `asOfLabel`, `asOfShort`, `context`, `model`, procent, hinder och tecken att bevaka per ruta, `review` och `process`.
+- `notices`: verifierade besked som inte flyttar procent. Ingen `model`, inga procent.
+
+### Lägga till en processnotis
+
+1. Läs den senaste notisen och den senaste körningens `review.wouldChange`. Skriv om beskedet uppfyller någon av de punkterna eller inte.
+2. Lägg en post sist i `notices` med `id`, `asOf`, `asOfLabel`, `kind: "process"`, `movesProbabilities: false`, `title`, `text`, `notTheTrigger`, `nextRunWhen`, `source` och `sourceLabel`.
+3. Källan ska vara en primärkälla, i första hand riksdagen.se, med datum.
+4. Ändra inte `snapshots`, procent eller `model` på en tidigare körning.
 
 ### Lägga till en ny körning
+
+Gör inte detta för ett rent processbesked. Använd då processnotis ovan.
 
 1. Kopiera den senaste posten i `snapshots` och lägg kopian sist.
 2. Ge den nytt `id`, `asOf`, `asOfLabel`, `asOfShort`, `context` och `model`.
@@ -42,7 +65,7 @@ All data ligger i `scenario.js` (`window.SCENARIO`). Det finns ingen kopia i `in
 
 - Text i rutorna, om `scenario.js` ändras och källan klarar ändringen.
 - Visuell ordning, typografi och hur panelen öppnas.
-- Nya körningar enligt ovan.
+- Nya körningar och processnotiser enligt ovan.
 
 ## Får inte ändras utan ny källa
 
@@ -54,7 +77,7 @@ All data ligger i `scenario.js` (`window.SCENARIO`). Det finns ingen kopia i `in
 
 ## Hur en annan modell fortsätter
 
-1. Läs `scenario.js` och `metod.md`.
+1. Läs `scenario.js`, `notices` och `metod.md`. Bestäm först om beskedet är en processnotis eller en ny körning.
 2. Ändra bara data om du samtidigt anger datum och källa.
 3. Låt `app.js` läsa `scenario.js`. Hårdkoda inte ett utfall i HTML.
 4. Använd relativa sökvägar: `stil.css`, `app.js`, `scenario.js`, `video/…`, `bilder/…`.
@@ -67,6 +90,8 @@ All data ligger i `scenario.js` (`window.SCENARIO`). Det finns ingen kopia i `in
 Statisk sida, ingen build. GitHub Pages från `main` ger `https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/` om Pages är påslaget för repot. Samma mapp kan vara Root Directory på Vercel. Byt inte till ett ramverk om inte uppgiften uttryckligen kräver det.
 
 ## Ändringslogg
+
+- 2026-10-02, eftermiddag: Processnotis skild från ny körning. `notices` i `scenario.js`. Första notisen: sonderingen återupptas måndag 5 oktober. Inga nya procent.
 
 - 2026-10-02: Länkförhandsvisning (`og:`-taggar, `og-bild.jpg`, delningssida per körning) och `video/gor_rotation.py`. Rutornas etiketter har nu riktiga å och ä (`quadrantLabel`).
 - 2026-10-02: En datakälla (`scenario.js`) i stället för `scenario.json` plus en kopia i HTML. Tidsväljare och körningar med tidsstämpel. AI-upplysning. GitHub-hörna och teknik-modal. Sakfel i ruta 2 rättat: det räcker att två ledamöter avstår, inte 24.

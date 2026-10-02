@@ -1,12 +1,14 @@
 // Enda datakällan för sidan. index.html och app.js innehåller ingen kopia av detta.
 // Filen är JavaScript och inte ren JSON, så att sidan fungerar även när index.html öppnas som file://.
 //
-// Tre nivåer:
+// Fyra nivåer:
 //   meta, mandates, axes  – gäller alla körningar
 //   scenarios             – det som inte ändras mellan körningar (rutans titel och etikett, mandatmatematik, vilka som måste avstå)
 //   snapshots             – en post per körning: procent, hinder, tecken att bevaka, omprövning och förlopp
+//   notices               – verifierade besked som inte flyttar procent. Inte en körning.
 //
 // Ny körning = ny post sist i `snapshots`, med eget `asOf`. Skriv aldrig över en tidigare post.
+// Processnotis = ny post sist i `notices`. Ingen procent, ingen ny modell, ingen delningssida.
 window.SCENARIO = {
   meta: {
     caseId: "regeringsbildning-2026",
@@ -154,6 +156,24 @@ window.SCENARIO = {
         { date: "2026-09-30", text: "Ny samtalsserie. Inget nytt sonderingsuppdrag." },
         { date: "2026-10-02", text: "Analysen görs på morgonen. Pressträff med talmannen är utsatt till klockan 11 och har inte hållits." }
       ]
+    }
+  ],
+
+  // Processnotiser är fakta efter en körning. De är inte körningar och har inga procent.
+  // Nästa modell ska läsa dem innan den bestämmer om en ny körning behövs.
+  notices: [
+    {
+      id: "2026-10-02-1100",
+      asOf: "2026-10-02T11:00:00+02:00",
+      asOfLabel: "2 oktober 2026, efter pressträffen kl 11",
+      kind: "process",
+      movesProbabilities: false,
+      title: "Sonderingen återupptas på måndag. Procenten ligger kvar.",
+      text: "Riksdagen meddelar att talman Andreas Norlén har gett Magdalena Andersson (S) i uppdrag att från och med måndagen den 5 oktober återuppta sonderingen av förutsättningarna för att bilda regering. Det är ett processbesked, inte en ny regering och inte en flyttad röd linje. Morgonens körning kl 08:19 gäller därför fortfarande som den senaste analysen.",
+      notTheTrigger: "Körningens lista över vad som skulle ändra slutsatsen nämner ett sonderingsuppdrag med ett uttalat underlag. Det här beskedet är en återupptagen sondering från måndag, utan ett namngivet regeringsunderlag.",
+      nextRunWhen: "En ny körning blir aktuell när ett parti flyttar en linje, när sonderingen från måndagen ger ett underlag, eller när en modell efter en ny prövning vill sätta nya procent i sitt eget namn.",
+      source: "https://www.riksdagen.se/sv/aktuellt/",
+      sourceLabel: "Riksdagen, Aktuellt, 2 oktober 2026"
     }
   ]
 };

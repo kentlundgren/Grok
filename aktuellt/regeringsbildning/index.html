@@ -40,6 +40,8 @@
       <p class="picker-note" data-picker-note></p>
     </section>
 
+    <aside class="process-note" data-notices hidden></aside>
+
     <p class="stamp" data-stamp>Läser körning…</p>
     <p class="old" data-old hidden>Det här är en tidigare körning. Den visar läget då och gäller inte längre. Välj den senaste körningen för det senaste troliga utfallet.</p>
 
@@ -93,7 +95,7 @@
       <div class="contract">
         <div>
           <h2 id="byggkontrakt">Så kan nästa modell bygga vidare<a class="anchor" href="#byggkontrakt" aria-label="Länk till avsnittet">#</a></h2>
-          <p>Poängen ska stå kvar: fyra åtskilda utfall, sedan en omprövning. Procenten är en uppskattning och visas alltid med tidpunkt. En ny körning läggs till som en ny post. En äldre körning skrivs aldrig över.</p>
+          <p>Poängen ska stå kvar: fyra åtskilda utfall, sedan en omprövning. Procenten är en uppskattning och visas alltid med tidpunkt. Ett nytt fakta-besked som inte flyttar procenten läggs som en processnotis. En ny analys, med nya procent, läggs som en ny körning. En äldre körning skrivs aldrig över.</p>
           <table class="filetable">
             <tr><td><a href="scenario.js">scenario.js</a></td><td>Enda datakällan: rutor, mandat, körningar och omprövning.</td></tr>
             <tr><td><a href="app.js">app.js</a></td><td>Läser scenario.js och ritar scenen.</td></tr>

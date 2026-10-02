@@ -392,6 +392,23 @@ footer {
 .snap[aria-pressed="true"] { background: var(--ink); color: white; border-color: var(--ink); }
 .snap[aria-pressed="true"] span { color: #ddd; }
 .picker-note { margin: 8px 0 0; color: var(--muted); font-size: 0.9rem; max-width: 68ch; }
+.process-note {
+  margin: 16px 0 0;
+  padding: 14px 16px;
+  background: #eef3f8;
+  border-left: 5px solid var(--blue);
+  max-width: 72ch;
+}
+.process-note h2 { margin: 0 0 8px; font-size: 1.25rem; }
+.process-note p { margin: 0 0 8px; }
+.process-kicker {
+  margin: 0 0 6px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
 .old {
   margin: 8px 0 0;
   padding: 8px 12px;

@@ -7,7 +7,11 @@ Sidan visar hur en generativ modell kan användas för att ta fram fyra åtskild
 1. `prompt1.md` är beställningen: ta fram en prompt som tvingar fram en fyrfältare och därefter en ny prövning.
 2. `prompt2.md` är den skärpta prompten. Den krävde dagsaktuella källor, negativ parlamentarism och fyra utfall som inte får vara varianter av samma lösning.
 3. Videon visar körningen. Bilden är fyrfältaren som sparades från den körningen.
-4. `scenario.js` är den strukturerade versionen av körningen, morgonen den 2 oktober 2026 kl 08:19, före talmannens pressträff klockan 11. Senare körningar läggs till som nya poster med egen tidsstämpel.
+4. `scenario.js` är den strukturerade versionen av körningen, morgonen den 2 oktober 2026 kl 08:19, före talmannens pressträff klockan 11. Senare körningar läggs till som nya poster med egen tidsstämpel. Ett besked som inte räcker för nya procent läggs som processnotis i `notices`, inte som en körning.
+
+## Processnotis är inte en procent
+
+En processnotis får återge ett daterat besked från en primärkälla. Den får inte innehålla en ny sannolikhet, och den får inte skrivas så att den ser ut som en ny körning. Den första notisen, eftermiddagen den 2 oktober 2026, gäller talmannens besked att Magdalena Andersson från måndagen den 5 oktober återupptar sonderingen. Källa: [Riksdagen, Aktuellt](https://www.riksdagen.se/sv/aktuellt/), 2 oktober 2026. Samma mening står på [sidan om talmannen](https://www.riksdagen.se/sv/sa-fungerar-riksdagen/arbetet-i-riksdagen/talmannen/).
 
 ## Vad som får stå som faktum
 
