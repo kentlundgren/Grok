@@ -22,6 +22,15 @@ function renderFacts() {
   ].map(([n, label]) => `<div class="fact"><b>${n}</b><span>${label}</span></div>`).join("");
 }
 
+function facesHtml(item) {
+  if (!item.faces || !item.faces.length) return "";
+  return `<span class="faces">${item.faces.map((face) => `
+    <span class="face">
+      <img src="${face.src}" alt="${face.name}, ${face.party}${face.note ? ", illustration" : ""}">
+      <span>${face.party}</span>
+    </span>`).join("")}</span>`;
+}
+
 function renderStage() {
   const { axes } = state.data;
   document.querySelector("[data-axis-y]").textContent = axes.y.name + ": " + axes.y.top + " → " + axes.y.bottom;
@@ -30,6 +39,7 @@ function renderStage() {
     <button class="cell ${item.id}" data-id="${item.id}" aria-pressed="${item.id === state.selected}">
       <small>${item.quadrant.replaceAll("-", " · ")}</small>
       <strong>${item.title}</strong>
+      ${facesHtml(item)}
       <em>${item.probabilityLabel}</em>
     </button>
   `).join("");

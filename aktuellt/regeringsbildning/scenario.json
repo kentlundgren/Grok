@@ -45,6 +45,11 @@
       "concession": "V lägger kravet på statsrådsposter åt sidan. C accepterar ett organiserat stöd från V.",
       "obstacles": "Den 18–25 september sade båda nej till just detta. V upprepade regeringskravet, C uteslöt V från regeringen.",
       "watch": "Gemensam pressträff, skriftligt stödavtal, eller att V slutar kräva statsrådsposter.",
+      "faces": [
+        {"src": "bilder/andersson.jpg", "name": "Magdalena Andersson", "party": "S"},
+        {"src": "bilder/mp-sprakror.jpg", "name": "Amanda Lind och Daniel Helldén", "party": "MP"},
+        {"src": "bilder/thand-ringqvist.jpg", "name": "Elisabeth Thand Ringqvist", "party": "C"}
+      ],
       "probability": 28,
       "probabilityLabel": "28 %",
       "chosenAfterReview": false
@@ -61,6 +66,12 @@
       "concession": "C skulle behöva acceptera SD i regeringen, trots att C utesluter SD-inflytande. Ingen sådan öppning var belagd på morgonen den 2 oktober.",
       "obstacles": "C:s offentliga linje och en möjlig nej-majoritet på 176. Före valet lovade M och L SD ministerposter, men det skapar inte egna mandat.",
       "watch": "C säger att SD kan tolereras, eller enskilda C-ledamöter aviserar att de inte röstar nej.",
+      "faces": [
+        {"src": "bilder/kristersson.jpg", "name": "Ulf Kristersson", "party": "M", "note": "illustration"},
+        {"src": "bilder/akesson.jpg", "name": "Jimmie Åkesson", "party": "SD"},
+        {"src": "bilder/busch.jpg", "name": "Ebba Busch", "party": "KD"},
+        {"src": "bilder/mohamsson.jpg", "name": "Simona Mohamsson", "party": "L"}
+      ],
       "probability": 12,
       "probabilityLabel": "12 %",
       "chosenAfterReview": false
@@ -77,6 +88,11 @@
       "concession": "C går från processbesked till att inte fälla. SD accepterar att stå utanför trots vallöftet om ministerposter.",
       "obstacles": "C utesluter SD-inflytande även utifrån. Åkesson ville den 29 september pröva Andersson, inte sondera en försvagad Tidö.",
       "watch": "Kristersson får sonderingsuppdraget och C talar om passivt stöd.",
+      "faces": [
+        {"src": "bilder/kristersson.jpg", "name": "Ulf Kristersson", "party": "M", "note": "illustration"},
+        {"src": "bilder/busch.jpg", "name": "Ebba Busch", "party": "KD"},
+        {"src": "bilder/mohamsson.jpg", "name": "Simona Mohamsson", "party": "L"}
+      ],
       "probability": 30,
       "probabilityLabel": "30 %",
       "chosenAfterReview": false

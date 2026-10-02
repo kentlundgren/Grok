@@ -175,6 +175,30 @@ a { color: var(--blue); }
   font-size: 1.4rem;
 }
 
+.faces {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.face {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.face img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(28, 25, 21, 0.18);
+}
+
 .cell.s1 { background: #e7f3ea; }
 .cell.s2 { background: #f8e7e3; }
 .cell.s3 { background: #e7eef8; }
