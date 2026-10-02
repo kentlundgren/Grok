@@ -23,6 +23,31 @@ Det här dokumentet beskriver repot `kentlundgren/Grok` och ger kontext till AI-
 
 Agenten är tankepartner, inte ställföreträdande avsändare. Hitta inte på krav, hästar eller resultat.
 
+## Flera AI-agenter över tid
+
+Ägaren arbetar med flera AI-modeller och verktyg, över tid och ofta på samma sak: Grok (Grok Build), Claude (Claude Code och Cowork), Cursor och vid behov ChatGPT, Gemini och andra. Att köra samma uppdrag i olika verktyg vid olika tillfällen är ett medvetet sätt att lära känna modellernas och verktygens styrkor och svagheter. Det gäller alla repon, inte bara det här. Se skillen `kent-ai-arbetssatt` (`AI-teknik/Presentationer/.claude/skills/kent-ai-arbetssatt/SKILL.md`) och [Claude-kompassen](https://kentlundgren.github.io/AI-teknik/AI_modeller/Claude/olika_Claude_modeller/#claude), som beskriver rollerna. Kompassen är en bild och kan vara inaktuell.
+
+### Roller, så som de är beskrivna eller belagda
+
+| Verktyg | Roll | Källa |
+| --- | --- | --- |
+| Claude Code | Research, skrivande, kodning och lokal testning. Föreslår, bygger och verifierar, men committar och pushar inte om ägaren inte uttryckligen ber om det. | Claude-kompassen |
+| Cursor | Kodyta, redigering, diff, commit och push. Ägaren väljer Cursor för filer och versionshantering. | Claude-kompassen |
+| Grok / Grok Build | Scaffolda och förklara. Har också tagit fram analysen i `aktuellt/regeringsbildning` (fältet `model` i `scenario.js`). | Denna fil, `scenario.js` |
+| Cowork | Lokala filer, i Claude-appens skrivbordsyta. | Denna fil |
+| ChatGPT, Gemini | Används, men rollen är inte beskriven här eller i kompassen. Fråga ägaren, gissa inte. | |
+
+### Om du tar över mitt i arbetet
+
+1. Du är inte först och inte ensam. Läs `git status`, `git log -5` och översta posterna i `AGENTLOGG.md` innan du ändrar. En annan agent eller ägaren kan ha ändrat filer sedan senast.
+2. Ändra inte tillbaka andras ändringar. Verkar något fel, säg det och fråga.
+3. Skriv aldrig text eller siffror under en annan modells eller människas namn. Ange vilken modell och vilket verktyg som gjorde vad, till exempel fältet `model` i `aktuellt/regeringsbildning/scenario.js`.
+4. Skriv inte att du har gjort eller testat något som du inte har gjort.
+5. Lämna en överlämning i slutet av ett arbetspass: en ny post överst i `AGENTLOGG.md` med vad som ändrades, vad som är verifierat och vad som återstår. Ägaren committar.
+6. Verktygsspecifika filer (`CLAUDE.md`, `.cursor/rules/`, `.agents/skills/`) ska bara gälla just det verktyget eller peka hit. Skriv inte samma regel på flera ställen.
+
+Här skedde en uppdatering 2026-10-02: avsnittet lades till.
+
 ## Kontext: Grok Build i praktiken
 
 Kent testar Grok Build som en del av ett befintligt flöde med Cloud Cowork (lokala filer), Cursor (kodredigering) och GitHub (versionshantering och publicering). Grok Build är **inte en ny IDE** utan en terminalbaserad agent som planerar uppgifter, visar diffar för godkännande och kan köra subagenter parallellt.

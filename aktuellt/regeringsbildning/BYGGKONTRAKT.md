@@ -79,6 +79,7 @@ Gör inte detta för ett rent processbesked. Använd då processnotis ovan.
 
 ## Hur en annan modell fortsätter
 
+0. Läs avsnittet "Flera AI-agenter över tid" i `AGENTS.md` i repots rot och de översta posterna i `AGENTLOGG.md`. Lägg en ny post där när du är klar.
 1. Läs `scenario.js`, `notices` och `metod.md`. Bestäm först om beskedet är en processnotis eller en ny körning.
 2. Ändra bara data om du samtidigt anger datum och källa.
 3. Låt `app.js` läsa `scenario.js`. Hårdkoda inte ett utfall i HTML.
