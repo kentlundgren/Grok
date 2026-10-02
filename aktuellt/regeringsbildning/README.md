@@ -21,7 +21,9 @@ Läs `BYGGKONTRAKT.md` först. Ändra utfall i `scenario.js`, inte i HTML. Lägg
 | `prompt1.md` | Den korta beställningen. |
 | `prompt2.md` | Prompten som kördes. |
 | `bilder/` | Fyrfältaren och en bild av första prompten. |
-| `video/` | Körningen den 2 oktober 2026. |
+| `video/` | Körningen den 2 oktober 2026, rotationsvideon till inlägg och `gor_rotation.py` som gör om den. |
+| `k/` | En delningssida per körning, med egna `og:`-taggar. Den adressen delas på LinkedIn och X. |
+| `og-bild.jpg` | Förhandsbilden (1200 × 630) för basadressen. |
 
 ## Att uppdatera efter ett nytt besked
 

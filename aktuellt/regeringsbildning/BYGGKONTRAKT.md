@@ -31,7 +31,10 @@ All data ligger i `scenario.js` (`window.SCENARIO`). Det finns ingen kopia i `in
 3. Fyll i nya procent. De fyra ska summera till 100.
 4. Uppdatera `obstacles`, `watch`, `review` och `process` efter källorna, med datum.
 5. Ändra inte tidigare poster. Sidan sorterar på `asOf` och räknar själv ut skillnaden mot körningen före.
-6. Procenten ska vara tagen fram av den modell som anges i `model`. Skriv aldrig in siffror som någon annan modell eller människa har tagit fram under en annan modells namn.
+6. Gör en delningssida för körningen: kopiera `k/2026-10-02-0819/` till `k/<id>/`, byt id, tid, texter och bild i taggarna och i vidarebefordran. Förhandsvisningar ser inte `#`-ankaret, så den adressen är den som delas på LinkedIn och X.
+7. Gör en stillbild för delning, 1200 × 630, till `bilder/og_<id>.jpg`, och byt `og-bild.jpg` och `og:`-taggarna i `index.html` om den nya körningen ska vara den som basadressen visar.
+8. Gör om rotationsvideon: kör `python video/gor_rotation.py` från mappen `aktuellt/regeringsbildning`. Den läser `scenario.js` och ger `video/rotation_fyra_utfall_<ååmmdd>_kl<tt>.mp4`. Videon är en fil och uppdateras inte av sig själv. Kräver Python med Pillow, Node.js och ffmpeg.
+9. Procenten ska vara tagen fram av den modell som anges i `model`. Skriv aldrig in siffror som någon annan modell eller människa har tagit fram under en annan modells namn.
 
 ## Får ändras
 
@@ -63,4 +66,5 @@ Statisk sida, ingen build. GitHub Pages från `main` ger `https://kentlundgren.g
 
 ## Ändringslogg
 
+- 2026-10-02: Länkförhandsvisning (`og:`-taggar, `og-bild.jpg`, delningssida per körning) och `video/gor_rotation.py`. Rutornas etiketter har nu riktiga å och ä (`quadrantLabel`).
 - 2026-10-02: En datakälla (`scenario.js`) i stället för `scenario.json` plus en kopia i HTML. Tidsväljare och körningar med tidsstämpel. AI-upplysning. GitHub-hörna och teknik-modal. Sakfel i ruta 2 rättat: det räcker att två ledamöter avstår, inte 24.
