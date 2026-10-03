@@ -147,8 +147,8 @@
       "person": "Bengt",
       "status": "inlämnad",
       "submitted": null,
-      "cost": 20,
-      "stake": 5,
+      "cost": 40,
+      "stake": 10,
       "rows": 4,
       "system": "4x1",
       "dd1": [
@@ -173,7 +173,7 @@
       },
       "scratch": null,
       "coupon": null,
-      "note": "Ett rätt (DD-1). Spik 12 General Silvio höll inte. Klockslag ej angivet. Kostnad räknad 4 × 5 kr."
+      "note": "Ett rätt (DD-1). Spik 12 General Silvio höll inte. Klockslag ej angivet. Bengt spelar alltid 10 kr per rad, 4 × 10 kr = 40 kr."
     }
   ]
 }

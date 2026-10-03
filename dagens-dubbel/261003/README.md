@@ -11,9 +11,9 @@ DD-1 = V85-7 STL Silverdivisionen (2140 m auto, ca 17:13). DD-2 = V85-8 Scandal 
 | Kent | inlämnad 16:49, 40 kr | DD-1: 3 5 · DD-2: 4 12 14 15 | Ett rätt (DD-1) | [kent.md](kent.md) |
 | Lotta | inlämnad, 45 kr | DD-1: 3 5 7 · DD-2: 8 12 15 | Ett rätt (DD-1) | [lotta.md](lotta.md) |
 | Benita | inlämnad, 30 kr | DD-1: 3 5 7 · DD-2: 12 14 | Ett rätt (DD-1) | [benita.md](benita.md) |
-| Bengt | inlämnad, 20 kr | DD-1: 1 3 4 5 · DD-2: 12 | Ett rätt (DD-1) | [bengt.md](bengt.md) |
+| Bengt | inlämnad, 40 kr, 10 kr/rad | DD-1: 1 3 4 5 · DD-2: 12 | Ett rätt (DD-1) | [bengt.md](bengt.md) |
 
-Kostnad för Lotta, Benita och Bengt är räknad à 5 kr per rad. Klockslag är inte angivet.
+Kostnad för Lotta och Benita är räknad à 5 kr per rad. Bengt spelar alltid 10 kr per rad. Klockslag är inte angivet.
 
 Maskinläsbar källa: [`../data/261003.json`](../data/261003.json)
 

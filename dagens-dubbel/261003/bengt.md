@@ -2,7 +2,7 @@
 
 - **Live-app:** [https://kentlundgren.github.io/Grok/dagens-dubbel/](https://kentlundgren.github.io/Grok/dagens-dubbel/)
 - Inlämnad: klockslag ej angivet
-- Kostnad: 20 kr (4 rader × 5 kr)
+- Kostnad: 40 kr (4 rader × 10 kr)
 - **Utfall:** Ett rätt (DD-1). Ingen utdelning.
 
 ## System
