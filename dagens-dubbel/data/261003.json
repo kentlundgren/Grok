@@ -4,7 +4,7 @@
   "weekday": "lördag",
   "track": "Boden",
   "start": "17:13",
-  "comment": "DD-1 är V85-7 STL Silverdivisionen, 2140 m auto. DD-2 är V85-8 Scandal Plays Minne, 2640 m volt. Kent inlämnad 16:49, 40 kr, 2x4. Skräll: 15 King of Djazz. Resultat fylls i efter loppen.",
+  "comment": "DD-1 V85-7: 3 Frank S.H. (Magnus A Djuse, vinnarodds 2,49). DD-2 V85-8: 3 Merillion (Christian Månsson, vinnarodds 7,58). DD-odds 22,14. Kent ett rätt (DD-1). Merillion var medvetet utanför.",
   "races": {
     "dd1": {
       "label": "V85-7 / DD-1 STL Silverdivisionen",
@@ -18,14 +18,29 @@
     }
   },
   "result": {
-    "status": "pending",
-    "dd1Winner": null,
-    "dd2Winner": null,
-    "dd1Name": null,
-    "dd2Name": null,
-    "ddOdds": null,
-    "updated": null,
-    "sources": []
+    "status": "klar",
+    "dd1Winner": 3,
+    "dd2Winner": 3,
+    "dd1Name": "Frank S.H.",
+    "dd2Name": "Merillion",
+    "dd1Driver": "Magnus A Djuse",
+    "dd2Driver": "Christian Månsson",
+    "dd1WinOdds": 2.49,
+    "dd2WinOdds": 7.58,
+    "ddOdds": 22.14,
+    "placed": {
+      "dd1": [
+        "3 Frank S.H."
+      ],
+      "dd2": [
+        "3 Merillion"
+      ]
+    },
+    "updated": "2026-10-03 19:55",
+    "sources": [
+      "https://www.sverigetravet.se/dd-resultat/dd-resultat-lordag-3-oktober-2026-boden",
+      "https://www.travet.se/v85-resultat/v85-resultat-3-oktober-2026/"
+    ]
   },
   "tips": [
     {
@@ -60,7 +75,7 @@
       },
       "scratch": "15 King of Djazz i DD-2",
       "coupon": "261003/kupong-kent.png",
-      "note": "Kupong inlämnad 16:49. Samma 2x4 som analysen: Frank och Shogun mot Silvio, Pure Atlas, Irwin Zet och skrällen King of Djazz. Maserati Hall och Uno medvetet utanför."
+      "note": "Ett rätt (DD-1). Ingen utdelning. Frank S.H. vann, Merillion vann DD-2 och var medvetet utanför."
     },
     {
       "person": "Lotta",

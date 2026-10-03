@@ -4,7 +4,7 @@
 - Inlämnad: 2026-10-03 16:49
 - Kostnad: 40 kr (8 rader × 5 kr)
 - Kupong: [kupong-kent.png](kupong-kent.png)
-- **Utfall:** väntar
+- **Utfall:** Ett rätt (DD-1). Ingen utdelning.
 
 ## System
 
@@ -17,8 +17,8 @@ DD-1 har en tydlig favorit, därför två hästar där. DD-2 är öppet voltat l
 
 ## Medvetet utanför
 
-DD-1: 4 Maserati Hall. DD-2: 8 Uno och 13 B.Sacamano.
+DD-1: 4 Maserati Hall. DD-2: 8 Uno och 13 B.Sacamano. Merillion (3) lämnades också utanför, Travcashs barfotaskräll.
 
 ## Efter loppet
 
-Fylls i när DD-resultatet finns.
+Vinnare: 3 Frank S.H. / 3 Merillion, DD-odds 22,14. Frank höll. Skrällen King of Djazz höll inte. Merillion, som var medvetet utanför, vann det öppna voltloppet.

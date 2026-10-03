@@ -4,11 +4,11 @@
 
 DD-1 = V85-7 STL Silverdivisionen (2140 m auto, ca 17:13). DD-2 = V85-8 Scandal Plays Minne (2640 m volt, ca 17:35).
 
-**Resultat:** saknas. Fylls i efter loppen.
+**Resultat:** DD-1 **3 Frank S.H.** (Magnus A Djuse, vinnarodds 2,49). DD-2 **3 Merillion** (Christian Månsson, vinnarodds 7,58). DD-odds **22,14**. Omsättning DD 7 224 881 kr.
 
 | Person | Status | System | Utfall | Fil |
 | --- | --- | --- | --- | --- |
-| Kent | inlämnad 16:49, 40 kr | DD-1: 3 5 · DD-2: 4 12 14 15 | väntar | [kent.md](kent.md) |
+| Kent | inlämnad 16:49, 40 kr | DD-1: 3 5 · DD-2: 4 12 14 15 | Ett rätt (DD-1) | [kent.md](kent.md) |
 | Lotta | väntar | | | [lotta.md](lotta.md) |
 | Benita | väntar | | | [benita.md](benita.md) |
 | Bengt | väntar | | | [bengt.md](bengt.md) |
@@ -16,3 +16,5 @@ DD-1 = V85-7 STL Silverdivisionen (2140 m auto, ca 17:13). DD-2 = V85-8 Scandal 
 Maskinläsbar källa: [`../data/261003.json`](../data/261003.json)
 
 Kupong: [kupong-kent.png](kupong-kent.png)
+
+Källor: [SverigeTravet DD-resultat Boden 3 oktober 2026](https://www.sverigetravet.se/dd-resultat/dd-resultat-lordag-3-oktober-2026-boden), [Travet V85-resultat 3 oktober 2026](https://www.travet.se/v85-resultat/v85-resultat-3-oktober-2026/) (hämtade 3 oktober 2026).
