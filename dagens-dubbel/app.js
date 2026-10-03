@@ -264,6 +264,7 @@
         block("Rader", "<p>" + escapeHtml(rowStory(tips, week)) + "</p>") +
         block("System", systemList(tips)) +
         block("Odds", oddsBlock(week, tips)) +
+        poolOddsSection(week) +
         block("Hästarna vi spelat", horseTables(week, tips)) +
         "</div>";
     }
@@ -509,6 +510,39 @@
 
   function formatOdds(n) {
     return (Math.round(Number(n) * 100) / 100).toFixed(2).replace(".", ",");
+  }
+
+  function poolOddsSection(week) {
+    var pool = week.result && week.result.pool;
+    if (!pool || !pool.rows || !pool.rows.length) return "";
+    var tips = submittedTips(week);
+    var win = pool.rows.filter(function (r) { return r.winner; })[0];
+    var head = win
+      ? "Rätt kombination " + win.dd1 + "–" + win.dd2 + " till " + formatOdds(win.odds) + ". Bara den betalar."
+      : "Slutpoolens DD-odds.";
+    var lines = tips.map(function (tip) {
+      var stake = Number(tip.stake) > 0 ? Number(tip.stake) : 5;
+      var combos = [];
+      nums(tip.dd1).forEach(function (a) {
+        nums(tip.dd2).forEach(function (b) {
+          var hit = pool.rows.filter(function (r) {
+            return Number(r.dd1) === a && Number(r.dd2) === b;
+          })[0];
+          if (!hit) {
+            combos.push(a + "–" + b + " saknas");
+            return;
+          }
+          combos.push(a + "–" + b + " " + formatOdds(hit.odds) + " (" + formatOdds(hit.odds * stake) + " kr)");
+        });
+      });
+      return "<li>" + escapeHtml(tip.person + ": " + combos.join(", ")) + "</li>";
+    }).join("");
+    return block(
+      "DD-odds",
+      "<p>" + escapeHtml(head) + "</p>" +
+      '<ul class="list-disc pl-5 mt-2">' + lines + "</ul>" +
+      '<p class="mt-2 text-xs text-stone-500">' + escapeHtml(pool.note || "") + "</p>"
+    );
   }
 
   function oddsBlock(week, tips) {

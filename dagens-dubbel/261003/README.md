@@ -20,3 +20,5 @@ Maskinläsbar källa: [`../data/261003.json`](../data/261003.json)
 Kupong: [kupong-kent.png](kupong-kent.png)
 
 Källor: [SverigeTravet DD-resultat Boden 3 oktober 2026](https://www.sverigetravet.se/dd-resultat/dd-resultat-lordag-3-oktober-2026-boden), [Travet V85-resultat 3 oktober 2026](https://www.travet.se/v85-resultat/v85-resultat-3-oktober-2026/) (hämtade 3 oktober 2026).
+
+Odds i slutpoolen ligger under Analys, DD-odds. Källa: Liverättning 3 oktober 2026.
