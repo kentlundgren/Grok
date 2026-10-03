@@ -1,0 +1,120 @@
+{
+  "id": "261003",
+  "date": "2026-10-03",
+  "weekday": "lördag",
+  "track": "Boden",
+  "start": "17:13",
+  "comment": "DD-1 är V85-7 STL Silverdivisionen, 2140 m auto. DD-2 är V85-8 Scandal Plays Minne, 2640 m volt. Kent inlämnad 16:49, 40 kr, 2x4. Skräll: 15 King of Djazz. Resultat fylls i efter loppen.",
+  "races": {
+    "dd1": {
+      "label": "V85-7 / DD-1 STL Silverdivisionen",
+      "distance": "2140 m auto",
+      "startApprox": "17:13"
+    },
+    "dd2": {
+      "label": "V85-8 / DD-2 Scandal Plays Minne",
+      "distance": "2640 m volt",
+      "startApprox": "17:35"
+    }
+  },
+  "result": {
+    "status": "pending",
+    "dd1Winner": null,
+    "dd2Winner": null,
+    "dd1Name": null,
+    "dd2Name": null,
+    "ddOdds": null,
+    "updated": null,
+    "sources": []
+  },
+  "tips": [
+    {
+      "person": "Kent",
+      "status": "inlämnad",
+      "submitted": "2026-10-03 16:49",
+      "cost": 40,
+      "stake": 5,
+      "rows": 8,
+      "system": "2x4",
+      "dd1": [
+        3,
+        5
+      ],
+      "dd2": [
+        4,
+        12,
+        14,
+        15
+      ],
+      "names": {
+        "dd1": {
+          "3": "Frank S.H.",
+          "5": "Shogun R.R."
+        },
+        "dd2": {
+          "4": "Irwin Zet",
+          "12": "General Silvio",
+          "14": "Pure Atlas",
+          "15": "King of Djazz"
+        }
+      },
+      "scratch": "15 King of Djazz i DD-2",
+      "coupon": "261003/kupong-kent.png",
+      "note": "Kupong inlämnad 16:49. Samma 2x4 som analysen: Frank och Shogun mot Silvio, Pure Atlas, Irwin Zet och skrällen King of Djazz. Maserati Hall och Uno medvetet utanför."
+    },
+    {
+      "person": "Lotta",
+      "status": "väntar",
+      "submitted": null,
+      "cost": null,
+      "stake": 5,
+      "rows": null,
+      "system": null,
+      "dd1": [],
+      "dd2": [],
+      "names": {
+        "dd1": {},
+        "dd2": {}
+      },
+      "scratch": null,
+      "coupon": null,
+      "note": ""
+    },
+    {
+      "person": "Benita",
+      "status": "väntar",
+      "submitted": null,
+      "cost": null,
+      "stake": 5,
+      "rows": null,
+      "system": null,
+      "dd1": [],
+      "dd2": [],
+      "names": {
+        "dd1": {},
+        "dd2": {}
+      },
+      "scratch": null,
+      "coupon": null,
+      "note": ""
+    },
+    {
+      "person": "Bengt",
+      "status": "väntar",
+      "submitted": null,
+      "cost": null,
+      "stake": 5,
+      "rows": null,
+      "system": null,
+      "dd1": [],
+      "dd2": [],
+      "names": {
+        "dd1": {},
+        "dd2": {}
+      },
+      "scratch": null,
+      "coupon": null,
+      "note": ""
+    }
+  ]
+}
