@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Familjens lördags-DD</title>
   <meta name="description" content="Kent, Lotta, Benita och Bengts Dagens Dubbel på lördagar — tips, resultat och ställning.">
+  <link rel="canonical" href="https://kentlundgren.github.io/Grok/dagens-dubbel/">
+  <!-- OG: crawlers läser detta i rå HTML, inte det som app.js ritar. Bilden är 1200×630. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sv_SE">
+  <meta property="og:site_name" content="Familjens lördags-DD">
+  <meta property="og:url" content="https://kentlundgren.github.io/Grok/dagens-dubbel/">
+  <meta property="og:title" content="Familjens lördags-DD">
+  <meta property="og:description" content="Ett litet lördagssystem, 35–45 kr. Fyra tippare, en gemensam logg.">
+  <meta property="og:image" content="https://kentlundgren.github.io/Grok/dagens-dubbel/og.jpg">
+  <meta property="og:image:secure_url" content="https://kentlundgren.github.io/Grok/dagens-dubbel/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Två sulkies i duell på travbanan i kvällsljus.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Familjens lördags-DD">
+  <meta name="twitter:description" content="Ett litet lördagssystem, 35–45 kr. Fyra tippare, en gemensam logg.">
+  <meta name="twitter:image" content="https://kentlundgren.github.io/Grok/dagens-dubbel/og.jpg">
+  <meta name="twitter:image:alt" content="Två sulkies i duell på travbanan i kvällsljus.">
   <meta http-equiv="Cache-Control" content="no-cache">
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Här skedde en uppdatering 2026-09-26: v=2 så modalen ligger över hörnknapparna. -->
@@ -76,6 +95,10 @@
         <div class="tech-card">
           <h3>Modal</h3>
           <p>CSS-klass <code>.show</code>. Stängs med krysset, med Escape, eller med klick utanför rutan.</p>
+        </div>
+        <div class="tech-card">
+          <h3>OG-kort</h3>
+          <p>När länken delas på X, LinkedIn eller Facebook läser de <code>og:</code>-taggarna i <code>index.html</code>. Bilden är <code>og.jpg</code>, 1200×630. Crawlers kör inte skriptet, så kortet måste ligga i rå HTML.</p>
         </div>
         <div class="tech-card">
           <h3>GitHub Pages</h3>
