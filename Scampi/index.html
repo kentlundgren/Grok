@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scampi 30 – Yanmar YSB12G</title>
+  <style>
+    :root { color-scheme: light; --ink: #1c2430; --muted: #5c6b7a; --line: #d5dde6; --sea: #1f6f8b; --bg: #f4f7f8; }
+    body { margin: 0; font: 17px/1.55 Georgia, "Iowan Old Style", serif; color: var(--ink); background: var(--bg); }
+    main { max-width: 42rem; margin: 0 auto; padding: 2.2rem 1.2rem 4rem; background: #fff; }
+    h1 { font-size: 1.8rem; line-height: 1.2; margin: 0 0 0.3rem; }
+    h2 { font-size: 1.2rem; margin: 2rem 0 0.5rem; }
+    p, li { margin: 0.4rem 0; }
+    .lede { color: var(--muted); margin-bottom: 1.4rem; }
+    a { color: var(--sea); }
+    table { border-collapse: collapse; width: 100%; margin: 0.8rem 0 1rem; font-size: 0.95rem; }
+    th, td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); padding: 0.4rem 0.5rem 0.4rem 0; }
+    .note { background: #eef6f4; border-left: 4px solid #2f7d6d; padding: 0.7rem 0.9rem; margin: 1rem 0; }
+    footer { margin-top: 2.4rem; color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Scampi 30 – underhåll av Yanmar YSB12G</h1>
+  <p class="lede">Serienummer 1026, Peter Norlin / Shipman AB Visby. Motorn är en encylindrig YSB12G från 1977, råvattenkyld. Sidan samlar det som står i bloggen Tankar i tiden från Lund, plus glykolvalet.</p>
+
+  <p>Källa och skill: <a href="https://github.com/kentlundgren/Grok/blob/main/Scampi/SKILL.md">SKILL.md</a> · <a href="https://github.com/kentlundgren/Grok/blob/main/Scampi/references/blogginlagg-yanmar.md">källunderlag</a></p>
+
+  <h2>Årlig service</h2>
+  <p>Från inlägget 14 juni 2019. Artikelnummer är från då och ska kollas mot hyllan.</p>
+  <table>
+    <tr><th>Moment</th><th>Uppgift</th></tr>
+    <tr><td>Motorolja</td><td>3,3 liter mineralolja SAE 10W-30</td></tr>
+    <tr><td>Backslag</td><td>0,7 liter 10W-30</td></tr>
+    <tr><td>Spaltfilter</td><td>YS-104271-35130, rengörs i diesel</td></tr>
+    <tr><td>CAV-filter</td><td>Delphi 296 eller Volvo Penta 3581078</td></tr>
+    <tr><td>Finfilter</td><td>104500-55710 eller WIX E33262</td></tr>
+    <tr><td>Impeller</td><td>104211-42070 / 104211-42071, Biltema 25-203</td></tr>
+    <tr><td>Vakuumventil</td><td>16 mm, membran vid behov</td></tr>
+    <tr><td>Övrigt</td><td>Offeranod och olja till axeltätningen (SAE 90 nämns)</td></tr>
+  </table>
+  <p><a href="https://klel.wordpress.com/2019/06/14/arlig-service-av-yanmar-ysm12/">Årlig service av Yanmar YSB12G</a></p>
+
+  <h2>Glykol till motor och vattenpump</h2>
+  <div class="note">
+    <p>Propylenglykol, inte etylenglykol. Motorn är råvattenkyld, så glykolen är vinterkonservering – inte kylarvätska som ska stå kvar och köras på.</p>
+  </div>
+  <ul>
+    <li>Motor och impellerpump: sug in propylenglykol via sjövattenintaget tills färgad vätska kommer ur avgaserna. 50/50 ger ungefär −33 °C.</li>
+    <li>Sötvattenpump: töm tanken och kör dricksvattenklassad propylenglykol genom pump och alla kranar. Pumphuset håller ofta kvar en skvätt som annars fryser.</li>
+    <li>På våren: samla upp vätskan. Den får inte pumpas ut i sjön, även om den är propylenbaserad.</li>
+  </ul>
+  <p>Bloggen nämner grön propylenbaserad glykol från Biltema eller Volvo Penta. <a href="https://www.varmdo.se/byggabomiljo/klimatochmiljo/miljotillsyn/miljokravfritidsbatarochhamnar/anvandningavglykol.4.6c8567db19c933b0c2e33344.html">Värmdö kommun om glykol</a> · <a href="https://www.seasea.se/GlykolOchFrostskydd">SeaSea om propylenglykol</a></p>
+
+  <h2>Felsökning som redan är skriven</h2>
+  <ul>
+    <li>2020, startar inte: kablage och vattenskadad generator, inte batterierna. <a href="https://klel.wordpress.com/2020/05/24/extra-service/">Extra service</a></li>
+    <li>2022, sprucken avgaskrök: krök 104214-13521, rörmuff och avgassamlare Y104511-13070. <a href="https://klel.wordpress.com/2022/05/29/avgaskrok/">Avgaskrök</a></li>
+    <li>2024, går en stund efter luftning: sugläckage vid CAV-filter eller rörskarv, inte startmotor. <a href="https://klel.wordpress.com/2024/06/24/yanmar-ysb12g-motor-som-gar-en-stund-efter-luftning/">Luft i bränslesystemet</a></li>
+  </ul>
+
+  <footer>
+    <p>Live-sida för mappen Scampi i <a href="https://github.com/kentlundgren/Grok">kentlundgren/Grok</a>. Uppdaterad 4 oktober 2026.</p>
+  </footer>
+</main>
+</body>
+</html>
