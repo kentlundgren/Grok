@@ -1,7 +1,10 @@
 # Scampi – Yanmar YSB12G
 
+**Live-sida:** https://kentlundgren.github.io/Grok/Scampi/
+
 Skill för underhåll av Scampi 30 serienummer 1026 och dess Yanmar YSB12G från 1977. Innehållet är hämtat från bloggen Tankar i tiden från Lund och kompletterat med val av miljöanpassad glykol.
 
+- Live: [kentlundgren.github.io/Grok/Scampi/](https://kentlundgren.github.io/Grok/Scampi/)
 - Instruktioner till agent: [SKILL.md](SKILL.md)
 - Källunderlag: [references/blogginlagg-yanmar.md](references/blogginlagg-yanmar.md)
 
