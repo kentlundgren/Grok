@@ -80,6 +80,14 @@ Sidan har en tidsväljare, så att körningar vid olika tidpunkter kan jämföra
 - **Delningslänk för körningen kl 08:19:** [https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/k/2026-10-02-0819/](https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/k/2026-10-02-0819/) (har egen förhandsbild för LinkedIn och X)
 - **Hur man bygger vidare:** [aktuellt/regeringsbildning/BYGGKONTRAKT.md](aktuellt/regeringsbildning/BYGGKONTRAKT.md)
 
+### Scampi 30 – Yanmar YSB12G
+
+Underhåll från bloggen Tankar i tiden från Lund, plus val av propylenglykol till motor och vattenpump.
+
+- **Källkod:** [Scampi/](Scampi/)
+- **Live:** [https://kentlundgren.github.io/Grok/Scampi/](https://kentlundgren.github.io/Grok/Scampi/)
+- **Skill:** [Scampi/SKILL.md](Scampi/SKILL.md)
+
 ## Tekniker
 
 - HTML5 + Tailwind CSS (via CDN)
@@ -97,4 +105,4 @@ Sidan har en tidsväljare, så att körningar vid olika tidpunkter kan jämföra
 
 ---
 
-*Senast uppdaterat: 2 oktober 2026*
+*Senast uppdaterat: 4 oktober 2026*
