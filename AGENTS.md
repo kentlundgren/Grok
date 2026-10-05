@@ -48,6 +48,10 @@ Agenten är tankepartner, inte ställföreträdande avsändare. Hitta inte på k
 
 Här skedde en uppdatering 2026-10-02: avsnittet lades till.
 
+### Skills: var de ska ligga
+
+Huvudregeln är att skills ligger direkt under repots rot, i `.claude/skills/<namn>/`, vilket Claude Code och Cursor läser. Ska Grok Build också använda dem lägger man en tunn pekare i `.grok/skills/<namn>/`. Se Regel 4 i skillen `kent-meta-regler-for-code` för resonemang och källor. Observera: i mappstrukturen nedan ligger `koldioxidlagring-villkor` i `.agents/skills/` med en pekare i `.claude/skills/`. Det följer ett äldre mönster. Att Grok hittar `.agents/skills/` på projektnivå är inte verifierat (xAI:s dokumentation listar `.grok/skills/`), så kontrollera med `grok inspect` innan det mönstret kopieras.
+
 ## Kontext: Grok Build i praktiken
 
 Kent testar Grok Build som en del av ett befintligt flöde med Cloud Cowork (lokala filer), Cursor (kodredigering) och GitHub (versionshantering och publicering). Grok Build är **inte en ny IDE** utan en terminalbaserad agent som planerar uppgifter, visar diffar för godkännande och kan köra subagenter parallellt.
