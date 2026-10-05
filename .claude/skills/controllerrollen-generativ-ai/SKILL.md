@@ -1,6 +1,6 @@
 ---
 name: controllerrollen-generativ-ai
-description: Pekare för Claude Code. Texten ligger i kopian under .agents/skills. Originalet är Groks interna skill med samma namn. Gäller controllerrollen, ekonomifunktionen och ekonomistyrning under generativ AI, inklusive känsliga data (personuppgift, sekretess, mottagare).
+description: Pekare för Claude Code. Texten ligger i kopian under .agents/skills. Originalet är Groks interna skill med samma namn. Gäller controllerrollen, ekonomifunktionen och ekonomistyrning under generativ AI, inklusive känsliga data (personuppgift, sekretess, mottagare). Används också när ett LinkedIn-inlägg, en kommentar eller en bloggtext om generativ AI ska läsas genom controllerrollen.
 ---
 
 > Pekare, inte en egen kopia av texten. Claude Code ska läsa `.agents/skills/controllerrollen-generativ-ai/SKILL.md` (från repots rot) och därefter bara den referensfil i `references/` som uppgiften behöver.
