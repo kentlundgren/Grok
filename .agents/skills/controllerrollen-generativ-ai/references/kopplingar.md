@@ -12,7 +12,7 @@ Inte prövat: om 63 procent är en stabil andel utanför Invicis rekryteringspan
 
 ## 2026-10-03 – Frigjord tid till analys
 
-Källa: grafik, 65 procent ser fram emot AI för att frigöra tid till analys och råd. Bloggen: 59 procent vill automatisera avstämningar men hindras av system.
+Källa: grafik, 65 procent ser fram emot AI för att frigöra tid till analys och råd. Bloggen: 🟡 **59 procent vill automatisera avstämningar men hindras av system** (Kent instämmer, se `kallkanon.md`).
 
 Läge: stämmer med riktningen i den egna automatiseringen av rapporttunga moment. Nyanserar slutsatsen. Frigjord tid har i praktiken fyllts av nya frågor, inte av ett färdigt rådgivningsmandat. Utan datakvalitet och ägarskap av underlaget blir den frigjorda tiden mer text, inte bättre beslut.
 

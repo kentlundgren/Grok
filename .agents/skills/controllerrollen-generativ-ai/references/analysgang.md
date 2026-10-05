@@ -18,7 +18,7 @@ Inlägg: Magnus Nilsson, rekryteringskonsult på Invici, 2026-10-01 (rättat 202
 
 Vad texten belägger, om populationen hålls isär:
 
-- Bloggen, controllers: 63 procent ser AI-verktyg och agenter som kritisk framtidskompetens. Sju av tio prioriterar affärsinsikt. 74 procent värderar snabb rapportering. 59 procent vill automatisera avstämningar men hindras av system. Slutsats hos avsändaren: redo roll, saknat mandat, svaga system, svag förändringsledning.
+- Bloggen, controllers: 63 procent ser AI-verktyg och agenter som kritisk framtidskompetens. Sju av tio prioriterar affärsinsikt. 74 procent värderar snabb rapportering. 🟡 **59 procent vill automatisera avstämningar men hindras av system** (Kent instämmer, se `kallkanon.md`). Slutsats hos avsändaren: redo roll, saknat mandat, svaga system, svag förändringsledning.
 - Grafiken, controllers: 46 procent oroar sig för orealistiska förväntningar hos ledningen. 44 procent för att AI bygger beslut på partisk eller felaktig data. 42 procent för att data eller bias ger fel beslut. 65 procent vill frigöra tid till analys. 72 procent definierar framgång som affärsinsikt och påverkan. 71 procent ser BI och visualisering som måste-ha till 2026.
 - Bredare återgivning, hela ekonomifunktionen, inte samma population: 80 procent tror att AI ändrar rollen, 93 procent ser risker, 86 procent planerar inte data governance. Se `kallkanon.md`.
 

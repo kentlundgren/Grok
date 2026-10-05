@@ -17,7 +17,7 @@ Påståenden som sidan själv bär:
 - 63 procent av controllers ser AI-verktyg och agenter som kritisk framtidskompetens, i nivå med CFO:er och före operativa ekonomer.
 - Sju av tio controllers prioriterar att skapa affärsinsikt, högst bland rollerna i materialet.
 - 74 procent värderar snabb och träffsäker rapportering.
-- 59 procent vill automatisera avstämningar och periodstängning, men hindras ofta av system och arbetssätt.
+- 🟡 **59 procent vill automatisera avstämningar och periodstängning, men hindras ofta av system och arbetssätt.** *(Markerad av Kent 2026-10-06: han instämmer. Det är hans ståndpunkt, inte ett belägg. Siffran gäller Invicis panel, och antalet controllers anges inte.)*
 - Slutsats på sidan: controllers är redo, men saknar ofta mandat, systemstöd och förändringsledning. Tre skiften föreslås: tydligare mandat, investering i data och system, prioriterad förändringsledning.
 
 ### Invici (2026b) rapportlandning

@@ -83,7 +83,7 @@ Nämn dem i en uppföljning, inte i första meningen. Öppna ödmjukt. De visar 
 
 ## Startläge, kort
 
-Invicis blogg 3 juni 2026, redigerad 22 augusti, läser den egna rapporten så här: controllers är den roll som är mest redo. 63 procent ser AI-verktyg och agenter som kritisk framtidskompetens. Sju av tio prioriterar affärsinsikt. Samtidigt saknas ofta mandat, och 59 procent som vill automatisera avstämningar hindras av system. Grafiken till samma rapport, controllerspecifik, visar oro för orealistiska förväntningar (46 procent) och partisk eller felaktig data (44 procent), och att 65 procent vill frigöra tid till analys. Bredare återgivning i VD-tidningen: 80 procent tror att AI förändrar rollen, 93 procent ser risker, 86 procent planerar inte data governance. Detaljer och länkar ligger i källkanon. Använd inte dessa tal utan att säga vilken population de avser.
+Invicis blogg 3 juni 2026, redigerad 22 augusti, läser den egna rapporten så här: controllers är den roll som är mest redo. 63 procent ser AI-verktyg och agenter som kritisk framtidskompetens. Sju av tio prioriterar affärsinsikt. Samtidigt saknas ofta mandat, och 🟡 **59 procent som vill automatisera avstämningar hindras av system** (Kent instämmer, se `references/kallkanon.md`). Grafiken till samma rapport, controllerspecifik, visar oro för orealistiska förväntningar (46 procent) och partisk eller felaktig data (44 procent), och att 65 procent vill frigöra tid till analys. Bredare återgivning i VD-tidningen: 80 procent tror att AI förändrar rollen, 93 procent ser risker, 86 procent planerar inte data governance. Detaljer och länkar ligger i källkanon. Använd inte dessa tal utan att säga vilken population de avser.
 
 ## Så svarar du
 
