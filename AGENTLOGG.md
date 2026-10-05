@@ -15,6 +15,16 @@ Mall:
 
 ---
 
+## 2026-10-05 · Claude Code (Sonnet 5.5) · README om skills rättad, med bilder
+
+- **Gjort:** `.agents/skills/README.md` rättad efter att `AGENTS.md` fått avsnittet "Skills: var de ska ligga": avsnitt 3 säger nu att `.claude/skills/` är huvudregeln för Claude Code och Cursor, att Grok Build enligt xAI:s dokumentation använder `.grok/skills/`, och att `.agents/skills/` är ett äldre mönster som inte är verifierat för Grok. Nytt avsnitt 6C med de fyra skärmdumparna i `_BILDER/` (städning av en ihopslagen gren). Avsnitten 5 och 7 uppdaterade.
+- **Verifierat (och hur):** Bildfilerna finns i `.agents/skills/_BILDER/` och länkarna i README:n pekar på dem (kontrollerat med `test -f`). Jag öppnade och tittade på alla fyra bilderna. Pull request #6 är ihopslagen (`git log` på `main`).
+- **Inte verifierat:** Hur bilderna visas på GitHub. Att Grok Build hittar skills i `.agents/skills/` (kör `grok inspect`). Länken till xAI:s dokumentation öppnades inte.
+- **Återstår:** Se avsnitt 7 i README:n, bland annat om skillsen ska flyttas till huvudregeln.
+- **Obs:** Bilderna lades i repot av ägaren (commit `c40e1e9`). Ägaren bad om grenen och pull requesten och slår ihop.
+
+---
+
 ## 2026-10-05 · Claude Code (Sonnet 5.5) · kopiorna följer Groks original, plus README om skills
 
 - **Gjort:** Kopiorna uppdaterades enligt Groks egen lista: `controllerrollen-generativ-ai` till version 1.6 (ny rad under Senaste ändringar, äldsta raden bort, ny cross-reference, en mening i omdöme 6 i `references/erfarenheter.md`) och `ai-minne-formagor-organisation` (ny Cross-references-sektion, banner avstämd 2026-10-05 17:59 CEST mot original 1.1, `last_updated`). Ny `.agents/skills/README.md` med process för original, kopia, pekare och pull request. Raden lades också i mappstrukturen i `AGENTS.md`.
