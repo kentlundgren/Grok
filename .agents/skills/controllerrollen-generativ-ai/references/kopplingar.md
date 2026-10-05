@@ -88,6 +88,16 @@ Praktiken: indataprovet. Mandat att påverka beslut bör omfatta vilka verktyg o
 
 Inte prövat: vad "partisk" avsåg, hur många controllers som svarade, och om 63 procent är stabilt utanför Invicis panel. Tre stödjande exempel är öppnade 2026-10-06 (Linnéuniversitetet 2026, Wise Finance 2026, AICPA och CIMA 2026), men inget av dem är ett dokumenterat organisationsfall.
 
+## 2026-10-06 – Linnéuppsatsen: kvalitativ studie, överförbarhet snarare än representativitet
+
+Källa: Andersson, Axling och Norrbom (2026), kandidatuppsats, nio semistrukturerade intervjuer i privata bolag (sju stora, ett medelstort, ett litet). Författarna skriver själva i avsnitt 3.3 att resultatet inte kan generaliseras till en större population, och i avsnitt 3.5 att de nått teoretisk mättnad efter nio intervjuer.
+
+Läge: nyanserar hur uppsatsen får refereras. Kent utelämnade medvetet formuleringen att nio intervjuer inte är representativa, när han kommenterade Invicis inlägg. Skälet: studien är kvalitativ, och representativitet är ett kvantitativt mått. Uppsatsen ger djup och mekanismer (till exempel att ansvaret ligger hos den enskilda utan tydliga ramar), inte hur vanligt något är. Bedömningen stämmer med författarnas egen. Kents egen licentiatavhandling är på motsvarande sätt mer kvalitativ än kvantitativ.
+
+Praktikregel: referera uppsatsen som kvalitativ, med ord som "pekar på" och "beskriver", inte med procent eller "många". Den öppna frågan är överförbarhet, alltså om bilden även gäller i en kontext som studien inte täcker. Alla bolag i studien är privata. Frågan om statlig och kommunal verksamhet är därför berättigad, och den hör hemma i kvalitativ forskning, till skillnad från ett krav på representativitet.
+
+Inte prövat: den publicerade formuleringen. LinkedIn-kommentaren (kortlänk `lnkd.in/p/eHdcj8q7`) gick inte att öppna utan inloggning.
+
 ## Mall för nästa koppling
 
 - Datum.
