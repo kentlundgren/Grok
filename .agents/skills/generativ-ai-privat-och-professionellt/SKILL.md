@@ -1,11 +1,11 @@
 ---
 name: generativ-ai-privat-och-professionellt
-description: Hur generativ AI kan och bör hanteras privat och professionellt, och när de två rollerna flyter ihop, till exempel när man testar, leker och lär med generativ AI på fritiden eller pro bono. Används när frågan gäller vad som får matas in i en AI-modell, vilken yta (konsumentchatt, API, avtal) som passar, vem som äger resultatet, hur man visar att AI varit med, eller gränsen mellan fritidsexperiment och uppdrag. Pekar vidare till controllerrollen-generativ-ai och ai-minne-formagor-organisation i stället för att upprepa dem.
+description: Hur generativ AI kan och bör hanteras privat och professionellt, och när de två rollerna flyter ihop, till exempel när man testar, leker och lär med generativ AI på fritiden eller pro bono. Används när frågan gäller vad som får matas in i en AI-modell, vilken yta (konsumentchatt, API, avtal) som passar, vem som äger resultatet, hur man visar att AI varit med, eller gränsen mellan fritidsexperiment och uppdrag. Används också när ett LinkedIn-inlägg, en kommentar, en feedback på någon annans inlägg eller en bloggtext om generativ AI ska skrivas eller granskas, särskilt om texten rör arbetsdata, personuppgifter eller gränsen mellan privat och professionellt. Pekar vidare till controllerrollen-generativ-ai och ai-minne-formagor-organisation i stället för att upprepa dem.
 metadata:
   type: workflow
-  version: "0.1"
-  origin: Skriven av Claude Code (Sonnet 5.5) 2026-10-05 på Kents begäran. Inte en kopia av en Grok-skill. Ägaren avgör om originalet ska ligga här eller i Groks skill-lager.
-  last_updated: 2026-10-05 (Stockholm)
+  version: "0.2"
+  origin: Skriven av Claude Code (Sonnet 5.5) 2026-10-05 på Kents begäran. Inte en kopia av en Grok-skill. Originalet ligger i repot (beslut 2026-10-05, se .agents/skills/README.md, avsnitt 8).
+  last_updated: 2026-10-05 (Stockholm), version 0.2: LinkedIn-trigger och avsnitt om inlägg
 ---
 
 # Generativ AI privat och professionellt
@@ -51,12 +51,23 @@ Offentlig sektors regler (offentlighets- och sekretesslagen, dataskydd) och käl
 - **Controllerarbete:** gå vidare till `controllerrollen-generativ-ai`.
 - **Frågan är vem som äger original, kopior och pekare:** gå vidare till `ai-minne-formagor-organisation`.
 
+## När du skriver, kommenterar eller ger feedback på ett inlägg
+
+Gäller LinkedIn, bloggar och liknande, både egna inlägg och svar på andras. Ton, röst och källformat hämtas från Kents egna skills (se Cross-references), inte härifrån. Den här skillen bidrar med innehåll och gränser:
+
+1. Säg vad texten belägger, och vad den inte belägger. Märk *(egen praktik)* eller *(källa)*. Låna inte tyngd av en erfarenhet till en siffra.
+2. Rör inlägget arbetsdata, siffror från ett uppdrag eller andras personuppgifter: gör de tre frågorna ovan innan något skrivs in eller refereras. Är svaret oklart, fråga ägaren.
+3. Skilj på fritidsarbete och uppdrag, och säg vilket som avses. Pro bono för ideell verksamhet räknas som professionellt (se `controllerrollen-generativ-ai/references/erfarenheter.md`, omdöme 6).
+4. Ägaren är avsändare. Agenten föreslår, skriver inte under ägarens namn det ägaren inte sagt.
+5. Verifiera varje extern länk innan den tas med. Kan en länk inte öppnas, säg det.
+
 ## Cross-references
 
 - `controllerrollen-generativ-ai`: yrkesdjupet, källkanon, analysgång, känsliga data i ekonomistyrningen.
 - `ai-minne-formagor-organisation`: normalform, person/grupp/organisation.
 - `kodsatt-agentic-engineering`: när experimentet blir kod som ska leva, delas eller röra data.
 - `kent-referens`: källformat (finns utanför repot).
+- `kent-respons` och `kent-skrivstil`: röst, ton och uppbyggnad för kommentarer, feedback och egna inlägg. De ligger på ägarens konto i claude.ai, utanför repot.
 
 ## Referenser
 

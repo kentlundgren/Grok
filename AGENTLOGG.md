@@ -15,6 +15,16 @@ Mall:
 
 ---
 
+## 2026-10-05 · Claude Code (Sonnet 5.5) · beslut om var originalen ska ligga, LinkedIn-trigger, prompt i README
+
+- **Gjort:** `.agents/skills/README.md`: nytt avsnitt 8 (beslut: original i repot, i `.claude/skills/<namn>/`, Grok-pekare i `.grok/skills/` efter `grok inspect`, flytten ej genomförd) och avsnitt 9 (strukturerad prompt för regelbunden kontroll av hur verktygen läser skills). `generativ-ai-privat-och-professionellt` till version 0.2: LinkedIn-trigger i beskrivningen, nytt avsnitt om inlägg, cross-referenser till `kent-respons` och `kent-skrivstil`. Beskrivningarna i pekarna för den skillen, `controllerrollen-generativ-ai` och `ai-minne-formagor-organisation` utökade, eftersom pekarens beskrivning är det Claude Code väljer skill efter.
+- **Verifierat (och hur):** Claude Code-sessionen listade pekarna i `.claude/skills/` med sina beskrivningar, och visade de nya beskrivningarna direkt efter ändringen. Det belägger att Claude Code laddar pekarna.
+- **Inte verifierat:** Att Cursor läser `.claude/skills/`. Att Grok Build hittar skills i `.agents/skills/` (kör `grok inspect`). Att skillen faktiskt väljs vid ett LinkedIn-inlägg (inte provat). Att namnen `linkedin-ai-feedback-generator`, `x-ai-feedback-generator` och `controllerutangranser-blog-generator` finns någonstans (de fanns inte i skill-listan).
+- **Återstår:** Se avsnitt 7 i README:n. Pekaren för `kodsatt-agentic-engineering` har fortfarande en beskrivning utan ämne. Själva flytten enligt avsnitt 8.
+- **Obs:** Beslutet i avsnitt 8 är ett förslag från Claude Code som ägaren bad att få inskrivet. Ägaren granskar och slår ihop pull requesten.
+
+---
+
 ## 2026-10-05 · Claude Code (Sonnet 5.5) · README om skills rättad, med bilder
 
 - **Gjort:** `.agents/skills/README.md` rättad efter att `AGENTS.md` fått avsnittet "Skills: var de ska ligga": avsnitt 3 säger nu att `.claude/skills/` är huvudregeln för Claude Code och Cursor, att Grok Build enligt xAI:s dokumentation använder `.grok/skills/`, och att `.agents/skills/` är ett äldre mönster som inte är verifierat för Grok. Nytt avsnitt 6C med de fyra skärmdumparna i `_BILDER/` (städning av en ihopslagen gren). Avsnitten 5 och 7 uppdaterade.

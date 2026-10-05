@@ -40,7 +40,7 @@ Enligt `AGENTS.md` (avsnittet "Skills: var de ska ligga") gäller:
 
 **Det här repots skills följer ett äldre mönster.** De ligger i `.agents/skills/` med pekare i `.claude/skills/`. `AGENTS.md` säger att det mönstret är äldre, och att det inte är verifierat att Grok hittar `.agents/skills/` på projektnivå. Kontrollera med `grok inspect` innan mönstret kopieras till en ny skill.
 
-Det betyder att pekarna i `.claude/skills/` är det som verkligen läses av Claude Code, medan kopian i `.agents/skills/` är där texten bor. Att Cursor och Claude Code laddar skillsen i en ny session är **inte verifierat** (se AGENTLOGG 2026-10-05).
+Det betyder att pekarna i `.claude/skills/` är det som verkligen läses av Claude Code, medan kopian i `.agents/skills/` är där texten bor. **Verifierat 2026-10-05:** en Claude Code-session i molnet listade pekarna i `.claude/skills/` med sina beskrivningar. Claude Code laddar alltså pekarna. Det är pekarens `description` som styr när skillen väljs. Pekarens text ska därför säga vad skillen handlar om och när den används, inte bara "pekare". **Inte verifierat:** att Cursor läser `.claude/skills/` (det är vad `AGENTS.md` säger), och att kopian i `.agents/skills/` följs upp när pekaren läses.
 
 ---
 
@@ -52,9 +52,9 @@ Det betyder att pekarna i `.claude/skills/` är det som verkligen läses av Clau
 | `controllerrollen-generativ-ai` | Grok | Ja, med `references/` | Ja | Kopia och original 1.6 |
 | `kodsatt-agentic-engineering` | Grok | Ja, avstämd 2026-10-05 | Ja | 1.0 |
 | `koldioxidlagring-villkor` | Originalet ligger i repot | Är originalet | Ja | Ej genomgången här |
-| `generativ-ai-privat-och-professionellt` | Ligger i repot (skriven av Claude Code, version 0.1) | Är originalet | Ja | 0.1 |
+| `generativ-ai-privat-och-professionellt` | Ligger i repot (skriven av Claude Code) | Är originalet | Ja | 0.2 |
 
-Öppet beslut: ska `generativ-ai-privat-och-professionellt` bo kvar i repot, eller även ligga i Groks skill-lager? Grok har enligt egen rapport inte rört den, och tills du beslutar är repots fil originalet.
+Beslut: se avsnitt 8. Originalet av `generativ-ai-privat-och-professionellt` ligger i repot, och riktningen är att alla skills till sist har sitt original i `.claude/skills/<namn>/`. Flytten är inte genomförd.
 
 ---
 
@@ -67,7 +67,8 @@ Det betyder att pekarna i `.claude/skills/` är det som verkligen läses av Clau
 5. Grok ändrade sina original (controller-skillen till 1.6, enligt Groks egen rapport, inte kontrollerad här) och rapporterade vad kopiorna skulle ändras till.
 6. Kopiorna uppdaterades så att de följer originalen: version 1.6, nya cross-referenser och en mening om pro bono i `erfarenheter.md`. Pull request: [kentlundgren/Grok#6](https://github.com/kentlundgren/Grok/pull/6) (ihopslagen).
 7. Grenen `claude/focused-pascal-yb1gps` raderades på GitHub och på ägarens dator (se avsnitt 6C, med bilder).
-8. Avsnitt 3 i den här filen rättades efter att `AGENTS.md` fått avsnittet "Skills: var de ska ligga".
+8. Avsnitt 3 i den här filen rättades efter att `AGENTS.md` fått avsnittet "Skills: var de ska ligga". Pull request: [kentlundgren/Grok#7](https://github.com/kentlundgren/Grok/pull/7) (ihopslagen).
+9. Beslutet om var originalen ska ligga skrevs in (avsnitt 8), en strukturerad prompt för regelbunden kontroll lades till (avsnitt 9), och LinkedIn-triggern i `generativ-ai-privat-och-professionellt` gjordes tydligare (version 0.2), även i pekarnas beskrivningar.
 
 ---
 
@@ -151,14 +152,86 @@ Obs: repot ligger i OneDrive. OneDrive kan låsa filer i `.git`-mappen under syn
 
 ## 7. Vad som återstår
 
-- **Beslut:** var ska originalet av `generativ-ai-privat-och-professionellt` ligga?
+- **Genomför flytten** enligt avsnitt 8, en skill i taget, med `grok inspect` först.
 - **Beslut:** ordet "controllerarbete" står kvar i kopians beskrivning av `ai-minne-formagor-organisation`, men finns inte i originalets. Ta bort det eller behåll det?
-- **Verifiera:** att Cursor och Claude Code laddar skillsen i en ny session.
+- **Verifiera:** att Cursor läser `.claude/skills/`, och att Claude Code följer pekaren till texten i en ny session.
 - **Verifiera med `grok inspect`:** om Grok Build hittar skills i `.agents/skills/`, eller om en tunn pekare i `.grok/skills/` behövs (`AGENTS.md`, avsnittet "Skills: var de ska ligga").
-- **Beslut:** ska skillsen i det här repot flyttas till huvudregeln (`.claude/skills/<namn>/` som den enda platsen) i stället för det äldre mönstret med original i `.agents/skills/`?
+- **Skillnamn som kan saknas:** `controllerrollen-generativ-ai` hänvisar till `linkedin-ai-feedback-generator`, `x-ai-feedback-generator` och `controllerutangranser-blog-generator`. De namnen fanns inte i skill-listan i Claude Code-sessionen 2026-10-05. På kontot i claude.ai finns `kent-respons` och `kent-skrivstil`. Avgör vilka som gäller och uppdatera hänvisningarna i originalet.
+- **Pekare utan ämne:** pekaren för `kodsatt-agentic-engineering` säger bara "Pekare för Claude Code" i sin beskrivning. Eftersom beskrivningen styr urvalet bör den säga vad skillen handlar om. (Pekarna för `ai-minne`, `controllerrollen` och `generativ-ai-privat-och-professionellt` fick bättre beskrivningar 2026-10-05.)
 - **Kontoskill i claude.ai:** ladda upp mappen själv om du vill ha skillen även där. Det kan inte göras från Claude Code i molnet.
 - **ChatGPT och Gemini:** deras roll och hur skillsen ska läggas in där är inte beskriven. Bestäm, så kan det skrivas in här.
 - **Länkar:** Digg, IMY, SpaceXAI och OpenAI i `controllerrollen-generativ-ai/references/kallkanon.md` kontrollerades senast 2026-10-03. De kunde inte omkontrolleras 2026-10-05 från Claude Code-sessionen (blockerade domäner).
+
+---
+
+## 8. Var originalen ska ligga (beslut 2026-10-05)
+
+Frågan: var ska minnen, projektbeskrivningar och skills ligga för att så många verktyg som möjligt ska kunna använda dem, med så lite dubbelarbete som möjligt? Det finns inget perfekt svar. Det här är en avvägning, och den ska omprövas när verktygen ändras (se avsnitt 9).
+
+**Beslut (riktning).** Förslag från Claude Code, inskrivet på ägarens begäran. Flytten är inte genomförd.
+
+- Originalet av varje skill ligger **i repot**, inte i ett enskilt verktygs privata lager (till exempel Groks interna). Skälet är egen bedömning: repot är det enda stället alla verktyg kan nå, det har historik och granskning via pull request, och det är en adress man kan peka på. Det stämmer med normalformen i `ai-minne-formagor-organisation`: ett original, kopior märkta som kopior.
+- Platsen i repot är `.claude/skills/<namn>/SKILL.md` med `references/`, som `AGENTS.md` anger som huvudregel (avsnittet "Skills: var de ska ligga"). Där läser Claude Code direkt, och enligt `AGENTS.md` Cursor.
+- Grok Build får en tunn pekare i `.grok/skills/<namn>/`, men först när `grok inspect` visat att det behövs.
+- ChatGPT och Gemini läser inte repot automatiskt. Skillsen är skrivna tool-neutralt. Kopian klistras in vid behov, och datum antecknas här.
+- `.agents/skills/` är ett äldre mönster. Det fasas ut skill för skill, inte på en gång.
+
+**Vad som hör hemma var** (egen bedömning, enligt tankegången i `ai-minne-formagor-organisation`):
+
+| Typ | Var | Exempel |
+| --- | --- | --- |
+| Vad projektet är, ägare, regler | `AGENTS.md` | Roller, Git-flöde, överlämning |
+| Hur man gör en återkommande sak | Skill (`SKILL.md`) | Kodsätt, känsliga data i ekonomistyrning |
+| Källor och fördjupning till en skill | `references/` i skillens mapp | `kallkanon.md` |
+| Vad som hänt och vad som återstår | `AGENTLOGG.md` | Överlämning mellan verktyg |
+| Verktygsspecifikt | `CLAUDE.md`, `.cursor/rules/` | Bara det verktyget; peka till `AGENTS.md` |
+
+**Så genomförs flytten, ett steg i taget:**
+
+1. Kör `grok inspect` och anteckna vad Grok Build faktiskt hittar.
+2. Börja med `generativ-ai-privat-och-professionellt`, som har skrivits av Claude Code och saknar Grok-original. Flytta mappen från `.agents/skills/` till `.claude/skills/` med `git mv`, och ta bort den tunna pekaren i `.claude/skills/` så att texten bor där.
+3. För Groks skills: bestäm med Grok när dess interna original ersätts av en pekare till repot. Tills dess gäller den nuvarande ordningen (original hos Grok, kopia i repot).
+4. Uppdatera mappstrukturen i `AGENTS.md` och loggen i `AGENTLOGG.md` vid varje flytt.
+5. Pull request enligt avsnitt 6B.
+
+**Risker att känna till.** Flera exemplar betyder att de kan glida isär. Det som minskar risken är att ha ett original, märka kopior med avstämningsdatum, och ha en kontrollista (avsnitt 6D). Hur verktygen läser skills ändras snabbt, så beslutet kan behöva ändras.
+
+---
+
+## 9. Strukturerad prompt: kontrollera regelbundet hur verktygen läser skills
+
+Syftet är att få bättre svar på frågan i avsnitt 8, och att upptäcka när verktygen ändrar sig. Kopiera prompten till en AI som kan söka på webben, helst varje gång något i verktygen verkar ha ändrats och annars med jämna mellanrum. Jämför svaret med avsnitt 3 och 8 här, och uppdatera dem bara om det finns belägg.
+
+```
+Du hjälper mig att kontrollera hur AI-verktyg läser skills och projektinstruktioner just nu. Jag har ett repo (kentlundgren/Grok) där skills ligger som mappar med en SKILL.md, och jag vill veta var varje verktyg läser dem, så att jag kan hålla ett original och peka dit.
+
+REGLER
+- Använd bara officiell dokumentation från verktygens tillverkare. Sekundära källor (bloggar, forum) får bara komplettera, och ska märkas som sådana.
+- Hitta inte på. Kan du inte belägga något, skriv "ej verifierat". Säg också om en sida inte gick att öppna.
+- Öppna varje länk och kontrollera att den leder till rätt sida innan du anger den. Ange källor i Harvardformat med klickbar länk, hämtdatum (dagens datum) och en kort kursiv notis om varför källan är med.
+- Fråga mig om något är oklart innan du svarar.
+- Ändra inga filer. Redovisa bara.
+
+VERKTYG ATT KONTROLLERA
+Claude Code, Cursor, Grok Build (xAI), ChatGPT (projekt, custom instructions, GPTs) och Gemini (Gems).
+
+FRÅGOR, PER VERKTYG
+1. Var söker verktyget skills eller motsvarande instruktioner på projektnivå (mappnamn, filnamn)? Och på personnivå?
+2. Läser det AGENTS.md, CLAUDE.md eller någon annan fil automatiskt? Vilken har företräde?
+3. Hur väljs en skill: styrs det av en beskrivning (description), av filens namn, manuellt, eller på annat sätt?
+4. Följer verktyget en pekare (en fil som bara säger "läs den andra filen")? Går det att ha symboliska länkar, och fungerar de i Windows och OneDrive?
+5. Finns det begränsningar (storlek, antal skills, språk)?
+6. Vad har ändrats i dokumentationen de senaste tre månaderna?
+
+SVARSFORMAT
+a) En tabell med verktyg på raderna och frågorna 1–5 på kolumnerna. I varje ruta: svaret och källans nummer, eller "ej verifierat".
+b) Vad som har ändrats sedan förra kontrollen (jämför med det som står i `.agents/skills/README.md`, avsnitt 3 och 8).
+c) Konkreta förslag på vad som bör ändras i README:n, med motivering. Skilj på belagt och bedömning.
+d) Källförteckning i Harvardformat, i bokstavsordning.
+e) En lista över sidor som inte gick att öppna.
+
+Börja med att fråga mig vilka av verktygen jag använder just nu, och om jag vill ha hela kontrollen eller bara ett verktyg.
+```
 
 ---
 
