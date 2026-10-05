@@ -52,7 +52,7 @@ Det betyder att pekarna i `.claude/skills/` är det som verkligen läses av Clau
 | `controllerrollen-generativ-ai` | Grok | Ja, med `references/` | Ja | Kopia och original 1.6 |
 | `kodsatt-agentic-engineering` | Grok | Ja, avstämd 2026-10-05 | Ja | 1.0 |
 | `koldioxidlagring-villkor` | Originalet ligger i repot | Är originalet | Ja | Ej genomgången här |
-| `generativ-ai-privat-och-professionellt` | Ligger i repot (skriven av Claude Code, version 0.1) | Är originalet | Ja | 0.1 |
+| `generativ-ai-privat-och-professionellt` | Ligger i repot (skriven av Claude Code) | Är originalet | Ja | 0.2 |
 
 Beslut: se avsnitt 8. Originalet av `generativ-ai-privat-och-professionellt` ligger i repot, och riktningen är att alla skills till sist har sitt original i `.claude/skills/<namn>/`. Flytten är inte genomförd.
 
