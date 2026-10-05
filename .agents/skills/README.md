@@ -36,9 +36,11 @@ Enligt `AGENTS.md` (avsnittet "Skills: var de ska ligga") gäller:
 | --- | --- | --- |
 | Claude Code och Cursor | `.claude/skills/` | Huvudregeln i `AGENTS.md`: skills ligger direkt under repots rot i `.claude/skills/<namn>/`. |
 | Grok Build | `.grok/skills/` | Enligt `AGENTS.md` listar xAI:s dokumentation `.grok/skills/`. Vill man att Grok Build ska använda en skill lägger man en tunn pekare där. |
+| Det här repot (original och kopior) | `.agents/skills/` | Äldre mönster, som repot använder idag. Mappstrukturen i `AGENTS.md` kommenterar den fortfarande som "Skill som Cursor och Grok hittar själva", men avsnittet "Skills: var de ska ligga" säger att det inte är verifierat för Grok. Claude Code läser den inte direkt, utan via pekarna i `.claude/skills/` (enligt pekarfilen för `koldioxidlagring-villkor`: Claude Code läser bara från `.claude/skills/`). |
+| Grok (kontonivå) | Groks eget lager, inte en mapp i repot | Enligt Groks utskrift 2026-10-05 (frågan "grok inspect" ställd i chatten, inte som kommando) finns 49 "account skills", skilda från projektets skills i `.grok/skills/`. Där ligger originalen av `ai-minne-formagor-organisation`, `controllerrollen-generativ-ai` och `kodsatt-agentic-engineering`, och även en egen kopia av `generativ-ai-privat-och-professionellt` (version okänd). Var lagret ligger på datorn eller kontot är inte känt. |
 | ChatGPT, Gemini | Ingen automatisk läsning beskriven här | Controller-skillen säger att filen kan läggas i projektinstruktion, Gem eller custom instructions. Rollen för ChatGPT och Gemini är inte beskriven i `AGENTS.md`. Fråga ägaren, gissa inte. |
 
-**Det här repots skills följer ett äldre mönster.** De ligger i `.agents/skills/` med pekare i `.claude/skills/`. `AGENTS.md` säger att det mönstret är äldre, och att det inte är verifierat att Grok hittar `.agents/skills/` på projektnivå. Kontrollera med `grok inspect` innan mönstret kopieras till en ny skill.
+**Det här repots skills följer ett äldre mönster.** De ligger i `.agents/skills/` med pekare i `.claude/skills/`. `AGENTS.md` säger att det mönstret är äldre, och att det inte är verifierat att Grok hittar `.agents/skills/` på projektnivå. Innan mönstret kopieras till en ny skill bör det kontrolleras. Vad `grok inspect` är som kommando är **inte verifierat**: när det skrevs i Groks chatt svarade Grok att `grok` inte var installerat i den sessionen och gjorde en egen genomgång av sin arbetsyta, som inte gällde det här repot. Pröva `grok --help` i PowerShell (se avsnitt 7).
 
 Det betyder att pekarna i `.claude/skills/` är det som verkligen läses av Claude Code, medan kopian i `.agents/skills/` är där texten bor. **Verifierat 2026-10-05:** en Claude Code-session i molnet listade pekarna i `.claude/skills/` med sina beskrivningar. Claude Code laddar alltså pekarna. Det är pekarens `description` som styr när skillen väljs. Pekarens text ska därför säga vad skillen handlar om och när den används, inte bara "pekare". **Inte verifierat:** att Cursor läser `.claude/skills/` (det är vad `AGENTS.md` säger), och att kopian i `.agents/skills/` följs upp när pekaren läses.
 
@@ -152,12 +154,13 @@ Obs: repot ligger i OneDrive. OneDrive kan låsa filer i `.git`-mappen under syn
 
 ## 7. Vad som återstår
 
-- **Genomför flytten** enligt avsnitt 8, en skill i taget, med `grok inspect` först.
+- **Genomför flytten** enligt avsnitt 8, en skill i taget, efter att det är klarlagt vad Grok Build faktiskt läser.
 - **Beslut:** ordet "controllerarbete" står kvar i kopians beskrivning av `ai-minne-formagor-organisation`, men finns inte i originalets. Ta bort det eller behåll det?
 - **Verifiera:** att Cursor läser `.claude/skills/`, och att Claude Code följer pekaren till texten i en ny session.
-- **Verifiera med `grok inspect`:** om Grok Build hittar skills i `.agents/skills/`, eller om en tunn pekare i `.grok/skills/` behövs (`AGENTS.md`, avsnittet "Skills: var de ska ligga").
-- **Skillnamn som kan saknas:** `controllerrollen-generativ-ai` hänvisar till `linkedin-ai-feedback-generator`, `x-ai-feedback-generator` och `controllerutangranser-blog-generator`. De namnen fanns inte i skill-listan i Claude Code-sessionen 2026-10-05. På kontot i claude.ai finns `kent-respons` och `kent-skrivstil`. Avgör vilka som gäller och uppdatera hänvisningarna i originalet.
+- **Verifiera hur Grok Build läser skills:** om det hittar `.agents/skills/` i det här repot, eller om en tunn pekare i `.grok/skills/` behövs. Kör `grok --help` i PowerShell i repots mapp. Finns kommandot `inspect` (testa `grok inspect --help`) kan det användas. Hittas inte `grok`, är Grok Build inte installerat på den datorn. Grok kan också tillfrågas direkt i Grok Build.
+- **Skillnamn i hänvisningarna (utrett 2026-10-05):** `controllerrollen-generativ-ai` hänvisar till `linkedin-ai-feedback-generator`, `x-ai-feedback-generator`, `controllerutangranser-blog-generator` och `kent-referens`. De finns i Groks kontolager (enligt Groks utskrift) men inte på kontot i claude.ai, där motsvarigheterna heter `kent-respons`, `kent-skrivstil` och `kent-referens`. Hänvisningarna är alltså inte trasiga, men de gäller Grok. Avgör om originalet ska nämna båda uppsättningarna.
 - **Pekare utan ämne:** pekaren för `kodsatt-agentic-engineering` säger bara "Pekare för Claude Code" i sin beskrivning. Eftersom beskrivningen styr urvalet bör den säga vad skillen handlar om. (Pekarna för `ai-minne`, `controllerrollen` och `generativ-ai-privat-och-professionellt` fick bättre beskrivningar 2026-10-05.)
+- **Två exemplar av `generativ-ai-privat-och-professionellt`:** repot har version 0.2, och Grok har enligt sin utskrift en egen kopia i sitt kontolager, version okänd. Fråga Grok vilken version den har, och bestäm vilket exemplar som är originalet (avsnitt 8 säger repot). Därefter ska det andra bli en kopia eller pekare.
 - **Kontoskill i claude.ai:** ladda upp mappen själv om du vill ha skillen även där. Det kan inte göras från Claude Code i molnet.
 - **ChatGPT och Gemini:** deras roll och hur skillsen ska läggas in där är inte beskriven. Bestäm, så kan det skrivas in här.
 - **Länkar:** Digg, IMY, SpaceXAI och OpenAI i `controllerrollen-generativ-ai/references/kallkanon.md` kontrollerades senast 2026-10-03. De kunde inte omkontrolleras 2026-10-05 från Claude Code-sessionen (blockerade domäner).
@@ -172,7 +175,7 @@ Frågan: var ska minnen, projektbeskrivningar och skills ligga för att så mån
 
 - Originalet av varje skill ligger **i repot**, inte i ett enskilt verktygs privata lager (till exempel Groks interna). Skälet är egen bedömning: repot är det enda stället alla verktyg kan nå, det har historik och granskning via pull request, och det är en adress man kan peka på. Det stämmer med normalformen i `ai-minne-formagor-organisation`: ett original, kopior märkta som kopior.
 - Platsen i repot är `.claude/skills/<namn>/SKILL.md` med `references/`, som `AGENTS.md` anger som huvudregel (avsnittet "Skills: var de ska ligga"). Där läser Claude Code direkt, och enligt `AGENTS.md` Cursor.
-- Grok Build får en tunn pekare i `.grok/skills/<namn>/`, men först när `grok inspect` visat att det behövs.
+- Grok Build får en tunn pekare i `.grok/skills/<namn>/`, men först när det är klarlagt att det behövs (avsnitt 7).
 - ChatGPT och Gemini läser inte repot automatiskt. Skillsen är skrivna tool-neutralt. Kopian klistras in vid behov, och datum antecknas här.
 - `.agents/skills/` är ett äldre mönster. Det fasas ut skill för skill, inte på en gång.
 
@@ -188,8 +191,8 @@ Frågan: var ska minnen, projektbeskrivningar och skills ligga för att så mån
 
 **Så genomförs flytten, ett steg i taget:**
 
-1. Kör `grok inspect` och anteckna vad Grok Build faktiskt hittar.
-2. Börja med `generativ-ai-privat-och-professionellt`, som har skrivits av Claude Code och saknar Grok-original. Flytta mappen från `.agents/skills/` till `.claude/skills/` med `git mv`, och ta bort den tunna pekaren i `.claude/skills/` så att texten bor där.
+1. Ta reda på vad Grok Build faktiskt hittar (se avsnitt 7, `grok --help`), och anteckna det.
+2. Börja med `generativ-ai-privat-och-professionellt`, som skrevs av Claude Code. Grok har enligt sin utskrift redan en egen kopia, så den behöver ersättas med en pekare eller en kopia märkt som kopia. Flytta mappen från `.agents/skills/` till `.claude/skills/` med `git mv`, och ta bort den tunna pekaren i `.claude/skills/` så att texten bor där.
 3. För Groks skills: bestäm med Grok när dess interna original ersätts av en pekare till repot. Tills dess gäller den nuvarande ordningen (original hos Grok, kopia i repot).
 4. Uppdatera mappstrukturen i `AGENTS.md` och loggen i `AGENTLOGG.md` vid varje flytt.
 5. Pull request enligt avsnitt 6B.
