@@ -97,6 +97,10 @@ Grok/
 ├── .claude/skills/koldioxidlagring-villkor/ # Pekare för Claude Code till skillet ovan
 ├── .claude/skills/kodsatt-agentic-engineering/ # Pekare till kopian ovan
 ├── .claude/skills/ai-minne-formagor-organisation/ # Pekare till kopian ovan
+├── .agents/skills/controllerrollen-generativ-ai/ # Kopia av intern skill om controllerrollen och generativ AI
+├── .agents/skills/generativ-ai-privat-och-professionellt/ # Ny skill (Claude Code): privat, professionellt och när de flyter ihop
+├── .claude/skills/controllerrollen-generativ-ai/ # Pekare till kopian ovan
+├── .claude/skills/generativ-ai-privat-och-professionellt/ # Pekare till skillen ovan
 ├── skills/lordags-dagens-dubbel/
 ├── dagens-dubbel/     # Familjens lördags-DD (live-app, ingen build)
 ├── intervju/Forsakringskassan_202609/

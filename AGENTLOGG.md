@@ -15,6 +15,16 @@ Mall:
 
 ---
 
+## 2026-10-05 · Claude Code (Sonnet 5.5) · ny skill om generativ AI privat och professionellt
+
+- **Gjort:** Ny skill `generativ-ai-privat-och-professionellt` i `.agents/skills/` (original, skriven av Claude Code, inte en Grok-kopia) med pekare i `.claude/skills/`. Saknad pekare lades till för `controllerrollen-generativ-ai`. `forslag-till-original.md` listar ändringar att göra i Groks original. Kopiorna av ai-minne- och controller-skillen är oförändrade.
+- **Verifierat (och hur):** Anthropics integritetspolicy (gällande 2026-09-10) öppnades och lästes 2026-10-05. Filerna skrevs och syns i `git status`.
+- **Inte verifierat:** Att Claude Code laddar de nya skillsen i en ny session. Digg, IMY, SpaceXAI, OpenAI och Claude-kompassen kunde inte omkontrolleras (domänerna blockerades i sessionen). Skillen är version 0.1 och ej granskad av ägaren.
+- **Återstår:** Ägaren granskar texten. Förslagen i `forslag-till-original.md` förs över till Groks original. `AGENTS.md` mappstruktur uppdaterades med de nya mapparna.
+- **Obs:** Ägaren bad uttryckligen om commit och push till grenen `claude/focused-pascal-yb1gps`.
+
+---
+
 ## 2026-10-05 10:50 · Grok (xAI) · kopia av kodsätt-skillen
 
 - **Gjort:** Lade en kopia av Groks interna skill `kodsatt-agentic-engineering` i `.agents/skills/kodsatt-agentic-engineering/` (SKILL.md och references). `.claude/skills/kodsatt-agentic-engineering/SKILL.md` är en pekare, inte en andra regeltext. `AGENTS.md` pekar dit och upprepar inte regeln.
