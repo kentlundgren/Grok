@@ -91,6 +91,7 @@ Kent testar Grok Build som en del av ett befintligt flöde med Cloud Cowork (lok
 Grok/
 ├── README.md
 ├── AGENTS.md
+├── .agents/skills/README.md # Så hålls skills lika: original, kopia, pekare och PR-flöde
 ├── .agents/skills/koldioxidlagring-villkor/ # Skill som Cursor och Grok hittar själva
 ├── .agents/skills/kodsatt-agentic-engineering/ # Kopia av Groks interna skill, avstämd 2026-10-05
 ├── .agents/skills/ai-minne-formagor-organisation/ # Kopia av intern skill om minne och förmågor
