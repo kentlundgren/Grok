@@ -7,6 +7,8 @@ Detta är den utbyggbara banken för användarens egen praktik. Skriv roll och f
 - Civilekonom och civilingenjör, med tekn. licentiat i miljöekonomi. Drygt 20 års controllerarbete i privat och offentlig sektor. [praktik, återgiven 2026-10-03]
 - Verksamhetsnära controlling: budget, prognos, analys, produktionsflöden och att göra ekonomi begriplig för chefer utan ekonombakgrund. Systemvana från bland annat Hypergene, Raindance, Qlik Sense, Unit4/UBW, Planacy och avancerad Excel. [praktik]
 - Offentlig praktik: Lunds universitet (projektredovisning av externfinansierade forskningsprojekt), Trafikverket, SiS (ledde QlikView-implementering), Landskrona kommun (Planacy), Simrishamns kommun Kultur- och fritidsförvaltningen samt Socialförvaltningen. Konsultrollen i Simrishamn avslutades 30 juni 2026. [praktik]
+- Privat och bolagsnära praktik: Sparbanken Kalmar, Kalmar Verkstad, ABB Kalmar Train, SCA, Bemannia/Sodexo och Poolia. [praktik, återgiven av Kent 2026-10-06. Roll, period och system per uppdragsgivare är inte angivna och ska inte gissas. Fråga innan något sägs om vad som gjordes där.]
+- Erfarenheten är lika stor i privat som i statlig, kommunal och offentlig verksamhet. Utgå från en controller i ekonomistyrning som arbetat i båda, och låt ingen sektor vara standard. [Kents rättelse 2026-10-06]
 - Mellan uppdrag hösten 2026, med intervjuer för controller- och ekonomroller i kommun, universitet och stat. [läge 2026-10-03]
 - Ideell praktik: revisor och styrelsearbete, bland annat Kalmar Nation och Lunds Naturskyddsföreningen. I ideell sektor är attribution extra viktig för förtroendet. [praktik]
 
@@ -83,3 +85,15 @@ Vad som lärdes:
 - I en LinkedIn-kommentar ska källförklaringen stå i parentes, utan ordet Notion.
 
 Vald formulering, kort: hålet är också ett controllerhål. Kartan utan verkstad, eller verkstad utan höjd, lämnar frågan vad vi ska sluta göra olöst. Inlägg: https://lnkd.in/p/eT9MAFsc.
+
+## 2026-10-06 – Rättelse: privat och offentlig praktik jämställs
+
+Sammanhang: Kent påpekade att svaren ofta lutat åt offentlig och kommunal verksamhet, fast erfarenheten är lika stor i privat. Raden "Offentlig praktik" ovan listade bara offentliga uppdragsgivare, och flera tidigare formuleringar (kopplingarna 2026-10-03 och 2026-10-05, praktiknyansen i analysgången) har en offentlig vinkel.
+
+Vad som gäller framåt:
+
+- Privata uppdragsgivare är nu inlagda under Roll och sammanhang. Uppgifterna är bara namnen. Roller, perioder och system är inte angivna.
+- Nyansen "affärspartner är privat sektors språk, verksamhetspartner är offentlig motsvarighet" ska användas som en nyans när en källa är avgränsad till en sektor, inte som hemmaplan. Invici-enkäten omfattar båda sektorerna. Linnéuppsatsen (Andersson, Axling och Norrbom 2026) omfattar bara privata bolag. Fråga därför om bilden stämmer i den sektor som källan inte täcker.
+- Äldre poster lämnas oförändrade. Läs deras offentliga vinkel som en av två, inte som hela praktiken.
+
+Inte prövat: vad rollerna var i de privata uppdragen, och vilka av dem som får nämnas publikt som illustration.
