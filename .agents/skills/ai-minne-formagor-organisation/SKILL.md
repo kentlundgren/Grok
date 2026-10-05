@@ -6,10 +6,10 @@ metadata:
   version: "1.2"
   source: Grok intern skill ai-minne-formagor-organisation
   copy_date: 2026-10-05
-  last_updated: 2026-10-05 11:50 CEST (Stockholm)
+  last_updated: 2026-10-05 17:59 CEST (Stockholm)
 ---
 
-> Kopia av Groks interna skill `ai-minne-formagor-organisation`, avstämd 2026-10-05. Originalet ligger i Groks skill-lager. Ändra originalet först. Regeln ska inte skrivas om här på egen hand.
+> Kopia av Groks interna skill `ai-minne-formagor-organisation`, avstämd 2026-10-05 17:59 CEST mot original version 1.1. Originalet ligger i Groks skill-lager. Ändra originalet först. Regeln ska inte skrivas om här på egen hand.
 
 # Minne, förmågor och ordning — person, grupp, organisation
 
@@ -54,6 +54,10 @@ Målet 1+1=3 är en önskan om förstärkning, inte ett uppnått resultat. *(ege
 *(egen praktik)* En person kan hålla original, pekare och kopia i huvudet. En avdelning kan inte. En stor organisation kan det ännu mindre, om inte någon äger registret och granskningen. 1+1 blir 3 först när en persons prövade skill kan användas av en annan utan att båda skriver om den.
 
 *(källa)* Bosio återger att för många skills gör att rätt skill missas, att Vercel såg att agenten inte anropade tillgänglig skill i 56 procent av fallen, och att en arXiv-studie fick vinsten att krympa när agenten själv fick söka i ett stort skill-bibliotek (Bosio, 2026). Siffrorna är inte lästa i primärstudierna här. *(källa)* Taheri kallar glappet memory governance gap (Taheri, 2026). *(källa)* MintMCP skiljer privat, team och organisation som olika minnesytor (MintMCP, 2026).
+
+## Cross-references
+
+- `generativ-ai-privat-och-professionellt` — vad som får in i modellen, i motsats till vem som äger filerna. Peka, upprepa inte.
 
 ## Referenser
 

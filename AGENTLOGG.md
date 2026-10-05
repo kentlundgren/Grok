@@ -15,6 +15,16 @@ Mall:
 
 ---
 
+## 2026-10-05 · Claude Code (Sonnet 5.5) · kopiorna följer Groks original, plus README om skills
+
+- **Gjort:** Kopiorna uppdaterades enligt Groks egen lista: `controllerrollen-generativ-ai` till version 1.6 (ny rad under Senaste ändringar, äldsta raden bort, ny cross-reference, en mening i omdöme 6 i `references/erfarenheter.md`) och `ai-minne-formagor-organisation` (ny Cross-references-sektion, banner avstämd 2026-10-05 17:59 CEST mot original 1.1, `last_updated`). Ny `.agents/skills/README.md` med process för original, kopia, pekare och pull request. Raden lades också i mappstrukturen i `AGENTS.md`.
+- **Verifierat (och hur):** `git diff` mot `main` visar bara de ändringarna. `description` är oförändrad i controller-kopian. Versionen i `ai-minne`-kopian är kvar på 1.2.
+- **Inte verifierat:** Att Groks original verkligen står på 1.6 och 1.1. Det vet jag bara från Groks rapport. Att Cursor och Claude Code laddar skillsen i en ny session.
+- **Återstår:** Se avsnitt 7 i `.agents/skills/README.md` (var originalet av den nya skillen ska ligga, ordet "controllerarbete", ChatGPT och Gemini).
+- **Obs:** Ägaren bad om grenen och pull requesten. Ägaren slår ihop.
+
+---
+
 ## 2026-10-05 · Claude Code (Sonnet 5.5) · ny skill om generativ AI privat och professionellt
 
 - **Gjort:** Ny skill `generativ-ai-privat-och-professionellt` i `.agents/skills/` (original, skriven av Claude Code, inte en Grok-kopia) med pekare i `.claude/skills/`. Saknad pekare lades till för `controllerrollen-generativ-ai`. `forslag-till-original.md` listar ändringar att göra i Groks original. Kopiorna av ai-minne- och controller-skillen är oförändrade.

@@ -3,20 +3,20 @@ name: controllerrollen-generativ-ai
 description: Kunskaps- och analysskill för hur controllerrollen, ekonomifunktionen och ekonomistyrningen förändras av generativ AI. Används när ett inlägg, en rapport, en blogg eller en fråga handlar om controllern som affärspartner, mandat, BI, automatisering av avstämning och periodstängning, datakvalitet, black box eller AI-kompetens i ekonomifunktionen. Används också när inlägget är en generell röst om generativ AI – transformation, marknadshål, ledarskap, agenter eller vad organisationen ska sluta göra – och användaren vill se hur controllerrollen påverkas. Fångar både generell källkanon och användarens praktik, och håller isär dem. Byggs på med nya källor, erfarenheter och kopplingar. Triggerord inkluderar controllerrollen AI, ekonomifunktionen 2026, affärspartner controller, Invici controllers, generativ AI ekonomistyrning, mandat och analys, AI-transformation, hål i marknaden AI.
 metadata:
   type: workflow
-  version: "1.5"
+  version: "1.6"
   created_via: conversation
   purpose: Portable, extensible knowledge skill on the controller role under generative AI, combining a sourced canon with the user's practice
   created: 2026-10-03
-  last_updated: 2026-10-05 11:05 CEST (Stockholm)
+  last_updated: 2026-10-05 17:59 CEST (Stockholm)
 ---
 
 ## Senaste ändringar
 
+- **2026-10-05 17:59 CEST (Stockholm)**: Pekare till `generativ-ai-privat-och-professionellt` (gränsen mellan fritidsexperiment, pro bono och uppdrag) i Cross-references. Omdöme 6 i `references/erfarenheter.md` fick en mening om pro bono. Egen praktikbedömning, inte juridisk slutsats.
 - **2026-10-05 11:36 CEST (Stockholm)**: Frågan vem som äger normalformen för minne och skills pekas till `ai-minne-formagor-organisation`. Texten upprepas inte här.
 - **2026-10-03 16:35 CEST (Stockholm)**: Lade in Nr1 och Nr2 som praktikillustration, inte som belägg. Nr1 är fritidsresan 2023–2026. Nr2 är provbänken mot en uppdragsgivare. Sökvägen Nn2 finns inte.
 - **2026-10-03 16:30 CEST (Stockholm)**: Lyfte funderingen om känsliga ekonomistyrningsdata in i själva instruktionen. Ny sektion med tre prov: personuppgift, sekretessgrund, godkänt verktyg. Avdelning A och C behöver inte dela svar.
 - **2026-10-03 16:26 CEST (Stockholm)**: Lade till analysgången i `references/analysgang.md`, med Magnus Nilsson och Invici-bloggen som första fall. Indataprovet om budget, prognos och utfall är ett obligatoriskt steg, även när inlägget inte nämner sekretess.
-- **2026-10-03 16:19 CEST (Stockholm)**: Lade till svårigheten med preliminära budget-, prognos- och utfallssiffror per avdelning. Källkanon fick Skövde kommun, SOU 2024:28, OSL 31 kap. 16 §, Control Edge och Eisl och Gleißner. Ny koppling: intern är inte samma sak som hemlig, och avdelningar kan falla olika ut.
 
 # Controllerrollen och generativ AI
 
@@ -128,6 +128,7 @@ Filer under `references/`:
 - `klimat-samhalle-natur-analys`: när frigjord kapacitet ska kopplas till vad organisationen väljer att undersöka, inklusive resursanvändning.
 - `ekosystem-analys-claude-kompassen`: när fritidspraktiken med ytor, harness och styrfiler ska beskrivas konkret.
 - `ai-minne-formagor-organisation`: när frågan är vem som äger normalformen för minne, skills, AGENTS.md och CLAUDE.md, eller skillnaden person, grupp och organisation. Peka, upprepa inte.
+- `generativ-ai-privat-och-professionellt`: när frågan gäller gränsen mellan fritidsexperiment, pro bono och uppdrag, eller vad som får matas in oavsett yrke. Peka, upprepa inte.
 - `verksamhetscontroller-museum` och `kommunal-mal-internkontroll-uppsiktsplikt`: när skiftet sker i en professionell byråkrati med hög autonomi, målkedja och uppsiktsplikt.
 - `ai-agent-workflow-patterns`: när någon föreslår autonoma ekonomiflöden. Datakvalitet och verifiering ska finnas innan flödet skalas.
 
