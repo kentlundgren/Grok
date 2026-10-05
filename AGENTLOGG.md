@@ -15,6 +15,16 @@ Mall:
 
 ---
 
+## 2026-10-05 · Claude Code (Sonnet 5.5) · README: .agents/skills i avsnitt 3, rättelser efter Groks utskrift
+
+- **Gjort:** `.agents/skills/README.md`, avsnitt 3: raden `.agents/skills/` (repots original och kopior) och en rad för Groks kontolager lades till. `grok inspect`: texten säger nu att kommandot är overifierat, och att det som kördes var en chattfråga. Avsnitt 7 och 8 rättade: skillnamnen i hänvisningarna finns i Groks kontolager (inte trasiga), och `generativ-ai-privat-och-professionellt` finns i två exemplar (repot 0.2, Grok okänd version).
+- **Verifierat (och hur):** Grundar sig på Groks utskrift som ägaren klistrade in (49 account skills, inklusive de tre Grok-originalen och en kopia av den nya skillen). Jag har inte själv sett Groks lager.
+- **Inte verifierat:** Vad `grok inspect` är som kommando. Vilken version Grok har av den nya skillen. Var Groks kontolager ligger. Att Grok Build hittar `.agents/skills/`.
+- **Återstår:** Avsnitt 7 i README:n. Fråga Grok om versionen, och kör `grok --help` i PowerShell.
+- **Obs:** Ägaren bad om ändringen. Ägaren slår ihop pull requesten.
+
+---
+
 ## 2026-10-05 · Claude Code (Sonnet 5.5) · beslut om var originalen ska ligga, LinkedIn-trigger, prompt i README
 
 - **Gjort:** `.agents/skills/README.md`: nytt avsnitt 8 (beslut: original i repot, i `.claude/skills/<namn>/`, Grok-pekare i `.grok/skills/` efter `grok inspect`, flytten ej genomförd) och avsnitt 9 (strukturerad prompt för regelbunden kontroll av hur verktygen läser skills). `generativ-ai-privat-och-professionellt` till version 0.2: LinkedIn-trigger i beskrivningen, nytt avsnitt om inlägg, cross-referenser till `kent-respons` och `kent-skrivstil`. Beskrivningarna i pekarna för den skillen, `controllerrollen-generativ-ai` och `ai-minne-formagor-organisation` utökade, eftersom pekarens beskrivning är det Claude Code väljer skill efter.
