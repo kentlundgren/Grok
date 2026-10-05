@@ -72,13 +72,15 @@ Inte prövat: om mellanstora bolag faktiskt står ensamma, och om två dagar i v
 
 Vald formulering 2026-10-05, kort kommentar: hålet är också ett controllerhål. Olika roller har ofta underlag och vilja att testa och lära. Mandatet att rita om styrningen saknas oftare. Förslaget till Per: de två dagarna nära vd och styrelse kan kompletteras med en dag i verksamheten. Källor i samma block: AI Sweden Leadership Report 2026 och Invici (2026a), den senare med notis om panelen.
 
-## 2026-10-06 – Invici (företagssidan) och Magnus Nilssons inlägg: samma underlag, två avsändare
+## 2026-10-06 – Invici (företagssidan) och Nilssons inlägg: samma underlag, två avsändare
 
-Källa: Invici (2026c), LinkedIn-inlägg med grafik ur Ekonomifunktionen 2026, och Invici (2026a). Korsreferens till posten 2026-10-03 (Magnus Nilsson, samma blogg och samma grafik). Kommentaren som skrevs ligger i `aktuellt/aktuellt_just_nu/1/invici_feedback_2.md`.
+Källa: Invici (2026c), LinkedIn-inlägg med grafik ur Ekonomifunktionen 2026, och Invici (2026a). Korsreferens till posten 2026-10-03 (Nilsson 2026, samma blogg och samma grafik). Kommentaren som skrevs ligger i `aktuellt/aktuellt_just_nu/1/invici_feedback_2.md`.
 
-Läge: stämmer med posten 2026-10-03, och nyanserar den på tre punkter.
+Rättelse 2026-10-06: inläggen är nästan identiska i text. Företagssidans inlägg publicerades 2026-10-01 kl. 07:13 UTC och Nilssons omkring tre timmar senare, enligt inläggens metadata. Tidigare angivet "omkring 2 oktober" för Nilsson var fel.
 
-- Inlägget skriver att controllers "påverkas mest". Bloggen skriver "mest redo". Två olika påståenden. VD-tidningen uppges i kallkanonen återge att operativa ekonomer är mest utsatta (inte omkontrollerat 2026-10-06).
+Läge: stämmer med posten 2026-10-03, och nyanserar läsningen av bloggen på tre punkter. Punkt 1 gäller båda inläggen.
+
+- Båda inläggen skriver att controllers "påverkas mest". Bloggen skriver "mest redo". Två olika påståenden. VD-tidningen uppges i kallkanonen återge att operativa ekonomer är mest utsatta (inte omkontrollerat 2026-10-06).
 - Talen 44 och 42 i grafiken (controllers: partisk eller felaktig data, data eller bias) liknar tal som Key People Group återger för en bredare grupp med andra etiketter (44 black box, 42 fel data eller bias). Blanda inte (inte omkontrollerat 2026-10-06).
 - Av grafikens ordalydelse sitter det partiska i datan, inte i AI:n. Vad respondenterna menade framgår inte. Enkätfrågan är inte läst.
 
@@ -86,7 +88,7 @@ Urvalet: Invici (2026b) anger 412 ekonomer i Sverige, senhösten 2025, privat oc
 
 Praktiken: indataprovet. Mandat att påverka beslut bör omfatta vilka verktyg och vilken klassning av siffrorna som gäller. Preliminära siffror är sällan personuppgift, men inte självklart något för en fri chatt.
 
-Inte prövat: vad "partisk" avsåg, hur många controllers som svarade, och om 63 procent är stabilt utanför Invicis panel. Tre stödjande exempel är öppnade 2026-10-06 (Linnéuniversitetet 2026, Wise Finance 2026, AICPA och CIMA 2026), men inget av dem är ett dokumenterat organisationsfall.
+Inte prövat: vad "partisk" avsåg, hur många controllers som svarade, och om 63 procent är stabilt utanför Invicis panel. Tre stödjande exempel är öppnade 2026-10-06 (Andersson, Axling och Norrbom 2026, Wise Finance 2026, AICPA och CIMA 2026), men inget av dem är ett dokumenterat organisationsfall.
 
 ## 2026-10-06 – Linnéuppsatsen: kvalitativ studie, överförbarhet snarare än representativitet
 
@@ -105,3 +107,64 @@ Inte prövat: den publicerade formuleringen. LinkedIn-kommentaren (kortlänk `ln
 - Läge: stämmer, nyanserar eller saknar praktik.
 - Vilken erfarenhet den rör. Hänvisa till en post i `erfarenheter.md`, inte till ett personnamn.
 - Vad som ännu inte är prövat.
+- Lägg källan i `kallkanon.md` och i Källförteckningen nedan (alfabetiskt), med klickbar länk, hämtdatum och kort kursiv notis.
+
+## Källförteckning
+
+Förteckningen gäller de källor som den här filen hänvisar till, sorterade efter författare eller organisation. Fler detaljer, populationer och nivåindelning finns i `kallkanon.md`. Länkarna kontrollerades 2026-10-06 med `curl`: de svarar och leder till en sida med avsedd titel, utom OpenAI (se posten). Påståendena i noterna är hämtade ur källorna och inte kvalitetssäkrade. Kontrollera mot källan innan något återges. Innehållet omläsades 2026-10-06 bara för Andersson m.fl., Invici (2026a, b, c), Nilsson, Wise Finance och AICPA & CIMA.
+
+AI Sweden (2026) *AI Sweden Leadership Report 2026*. Tillgänglig på: [https://www.ai.se/en/ai-sweden-leadership-report-2026](https://www.ai.se/en/ai-sweden-leadership-report-2026). Svensk sammanfattning: [https://www.ai.se/sv/nyheter/ai-sweden-leadership-report-2026-detta-utmarker-ledare-i-en-ai-driven-varld](https://www.ai.se/sv/nyheter/ai-sweden-leadership-report-2026-detta-utmarker-ledare-i-en-ai-driven-varld) (hämtad 2026-10-05; länkar kontrollerade 2026-10-06). *(Ledarskapsram från ett nationellt tillämpningscenter, inte en controllerenkät.)*
+
+AICPA & CIMA (2026) *Singapore: From Controllers to Architects. Redesigning Finance for an AI Economy*. Publicerad 10 juli 2026. Tillgänglig på: [https://www.aicpa-cima.com/advocacy/download/singapore-from-controllers-to-architects](https://www.aicpa-cima.com/advocacy/download/singapore-from-controllers-to-architects) (hämtad 2026-10-06). *(Begreppet Finance Architect som spegel. Bara landningssidan är läst, och underlaget gäller Singapore.)*
+
+Andersson, T., Axling, P. och Norrbom, M. (2026) *Controller och AI: En kvalitativ studie om hur AI förändrar controllers arbetssätt*. Kandidatuppsats, Linnéuniversitetet, Växjö. Tillgänglig på: [https://lnu.diva-portal.org/smash/get/diva2:2082382/FULLTEXT01.pdf](https://lnu.diva-portal.org/smash/get/diva2:2082382/FULLTEXT01.pdf) (hämtad 2026-10-06). *(Nio kvalitativa intervjuer i privata bolag. Beskriver mekanismer, inte hur vanligt något är.)*
+
+Anthropic (2026) *Privacy Policy*, gällande från 10 september 2026. Tillgänglig på: [https://www.anthropic.com/legal/privacy](https://www.anthropic.com/legal/privacy) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Konsumentvillkor: träning på inmatning om man inte valt bort det.)*
+
+Anthropic (u.å.) *How do you use personal data in model training?* Privacy Center. Tillgänglig på: [https://privacy.anthropic.com/en/articles/7996885-how-do-you-use-personal-data-in-model-training](https://privacy.anthropic.com/en/articles/7996885-how-do-you-use-personal-data-in-model-training) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Kommersiella produkter används som huvudregel inte för träning.)*
+
+Clingweld, P. (2026) *Jag tror att det finns ett hål i marknaden för AI-transformation*. LinkedIn. Tillgänglig på: [https://lnkd.in/p/eT9MAFsc](https://lnkd.in/p/eT9MAFsc) (hämtad 2026-10-05; länk kontrollerad 2026-10-06). *(Praktikerutsaga om mellanstora bolag. Ingen population och inga andelar.)*
+
+Control Edge (2026) *Nyfiken. Inte naiv. Ekonomers syn på AI, säkerhet och kontroll*. Återgiven av Exsitec. Tillgänglig på: [https://www.exsitec.se/artiklar/ai-i-ekonomifunktionen](https://www.exsitec.se/artiklar/ai-i-ekonomifunktionen) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(66 svar, indikativt, inte representativt. Hallucinationer och mänsklig validering.)*
+
+Digg (2026) *Säkerställ sekretess vid användning av generativ AI*. Myndigheten för digital förvaltning, uppdaterad 3 juni 2026. Tillgänglig på: [https://www.digg.se/ai-for-offentlig-forvaltning/riktlinjer-for-generativ-ai/sakerstall-sekretess-vid-anvandning-av-generativ-ai](https://www.digg.se/ai-for-offentlig-forvaltning/riktlinjer-for-generativ-ai/sakerstall-sekretess-vid-anvandning-av-generativ-ai) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Uppgift till en extern AI-leverantör är ett utlämnande. Utkast är inte automatiskt ofarliga.)*
+
+Eisl, C. och Gleißner, W. (2026) 'Rechengenauigkeit vs. fundierte Entscheidungsunterstützung: Grenzen generativer KI im Controlling', *Controller Magazin*, nr 4. Tillgänglig på: [https://icv-controlling.com/wp-content/uploads/2026/07/VCW_CM4_26_Rechengenauigkeit-vs-fundierte-Entscheidungsunterstuetzung-Grenzen-generativer-KI-im-Controlling.pdf](https://icv-controlling.com/wp-content/uploads/2026/07/VCW_CM4_26_Rechengenauigkeit-vs-fundierte-Entscheidungsunterstuetzung-Grenzen-generativer-KI-im-Controlling.pdf) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(En språkmodell kan räkna rätt och ändå dölja antaganden och osäkerhet i en prognos.)*
+
+FAR (u.å.) *Framtidssäkra din controllerroll – 4 trender*. Tillgänglig på: [https://www.far.se/ekonomisverige/verksamhetsstyrning/framtidssakra-din-controllerroll-4-trender/](https://www.far.se/ekonomisverige/verksamhetsstyrning/framtidssakra-din-controllerroll-4-trender/) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Svensk yrkesbakgrund om smart data och kommunikation, äldre än AI-skiftet.)*
+
+IMY (2025) *GDPR vid användning av generativ AI*. Integritetsskyddsmyndigheten, 5 februari 2025. Tillgänglig på: [https://www.imy.se/publikationer/gdpr-vid-anvandning-av-generativ-ai](https://www.imy.se/publikationer/gdpr-vid-anvandning-av-generativ-ai) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Rättslig grund, roller och tredjelandsöverföring.)*
+
+IMY (u.å.) *Behandla personuppgifter som har tydlig koppling till era ändamål*. Integritetsskyddsmyndigheten. Tillgänglig på: [https://www.imy.se/link/15334d4a6d314d17afa74079b31390e8.aspx](https://www.imy.se/link/15334d4a6d314d17afa74079b31390e8.aspx) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Uppgiftsminimering.)*
+
+IMY (u.å.) *Vad är personuppgifter?* Integritetsskyddsmyndigheten. Tillgänglig på: [https://www.imy.se/link/0bc8cc7136d64fa481b8e849d3a4c5c1.aspx](https://www.imy.se/link/0bc8cc7136d64fa481b8e849d3a4c5c1.aspx) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Namn är personuppgifter, liksom uppgifter som indirekt kan knytas till en person.)*
+
+Invici (2026a) *Controllers: från rapportleverantör till affärspartner på riktigt*. Publicerad 2026-06-03, redigerad 2026-08-22. Tillgänglig på: [https://www.invici.se/blogg/controllers-fran-rapportleverantor-till-affarspartner-pa-riktigt/](https://www.invici.se/blogg/controllers-fran-rapportleverantor-till-affarspartner-pa-riktigt/) (hämtad 2026-10-06). *(Avsändarens läsning av den egna enkäten. Sidans `<title>` är "Framtidens controller är en affärspartner och ser AI som avgörande".)*
+
+Invici (2026b) *Ekonomifunktionen 2026*. Tillgänglig på: [https://www.invici.se/rapport-ekonomifunktionen-2026/](https://www.invici.se/rapport-ekonomifunktionen-2026/) (hämtad 2026-10-06). *(Urvalet: 412 ekonomer, senhösten 2025. Rapportens fulltext är inte läst.)*
+
+Invici (2026c) LinkedIn-inlägg om controllers och AI, med grafik. Publicerat 2026-10-01. Tillgänglig på: [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm) (hämtad 2026-10-06). *(Företagssidans inlägg. Grafiken anger controllers som population.)*
+
+Key People Group (2026) *Ekonomer varnar för ”black box AI” i ekonomiarbetet*. Pressmeddelande, Mynewsdesk, 24 mars 2026. Tillgänglig på: [https://www.mynewsdesk.com/se/key-people-group/pressreleases/ekonomer-varnar-foer-black-box-ai-i-ekonomiarbetet-3438570](https://www.mynewsdesk.com/se/key-people-group/pressreleases/ekonomer-varnar-foer-black-box-ai-i-ekonomiarbetet-3438570) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Samma undersökning som Invicis, men en bredare grupp och andra etiketter.)*
+
+Lundgren, K. (2026) *Ett vindkraftverk, fem sanningar – vems kalkyl räknar vi egentligen?* Controller utan gränser, 3 juli 2026. Tillgänglig på: [https://controllerutangranser.wordpress.com/2026/07/03/ett-vindkraftverk-fem-sanningar-vems-kalkyl-raknar-vi-egentligen/](https://controllerutangranser.wordpress.com/2026/07/03/ett-vindkraftverk-fem-sanningar-vems-kalkyl-raknar-vi-egentligen/) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Egen analys där processen visas öppet. Praktik, inte belägg.)*
+
+Nilsson, M. (2026) LinkedIn-inlägg om controllers och AI, med grafik. Publicerat 2026-10-01. Tillgänglig på: [https://lnkd.in/p/eUv_Zqu4](https://lnkd.in/p/eUv_Zqu4) (hämtad 2026-10-06). *(Första fallet i korsreferensen. Nästan identisk text med Invicis inlägg.)*
+
+OpenAI (u.å.) *Business data privacy, security, and compliance*. Tillgänglig på: [https://openai.com/business-data/](https://openai.com/business-data/) (hämtad 2026-10-03). *(Företagsprodukter tränas inte som standard. Länken gav 403 vid kontrollen 2026-10-06 och är inte öppnad idag. Läs om sidan innan något citeras.)*
+
+Presidio (u.å.) *Presidio – data protection and de-identification SDK*. Tillgänglig på: [https://github.com/microsoft/presidio](https://github.com/microsoft/presidio) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Verktyg som maskar namn. Maskning är oftast pseudonymisering.)*
+
+Regeringen (2024) *SOU 2024:28. Sekretess vid Försäkringskassan och i socialförsäkringen*. Tillgänglig på: [https://www.regeringen.se/contentassets/b93e1a6fc5884d8eafc218b0988675c3/sou-2024_28_webb.pdf](https://www.regeringen.se/contentassets/b93e1a6fc5884d8eafc218b0988675c3/sou-2024_28_webb.pdf) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Återger rättsfall om enhetsbudget i konkurrens. Ingen controllernorm.)*
+
+Skövde kommun (u.å.) *Allmänna handlingar, offentlighet och sekretess*. Tillgänglig på: [https://www.skovde.se/kommun-och-politik/sa-arbetar-vi-med/allmanna-handlingar-offentlighet-och-sekretess/](https://www.skovde.se/kommun-och-politik/sa-arbetar-vi-med/allmanna-handlingar-offentlighet-och-sekretess/) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Utkast är inte allmänna handlingar. En färdig handling kan vara allmän och ändå hemlig.)*
+
+SpaceXAI (2026a) *Privacy Policy*, gällande från 24 augusti 2026. Tillgänglig på: [https://x.ai/legal/privacy-policy](https://x.ai/legal/privacy-policy) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Konsumentvillkor: innehåll får användas för träning.)*
+
+SpaceXAI (2026b) *FAQ – API Security*, uppdaterad 28 september 2026. Tillgänglig på: [https://docs.x.ai/developers/faq/security](https://docs.x.ai/developers/faq/security) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(API tränas inte på indata som standard och lagras 30 dagar.)*
+
+Sveriges riksdag (2009) *Offentlighets- och sekretesslag (2009:400)*, 31 kap. 16 §. Tillgänglig på: [https://lagen.nu/2009:400](https://lagen.nu/2009:400) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Sekretess för en enskilds affärsförhållanden i förbindelse med en myndighet.)*
+
+VD-tidningen (2026) 'Det krävs för en framgångsrik ekonomifunktion 2026: "Måste börja med grundjobbet"', *VD-tidningen*, 17 mars 2026. Tillgänglig på: [https://vdtidningen.se/det-kravs-for-en-framgangsrik-ekonomifunktion-2026-maste-borja-med-grundjobbet-finans/](https://vdtidningen.se/det-kravs-for-en-framgangsrik-ekonomifunktion-2026-maste-borja-med-grundjobbet-finans/) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Bredare återgivning av rapportens siffror för hela ekonomifunktionen.)*
+
+Wise Finance (2026) *Future of Controlling: När tempo slår perfektion*. Publicerad 2026-04-24. Tillgänglig på: [https://www.wise.se/artiklar/future-of-controlling-nar-tempo-slar-perfektion/](https://www.wise.se/artiklar/future-of-controlling-nar-tempo-slar-perfektion/) (hämtad 2026-10-06). *(Praktikerröster från ett konsultbolag med samma intresse som Invici.)*

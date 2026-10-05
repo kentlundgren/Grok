@@ -4,6 +4,8 @@ Detta är den utbyggbara källbanken för skill:et `controllerrollen-generativ-a
 
 Hämtkontroll av startkanon: 2026-10-03. Länkarna nedan öppnade rätt sida det datumet. IFAC-artikeln krävde konto för fulltext.
 
+Länkkontroll 2026-10-06: 37 webbadresser i filen, kontrollerade med `curl`. 35 svarade (HTTP 200) och leder till en sida med avsedd titel. Två gjorde det inte: `https://www.invici.se/laddaner` gav 404 (se Invici 2026b), och OpenAI-sidan gav 403 (bot-skydd, sidan öppnades inte idag). Kontrollen gäller att länken svarar och rätt sida visas, inte att varje påstående i posten omläsats.
+
 ## Nivå 1 – Primära undersökningar (avsändaren är också intressent)
 
 ### Invici (2026a) blogg
@@ -24,6 +26,8 @@ Invici (2026b) *Ekonomifunktionen 2026*. Invici. Tillgänglig på: [https://www.
 
 Landningssidan säger att undersökningen gjordes senhösten 2025 och att 80 procent tror att AI förändrar ekonomirollen i grunden. En fjärdedel av CFO:erna planerar inga investeringar trots höga ambitioner.
 
+Tillägg 2026-10-06, från sidans avsnitt "Om undersökningen": digital enkät, anonyma svar, privat och offentlig sektor, spritt över landet, chefer och specialister. "Totalt deltog 412 ekonomer i Sverige." Antalet controllers anges inte. Rapportens fulltext ligger bakom formulär och är inte läst. Länken `https://www.invici.se/laddaner` gav 404 2026-10-06; rapportsidan själv svarar.
+
 ### Grafik i LinkedIn-inlägg av Magnus Nilsson, Invici, omkring 2026-10-02
 
 Källa angiven i bilden: Invici, Ekonomifunktionen 2026. Population i grafiken: controllers.
@@ -32,6 +36,14 @@ Källa angiven i bilden: Invici, Ekonomifunktionen 2026. Population i grafiken: 
 - Krav och förväntningar: 65 procent ser fram emot att använda AI och automatisering för att frigöra tid till analys och rådgivning; 72 procent definierar en framgångsrik ekonom som någon som skapar affärsinsikt och påverkar beslut; 71 procent anger BI och visualisering som en måste-ha-kompetens till 2026.
 
 Blanda inte dessa controllerandelar med andelar för hela ekonomifunktionen.
+
+### LinkedIn-inlägg om samma material, 2026-10-01 (tillägg 2026-10-06, med rättelse)
+
+Nilsson, M. (2026) LinkedIn-inlägg om controllers och AI, med grafik. Publicerat 2026-10-01 kl. 10:35 UTC enligt inläggets metadata. Tillgänglig på: [https://lnkd.in/p/eUv_Zqu4](https://lnkd.in/p/eUv_Zqu4) (hämtad 2026-10-06). *(Personligt inlägg av en rekryteringskonsult på Invici. Rättelse: posten ovan anger "omkring 2026-10-02". Metadata anger 2026-10-01. Texten är nästan identisk med företagssidans inlägg nedan, och länkar direkt till artikeln.)*
+
+Invici (2026c) LinkedIn-inlägg om controllers och AI, med grafik. Publicerat 2026-10-01 kl. 07:13 UTC enligt inläggets metadata, alltså omkring tre timmar före Nilssons. Tillgänglig på: [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm) (hämtad 2026-10-06). *(Företagssidans inlägg. Länken till bloggen ligger i en kommentar.)*
+
+Båda inläggen öppnar med att controllers är "den roll som påverkas mest", medan bloggen (Invici 2026a) skriver "mest redo". Det är en skillnad mellan inläggen och bloggen, inte mellan de två inläggen. Grafiken är densamma. Nilssons text skriver "rapporten Ekonomifunktionen 2026 från Invici", företagssidan "Invicis rapport", och bara företagssidan har hashtaggar.
 
 ### Återgivningar av samma undersökning
 
@@ -56,6 +68,10 @@ Key People Group (2026) *Ekonomer varnar för ”black box AI” i ekonomiarbete
 - 42 procent pekar på fel data eller bias som väg till fel beslut.
 - 40 procent oroar sig för att mänskligt omdöme ersätts i för stor utsträckning.
 - Varannan CFO uppger att ledningen har orealistiska förväntningar.
+
+### Praktikerröster från konsult- och rekryteringsbolag (tillägg 2026-10-06)
+
+Wise Finance (2026) *Future of Controlling: När tempo slår perfektion*. Publicerad 2026-04-24. Tillgänglig på: [https://www.wise.se/artiklar/future-of-controlling-nar-tempo-slar-perfektion/](https://www.wise.se/artiklar/future-of-controlling-nar-tempo-slar-perfektion/) (hämtad 2026-10-06). *(Trendspaning efter Controllerdagen 2026 med två business controllers och en konsultchef. Rollen flyttar ut i verksamheten, rapportering automatiseras, äldre system bromsar. Inga siffror. Avsändaren är ett konsultbolag med samma intresse som Invici, så texten är inte oberoende.)*
 
 ## Nivå 2 – Yrkeskroppar och professionella ramverk
 
@@ -124,6 +140,20 @@ Sveriges riksdag (2009) *Offentlighets- och sekretesslag (2009:400), 31 kap. 16 
 Control Edge (2026) *Nyfiken. Inte naiv. Ekonomers syn på AI, säkerhet och kontroll*. Återgiven av Exsitec. Tillgänglig på: [https://www.exsitec.se/artiklar/ai-i-ekonomifunktionen](https://www.exsitec.se/artiklar/ai-i-ekonomifunktionen) (hämtad 2026-10-03). *(66 svar från ekonomifunktioner i bolag med verksamhet i Sverige, augusti 2026. Indikativt, inte representativt. 53,2 procent anger hallucinationer som största farhåga när AI hanterar finansiella data. 58,5 procent ser mänsklig validering vid finansiella avvikelser som helt avgörande. 46,7 procent sätter spårbarhet främst bland säkerhetskrav. Kommersiell återgivning.)*
 
 Eisl, C. och Gleißner, W. (2026) 'Rechengenauigkeit vs. fundierte Entscheidungsunterstützung: Grenzen generativer KI im Controlling', *Controller Magazin*, nr 4. Tillgänglig på: [https://icv-controlling.com/wp-content/uploads/2026/07/VCW_CM4_26_Rechengenauigkeit-vs-fundierte-Entscheidungsunterstuetzung-Grenzen-generativer-KI-im-Controlling.pdf](https://icv-controlling.com/wp-content/uploads/2026/07/VCW_CM4_26_Rechengenauigkeit-vs-fundierte-Entscheidungsunterstuetzung-Grenzen-generativer-KI-im-Controlling.pdf) (hämtad 2026-10-03). *(Controllingyrke, inte sekretess. Generativ AI kan räkna formellt rätt och samtidigt dölja antaganden och osäkerhet. Relevant när frågan är om en prognos alls ska lämnas till en språkmodell, inte bara om den är hemlig.)*
+
+### Akademi: kandidatuppsats (tillägg 2026-10-06)
+
+Andersson, T., Axling, P. och Norrbom, M. (2026) *Controller och AI: En kvalitativ studie om hur AI förändrar controllers arbetssätt*. Kandidatuppsats, Linnéuniversitetet, Växjö, vårterminen 2026. Handledare: A. Stafsudd. Tillgänglig på: [https://lnu.diva-portal.org/smash/get/diva2:2082382/FULLTEXT01.pdf](https://lnu.diva-portal.org/smash/get/diva2:2082382/FULLTEXT01.pdf) (hämtad 2026-10-06). *(Kvalitativ studie med nio semistrukturerade intervjuer, 6–22 maj 2026, alla i privata bolag (sju stora, ett medelstort, ett litet). Studentarbete, inte peer-reviewad. Författarna skriver själva att resultatet inte kan generaliseras till en större population. Texten är läst t.o.m. avsnitt 6.3. Källförteckning, bilaga 1 och sammanställningstabellen i 4.1.1 (en bild) är inte genomgångna.)*
+
+Vad uppsatsen själv bär:
+
+- AI är ett hjälpmedel, inte en ersättare. Alla nio använder AI i någon form, och ingen upplever ett hot mot sin position.
+- Förändringen är inte enhetlig. Affärspartner-orienterade controllers gynnas, granskande controllers möter större osäkerhet. Uppdelningen hämtas från Van Slooten, Dirks och Firk (2026), en enkätstudie om digitalisering som jag inte läst. I uppsatsens egna intervjuer illustreras den granskande sidan främst av en junior controller.
+- Ledningens inställning och organisationens beredskap avgör takten. Sammanfattningen skriver "graden av förändring"; avsnitt 6.1 skriver "graden av AI-användning" och lägger till "tillgänglig infrastruktur".
+- Alla respondenter är eniga om att ansvaret för AI-genererade underlag landar hos den enskilda controllern. Det grundas i omdöme, inte i tydliga regler.
+- Verktygen varierar: central Copilot på två bolag, individuellt val på ett, och privata konton nämns som risk (avsnitt 4.3).
+
+Vad den inte belägger: hur vanligt något är, offentlig sektor, eller specifikt generativ AI.
 
 ## Regel vid konflikt mellan siffror
 

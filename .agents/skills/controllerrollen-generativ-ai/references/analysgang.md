@@ -14,7 +14,7 @@ Använd den här gången när ett inlägg, en blogg eller en rapport ska analyse
 
 ## Fall – Magnus Nilsson och Invici, 2026-10-03
 
-Inlägg: Magnus Nilsson, rekryteringskonsult på Invici, omkring 2 oktober 2026. Kortlänk: [https://lnkd.in/p/eUv_Zqu4](https://lnkd.in/p/eUv_Zqu4). Länken i inlägget går till Invici (2026a) *Controllers: från rapportleverantör till affärspartner på riktigt*, [https://www.invici.se/blogg/controllers-fran-rapportleverantor-till-affarspartner-pa-riktigt/](https://www.invici.se/blogg/controllers-fran-rapportleverantor-till-affarspartner-pa-riktigt/). Grafiken i inlägget anger källa Invici, Ekonomifunktionen 2026.
+Inlägg: Magnus Nilsson, rekryteringskonsult på Invici, 2026-10-01 (rättat 2026-10-06 efter inläggets metadata; tidigare angivet omkring 2 oktober). Kortlänk: [https://lnkd.in/p/eUv_Zqu4](https://lnkd.in/p/eUv_Zqu4). Länken i inlägget går till Invici (2026a) *Controllers: från rapportleverantör till affärspartner på riktigt*, [https://www.invici.se/blogg/controllers-fran-rapportleverantor-till-affarspartner-pa-riktigt/](https://www.invici.se/blogg/controllers-fran-rapportleverantor-till-affarspartner-pa-riktigt/). Grafiken i inlägget anger källa Invici, Ekonomifunktionen 2026.
 
 Vad texten belägger, om populationen hålls isär:
 
@@ -30,9 +30,9 @@ Spänningar som biter här: redo individ mot ofärdig organisation, frigjord tid
 
 ## Fall – Invici (företagssidan), samma underlag som Magnus Nilsson, 2026-10-06
 
-Inlägg: Invici, LinkedIn, kortlänk [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm). Samma blogg och samma grafik som i fallet Magnus Nilsson ovan, men företagssidan som avsändare. Kommentaren som skrevs: `aktuellt/aktuellt_just_nu/1/invici_feedback_2.md`.
+Inlägg: Invici, LinkedIn, 2026-10-01, kortlänk [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm). Samma blogg och samma grafik som i fallet Magnus Nilsson ovan, men företagssidan som avsändare. Texten är nästan identisk med Nilssons inlägg, som kom omkring tre timmar senare. Kommentaren som skrevs: `aktuellt/aktuellt_just_nu/1/invici_feedback_2.md`.
 
-Skillnader mot fallet ovan: inlägget skriver "påverkas mest" medan bloggen skriver "mest redo". Urvalet är 412 ekonomer (Invici 2026b), och antalet controllers anges inte. Grafikens "partisk eller felaktig data" placerar det partiska i datan, inte i AI:n. Rapporten själv är inte läst. Se kopplingen 2026-10-06 i `kopplingar.md`.
+Det som gäller båda inläggen: de skriver "påverkas mest" medan bloggen skriver "mest redo". Urvalet är 412 ekonomer (Invici 2026b), och antalet controllers anges inte. Grafikens "partisk eller felaktig data" placerar det partiska i datan, inte i AI:n. Rapporten själv är inte läst. Se kopplingen 2026-10-06 i `kopplingar.md`.
 
 Indataprovet gav kommentarens kärna: mandat att påverka beslut bör omfatta vilka verktyg och vilken klassning av siffrorna som gäller.
 
@@ -47,3 +47,21 @@ Vad texten inte belägger: andel svenska bolag i hålet, att controllers är red
 Indataprovet: inlägget nämner inte ekonomi. För att controllern ska kunna vara den som hjälper ledningen svara på de tre frågorna krävs ändå budget, prognos och utfall per ansvar, plus en bild av vad som faktiskt slutar göras. Siffrorna är sällan personuppgift. De kan vara olämpliga i en fri chatt. En kommentar som bara hyllar verkstaden missar det.
 
 Spänningar som biter: redo individ mot ofärdig organisation, rapportbillighet mot nya frågor, verktyg mot avsändarskap, privat sektors språk mot flera uppdragsgivare. Praktiknyans, högst en: mellanrummet känns igen i kommun, universitet och idéburen verksamhet, men där heter rollen verksamhetspartner och spårbarheten väger tyngre.
+
+## Källförteckning
+
+Förteckningen gäller de källor som den här filen hänvisar till, sorterade efter författare eller organisation. Fler detaljer och populationer finns i `kallkanon.md`. Länkarna kontrollerades 2026-10-06 med `curl`: de svarar och leder till en sida med avsedd titel. Påståendena i noterna är hämtade ur källorna och inte kvalitetssäkrade. Kontrollera mot källan innan något återges.
+
+AI Sweden (2026) *AI Sweden Leadership Report 2026*. Tillgänglig på: [https://www.ai.se/en/ai-sweden-leadership-report-2026](https://www.ai.se/en/ai-sweden-leadership-report-2026) (hämtad 2026-10-05; länk kontrollerad 2026-10-06). *(Ledarskapsram från ett nationellt tillämpningscenter, inte en controllerenkät.)*
+
+Clingweld, P. (2026) *Jag tror att det finns ett hål i marknaden för AI-transformation*. LinkedIn. Tillgänglig på: [https://lnkd.in/p/eT9MAFsc](https://lnkd.in/p/eT9MAFsc) (hämtad 2026-10-05; länk kontrollerad 2026-10-06). *(Praktikerutsaga om mellanstora bolag. Ingen population och inga andelar.)*
+
+Invici (2026a) *Controllers: från rapportleverantör till affärspartner på riktigt*. Publicerad 2026-06-03, redigerad 2026-08-22. Tillgänglig på: [https://www.invici.se/blogg/controllers-fran-rapportleverantor-till-affarspartner-pa-riktigt/](https://www.invici.se/blogg/controllers-fran-rapportleverantor-till-affarspartner-pa-riktigt/) (hämtad 2026-10-06). *(Avsändarens läsning av den egna enkäten.)*
+
+Invici (2026b) *Ekonomifunktionen 2026*. Tillgänglig på: [https://www.invici.se/rapport-ekonomifunktionen-2026/](https://www.invici.se/rapport-ekonomifunktionen-2026/) (hämtad 2026-10-06). *(Urvalet: 412 ekonomer, senhösten 2025. Rapportens fulltext är inte läst.)*
+
+Invici (2026c) LinkedIn-inlägg om controllers och AI, med grafik. Publicerat 2026-10-01. Tillgänglig på: [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm) (hämtad 2026-10-06). *(Företagssidans inlägg. Grafiken anger controllers som population.)*
+
+Nilsson, M. (2026) LinkedIn-inlägg om controllers och AI, med grafik. Publicerat 2026-10-01. Tillgänglig på: [https://lnkd.in/p/eUv_Zqu4](https://lnkd.in/p/eUv_Zqu4) (hämtad 2026-10-06). *(Första fallet. Nästan identisk text med Invicis inlägg.)*
+
+VD-tidningen (2026) 'Det krävs för en framgångsrik ekonomifunktion 2026: "Måste börja med grundjobbet"', *VD-tidningen*, 17 mars 2026. Tillgänglig på: [https://vdtidningen.se/det-kravs-for-en-framgangsrik-ekonomifunktion-2026-maste-borja-med-grundjobbet-finans/](https://vdtidningen.se/det-kravs-for-en-framgangsrik-ekonomifunktion-2026-maste-borja-med-grundjobbet-finans/) (hämtad 2026-10-03; länk kontrollerad 2026-10-06). *(Bredare återgivning av rapportens siffror för hela ekonomifunktionen.)*

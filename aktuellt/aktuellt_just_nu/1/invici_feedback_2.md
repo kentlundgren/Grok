@@ -53,13 +53,13 @@ Underlaget är detsamma, men avsändaren är en annan.
 
 | | Första fallet | Det här fallet |
 |---|---|---|
-| Avsändare | Magnus Nilsson, rekryteringskonsult på Invici, personligt inlägg omkring 2 oktober 2026 | Invici, företagssidan |
+| Avsändare | Magnus Nilsson, rekryteringskonsult på Invici, personligt inlägg 2026-10-01 kl. 10:35 UTC | Invici, företagssidan, 2026-10-01 kl. 07:13 UTC |
 | Inlägg | [https://lnkd.in/p/eUv_Zqu4](https://lnkd.in/p/eUv_Zqu4) (inte öppnad idag) | [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm) |
 | Blogg | Invici (2026a) | Invici (2026a) |
 | Grafik | Controllers, 46/44/42/65/72/71 procent | Samma grafik, samma tal |
 | Analys | [analysgang.md](../../../.agents/skills/controllerrollen-generativ-ai/references/analysgang.md), fall 2026-10-03 | Fall 2026-10-06 i samma fil |
 
-Det som är nytt i det här fallet är att inlägget säger "påverkas mest" medan bloggen säger "mest redo", att grafikens tal 44 och 42 (controllers) liknar tal som Key People Group återger för en bredare grupp med andra etiketter, och att Kents fråga om vad "partisk" betyder är ny.
+Rättelse 2026-10-06: inläggen är nästan identiska i text, och företagssidans kom omkring tre timmar före Nilssons (enligt inläggens metadata). Att inläggen säger "påverkas mest" medan bloggen säger "mest redo" gäller därför båda. Det som är nytt i det här fallet är att grafikens tal 44 och 42 (controllers) liknar tal som Key People Group återger för en bredare grupp med andra etiketter, och att Kents fråga om vad "partisk" betyder är ny.
 
 Texten på den första feedbacken till Magnus Nilsson finns inte i repot. Den här filen hänvisar därför till analysen och inte till ordalydelsen. Lägg gärna in den i en egen fil om den ska kunna jämföras.
 
@@ -112,6 +112,8 @@ Invici (2026a) *Controllers: från rapportleverantör till affärspartner på ri
 
 Invici (2026b) *Ekonomifunktionen 2026*. Tillgänglig på: [https://www.invici.se/rapport-ekonomifunktionen-2026/](https://www.invici.se/rapport-ekonomifunktionen-2026/) (hämtad 2026-10-06). *(Anger urvalet: 412 ekonomer, senhösten 2025. Rapporten själv är inte läst.)*
 
-Invici (2026c) LinkedIn-inlägg om controllers och AI, med grafik. Tillgänglig på: [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm) (hämtad 2026-10-06). *(Inlägget som kommenterades. Exakt datum inte verifierat.)*
+Invici (2026c) LinkedIn-inlägg om controllers och AI, med grafik. Publicerat 2026-10-01 kl. 07:13 UTC enligt inläggets metadata. Tillgänglig på: [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm) (hämtad 2026-10-06). *(Inlägget som kommenterades.)*
+
+Nilsson, M. (2026) LinkedIn-inlägg om controllers och AI, med grafik. Publicerat 2026-10-01 kl. 10:35 UTC enligt inläggets metadata. Tillgänglig på: [https://lnkd.in/p/eUv_Zqu4](https://lnkd.in/p/eUv_Zqu4) (hämtad 2026-10-06). *(Första fallet i korsreferensen. Nästan identisk text med Invicis inlägg.)*
 
 Wise Finance (2026) *Future of Controlling: När tempo slår perfektion*. Publicerad 2026-04-24. Tillgänglig på: [https://www.wise.se/artiklar/future-of-controlling-nar-tempo-slar-perfektion/](https://www.wise.se/artiklar/future-of-controlling-nar-tempo-slar-perfektion/) (hämtad 2026-10-06). *(Praktikerröster om att rollen flyttar ut i verksamheten. Avsändaren är ett konsultbolag med samma intresse som Invici.)*

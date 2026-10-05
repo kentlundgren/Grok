@@ -3,20 +3,20 @@ name: controllerrollen-generativ-ai
 description: Kunskaps- och analysskill för hur controllerrollen, ekonomifunktionen och ekonomistyrningen förändras av generativ AI. Används när ett inlägg, en rapport, en blogg eller en fråga handlar om controllern som affärspartner, mandat, BI, automatisering av avstämning och periodstängning, datakvalitet, black box eller AI-kompetens i ekonomifunktionen. Används också när inlägget är en generell röst om generativ AI – transformation, marknadshål, ledarskap, agenter eller vad organisationen ska sluta göra – och användaren vill se hur controllerrollen påverkas. Fångar både generell källkanon och användarens praktik, och håller isär dem. Byggs på med nya källor, erfarenheter och kopplingar. Triggerord inkluderar controllerrollen AI, ekonomifunktionen 2026, affärspartner controller, Invici controllers, generativ AI ekonomistyrning, mandat och analys, AI-transformation, hål i marknaden AI.
 metadata:
   type: workflow
-  version: "1.6"
+  version: "1.7"
   created_via: conversation
   purpose: Portable, extensible knowledge skill on the controller role under generative AI, combining a sourced canon with the user's practice
   created: 2026-10-03
-  last_updated: 2026-10-05 17:59 CEST (Stockholm)
+  last_updated: 2026-10-06 (Stockholm)
 ---
 
 ## Senaste ändringar
 
+- **2026-10-06 (Stockholm)**: Källförteckning (alfabetisk, enligt `kent-referens`) sist i `kopplingar.md` och `analysgang.md`. Tre källor in i `kallkanon.md` (Andersson m.fl., Wise Finance, Invici 2026c och Nilssons inlägg med rättat datum). Länkkontroll av 37 adresser: två fel noterade (Invici `/laddaner` 404, OpenAI 403). Ny regel under "Så byggs filen på". Privat och offentlig praktik jämställs i `erfarenheter.md`.
 - **2026-10-05 17:59 CEST (Stockholm)**: Pekare till `generativ-ai-privat-och-professionellt` (gränsen mellan fritidsexperiment, pro bono och uppdrag) i Cross-references. Omdöme 6 i `references/erfarenheter.md` fick en mening om pro bono. Egen praktikbedömning, inte juridisk slutsats.
 - **2026-10-05 11:36 CEST (Stockholm)**: Frågan vem som äger normalformen för minne och skills pekas till `ai-minne-formagor-organisation`. Texten upprepas inte här.
 - **2026-10-03 16:35 CEST (Stockholm)**: Lade in Nr1 och Nr2 som praktikillustration, inte som belägg. Nr1 är fritidsresan 2023–2026. Nr2 är provbänken mot en uppdragsgivare. Sökvägen Nn2 finns inte.
 - **2026-10-03 16:30 CEST (Stockholm)**: Lyfte funderingen om känsliga ekonomistyrningsdata in i själva instruktionen. Ny sektion med tre prov: personuppgift, sekretessgrund, godkänt verktyg. Avdelning A och C behöver inte dela svar.
-- **2026-10-03 16:26 CEST (Stockholm)**: Lade till analysgången i `references/analysgang.md`, med Magnus Nilsson och Invici-bloggen som första fall. Indataprovet om budget, prognos och utfall är ett obligatoriskt steg, även när inlägget inte nämner sekretess.
 
 # Controllerrollen och generativ AI
 
@@ -103,6 +103,8 @@ Gör detta varje gång användaren tar in en ny röst, en ny rapport eller en ny
 - Ny källa: lägg en post i `references/kallkanon.md` under rätt nivå. Kräv nivå, population, vad sidan faktiskt säger, länk och hämtningsdatum. Kontrollera länken innan posten skrivs.
 - Ny erfarenhet: lägg en daterad post i `references/erfarenheter.md`. Roll, sektor, vad som gjordes, vad som lärdes, om det får användas publikt.
 - Ny koppling: lägg en post i `references/kopplingar.md` med läge stämmer, nyanserar eller saknar praktik, plus vad som ännu inte är prövat.
+- Källförteckning i varje referensfil: `kopplingar.md` och `analysgang.md` slutar med en alfabetisk Källförteckning enligt `kent-referens`. Varje ny koppling eller nytt fall lägger sin källa i `kallkanon.md` och i filens egen förteckning, med klickbar URL, hämtdatum och kort kursiv notis. Öppna länken innan posten skrivs. Kan den inte öppnas, skriv det.
+- Rätta fel i äldre poster med en synlig rättelse (datum och orsak), inte i det tysta.
 - Uppdatera `last_updated` och lägg en rad under Senaste ändringar. Håll den listan till de fem senaste.
 - Om en källa motsäger en äldre post: behåll båda och skriv konflikten. Radera inte.
 
