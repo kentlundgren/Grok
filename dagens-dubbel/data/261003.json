@@ -1,0 +1,416 @@
+{
+  "id": "261003",
+  "date": "2026-10-03",
+  "weekday": "lördag",
+  "track": "Boden",
+  "start": "17:13",
+  "comment": "DD-1 V85-7: 3 Frank S.H. (Magnus A Djuse, vinnarodds 2,49). DD-2 V85-8: 3 Merillion (Christian Månsson, vinnarodds 7,58). DD-odds 22,14. Alla fyra ett rätt (DD-1). Ingen hade Merillion.",
+  "races": {
+    "dd1": {
+      "label": "V85-7 / DD-1 STL Silverdivisionen",
+      "distance": "2140 m auto",
+      "startApprox": "17:13"
+    },
+    "dd2": {
+      "label": "V85-8 / DD-2 Scandal Plays Minne",
+      "distance": "2640 m volt",
+      "startApprox": "17:35"
+    }
+  },
+  "result": {
+    "status": "klar",
+    "dd1Winner": 3,
+    "dd2Winner": 3,
+    "dd1Name": "Frank S.H.",
+    "dd2Name": "Merillion",
+    "dd1Driver": "Magnus A Djuse",
+    "dd2Driver": "Christian Månsson",
+    "dd1WinOdds": 2.49,
+    "dd2WinOdds": 7.58,
+    "ddOdds": 22.14,
+    "placed": {
+      "dd1": [
+        "3 Frank S.H."
+      ],
+      "dd2": [
+        "3 Merillion"
+      ]
+    },
+    "updated": "2026-10-03 19:55",
+    "sources": [
+      "https://www.sverigetravet.se/dd-resultat/dd-resultat-lordag-3-oktober-2026-boden",
+      "https://www.travet.se/v85-resultat/v85-resultat-3-oktober-2026/"
+    ],
+    "pool": {
+      "source": "https://www.liverattning.nu/dagens-dubbel-resultat",
+      "fetched": "2026-10-03 20:10",
+      "note": "Slutpoolens DD-odds, Liverättning 3 oktober 2026. Bara vinnande kombination betalar. Belopp i parentes är insats gånger odds.",
+      "rows": [
+        {
+          "dd1": 3,
+          "dd2": 3,
+          "odds": 22.14,
+          "winner": true
+        },
+        {
+          "dd1": 3,
+          "dd2": 4,
+          "odds": 17.59
+        },
+        {
+          "dd1": 3,
+          "dd2": 8,
+          "odds": 19.36
+        },
+        {
+          "dd1": 3,
+          "dd2": 12,
+          "odds": 10.55
+        },
+        {
+          "dd1": 3,
+          "dd2": 14,
+          "odds": 15.94
+        },
+        {
+          "dd1": 3,
+          "dd2": 15,
+          "odds": 38.14
+        },
+        {
+          "dd1": 5,
+          "dd2": 4,
+          "odds": 16.69
+        },
+        {
+          "dd1": 5,
+          "dd2": 8,
+          "odds": 18.57
+        },
+        {
+          "dd1": 5,
+          "dd2": 12,
+          "odds": 9.21
+        },
+        {
+          "dd1": 5,
+          "dd2": 14,
+          "odds": 14.55
+        },
+        {
+          "dd1": 5,
+          "dd2": 15,
+          "odds": 34.28
+        },
+        {
+          "dd1": 1,
+          "dd2": 12,
+          "odds": 158.09
+        },
+        {
+          "dd1": 4,
+          "dd2": 12,
+          "odds": 44.52
+        },
+        {
+          "dd1": 7,
+          "dd2": 8,
+          "odds": 103.84
+        },
+        {
+          "dd1": 7,
+          "dd2": 12,
+          "odds": 77.27
+        },
+        {
+          "dd1": 7,
+          "dd2": 14,
+          "odds": 115.71
+        },
+        {
+          "dd1": 7,
+          "dd2": 15,
+          "odds": 190.27
+        }
+      ]
+    }
+  },
+  "tips": [
+    {
+      "person": "Kent",
+      "status": "inlämnad",
+      "submitted": "2026-10-03 16:49",
+      "cost": 40,
+      "stake": 5,
+      "rows": 8,
+      "system": "2x4",
+      "dd1": [
+        3,
+        5
+      ],
+      "dd2": [
+        4,
+        12,
+        14,
+        15
+      ],
+      "names": {
+        "dd1": {
+          "3": "Frank S.H.",
+          "5": "Shogun R.R."
+        },
+        "dd2": {
+          "4": "Irwin Zet",
+          "12": "General Silvio",
+          "14": "Pure Atlas",
+          "15": "King of Djazz"
+        }
+      },
+      "scratch": "15 King of Djazz i DD-2",
+      "coupon": "261003/kupong-kent.png",
+      "note": "Ett rätt (DD-1). Ingen utdelning. Frank S.H. vann, Merillion vann DD-2 och var medvetet utanför."
+    },
+    {
+      "person": "Lotta",
+      "status": "inlämnad",
+      "submitted": null,
+      "cost": 45,
+      "stake": 5,
+      "rows": 9,
+      "system": "3x3",
+      "dd1": [
+        3,
+        5,
+        7
+      ],
+      "dd2": [
+        8,
+        12,
+        15
+      ],
+      "names": {
+        "dd1": {
+          "3": "Frank S.H.",
+          "5": "Shogun R.R.",
+          "7": "Marlon Boko"
+        },
+        "dd2": {
+          "8": "Uno",
+          "12": "General Silvio",
+          "15": "King of Djazz"
+        }
+      },
+      "scratch": null,
+      "coupon": null,
+      "note": "Ett rätt (DD-1). Klockslag ej angivet. Kostnad räknad 9 × 5 kr."
+    },
+    {
+      "person": "Benita",
+      "status": "inlämnad",
+      "submitted": null,
+      "cost": 30,
+      "stake": 5,
+      "rows": 6,
+      "system": "3x2",
+      "dd1": [
+        3,
+        5,
+        7
+      ],
+      "dd2": [
+        12,
+        14
+      ],
+      "names": {
+        "dd1": {
+          "3": "Frank S.H.",
+          "5": "Shogun R.R.",
+          "7": "Marlon Boko"
+        },
+        "dd2": {
+          "12": "General Silvio",
+          "14": "Pure Atlas"
+        }
+      },
+      "scratch": null,
+      "coupon": null,
+      "note": "Ett rätt (DD-1). Klockslag ej angivet. Kostnad räknad 6 × 5 kr."
+    },
+    {
+      "person": "Bengt",
+      "status": "inlämnad",
+      "submitted": null,
+      "cost": 40,
+      "stake": 10,
+      "rows": 4,
+      "system": "4x1",
+      "dd1": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "dd2": [
+        12
+      ],
+      "names": {
+        "dd1": {
+          "1": "Robinhood C.A.",
+          "3": "Frank S.H.",
+          "4": "Maserati Hall",
+          "5": "Shogun R.R."
+        },
+        "dd2": {
+          "12": "General Silvio"
+        }
+      },
+      "scratch": null,
+      "coupon": null,
+      "note": "Ett rätt (DD-1). Spik 12 General Silvio höll inte. Klockslag ej angivet. Bengt spelar alltid 10 kr per rad, 4 × 10 kr = 40 kr."
+    }
+  ],
+  "market": {
+    "source": "ATG vinnarodds via Liverättning",
+    "url": "https://www.liverattning.nu/dagens-dubbel-resultat",
+    "fetched": "2026-10-03 20:10",
+    "note": "Slutodds i de två DD-loppen. Inte en live-hämtning.",
+    "lowUnder": 5,
+    "highOver": 12,
+    "dd1": [
+      {
+        "no": 1,
+        "name": "Robinhood C.A.",
+        "odds": 40.53,
+        "scratched": false
+      },
+      {
+        "no": 2,
+        "name": "The Bald Eagle",
+        "odds": 88.85,
+        "scratched": false
+      },
+      {
+        "no": 3,
+        "name": "Frank S.H.",
+        "odds": 2.49,
+        "scratched": false
+      },
+      {
+        "no": 4,
+        "name": "Maserati Hall",
+        "odds": 9.11,
+        "scratched": false
+      },
+      {
+        "no": 5,
+        "name": "Shogun R.R.",
+        "odds": 1.98,
+        "scratched": false
+      },
+      {
+        "no": 6,
+        "name": "Last Dying Breath",
+        "odds": 64.43,
+        "scratched": false
+      },
+      {
+        "no": 7,
+        "name": "Marlon Boko",
+        "odds": 18.43,
+        "scratched": false
+      },
+      {
+        "no": 8,
+        "name": "Drizzle",
+        "odds": 143.81,
+        "scratched": false
+      },
+      {
+        "no": 9,
+        "name": "The Oak L.A.",
+        "odds": 39.71,
+        "scratched": false
+      },
+      {
+        "no": 10,
+        "name": "Bidensky",
+        "odds": 121.51,
+        "scratched": false
+      },
+      {
+        "no": 11,
+        "name": "Kiwi Sisu",
+        "odds": 53.6,
+        "scratched": false
+      }
+    ],
+    "dd2": [
+      {
+        "no": 2,
+        "name": "ChiquititaCreation",
+        "odds": 62.95,
+        "scratched": false
+      },
+      {
+        "no": 3,
+        "name": "Merillion",
+        "odds": 7.58,
+        "scratched": false
+      },
+      {
+        "no": 4,
+        "name": "Irwin Zet",
+        "odds": 8.24,
+        "scratched": false
+      },
+      {
+        "no": 5,
+        "name": "Moni U.S.A.",
+        "odds": 35.7,
+        "scratched": false
+      },
+      {
+        "no": 7,
+        "name": "Lots of Fun Sisu",
+        "odds": 17.05,
+        "scratched": false
+      },
+      {
+        "no": 8,
+        "name": "Uno",
+        "odds": 9.34,
+        "scratched": false
+      },
+      {
+        "no": 11,
+        "name": "Pretty Devil",
+        "odds": 84.77,
+        "scratched": false
+      },
+      {
+        "no": 12,
+        "name": "General Silvio",
+        "odds": 3.65,
+        "scratched": false
+      },
+      {
+        "no": 13,
+        "name": "B.Sacamano",
+        "odds": 9.88,
+        "scratched": false
+      },
+      {
+        "no": 14,
+        "name": "Pure Atlas",
+        "odds": 6.53,
+        "scratched": false
+      },
+      {
+        "no": 15,
+        "name": "King of Djazz",
+        "odds": 13.65,
+        "scratched": false
+      }
+    ]
+  }
+}

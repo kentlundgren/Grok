@@ -15,6 +15,14 @@ Mall:
 
 ---
 
+## 2026-10-05 10:50 · Grok (xAI) · kopia av kodsätt-skillen
+
+- **Gjort:** Lade en kopia av Groks interna skill `kodsatt-agentic-engineering` i `.agents/skills/kodsatt-agentic-engineering/` (SKILL.md och references). `.claude/skills/kodsatt-agentic-engineering/SKILL.md` är en pekare, inte en andra regeltext. `AGENTS.md` pekar dit och upprepar inte regeln.
+- **Verifierat (och hur):** Filerna skapades via GitHubs API på `main`. Sökvägarna kom tillbaka i svaren. Inget lokalt test och ingen sidvisning.
+- **Inte verifierat:** Att Cursor och Claude Code faktiskt läser skillen i en session.
+- **Återstår:** Originalet ligger i Groks skill-lager. Om det ändras ska kopian uppdateras med nytt avstämningsdatum.
+- **Obs:** Ägaren bad uttryckligen att kopiorna skulle läggas i repot. Därför committades filerna här, trots den vanliga regeln att ägaren committar.
+
 ## 2026-10-02 · Claude Code (Sonnet 5.5) · skillen `kent-paverka-ai-verktyg` flyttad till AI-teknik
 
 - **Gjort:** Skapade skillen för att Kent ska kunna påverka hur AI-verktyg utformas (röster och kommentarer på GitHub, med en logg). Den fullständiga versionen ligger nu i `AI-teknik/.claude/skills/kent-paverka-ai-verktyg/` (`SKILL.md` och `LOGG.md`). Globalt, i `C:\Users\kentl\.claude\skills\kent-paverka-ai-verktyg\`, ligger en tunn pekare. Kopian i det här repot (`aktuellt/kopia_kent-paverka-ai-verktyg/`) är borttagen.
@@ -22,7 +30,6 @@ Mall:
 - **Inte verifierat:** Att den fullständiga versionen laddas automatiskt när en session öppnas i en annan mapp än AI-teknik. Pekaren är gjord för att täcka det fallet.
 - **Återstår:** Ägaren committar och pushar. I `AI-teknik` är mappen `.claude/skills/kent-paverka-ai-verktyg/` ny. I det här repot är den borttagna kopian och den här posten ändrade.
 - **Obs:** Ägaren har röstat och kommenterat på `anthropics/claude-code#95125` och `#20697`. Se `LOGG.md` i skillen för detaljer. Loggen ska bara hållas i den fullständiga mappen.
-
 ## 2026-10-02 · Claude Code (Sonnet 5.5) · `aktuellt/regeringsbildning`
 
 - **Gjort:** `scenario.js` blev enda datakälla (ersatte `scenario.json` och en kopia i HTML). Tidsväljare och körningar med tidsstämpel. AI-upplysning på sidan. Sakfel i ruta 2 rättat (det räcker att 2 ledamöter avstår, inte 24). GitHub-hörna och teknik-modal. Länkförhandsvisning (`og:`-taggar, `og-bild.jpg`, delningssida `k/2026-10-02-0819/`). `video/gor_rotation.py` och en rotationsvideo att ladda upp i inlägg. Turläge ("Se de fyra alternativen i tur och ordning") och en svart ram som flyttas av sig själv var 4:e sekund, med spärrar (paus vid hover och fokus, stopp vid klick, paus-knapp, av vid "minska rörelse"). Rot-`README.md` uppdaterad, och avsnittet "Flera AI-agenter över tid" lades till i `AGENTS.md`.

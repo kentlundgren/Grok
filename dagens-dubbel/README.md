@@ -108,3 +108,5 @@ Efter `data.js`-fallbacken ska även dubbelklick på `index.html` visa omgången
 Tipsunderlag (vilka hästar, skräll, 35–45 kr) tas fram med `skills/lordags-dagens-dubbel/` i detta repo. Grok har också en global kopia av samma skill.
 
 18+. [ATG: Spela med måtta](https://www.atg.se/spela-med-matta).
+
+Bengt spelar alltid 10 kr per rad. Övriga spelar 5 kr per rad.
