@@ -1,19 +1,27 @@
 ---
 name: ai-minne-formagor-organisation
-description: Kopia av Groks interna skill med samma namn. Använd när frågan rör minne, skills, AGENTS.md, CLAUDE.md, controllerarbete eller ordning för person, grupp och organisation. Originalet gäller om kopian glider isär.
+description: Kopia av Groks interna skill med samma namn. Använd när frågan rör minne, skills, AGENTS.md, CLAUDE.md, controllerarbete eller vem som äger normalformen. Originalet gäller om kopian glider isär.
 metadata:
   type: workflow
-  version: "1.0"
+  version: "1.1"
   source: Grok intern skill ai-minne-formagor-organisation
   copy_date: 2026-10-05
-  last_updated: 2026-10-05 11:05 CEST (Stockholm)
+  last_updated: 2026-10-05 11:36 CEST (Stockholm)
 ---
 
 > Kopia av Groks interna skill `ai-minne-formagor-organisation`, avstämd 2026-10-05. Originalet ligger i Groks skill-lager. Ändra originalet först. Regeln ska inte skrivas om här på egen hand.
 
 # Minne, förmågor och ordning — person, grupp, organisation
 
-Märk varje påstående *(egen praktik)* eller *(källa)*. Blanda inte en erfarenhet med en procentsats.
+Märk varje påstående *(egen praktik)* eller *(källa)*. Blanda inte en erfarenhet med en procentsats. Kalla inte originalet för kanon. Svenska kanon betyder först ett vapen.
+
+## Normalform — den adress som gäller
+
+Engelskans canonical betyder den form som gäller när samma sak kan nås från flera håll. En canonical URL är den adress som gäller. En normalform är den form ett värde ska ha.
+
+*(egen praktik)* Samma idé gäller minne, `AGENTS.md`, `CLAUDE.md` och skills. Flera filer kan peka på samma regel. Bara en är originalet. Kopior märks som kopior.
+
+Frågan är vem som äger normalformen. Personen: ägaren. Gruppen: en namngiven roll. Organisationen: ett register med granskning innan något blir gemensamt. *(källa)* EXL ställer samma fråga om minne: vem kontrollerar det, när ändras det, och till vilken kostnad (EXL, 2026).
 
 ## Tre nivåer
 
@@ -52,6 +60,10 @@ Atlan (2026) https://atlan.com/know/what-are-enterprise-skills/ (Hämtad: 2026-1
 Bosio Digital (2026) https://bosio.digital/articles/agent-skills (Hämtad: 2026-10-05).
 
 Context Studios (2026) https://www.contextstudios.ai/guides/claude-context-engineering-enterprise-2026 (Hämtad: 2026-10-05).
+
+English Language & Usage Stack Exchange (2012) https://english.stackexchange.com/questions/56606/what-is-the-relationship-between-canon-and-cannon (Hämtad: 2026-10-05). *Mätstocken och vapnet kan dela vassroten men har olika vägar.*
+
+Etymonline (u.å.) https://www.etymonline.com/word/cannon (Hämtad: 2026-10-05). *Vapnets väg, och att stavningen skiljdes åt omkring 1800.*
 
 EXL (2026) https://www.exlservice.com/insights/white-paper/engineering-memory-reliable-enterprise-ai-agents (Hämtad: 2026-10-05).
 
