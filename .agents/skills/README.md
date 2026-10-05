@@ -21,7 +21,7 @@ Bakgrund: `AGENTS.md` säger att samma regel inte ska skrivas på flera ställen
 | Begrepp | Vad det är | Exempel |
 | --- | --- | --- |
 | **Original** | Den enda text som gäller. Ändra den först. | Groks interna skill `controllerrollen-generativ-ai` |
-| **Kopia** | En avstämd kopia av originalet, lagd i repot så att Cursor och Grok Build hittar den. Märkt som kopia, med avstämningsdatum. | `.agents/skills/controllerrollen-generativ-ai/` |
+| **Kopia** | En avstämd kopia av originalet, lagd i repot (här i `.agents/skills/`, ett äldre mönster, se avsnitt 3). Märkt som kopia, med avstämningsdatum. | `.agents/skills/controllerrollen-generativ-ai/` |
 | **Pekare** | En liten fil som bara säger "läs kopian där". Innehåller ingen regel. | `.claude/skills/controllerrollen-generativ-ai/SKILL.md` |
 
 Regeln: **originalet först, kopian efteråt, pekaren ändras sällan.** Skriv aldrig om en regel i kopian på egen hand.
@@ -30,15 +30,17 @@ Regeln: **originalet först, kopian efteråt, pekaren ändras sällan.** Skriv a
 
 ## 3. Var verktygen läser
 
-Enligt `AGENTS.md` (mappstrukturen och avsnittet om skills) gäller i det här repot:
+Enligt `AGENTS.md` (avsnittet "Skills: var de ska ligga") gäller:
 
 | Verktyg | Läser | Kommentar |
 | --- | --- | --- |
-| Cursor och Grok Build | `.agents/skills/` | De hittar skillen själva. |
-| Claude Code | `.claude/skills/` | Läser bara därifrån. Därför behövs en pekare per skill. |
+| Claude Code och Cursor | `.claude/skills/` | Huvudregeln i `AGENTS.md`: skills ligger direkt under repots rot i `.claude/skills/<namn>/`. |
+| Grok Build | `.grok/skills/` | Enligt `AGENTS.md` listar xAI:s dokumentation `.grok/skills/`. Vill man att Grok Build ska använda en skill lägger man en tunn pekare där. |
 | ChatGPT, Gemini | Ingen automatisk läsning beskriven här | Controller-skillen säger att filen kan läggas i projektinstruktion, Gem eller custom instructions. Rollen för ChatGPT och Gemini är inte beskriven i `AGENTS.md`. Fråga ägaren, gissa inte. |
 
-Obs: att Cursor och Claude Code faktiskt laddar skillsen i en ny session är **inte verifierat** (se AGENTLOGG 2026-10-05).
+**Det här repots skills följer ett äldre mönster.** De ligger i `.agents/skills/` med pekare i `.claude/skills/`. `AGENTS.md` säger att det mönstret är äldre, och att det inte är verifierat att Grok hittar `.agents/skills/` på projektnivå. Kontrollera med `grok inspect` innan mönstret kopieras till en ny skill.
+
+Det betyder att pekarna i `.claude/skills/` är det som verkligen läses av Claude Code, medan kopian i `.agents/skills/` är där texten bor. Att Cursor och Claude Code laddar skillsen i en ny session är **inte verifierat** (se AGENTLOGG 2026-10-05).
 
 ---
 
@@ -63,7 +65,9 @@ Obs: att Cursor och Claude Code faktiskt laddar skillsen i en ny session är **i
 3. En ny skill, `generativ-ai-privat-och-professionellt`, skrevs för frågan hur generativ AI kan och bör hanteras privat och professionellt, och när rollerna flyter ihop. Den är tunn och pekar på de två andra skillsen i stället för att upprepa dem. Pull request: [kentlundgren/Grok#5](https://github.com/kentlundgren/Grok/pull/5) (ihopslagen).
 4. Förslag till ändringar i Groks original skrevs i `generativ-ai-privat-och-professionellt/forslag-till-original.md`.
 5. Grok ändrade sina original (controller-skillen till 1.6, enligt Groks egen rapport, inte kontrollerad här) och rapporterade vad kopiorna skulle ändras till.
-6. Kopiorna uppdaterades så att de följer originalen (denna pull request): version 1.6, nya cross-referenser och en mening om pro bono i `erfarenheter.md`.
+6. Kopiorna uppdaterades så att de följer originalen: version 1.6, nya cross-referenser och en mening om pro bono i `erfarenheter.md`. Pull request: [kentlundgren/Grok#6](https://github.com/kentlundgren/Grok/pull/6) (ihopslagen).
+7. Grenen `claude/focused-pascal-yb1gps` raderades på GitHub och på ägarens dator (se avsnitt 6C, med bilder).
+8. Avsnitt 3 i den här filen rättades efter att `AGENTS.md` fått avsnittet "Skills: var de ska ligga".
 
 ---
 
@@ -96,11 +100,37 @@ git fetch --prune
 ```
 
 7. Kontrollera med Ctrl+P i Cursor att filerna finns.
-8. Rensa den lokala grenen om den finns kvar: `git branch -d <grennamn>`. Flaggan `-d` är den säkra varianten.
+8. Rensa den lokala grenen om den finns kvar: `git branch -d <grennamn>`. Flaggan `-d` är den säkra varianten. Se avsnitt 6C för ett exempel med bilder.
 
 Om något ser konstigt ut: `git status` visar om du har ändringar som inte är committade, och `git branch -a` visar vilka grenar som finns.
 
-### C. Kontrollista innan du slår ihop
+### C. Städa efter en ihopslagen gren (exempel med bilder)
+
+Efter att pull requesten är ihopslagen och grenen raderad på GitHub finns grenen kvar på din dator på två sätt: som en **lokal gren** och som en **anteckning** om GitHub-grenen (`remotes/origin/...`). Båda städas bort med varsitt kommando. Skärmdumparna är från 2026-10-05, när grenen `claude/focused-pascal-yb1gps` städades bort.
+
+**1. Förberedelse.** Instruktionen före städningen:
+
+![Instruktion: git branch -a före städningen](_BILDER/git_branch_-a_bild0.jpg)
+
+**2. Före.** `git branch -a` visar alla grenar. Den lokala grenen står utan `remotes/`. Den röda raden med `remotes/origin/claude/...` är den gamla anteckningen om grenen på GitHub:
+
+![git branch -a före städningen](_BILDER/git_branch_-a_bild1.jpg)
+
+**3. `git fetch --prune`.** Kommandot hämtar nyheter och tar bort anteckningar om grenar som inte finns kvar på GitHub. Här kom ett felmeddelande om att en tom loggmapp inte kunde raderas. Det är ofarligt. Windows (och ibland OneDrive eller Cursor) höll mappen öppen. Svara `y` en gång, och `n` om frågan kommer igen:
+
+![Felmeddelande vid git fetch --prune](_BILDER/git_branch_-a_bild2.jpg)
+
+**4. Efter.** Den röda raden `remotes/origin/claude/...` är borta. Men den **lokala** grenen står kvar, för `--prune` rör inte den. Den tas bort med `git branch -d claude/focused-pascal-yb1gps`:
+
+![git branch -a efter git fetch --prune: den lokala grenen finns kvar](_BILDER/git_branch_-a_bild3.jpg)
+
+**Klart** är det när `git branch -a` bara visar `main`, `remotes/origin/HEAD -> origin/main` och `remotes/origin/main`.
+
+Obs: repot ligger i OneDrive. OneDrive kan låsa filer i `.git`-mappen under synkning. Det är allmän erfarenhet, inte undersökt på din dator.
+
+---
+
+### D. Kontrollista innan du slår ihop
 
 - Står originalet och kopian på samma versionsnummer (utom där kopian medvetet är en egen förkortning, som `ai-minne`)?
 - Är bannern i kopian märkt "kopia" med avstämningsdatum?
@@ -109,7 +139,7 @@ Om något ser konstigt ut: `git status` visar om du har ändringar som inte är 
 - Finns en ny post överst i `AGENTLOGG.md`?
 - Är inga nycklar, lösenord eller personuppgifter med?
 
-### D. Lägga till en ny skill
+### E. Lägga till en ny skill
 
 1. Skapa `.agents/skills/<namn>/SKILL.md` med frontmatter (`name`, `description`) och märk vem som skrev den.
 2. Skapa pekare: `.claude/skills/<namn>/SKILL.md`.
@@ -124,6 +154,8 @@ Om något ser konstigt ut: `git status` visar om du har ändringar som inte är 
 - **Beslut:** var ska originalet av `generativ-ai-privat-och-professionellt` ligga?
 - **Beslut:** ordet "controllerarbete" står kvar i kopians beskrivning av `ai-minne-formagor-organisation`, men finns inte i originalets. Ta bort det eller behåll det?
 - **Verifiera:** att Cursor och Claude Code laddar skillsen i en ny session.
+- **Verifiera med `grok inspect`:** om Grok Build hittar skills i `.agents/skills/`, eller om en tunn pekare i `.grok/skills/` behövs (`AGENTS.md`, avsnittet "Skills: var de ska ligga").
+- **Beslut:** ska skillsen i det här repot flyttas till huvudregeln (`.claude/skills/<namn>/` som den enda platsen) i stället för det äldre mönstret med original i `.agents/skills/`?
 - **Kontoskill i claude.ai:** ladda upp mappen själv om du vill ha skillen även där. Det kan inte göras från Claude Code i molnet.
 - **ChatGPT och Gemini:** deras roll och hur skillsen ska läggas in där är inte beskriven. Bestäm, så kan det skrivas in här.
 - **Länkar:** Digg, IMY, SpaceXAI och OpenAI i `controllerrollen-generativ-ai/references/kallkanon.md` kontrollerades senast 2026-10-03. De kunde inte omkontrolleras 2026-10-05 från Claude Code-sessionen (blockerade domäner).
