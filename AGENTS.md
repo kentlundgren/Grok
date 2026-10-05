@@ -21,6 +21,8 @@ Det här dokumentet beskriver repot `kentlundgren/Grok` och ger kontext till AI-
 | 2 Yta | Cursor och Claude Code är normal yta. Grok får scaffolde och förklara. |
 | 3 Leverans | Ägaren commit:ar i Cursor och pushar till GitHub Pages, om hen inte uttryckligen bett agenten pusha. |
 
+Kodsättet ligger inte i den här filen. Kopia av Groks interna skill `kodsatt-agentic-engineering` finns i `.agents/skills/kodsatt-agentic-engineering/`. Originalet är den interna skillen. `.claude/skills/kodsatt-agentic-engineering/` pekar dit. Här skedde en uppdatering 2026-10-05.
+
 Agenten är tankepartner, inte ställföreträdande avsändare. Hitta inte på krav, hästar eller resultat.
 
 ## Flera AI-agenter över tid
@@ -84,7 +86,9 @@ Grok/
 ├── README.md
 ├── AGENTS.md
 ├── .agents/skills/koldioxidlagring-villkor/ # Skill som Cursor och Grok hittar själva
+├── .agents/skills/kodsatt-agentic-engineering/ # Kopia av Groks interna skill, avstämd 2026-10-05
 ├── .claude/skills/koldioxidlagring-villkor/ # Pekare för Claude Code till skillet ovan
+├── .claude/skills/kodsatt-agentic-engineering/ # Pekare till kopian ovan
 ├── skills/lordags-dagens-dubbel/
 ├── dagens-dubbel/     # Familjens lördags-DD (live-app, ingen build)
 ├── intervju/Forsakringskassan_202609/
