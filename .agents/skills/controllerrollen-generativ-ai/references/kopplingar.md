@@ -72,6 +72,22 @@ Inte prövat: om mellanstora bolag faktiskt står ensamma, och om två dagar i v
 
 Vald formulering 2026-10-05, kort kommentar: hålet är också ett controllerhål. Olika roller har ofta underlag och vilja att testa och lära. Mandatet att rita om styrningen saknas oftare. Förslaget till Per: de två dagarna nära vd och styrelse kan kompletteras med en dag i verksamheten. Källor i samma block: AI Sweden Leadership Report 2026 och Invici (2026a), den senare med notis om panelen.
 
+## 2026-10-06 – Invici (företagssidan) och Magnus Nilssons inlägg: samma underlag, två avsändare
+
+Källa: Invici (2026c), LinkedIn-inlägg med grafik ur Ekonomifunktionen 2026, och Invici (2026a). Korsreferens till posten 2026-10-03 (Magnus Nilsson, samma blogg och samma grafik). Kommentaren som skrevs ligger i `aktuellt/aktuellt_just_nu/1/invici_feedback_2.md`.
+
+Läge: stämmer med posten 2026-10-03, och nyanserar den på tre punkter.
+
+- Inlägget skriver att controllers "påverkas mest". Bloggen skriver "mest redo". Två olika påståenden. VD-tidningen uppges i kallkanonen återge att operativa ekonomer är mest utsatta (inte omkontrollerat 2026-10-06).
+- Talen 44 och 42 i grafiken (controllers: partisk eller felaktig data, data eller bias) liknar tal som Key People Group återger för en bredare grupp med andra etiketter (44 black box, 42 fel data eller bias). Blanda inte (inte omkontrollerat 2026-10-06).
+- Av grafikens ordalydelse sitter det partiska i datan, inte i AI:n. Vad respondenterna menade framgår inte. Enkätfrågan är inte läst.
+
+Urvalet: Invici (2026b) anger 412 ekonomer i Sverige, senhösten 2025, privat och offentlig sektor, chefer och specialister. Antalet controllers anges inte. Procentandelarna har därför okänd nämnare.
+
+Praktiken: indataprovet. Mandat att påverka beslut bör omfatta vilka verktyg och vilken klassning av siffrorna som gäller. Preliminära siffror är sällan personuppgift, men inte självklart något för en fri chatt.
+
+Inte prövat: vad "partisk" avsåg, hur många controllers som svarade, och om 63 procent är stabilt utanför Invicis panel. Tre stödjande exempel är öppnade 2026-10-06 (Linnéuniversitetet 2026, Wise Finance 2026, AICPA och CIMA 2026), men inget av dem är ett dokumenterat organisationsfall.
+
 ## Mall för nästa koppling
 
 - Datum.

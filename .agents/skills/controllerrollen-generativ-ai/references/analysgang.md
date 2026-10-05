@@ -28,6 +28,14 @@ Indataprovet på just detta inlägg: bloggen vill att controllern ska tolka, fö
 
 Spänningar som biter här: redo individ mot ofärdig organisation, frigjord tid mot saknat grundjobb, affärsinsikt mot förklarbart underlag, intern siffra mot hemlig siffra.
 
+## Fall – Invici (företagssidan), samma underlag som Magnus Nilsson, 2026-10-06
+
+Inlägg: Invici, LinkedIn, kortlänk [https://lnkd.in/p/eb55fTJm](https://lnkd.in/p/eb55fTJm). Samma blogg och samma grafik som i fallet Magnus Nilsson ovan, men företagssidan som avsändare. Kommentaren som skrevs: `aktuellt/aktuellt_just_nu/1/invici_feedback_2.md`.
+
+Skillnader mot fallet ovan: inlägget skriver "påverkas mest" medan bloggen skriver "mest redo". Urvalet är 412 ekonomer (Invici 2026b), och antalet controllers anges inte. Grafikens "partisk eller felaktig data" placerar det partiska i datan, inte i AI:n. Rapporten själv är inte läst. Se kopplingen 2026-10-06 i `kopplingar.md`.
+
+Indataprovet gav kommentarens kärna: mandat att påverka beslut bör omfatta vilka verktyg och vilken klassning av siffrorna som gäller.
+
 ## Fall – Per Clingweld och AI-transformationens mellanrum, 2026-10-05
 
 Inlägg: Per Clingweld, LinkedIn, hämtat 2026-10-05. Kortlänk: [https://lnkd.in/p/eT9MAFsc](https://lnkd.in/p/eT9MAFsc). Ingen vidare länk i själva inlägget. Avsändaren är praktiker, inte undersökare, och hänvisar till arbete med mognadsmätningar och ramverk på AI Sweden.

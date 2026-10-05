@@ -15,6 +15,16 @@ Mall:
 
 ---
 
+## 2026-10-06 · Claude Code (Sonnet 5.5) · Invici-feedback nr 2, korsreferens till fallet Magnus Nilsson
+
+- **Gjort:** `aktuellt/aktuellt_just_nu/1/invici_feedback_2.md` skrevs (tom fil fanns): den postade kommentaren, underlag, sammanfattning av arbetspasset, korsreferens till första fallet och koppling till skills. Ny post 2026-10-06 i `controllerrollen-generativ-ai/references/kopplingar.md` och nytt fall i `references/analysgang.md`. Ägarens globala `CLAUDE.md` fick regeln "Kan jag läsa det jag ska arbeta med?" (utanför repot).
+- **Verifierat (och hur):** Bloggen och rapportsidan hämtades som rå HTML med `curl` och matchade den inklistrade texten. Uppgiften om 412 deltagare står på rapportsidan. Grafiken jämfördes mot skärmdump. Linnéuppsatsen, Wise-artikeln och AICPA-landningssidan öppnades (HTTP 200). Skillfilerna lästes i sin helhet.
+- **Inte verifierat:** Själva rapporten (bakom formulär), enkätfrågornas ordalydelse, antalet controllers, kommentaren bakom LinkedIn-länken `eVyEGKVD`, Magnus Nilssons inlägg (omöppnat idag), VD-tidningen och Key People Group (omkontrollerades inte). Controllers Council gav 403 och räknades inte. AICPA-rapportens PDF är inte läst.
+- **Återstår / nästa steg:** Fråga Invici vad "partisk" avsåg och hur många controllers som svarade. Hitta ett konkret organisationsfall. Lägg in texten på första feedbacken till Magnus Nilsson i en egen fil, om den ska kunna jämföras.
+- **Obs:** `controllerrollen-generativ-ai` är en kopia av Groks interna skill (se `AGENTS.md`). Ändringarna i `kopplingar.md` och `analysgang.md` ligger bara i kopian och kan glida isär från originalet. Inget är committat.
+
+---
+
 ## 2026-10-05 · Claude Code (Sonnet 5.5) · README: .agents/skills i avsnitt 3, rättelser efter Groks utskrift
 
 - **Gjort:** `.agents/skills/README.md`, avsnitt 3: raden `.agents/skills/` (repots original och kopior) och en rad för Groks kontolager lades till. `grok inspect`: texten säger nu att kommandot är overifierat, och att det som kördes var en chattfråga. Avsnitt 7 och 8 rättade: skillnamnen i hänvisningarna finns i Groks kontolager (inte trasiga), och `generativ-ai-privat-och-professionellt` finns i två exemplar (repot 0.2, Grok okänd version).
