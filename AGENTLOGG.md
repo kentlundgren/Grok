@@ -16,6 +16,16 @@ Mall:
 
 ---
 
+## 2026-10-06 · Claude Code (Sonnet 5.5) · ny fil `aktuellt/Serviceforvaltningen/interimsuppdraget.md`
+
+- **Gjort:** Skrev `interimsuppdraget.md`: tre hypoteser om varför en controller hyrs in 2026-10-01 till 2027-01-31 (belastningstopp, kompetens/oberoende, strukturellt), plus en fjärde (snabbhet), med för, emot, vad som skulle motbevisa och säkerhetsgrad. `README.md` är inte ändrad. Lokala `main` snabbspolades till `origin/main` (commit `fa95556`, som innehöll README:n) innan arbetet. Ingen commit eller push.
+- **Verifierat (och hur):** Annonsen hämtades som rå HTML med `curl` och lästes. EVP 2024–2026 och 2026–2028, Årsredovisning 2025, EY:s ramavtalsgranskning och sex lund.se-sidor hämtades som rå HTML/PDF och relevanta stycken lästes i sitt sammanhang. Alla 12 webbadresser i filen gav HTTP 200 vid hämtningen 2026-10-06.
+- **Inte verifierat:** Att annonsen är samma uppdrag som kommunens (annonsen nämner inte Lund, kopplingen kommer från ägarens uppgift om ett annat konsultbolags beskrivning). Själva delårsrapporten (moten.lund.se svarade "Förfrågan avvisades", ingen omväg användes), så delårsuppgifterna är kommunens sammanfattning. Sidnummer i PDF:erna anges inte. Inget rekryteringsstopp och inga ramavtal för ekonomikonsulter hittades, vilket inte bevisar att de saknas.
+- **Återstår / nästa steg:** Ägaren granskar. Bifoga delårsrapporten om hypoteserna ska prövas mot originaltexten. Överväg att begära ut avropsbeställningen hos kommunen. Referensen (2026b) har ett namn i sökvägen; rubriken är omskriven.
+- **Obs:** En annonsrad om serviceförvaltningens ekonomichef hos en annonsaggregator är gammal och användes inte. Inga tjänstepersoner namnges i texten.
+
+---
+
 ## 2026-10-06 · Claude Code (Sonnet 5.5) · ny artikel `aktuellt/Serviceforvaltningen`
 
 - **Gjort:** Skrev artikeln `aktuellt/Serviceforvaltningen/README.md` om nedläggningen av Lunds servicenämnd och bildandet av en fastighetsförvaltning 1 januari 2027, med Harvardreferenser, länkar och en kort notion per källa. Mappnamnet är utan å, enligt ägarens önskemål. Mappen `aktuellt` har litet a i repot.
