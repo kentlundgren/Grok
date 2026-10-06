@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicenämnden läggs ner – förändringen vid årsskiftet 2026/2027</title>
+  <meta name="description" content="Diagram över hur Lunds servicenämnd och serviceförvaltning upphör den 31 december 2026 och vad som tar vid den 1 januari 2027. Med säkerhetsgrad och källa för varje del.">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <main class="wrap">
+
+    <header class="top">
+      <p class="kicker">Lund · Servicenämnden och serviceförvaltningen</p>
+      <h1>Förändringen vid årsskiftet 2026/2027</h1>
+      <p class="byline">Kent Lundgren · 6 oktober 2026 · Fortsättning på <a href="https://github.com/kentlundgren/Grok/blob/main/aktuellt/Serviceforvaltningen/README.md" target="_blank" rel="noopener">artikeln om nedläggningen</a> och <a href="https://github.com/kentlundgren/Grok/blob/main/aktuellt/Serviceforvaltningen/interimsuppdraget.md" target="_blank" rel="noopener">analysen av interimsuppdraget</a></p>
+      <p class="lead">Servicenämnden upphör den 31 december 2026. Från 1 januari 2027 samlas fastighetsfrågor och lokalvård i en ny fastighetsförvaltning under kommunstyrelsen, och övriga verksamheter fördelas på fem andra förvaltningar. Det här är en bild av vad som är belagt, vad som är en tolkning och vad som inte framgår.</p>
+    </header>
+
+    <section aria-labelledby="Diagram">
+      <h2 id="Diagram">Diagrammet <a class="anchor" href="#Diagram" aria-label="Länk till avsnittet Diagrammet">#</a></h2>
+
+      <ul class="legend" aria-label="Förklaring av linjerna">
+        <li><span class="swatch swatch-belagt"></span><strong>Belagt</strong> – står i en källa från kommunen</li>
+        <li><span class="swatch swatch-indikerat"></span><strong>Indikerat</strong> – tolkning av vad källorna pekar mot</li>
+        <li><span class="swatch swatch-ospecificerat"></span><strong>Ospecificerat</strong> – källorna säger inte vart</li>
+      </ul>
+      <p class="hint">Klicka på en ruta för källa och förklaring. Hovra eller tabba till en ruta för att lyfta fram dess linjer.</p>
+
+      <div class="diagram-yta">
+        <div class="diagram" id="diagram">
+          <svg id="linjer" class="linjer" aria-hidden="true" focusable="false"></svg>
+          <div class="kolumn kolumn-vanster" id="vanster" aria-label="Till och med 31 december 2026"></div>
+          <div class="kolumn kolumn-hoger" id="hoger" aria-label="Från 1 januari 2027"></div>
+        </div>
+
+        <aside class="detalj" id="detalj" aria-live="polite">
+          <p class="detalj-tom">Välj en ruta i diagrammet.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="Tidslinje">
+      <h2 id="Tidslinje">Vägen hit <a class="anchor" href="#Tidslinje" aria-label="Länk till avsnittet Vägen hit">#</a></h2>
+      <ol class="tidslinje" id="tidslinje"></ol>
+    </section>
+
+    <section aria-labelledby="OppnaFragor">
+      <h2 id="OppnaFragor">Öppna frågor i ekonomistrukturen <a class="anchor" href="#OppnaFragor" aria-label="Länk till avsnittet Öppna frågor">#</a></h2>
+      <p class="sektion-intro">Det här är frågor, inte slutsatser. Varje kort visar om svaret finns i en källa eller inte.</p>
+      <div class="oppna" id="oppna"></div>
+    </section>
+
+    <section aria-labelledby="Kallor">
+      <h2 id="Kallor">Källor <a class="anchor" href="#Kallor" aria-label="Länk till avsnittet Källor">#</a></h2>
+      <p class="sektion-intro">Uppgifterna är hämtade ur källorna nedan och är inte kvalitetssäkrade eller beslutade av kommunen i den här sammanställningen. Kontrollera mot källan innan något återges. Källorna är hämtade 6 oktober 2026.</p>
+      <div class="kallor" id="kallor"></div>
+    </section>
+
+  </main>
+
+  <a class="corner corner-left" href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/Serviceforvaltningen/forandring" target="_blank" rel="noopener">{ } GitHub</a>
+  <button type="button" class="corner corner-right" id="techBtn" aria-label="Tekniköversikt">&lt;/&gt; teknik</button>
+
+  <div class="modal-overlay" id="techModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="techTitle">
+      <button type="button" class="modal-close" id="techClose" aria-label="Stäng">&times;</button>
+      <h2 id="techTitle">Hur den här sidan är byggd</h2>
+      <p>Två delar: tekniken i sidan, och metoden som innehållet togs fram med.</p>
+
+      <h3 class="tech-section-title">Tekniken</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Vanlig HTML, CSS och JavaScript</h3>
+          <p>Inga ramverk, inga bibliotek och inget byggsteg. Sidan består av <code>index.html</code>, <code>stil.css</code>, <code>app.js</code> och <code>data.js</code>.</p>
+        </div>
+        <div class="tech-card">
+          <h3>En enda datakälla</h3>
+          <p>Rutor, linjer, tidslinje, öppna frågor och källor ritas från <code>data.js</code>. Det finns ingen kopia av texten i HTML-filen.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Linjerna ritas av koden</h3>
+          <p>Linjerna är en SVG ovanpå rutnätet. <code>app.js</code> mäter rutornas läge och ritar kurvor mellan dem, och ritar om när fönstret ändrar storlek. På smal skärm döljs linjerna och varje ruta visar i stället en textrad om vart den går.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Tre sorters linje</h3>
+          <p>Hel linje är belagt, streckad är indikerat och prickad är ospecificerat. Skillnaden syns också som text i rutans förklaring, så den inte bara bärs av linjens form.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Tangentbord och skärmläsare</h3>
+          <p>Varje ruta är en knapp. Förklaringen uppdateras i ett <code>aria-live</code>-område. Modalen stängs med Escape, kryss eller klick utanför.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Ingen data skickas någonstans</h3>
+          <p>Sidan pratar inte med någon server och sparar ingenting om besökaren.</p>
+        </div>
+      </div>
+
+      <h3 class="tech-section-title">Metoden</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Bara öppna källor</h3>
+          <p>Allt kommer från Lunds kommuns webbplats och två granskningsrapporter därifrån. Sidor och PDF:er hämtades 2026-10-06 och lästes i sitt sammanhang.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Tre säkerhetsgrader</h3>
+          <p>Det som står i en källa är belagt. Att en avdelning följer med till den nya förvaltningen utifrån avdelningens namn är en tolkning och markeras som indikerat. Det som källorna inte säger är ospecificerat.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Vad som saknas</h3>
+          <p>Kommunen anger vilka fem förvaltningar som tar över övriga verksamheter, men inte vilken verksamhet som går vart. Därför drar måltider, transport och stödfunktioner prickade linjer till en gemensam ruta.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Ingen sida kringgicks</h3>
+          <p>Kommunens mötesportal avvisade en förfrågan under researchen. Inget har hämtats via omvägar, så delårsrapporten återges efter kommunens sammanfattning.</p>
+        </div>
+      </div>
+
+      <p class="modal-foot">Källkoden finns på <a href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/Serviceforvaltningen/forandring" target="_blank" rel="noopener">GitHub</a>.</p>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

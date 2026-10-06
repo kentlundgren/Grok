@@ -16,6 +16,16 @@ Mall:
 
 ---
 
+## 2026-10-06 · Claude Code (Sonnet 5.5) · diagram över årsskiftet och förberedelse inför samtalet om interimsuppdraget
+
+- **Gjort:** Ny sida `aktuellt/Serviceforvaltningen/forandring/` (`index.html`, `stil.css`, `app.js`, `data.js`, `README.md`): diagram över servicenämnden och serviceförvaltningen före och efter 2027-01-01, med tre säkerhetsgrader på linjerna, tidslinje, öppna frågor i ekonomistrukturen och källor. Hörnknappar och teknik-modal ingår. Ny fil `intervjuforberedelse.md` (skapades här men **flyttades samma dag på ägarens begäran** till `ArbetenSokta/Intervju/LundsKommun_261008/`, privat, aldrig GitHub; finns inte längre i Grok-repot): svar på om objektmappningen blir densamma i Lund (tre scenarier), möjliga uppgifter i rollen, KOF-exemplet i STAR-form med luckor, frågor att ställa. `README.md` och `interimsuppdraget.md` är inte ändrade.
+- **Verifierat (och hur):** Dina KOF-sida och repo (README, data) hämtades som rå text via `curl` och API:t. Lunds ekonomisystem (Raindance), cirka 450 fastighetsobjekt och internhyra sedan 2021 lästes i EY:s granskning av lokalförsörjning. Internhyrans uppbyggnad lästes i granskningen av fastighetsunderhåll. Sidan testades i förhandsvisning via lokal server: 9 linjer ritas, klick fyller förklaringen, hover lyfter linjer, modal öppnas och stängs med Escape, inga konsolfel, ingen sidscroll vid 375 px bredd efter rättning. Länkarna i källistan gav HTTP 200 vid hämtningen.
+- **Inte verifierat:** (Rättat: ägaren bekräftade att KOF-arbetet var i Simrishamn, filen är uppdaterad.) Vilken avdelning som går till vilken av de fem förvaltningarna (ingen källa anger det, visas som ospecificerat). Att avdelningarna Fastighetsförvaltning, Fastighetsservice, Fastighetsstyrning och Lokalvård och service går till den nya fastighetsförvaltningen (tolkning, markerat indikerat). Vad som ersätter internhyran. Hur arbetet fördelas mellan controller och ekonomiservice. Mobilvyn testades i en 375 px bred iframe, inte på en enhet.
+- **Återstår / nästa steg:** Delningsbild (`og-bild.jpg`) och Open Graph-taggar saknas på diagramsidan. De ska anpassas till projektet, så bilden väntar på ägarens val. Uppdatera `data.js` om kommunen anger fördelningen av verksamheter.
+- **Obs:** Servicenämndens delårsrapport är fortfarande läst via kommunens sammanfattning (portalen avvisade förfrågan). En lokal testserver kördes på port 8765 och stängs av efter arbetet. Inget är committat.
+
+---
+
 ## 2026-10-06 · Claude Code (Sonnet 5.5) · ny fil `aktuellt/Serviceforvaltningen/interimsuppdraget.md`
 
 - **Gjort:** Skrev `interimsuppdraget.md`: tre hypoteser om varför en controller hyrs in 2026-10-01 till 2027-01-31 (belastningstopp, kompetens/oberoende, strukturellt), plus en fjärde (snabbhet), med för, emot, vad som skulle motbevisa och säkerhetsgrad. `README.md` är inte ändrad. Lokala `main` snabbspolades till `origin/main` (commit `fa95556`, som innehöll README:n) innan arbetet. Ingen commit eller push.

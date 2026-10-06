@@ -1,0 +1,181 @@
+/* stil.css – färger som variabler så att linjernas och rutornas färger styrs från ett ställe */
+:root {
+  --ink: #1c2430;
+  --muted: #566170;
+  --paper: #f4f6f9;
+  --card: #ffffff;
+  --line: #d5dbe4;
+  --blue: #1f4e79;
+  --blue-soft: #e6eef7;
+  --belagt: #1f6b4a;
+  --indikerat: #b06a00;
+  --ospec: #7a4a8c;
+  --shadow: 0 10px 30px rgba(20, 40, 70, 0.08);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.5;
+  padding-bottom: 56px; /* så att hörnknapparna inte täcker sidfoten */
+}
+
+button { font: inherit; color: inherit; }
+a { color: var(--blue); }
+
+.wrap { width: min(1160px, calc(100% - 32px)); margin: 0 auto; padding-bottom: 48px; }
+
+/* ---------- Huvud ---------- */
+.top { padding: 28px 0 8px; }
+.kicker { margin: 0; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+h1 { margin: 0.2rem 0 0.4rem; font-size: clamp(1.6rem, 3.4vw, 2.3rem); line-height: 1.15; color: var(--blue); }
+.byline { margin: 0 0 0.8rem; font-size: 0.88rem; color: var(--muted); }
+.lead { max-width: 70ch; margin: 0; }
+
+h2 { margin: 2.2rem 0 0.6rem; font-size: 1.35rem; color: var(--blue); }
+.anchor { margin-left: 0.4rem; text-decoration: none; opacity: 0; font-weight: 400; }
+h2:hover .anchor, .anchor:focus-visible { opacity: 0.7; }
+.sektion-intro { margin: 0 0 1rem; color: var(--muted); max-width: 75ch; }
+
+/* ---------- Förklaring ---------- */
+.legend { display: flex; flex-wrap: wrap; gap: 0.5rem 1.4rem; list-style: none; padding: 0; margin: 0 0 0.4rem; font-size: 0.88rem; }
+.legend li { display: flex; align-items: center; gap: 0.5rem; }
+.swatch { display: inline-block; width: 38px; height: 0; border-top: 3px solid; }
+.swatch-belagt { border-color: var(--belagt); }
+.swatch-indikerat { border-color: var(--indikerat); border-top-style: dashed; }
+.swatch-ospecificerat { border-color: var(--ospec); border-top-style: dotted; }
+.hint { margin: 0 0 1rem; font-size: 0.85rem; color: var(--muted); }
+
+/* ---------- Diagram ---------- */
+.diagram-yta { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 1.2rem; align-items: start; }
+
+.diagram {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0 clamp(80px, 14vw, 170px); /* luft mellan kolumnerna där linjerna går */
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+
+.linjer { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.linje { fill: none; stroke-width: 2.4; transition: opacity 0.15s, stroke-width 0.15s; }
+.linje.belagt { stroke: var(--belagt); }
+.linje.indikerat { stroke: var(--indikerat); stroke-dasharray: 8 5; }
+.linje.ospecificerat { stroke: var(--ospec); stroke-dasharray: 2 5; stroke-linecap: round; }
+.diagram.fokus .linje { opacity: 0.12; }
+.diagram.fokus .linje.lyft { opacity: 1; stroke-width: 3.4; }
+.pil-belagt { fill: var(--belagt); }
+.pil-indikerat { fill: var(--indikerat); }
+.pil-ospecificerat { fill: var(--ospec); }
+
+.kolumn { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.kolumn-rubrik { margin: 0 0 4px; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+
+.ruta {
+  display: block; width: 100%; text-align: left; cursor: pointer;
+  background: var(--card); border: 1px solid var(--line); border-left-width: 5px;
+  border-radius: 10px; padding: 9px 12px;
+}
+.ruta:hover, .ruta:focus-visible { background: var(--blue-soft); outline: none; }
+.ruta:focus-visible { box-shadow: 0 0 0 2px var(--blue); }
+.ruta.vald { background: var(--blue-soft); box-shadow: 0 0 0 2px var(--blue); }
+.ruta.belagt { border-left-color: var(--belagt); }
+.ruta.indikerat { border-left-color: var(--indikerat); }
+.ruta.ospecificerat { border-left-color: var(--ospec); }
+.ruta .namn { display: block; font-weight: 600; font-size: 0.95rem; }
+.ruta .under { display: block; font-size: 0.78rem; color: var(--muted); }
+.ruta .ny { display: inline-block; margin-left: 6px; font-size: 0.7rem; background: #fff4d6; color: #7a5200; border-radius: 999px; padding: 0 7px; font-weight: 600; }
+.ruta .gar-till { display: none; margin-top: 4px; font-size: 0.78rem; color: var(--muted); }
+
+.ram { border: 1.5px solid var(--line); border-radius: 12px; padding: 10px; background: #fafbfd; display: flex; flex-direction: column; gap: 8px; }
+.ram-rubrik { margin: 0 2px; font-size: 0.82rem; color: var(--muted); }
+.ram-rubrik strong { color: var(--ink); font-size: 0.95rem; }
+
+.stod-delar { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.chip { font-size: 0.74rem; background: #eef1f6; border-radius: 999px; padding: 1px 8px; color: var(--muted); }
+
+/* höger kolumn: de två målrutorna delar höjd ungefär som vänstersidans rader */
+.hoger-nyfast { flex: 4 1 0; display: flex; flex-direction: column; }
+.hoger-ovriga { flex: 3 1 0; display: flex; flex-direction: column; }
+.hoger-nyfast .ruta, .hoger-ovriga .ruta { flex: 1; }
+.uppdrag, .mottagare { margin: 6px 0 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 4px; }
+.notering { margin: 4px 2px 0; font-size: 0.78rem; color: var(--muted); }
+
+/* ---------- Detaljpanel ---------- */
+.detalj { position: sticky; top: 12px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px; box-shadow: var(--shadow); font-size: 0.9rem; }
+.detalj h3 { margin: 0 0 4px; font-size: 1.05rem; color: var(--blue); }
+.detalj-tom { margin: 0; color: var(--muted); }
+.status { display: inline-block; font-size: 0.74rem; font-weight: 700; border-radius: 999px; padding: 1px 9px; color: #fff; margin-bottom: 8px; }
+.status.belagt { background: var(--belagt); }
+.status.indikerat { background: var(--indikerat); }
+.status.ospecificerat { background: var(--ospec); }
+.detalj p { margin: 0 0 8px; }
+.detalj .kallrad { margin: 0; font-size: 0.82rem; color: var(--muted); }
+
+/* ---------- Tidslinje ---------- */
+.tidslinje { list-style: none; margin: 0; padding: 0 0 0 18px; border-left: 3px solid var(--line); }
+.tidslinje li { position: relative; padding: 0 0 14px 16px; }
+.tidslinje li::before { content: ""; position: absolute; left: -26px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--blue); border: 2px solid var(--paper); }
+.tidslinje li.viktig::before { background: var(--belagt); width: 15px; height: 15px; left: -28px; top: 5px; }
+.tidslinje time { display: block; font-weight: 700; font-size: 0.86rem; color: var(--blue); }
+.tidslinje .kallrad { font-size: 0.78rem; color: var(--muted); }
+
+/* ---------- Öppna frågor ---------- */
+.oppna { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.fraga { background: var(--card); border: 1px solid var(--line); border-top: 4px solid var(--ospec); border-radius: 12px; padding: 14px 16px; }
+.fraga.belagt { border-top-color: var(--belagt); }
+.fraga h3 { margin: 0 0 4px; font-size: 1rem; }
+.fraga p { margin: 0 0 8px; font-size: 0.88rem; }
+.fraga .kallrad { font-size: 0.78rem; color: var(--muted); }
+
+/* ---------- Källor ---------- */
+.kallor p { margin: 0 0 14px; font-size: 0.88rem; overflow-wrap: anywhere; } /* långa URL:er får brytas så sidan inte får sidscroll på mobil */
+.kallor .ref:target { background: #fff4d6; }
+
+/* ---------- Hörnknappar och modal ---------- */
+.corner {
+  position: fixed; bottom: 14px; z-index: 20;
+  font-size: 0.78rem; padding: 4px 10px; border-radius: 8px;
+  background: rgba(255, 255, 255, 0.85); border: 1px solid var(--line);
+  color: var(--muted); text-decoration: none; cursor: pointer; opacity: 0.55;
+}
+.corner:hover, .corner:focus-visible { opacity: 1; color: var(--blue); }
+.corner-left { left: 14px; }
+.corner-right { right: 14px; }
+
+.modal-overlay { position: fixed; inset: 0; z-index: 50; display: none; align-items: center; justify-content: center; background: rgba(15, 25, 40, 0.5); padding: 16px; }
+.modal-overlay.show { display: flex; }
+.modal { position: relative; background: var(--card); border-radius: 14px; max-width: 640px; width: 100%; max-height: 88vh; overflow: auto; padding: 1.6rem; }
+.modal h2 { margin: 0 0 0.4rem; font-size: 1.35rem; }
+.modal > p { color: var(--muted); font-size: 0.92rem; margin: 0 0 1rem; }
+.modal-close { position: absolute; top: 10px; right: 12px; border: 0; background: none; font-size: 1.6rem; cursor: pointer; color: var(--muted); }
+.tech-section-title { margin: 1.2rem 0 0.6rem; font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.tech-card h3 { margin: 0 0 0.3rem; font-size: 0.95rem; color: var(--blue); }
+.tech-card p { margin: 0; font-size: 0.85rem; }
+.tech-card code { background: #eef1f6; border-radius: 4px; padding: 0.05rem 0.3rem; font-size: 0.82em; }
+.modal-foot { margin: 1.2rem 0 0; font-size: 0.85rem; }
+
+/* ---------- Smal skärm: linjerna döljs, textrad "går till" visas ---------- */
+@media (max-width: 860px) {
+  .diagram-yta { grid-template-columns: 1fr; }
+  .diagram { grid-template-columns: 1fr; gap: 20px; }
+  .linjer { display: none; }
+  .ruta .gar-till { display: block; }
+  .detalj { position: static; }
+  .tech-grid { grid-template-columns: 1fr; }
+  .hoger-nyfast, .hoger-ovriga { flex: none; }
+}
+
+@media (prefers-reduced-motion: reduce) { .linje { transition: none; } }
+
+/* ---------- Utskrift: ritas utan hörnknappar ---------- */
+@media print { .corner, .modal-overlay { display: none; } .detalj { display: none; } }
