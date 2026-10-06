@@ -13,6 +13,17 @@ Mall:
 - Obs (något en annan agent bör veta):
 ```
 
+
+---
+
+## 2026-10-06 · Claude Code (Sonnet 5.5) · ny artikel `aktuellt/Serviceforvaltningen`
+
+- **Gjort:** Skrev artikeln `aktuellt/Serviceforvaltningen/README.md` om nedläggningen av Lunds servicenämnd och bildandet av en fastighetsförvaltning 1 januari 2027, med Harvardreferenser, länkar och en kort notion per källa. Mappnamnet är utan å, enligt ägarens önskemål. Mappen `aktuellt` har litet a i repot.
+- **Verifierat (och hur):** Alla 14 länkar i källförteckningen gav HTTP 200 när de hämtades 2026-10-06. Siffror och citat jämfördes med sidornas text (lund.se-sidorna, budgeten 2026–2028, EY-rapporten, Johanssons artikel och SOU 2000:38). Länken till Högskolan i Borås rapport (Brorström och Solli, 2017) gav 404 och finns därför inte med.
+- **Inte verifierat:** Att kommunen inte ändrar sidorna efter hämtningen. Min tolkning av vad som är poängen (avsnitten "Vad är det egentligen som är poängen?" och "Vad återstår att lösa?") är en bedömning, inte kommunens uppgift. EY-rapporten uppger inte själv sin sidnumrering i referensen.
+- **Återstår / nästa steg:** Ägaren granskar och väljer om texten ska bli ett blogginlägg. Uppdatera efter att fastighetsförvaltningen startat 2027-01-01 och när budgeten för 2027 fördelats.
+- **Obs:** Ägaren bad uttryckligen om att texten skulle läggas i repot, därför committades och pushades den.
+
 ---
 
 ## 2026-10-06 · Claude Code (Sonnet 5.5) · Invici-feedback nr 2, korsreferens till fallet Magnus Nilsson
