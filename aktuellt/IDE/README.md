@@ -14,3 +14,4 @@ Statisk sida, relativa länkar, ingen build. Samma mapp kan ligga på GitHub Pag
 | `stil.css` | Utseende. |
 | `README.md` | Karta och live-länk. |
 | `Bilder/Fyra_IDE-er.jpg` | Inlägget som satte igång jämförelsen. |
+| `og-bild.jpg` | Förhandsbild, 1200 × 630, för X, LinkedIn och andra som läser Open Graph. |
