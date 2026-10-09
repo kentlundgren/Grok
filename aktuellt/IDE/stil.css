@@ -195,3 +195,16 @@ footer, .src {
   color: var(--muted);
   margin-top: 0.4rem;
 }
+
+.cards { display: grid; gap: 0.8rem; margin: 1rem 0 1.4rem; }
+.card {
+  display: block; background: var(--card); border: 1px solid var(--line);
+  border-radius: 10px; padding: 0.85rem 1rem; text-decoration: none; color: var(--ink);
+}
+.card span {
+  display: block; font-family: "Segoe UI", sans-serif; font-size: 0.72rem;
+  letter-spacing: 0.05em; text-transform: uppercase; color: var(--muted);
+}
+.card strong { display: block; margin: 0.15rem 0; font-size: 1.05rem; }
+.card em { display: block; font-style: normal; color: var(--muted); font-size: 0.95rem; }
+.card:hover { border-color: var(--accent); }
