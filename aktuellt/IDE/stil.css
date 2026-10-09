@@ -153,3 +153,18 @@ footer, .src {
   nav a { white-space: nowrap; border-top: 0; }
   h1 { font-size: 1.7rem; }
 }
+
+.uppslag { margin: 1rem 0 1.2rem; }
+.uppslag img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+.uppslag figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
