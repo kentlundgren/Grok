@@ -80,6 +80,13 @@ Sidan har en tidsväljare, så att körningar vid olika tidpunkter kan jämföra
 - **Delningslänk för körningen kl 08:19:** [https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/k/2026-10-02-0819/](https://kentlundgren.github.io/Grok/aktuellt/regeringsbildning/k/2026-10-02-0819/) (har egen förhandsbild för LinkedIn och X)
 - **Hur man bygger vidare:** [aktuellt/regeringsbildning/BYGGKONTRAKT.md](aktuellt/regeringsbildning/BYGGKONTRAKT.md)
 
+### IDE: Cursor, Antigravity och agentapparna
+
+Sammanställning från 9 oktober 2026. Utgångspunkten är jämförelsen mellan Cursor och Google Antigravity. Sidan går vidare till vad en IDE är, hur editorerna förhåller sig, andra IDE-konkurrenter, och varför Claude Code, Cowork och Codex-appen inte är IDE:er i strikt mening.
+
+- **Källkod:** [aktuellt/IDE/](aktuellt/IDE/)
+- **Live:** [https://kentlundgren.github.io/Grok/aktuellt/IDE/](https://kentlundgren.github.io/Grok/aktuellt/IDE/)
+
 ### Scampi 30 – Yanmar YSB12G
 
 Underhåll från bloggen Tankar i tiden från Lund, plus val av propylenglykol till motor och vattenpump.
@@ -105,4 +112,4 @@ Underhåll från bloggen Tankar i tiden från Lund, plus val av propylenglykol t
 
 ---
 
-*Senast uppdaterat: 4 oktober 2026*
+*Senast uppdaterat: 9 oktober 2026*

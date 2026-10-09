@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IDE: Cursor, Antigravity och agentapparna</title>
+  <meta name="description" content="Sammanställning 9 oktober 2026. Cursor mot Google Antigravity, vad en IDE är, och varför Claude Code, Cowork och Codex-appen inte är IDE:er i strikt mening.">
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <div class="layout">
+    <nav aria-label="Innehåll">
+      <p>Innehåll</p>
+      <a href="#utgangspunkt">Utgångspunkt</a>
+      <a href="#vad">Vad de är</a>
+      <a href="#historia">Historia</a>
+      <a href="#likheter">Likheter</a>
+      <a href="#skillnader">Skillnader</a>
+      <a href="#framtid">Utveckling och framtid</a>
+      <a href="#ide">Vad en IDE är</a>
+      <a href="#cursor-ide">Cursor IDE</a>
+      <a href="#antigravity-ide">Antigravity IDE</a>
+      <a href="#forhallande">Hur de förhåller sig</a>
+      <a href="#konkurrenter">Andra IDE-konkurrenter</a>
+      <a href="#agentappar">Code, Cowork, Codex</a>
+      <a href="#grans">Var gränsen går</a>
+      <a href="#kallor">Källor</a>
+    </nav>
+
+    <main>
+      <p class="kicker">Aktuellt · samtal 9 oktober 2026</p>
+      <h1>IDE: Cursor, Antigravity och agentapparna</h1>
+      <p class="lede">En navigerbar sammanställning av ett samtal om två kodverktyg, vad en integrerad utvecklingsmiljö är, och varför en agentapp inte blir en IDE bara för att den kan ändra filer.</p>
+      <p class="note">Egen syntes från samtalet, skild från källorna. Datum och produktgränser rör sig snabbt. Kontrollera mot länkarna längst ned innan något återges.</p>
+
+      <h2 id="utgangspunkt">Utgångspunkten</h2>
+      <p>Samtalet började med en jämförelse mellan Cursor och Google Antigravity: skillnader, likheter, historia, utveckling och framtid. Den första avgränsningen, den som bilden i samtalet visade, var denna:</p>
+      <blockquote>
+        <p>Cursor är en fristående editor, en fork av VS Code, från Anysphere. Agenten bor i editorn: tab-komplettering, inline-redigering, chat, förgrundsagent, molnagenter och ett CLI. Du granskar diffar där du redan skriver.</p>
+        <p>Antigravity är en plattform från Google, släppt 18 november 2025 tillsammans med Gemini 3. Den består nu av fyra delar: Antigravity 2.0 (fristående skrivbordsapp, ett slags mission control utan inbyggd IDE), Antigravity IDE (den ursprungliga VS Code-baserade editorn), Antigravity CLI (<code>agy</code>, efterföljare till Gemini CLI) och ett SDK. Tanken är att du startar och övervakar agenter, och att de lämnar granskningsbara artefakter: plan, diff, terminalutskrift, skärmdumpar och webbläsarinspelningar.</p>
+      </blockquote>
+      <p>Resten av sidan är den fördjupning som följde: först verktygen, sedan ordet IDE, sedan invändningen att Claude Code, Cowork och Codex-appen också skulle kunna räknas dit.</p>
+
+      <h2 id="vad">Vad de är</h2>
+      <p>Cursor och Google Antigravity är båda agentiska kodverktyg med en VS Code-liknande grund. De svarar på olika frågor. Cursor är en mogen AI-editor där du fortfarande sitter i koden. Antigravity är Googles försök att göra agenten till huvudytan och editorn till en av flera ytor.</p>
+      <p>Cursor är en fristående editor, en fork av VS Code, från Anysphere, numera under SpaceXAI. Agenten bor i editorn. Du granskar diffar där du redan skriver.</p>
+      <p>Antigravity släpptes 18 november 2025 tillsammans med Gemini 3. I maj 2026 delades den i en familj: Antigravity 2.0, Antigravity IDE, Antigravity CLI och ett SDK (Google, 2026; Wikipedia, 2026a).</p>
+
+      <h2 id="historia">Historia</h2>
+      <p>Cursor grundades 2022 av fyra MIT-studenter: Michael Truell, Sualeh Asif, Aman Sanger och Arvid Lunnemark. Editorn kom 2023, när GitHub Copilot i praktiken ägde marknaden för AI-kodning. Tillväxten var extrem: över 100 miljoner dollar i ARR i januari 2025, över 500 miljoner i juni 2025, och över 1 miljard i årstakt vid Series D i november 2025, med värdering 29,3 miljarder dollar. Cursor 2.0 i oktober 2025 lade till parallella agenter via git worktrees eller fjärrdatorer (Wikipedia, 2026b).</p>
+      <p>Ägarskapet skiftade 2026. SpaceX fick 21 april en rätt att köpa bolaget för 60 miljarder dollar. Affären utnyttjades 16 juni och stängdes 14 augusti, helt i aktier. Cursor är nu ett helägt dotterbolag under SpaceXAI, samma division som Grok (Wikipedia, 2026b; Roth, 2026).</p>
+      <p>Antigravity är knappt ett år gammalt. Första versionen var en agentisk IDE med en Manager-yta ovanpå editorn. Vid Google I/O 19 maj 2026 blev 2.0-appen ren agentorkestrering, IDE:n lever kvar separat, och CLI plus SDK tillkom. Gemini CLI och Code Assist för privatpersoner fasades ut runt mitten av 2026. Antigravity är den individuella efterföljaren (Google, 2026; Wikipedia, 2026a).</p>
+
+      <h2 id="likheter">Likheter</h2>
+      <p>Båda är proprietära, lokala skrivbordsappar med CLI, git-integration, multi-agent, MCP, sandlåda och möjlighet att köra tester. Båda kan öppna en bekant editor och båda tar betalt via abonnemang plus användningskvot, med en gratisnivå. Båda rör sig från komplettering mot att agenter planerar, ändrar filer och verifierar. Och båda sitter nu hos ett labb som också äger en frontier-modell: Google med Gemini, SpaceXAI med Grok.</p>
+
+      <h2 id="skillnader">Skillnader</h2>
+      <table>
+        <thead>
+          <tr><th></th><th>Cursor</th><th>Antigravity</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Grundfråga</td><td>Bättre editor, agenten inuti</td><td>Mission control, editorn som en yta</td></tr>
+          <tr><td>Ålder</td><td>Sedan 2023, stor installerad bas</td><td>Sedan november 2025</td></tr>
+          <tr><td>Ägare</td><td>SpaceX / SpaceXAI sedan 14 augusti 2026</td><td>Google</td></tr>
+          <tr><td>Modellriktning</td><td>Stor pool för Grok 4.5–4.7 och Composer 2.5. Claude, GPT och Gemini i en separat pool</td><td>Gemini först. Claude och gpt-oss finns även på gratisnivån enligt prisjämförelser</td></tr>
+          <tr><td>Pris, individ</td><td>Hobby gratis. Pro 20, Pro+ 60, Ultra 200 USD/månad</td><td>Individual 0 USD med veckokvot. Högre tak via Google AI Pro och Ultra</td></tr>
+          <tr><td>Granskning</td><td>Diff och editor i samma loop</td><td>Artefakter: plan, skärmdumpar, webbläsarbevis</td></tr>
+        </tbody>
+      </table>
+      <p>Den praktiska skillnaden syns i arbetsloopen. I Cursor stannar du i filen och ingriper ofta. I Antigravity delegerar du bredare och granskar bevis i efterhand. En månadslång jämförelse från september 2026 landade i att Cursor känns mest komplett just för att den inte tvingar valet mellan agent och editor (Shah, 2026). Modellversioner i recensioner går isär. Det som är stabilt är riktningen, inte exakt versionsnummer.</p>
+
+      <h2 id="framtid">Utveckling och framtid</h2>
+      <p>Cursor har gått från tab-komplettering till agent, vidare till parallella och molnagenter, och mot en egen stack: Composer som egen modell, Grok som gynnad pool, och Origin, ett git-värdskap byggt för agenter, aviserat i juni 2026. Risken är inlåsning. Fördelen är att editorn redan är den många bytte till. Frågan framåt är om Claude och GPT stannar kvar på rimliga villkor, eller om Grok-poolen blir det som abonnemanget egentligen köper (Cursor, 2026).</p>
+      <p>Antigravity rör sig åt andra hållet: från IDE med agent till agentteam med editor som sidoyta. 2.0-bloggen säger att Agent Manager på sikt ska lyftas ur IDE:n (Google, 2026). Googles fördel är distribution och en gratisnivå. Nackdelen är att produkten fortfarande delas i två appar.</p>
+      <p>Branschriktningen är densamma. Mindre autocomplete, mer övervakade agentteam, och kod som granskas via diff och tester. Vinnaren blir inte den som har flest agenter, utan den som låter dig se vad agenten gjorde och stoppa den.</p>
+
+      <h2 id="ide">Vad en IDE är</h2>
+      <p>IDE betyder integrated development environment, integrerad utvecklingsmiljö. Det är ett program som samlar det du behöver för att skriva, köra och laga program på ett ställe (IBM, 2025).</p>
+      <p>Kärnan är nästan alltid densamma: en editor med syntaxfärgning och filträd, körning och byggning, en debugger, en terminal, koppling till git, och ofta ett tilläggssystem. En texteditor räcker för att skriva filer. En IDE lägger till sammanhanget: projektet, felen, körningen och historiken.</p>
+      <p>Tre vanliga sorter finns. Språkspecifika, som PyCharm. Generella, som Visual Studio Code. Och plattforms-IDE:er, bundna till ett ekosystem. Sedan 2023 har en fjärde sort vuxit fram: den AI-inbyggda IDE:n, där modellen kan läsa projektet, föreslå nästa rad och ändra flera filer. Cursor och Antigravity IDE hör hit. Claude Code och Codex är inte IDE:er. De är agenter som kan jobba bredvid vilken editor som helst.</p>
+
+      <h2 id="cursor-ide">Cursor IDE</h2>
+      <p>Tre lager ligger ovanpå editorn. Tab föreslår nästa redigering medan du skriver. Inline-redigering tar en markerad bit och skriver om den. Agenten tar en uppgift på vanligt språk, läser projektet, ändrar filer, kör kommandon och lämnar en diff.</p>
+      <p>Arbetsloopen är fortfarande editorn. Du sitter i filen. Agenten är en kollega i samma rum, inte ett annat rum.</p>
+
+      <h2 id="antigravity-ide">Antigravity IDE</h2>
+      <p>Antigravity IDE är Googles motsvarande editor, också den härledd från VS Code. Den har filträd, terminal, tab-komplettering och en agentpanel. Det som skiljer den är att agenten tidigt fick en Manager-yta: flera agenter, flera arbetsytor, och artefakter att granska.</p>
+      <p>I maj 2026 delade Google produkten. Antigravity 2.0 blev en fristående skrivbordsapp utan IDE. Antigravity IDE lever kvar som den separata editorn. CLI:t <code>agy</code> och ett SDK ligger bredvid (Google, 2026). IDE:n är den yta som mest liknar Cursor. 2.0-appen är den yta Cursor inte har en direkt motsvarighet till.</p>
+
+      <h2 id="forhallande">Hur de förhåller sig</h2>
+      <p>De konkurrerar om samma plats på skrivbordet: den dagliga editorn. Båda är proprietära VS Code-forkar. En användare kan inte meningsfullt köra båda som primär editor utan att betala inlärning två gånger.</p>
+      <p>De är inte samma produkt i olika skal. Cursor optimerar loopen redigera, se diff, godkänn. Antigravity IDE optimerar loopen delegera, se bevis, godkänn, och är tänkt att användas bredvid 2.0-appen. De delar inte projektinställningar, index eller historik.</p>
+
+      <h2 id="konkurrenter">Andra IDE-konkurrenter</h2>
+      <p>VS Code med GitHub Copilot är incumbenten. Microsoft äger både editorn och agenten. Copilot Pro ligger kring 10 dollar i månaden. Fördelen är att du inte byter editor. Nackdelen är att AI:n är ett lager ovanpå, inte editorns egen arkitektur (Proven Brief, 2026).</p>
+      <p>Windsurf, nu Devin Desktop, var den direkta Cursor-konkurrenten. Codeium byggde Windsurf som en VS Code-fork med agenten Cascade. Cognition tog över. Prissidan renderar nu Devins planer (Proven Brief, 2026; InfraGap, 2026).</p>
+      <p>Zed är den öppna, snabba editorn, skriven i Rust. Personlig plan är gratis, Pro kring 10 dollar, och du kan ta med egna API-nycklar. Zed var med och tog fram ACP, ett protokoll så att en agent kan prata med editorn utan att äga den. JetBrains har anslutit sig till samma protokoll (InfraGap, 2026).</p>
+      <p>JetBrains, med IntelliJ, PyCharm och WebStorm, är de klassiska språk-IDE:erna. De är starkare på refaktorering och debugger i stora Java- eller Kotlin-kodbaser. Editorn är inte byggd runt agenten.</p>
+      <p>Intill, men inte IDE:er, finns Claude Code och OpenAI Codex. Cline och Continue är tillägg i VS Code. Aider är ett terminalverktyg där du tar med egen nyckel.</p>
+
+      <h2 id="agentappar">Kan Code, Cowork och Codex räknas som IDE?</h2>
+      <p>Delvis, men bara om man vidgar ordet. Claude Code och Codex-appen är utvecklingsmiljöer med IDE-delar. De är inte IDE:er i den gamla, strikta meningen. Claude Cowork är det ännu mindre.</p>
+      <h3>Claude Code</h3>
+      <p>Claude Code började som en terminalagent. Den läser repot, ändrar filer, kör tester och lämnar en diff. Det är ett utvecklingsverktyg, men inte en IDE: du har ingen egen editor, ingen debugger och ingen språkserver.</p>
+      <p>Samma agent finns i terminalen, som tillägg i VS Code och JetBrains, och som en Code-flik i Claudes skrivbordsapp. Anthropic kallar själv Code-fliken en full utvecklingsmiljö för ingenjörer: kodbas, plan- och kodläge, visuella diffar, git, lokalt eller på distans (Anthropic, 2026a). Det är så nära en IDE man kommer utan att äga editorn.</p>
+      <h3>Claude Cowork</h3>
+      <p>Cowork är kunskapsarbetsytan: mappar, Slack, Drive, webbläsare, Excel, PowerPoint, Word. Du beskriver ett utfall och får tillbaka ett dokument, en kalkyl eller en genomgång. Kod är inte målet. I produktmatrisen står Code för att bygga i ett repo, Cowork för arbete som rör filer och flera verktyg (Anthropic, 2026a; Anthropic, 2026b). Sedan 16 september 2026 håller Cowork och chatten på att slås ihop till en Claude (Anthropic, 2026c).</p>
+      <h3>Codex-appen</h3>
+      <p>Codex har fyra ytor: CLI, tillägg i VS Code, Cursor och Windsurf, molnet, och skrivbordsappen. Appen slogs ihop med ChatGPT-desktop 9 juli 2026. Den är bra på parallella trådar, git worktrees och en diff-ruta (Agentastic, 2026). Det är en övervakningsyta för en kodagent, samma klass som Antigravity 2.0, inte en editor. Den IDE-nära ytan är tillägget, och det bor inuti en IDE du redan har.</p>
+
+      <h2 id="grans">Var gränsen går</h2>
+      <p>Kalla gärna Claude Code och Codex-appen agentiska utvecklingsmiljöer. De integrerar uppgift, körning, git och granskning. Det är hälften av vad en IDE lovar.</p>
+      <p>De faller på den andra halvan. En IDE antar att människan redigerar, och att verktyget förstår språket rad för rad. De här apparna antar att agenten redigerar, och att människan styr och granskar. Cowork antar ingetdera om kod.</p>
+      <p>Praktiskt blir det tre lager, inte två. IDE:n, där du skriver: Cursor, VS Code, JetBrains, Antigravity IDE. Agent-harnessen, där du delegerar och granskar: Claude Code, Codex-appen, Antigravity 2.0. Kunskapsytan, där leveransen är ett dokument eller en kalkyl: Cowork.</p>
+      <p>För eget arbete med kalkyler och GitHub Pages är Cursor fortfarande det säkrare valet om du vill äga diffen. Antigravity är värt ett avgränsat test på en ny, icke-känslig prototyp. Data, auth och publicering hör hemma där du redan kan läsa diffen och köra testerna själv.</p>
+
+      <h2 id="kallor">Källor</h2>
+      <div class="src">
+        <p>Agentastic (2026) <a href="https://www.agentastic.dev/compare/codex-app-vs-cli" target="_blank" rel="noopener">Codex App vs CLI (2026): Differences and When to Use Each</a>. Tillgänglig på: <a href="https://www.agentastic.dev/compare/codex-app-vs-cli" target="_blank" rel="noopener">https://www.agentastic.dev/compare/codex-app-vs-cli</a> (hämtad 9 oktober 2026). <em>Belägger att Codex-appen är en övervakningsyta med worktrees och diff, skild från CLI och IDE-tillägg, och att den slogs ihop med ChatGPT-desktop 9 juli 2026.</em></p>
+        <p>Anthropic (2026a) <a href="https://claude.com/resources/guides/deploying-claude-across-your-organization/introducing-claude-cowork" target="_blank" rel="noopener">Introducing Claude Cowork</a>. Tillgänglig på: <a href="https://claude.com/resources/guides/deploying-claude-across-your-organization/introducing-claude-cowork" target="_blank" rel="noopener">https://claude.com/resources/guides/deploying-claude-across-your-organization/introducing-claude-cowork</a> (hämtad 9 oktober 2026). <em>Belägger skillnaden mellan Chat, Cowork och Code, och att Code beskrivs som utvecklingsmiljö för ingenjörer.</em></p>
+        <p>Anthropic (2026b) <a href="https://claude.com/resources/guides/claude-cowork-product-guide/product-overview" target="_blank" rel="noopener">Product overview – Claude Cowork product guide</a>. Tillgänglig på: <a href="https://claude.com/resources/guides/claude-cowork-product-guide/product-overview" target="_blank" rel="noopener">https://claude.com/resources/guides/claude-cowork-product-guide/product-overview</a> (hämtad 9 oktober 2026). <em>Belägger att Cowork är kunskapsarbete över filer och verktyg, inte en kodeditor.</em></p>
+        <p>Anthropic (2026c) <a href="https://claude.com/resources/articles/cowork-is-now-claude" target="_blank" rel="noopener">Claude Cowork and chat are now one Claude</a>. 16 september 2026. Tillgänglig på: <a href="https://claude.com/resources/articles/cowork-is-now-claude" target="_blank" rel="noopener">https://claude.com/resources/articles/cowork-is-now-claude</a> (hämtad 9 oktober 2026). <em>Belägger sammanslagningen av Cowork och chatt.</em></p>
+        <p>Cursor (2026) <a href="https://cursor.com/pricing" target="_blank" rel="noopener">Pricing</a>. Tillgänglig på: <a href="https://cursor.com/pricing" target="_blank" rel="noopener">https://cursor.com/pricing</a> (hämtad 9 oktober 2026). <em>Belägger individpriserna och att Grok-poolen är den gynnade.</em></p>
+        <p>Google (2026) <a href="https://antigravity.google/blog/introducing-google-antigravity-2" target="_blank" rel="noopener">Introducing Google Antigravity 2.0</a>. 19 maj 2026. Tillgänglig på: <a href="https://antigravity.google/blog/introducing-google-antigravity-2" target="_blank" rel="noopener">https://antigravity.google/blog/introducing-google-antigravity-2</a> (hämtad 9 oktober 2026). <em>Belägger delningen i 2.0-app utan IDE, och att Agent Manager på sikt lyfts ur editorn.</em></p>
+        <p>Google (2026) <a href="https://antigravity.google/pricing/" target="_blank" rel="noopener">Antigravity pricing</a>. Tillgänglig på: <a href="https://antigravity.google/pricing/" target="_blank" rel="noopener">https://antigravity.google/pricing/</a> (hämtad 9 oktober 2026). <em>Belägger gratisnivån Individual och att högre tak ligger i Google AI Pro och Ultra.</em></p>
+        <p>IBM (2025) <a href="https://www.ibm.com/think/topics/integrated-development-environment" target="_blank" rel="noopener">What is an Integrated Development Environment (IDE)?</a> Tillgänglig på: <a href="https://www.ibm.com/think/topics/integrated-development-environment" target="_blank" rel="noopener">https://www.ibm.com/think/topics/integrated-development-environment</a> (hämtad 9 oktober 2026). <em>Belägger den gängse definitionen: editor, byggning och debugger i ett gränssnitt.</em></p>
+        <p>InfraGap (2026) <a href="https://infragap.com/ai-native-ides/" target="_blank" rel="noopener">AI-Native IDEs – Cursor vs Windsurf vs Zed</a>. 8 oktober 2026. Tillgänglig på: <a href="https://infragap.com/ai-native-ides/" target="_blank" rel="noopener">https://infragap.com/ai-native-ides/</a> (hämtad 9 oktober 2026). <em>Belägger fältet Cursor, Devin Desktop, Zed och VS Code, samt ACP.</em></p>
+        <p>Proven Brief (2026) <a href="https://provenbrief.com/story/cursor-alternatives-in-2026-every-rival-s-price-limits-and-when-to-actually-swit" target="_blank" rel="noopener">Cursor Alternatives in 2026: Prices, Limits, When to Switch</a>. 25 september 2026. Tillgänglig på: <a href="https://provenbrief.com/story/cursor-alternatives-in-2026-every-rival-s-price-limits-and-when-to-actually-swit" target="_blank" rel="noopener">https://provenbrief.com/story/cursor-alternatives-in-2026-every-rival-s-price-limits-and-when-to-actually-swit</a> (hämtad 9 oktober 2026). <em>Belägger prisnivåer för Copilot, Windsurf/Devin och Zed.</em></p>
+        <p>Roth, E. (2026) <a href="https://www.theverge.com/ai-artificial-intelligence/980274/cursor-is-officially-part-of-spacex" target="_blank" rel="noopener">Cursor is officially part of SpaceX</a>. The Verge, 14 augusti 2026. Tillgänglig på: <a href="https://www.theverge.com/ai-artificial-intelligence/980274/cursor-is-officially-part-of-spacex" target="_blank" rel="noopener">https://www.theverge.com/ai-artificial-intelligence/980274/cursor-is-officially-part-of-spacex</a> (hämtad 9 oktober 2026). <em>Belägger att förvärvet stängdes 14 augusti 2026.</em></p>
+        <p>Shah, P. (2026) <a href="https://www.xda-developers.com/after-month-with-vs-code-cursor-google-antigravity-one-different-league/" target="_blank" rel="noopener">I compared VS Code, Cursor, and Google Antigravity for 30 days, and one pulled far ahead</a>. XDA Developers, 11 september 2026. Tillgänglig på: <a href="https://www.xda-developers.com/after-month-with-vs-code-cursor-google-antigravity-one-different-league/" target="_blank" rel="noopener">https://www.xda-developers.com/after-month-with-vs-code-cursor-google-antigravity-one-different-league/</a> (hämtad 9 oktober 2026). <em>Belägger en praktisk månadsjämförelse där Cursor behåller editorloopen.</em></p>
+        <p>Wikipedia (2026a) <a href="https://en.wikipedia.org/wiki/Google_Antigravity" target="_blank" rel="noopener">Google Antigravity</a>. Tillgänglig på: <a href="https://en.wikipedia.org/wiki/Google_Antigravity" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Google_Antigravity</a> (hämtad 9 oktober 2026). <em>Belägger lansering 18 november 2025, produktfamiljen och versionsläget hösten 2026.</em></p>
+        <p>Wikipedia (2026b) <a href="https://en.wikipedia.org/wiki/Cursor_(company)" target="_blank" rel="noopener">Cursor (company)</a>. Tillgänglig på: <a href="https://en.wikipedia.org/wiki/Cursor_(company)" target="_blank" rel="noopener">https://en.wikipedia.org/wiki/Cursor_(company)</a> (hämtad 9 oktober 2026). <em>Belägger grundare, tillväxt och SpaceX-affärens datum.</em></p>
+      </div>
+
+      <footer>
+        <p>Avsändare: Kent Lundgren, sammanställt med Grok 9 oktober 2026. Sidan är en läsanteckning från ett samtal, inte en leverantörsjämförelse som hålls aktuell av sig själv.</p>
+      </footer>
+    </main>
+  </div>
+  <a class="corner" href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/IDE" target="_blank" rel="noopener">{ } GitHub</a>
+</body>
+</html>
