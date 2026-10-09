@@ -157,6 +157,61 @@
       </footer>
     </main>
   </div>
-  <a class="corner" href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/IDE" target="_blank" rel="noopener">{ } GitHub</a>
+  <a class="corner corner-left" href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/IDE" target="_blank" rel="noopener">{ } GitHub</a>
+  <button type="button" class="corner corner-right" id="techBtn" aria-label="Tekniköversikt"></> teknik</button>
+
+  <div class="modal-overlay" id="techModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="techTitle">
+      <button type="button" class="modal-close" id="techClose" aria-label="Stäng">&times;</button>
+      <h2 id="techTitle">Hur den här sidan är byggd</h2>
+      <p>Statisk sida, utan ramverk och utan byggsteg. Samma filer kan ligga på GitHub Pages.</p>
+      <h3 class="tech-section-title">Tekniken</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>HTML och CSS</h3>
+          <p>Sidan är <code>index.html</code> och <code>stil.css</code>. Inga bibliotek. Menyn är ankare till avsnitten.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Förhandsbild</h3>
+          <p><code>og-bild.jpg</code> är 1200 × 630. Open Graph- och Twitter-taggarna pekar på den absoluta adressen, så X och LinkedIn kan visa kortet.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Hörnknappar</h3>
+          <p>Vänster öppnar mappen på GitHub. Höger öppnar den här rutan. Escape och klick utanför stänger.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Ingen data skickas</h3>
+          <p>Sidan pratar inte med någon server och sparar ingenting om besökaren.</p>
+        </div>
+      </div>
+      <h3 class="tech-section-title">Metoden</h3>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <h3>Uppslaget</h3>
+          <p>Aslams fyrfältare den 9 oktober 2026, och svaret att tre av fyra verktyg redan var använda. Antigravity saknades.</p>
+        </div>
+        <div class="tech-card">
+          <h3>Källor skilda från syntes</h3>
+          <p>Påståenden om produkter pekar på källförteckningen. Den egna läsningen är märkt som syntes från samtalet.</p>
+        </div>
+      </div>
+      <p style="margin-top:1.4rem"><a href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/IDE" target="_blank" rel="noopener">Källkoden på GitHub</a></p>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var btn = document.getElementById("techBtn");
+      var modal = document.getElementById("techModal");
+      var close = document.getElementById("techClose");
+      function openModal() { modal.classList.add("show"); close.focus(); }
+      function closeModal() { modal.classList.remove("show"); btn.focus(); }
+      btn.addEventListener("click", openModal);
+      close.addEventListener("click", closeModal);
+      modal.addEventListener("click", function (event) { if (event.target === modal) closeModal(); });
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("show")) closeModal();
+      });
+    }());
+  </script>
 </body>
 </html>
