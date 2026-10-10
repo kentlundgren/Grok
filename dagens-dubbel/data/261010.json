@@ -1,0 +1,93 @@
+{
+  "id": "261010",
+  "date": "2026-10-10",
+  "weekday": "lördag",
+  "track": "Solvalla",
+  "start": "17:16",
+  "comment": "Superlördag Solvalla med Kriteriet och Oaks. DD = V85-7 och V85-8. Lotta inlämnad 1,4,11 / 1,2,9.",
+  "races": {
+    "dd1": {
+      "label": "V85-7 / DD-1",
+      "distance": "2640 m auto",
+      "startApprox": "17:16"
+    },
+    "dd2": {
+      "label": "V85-8 / DD-2",
+      "distance": "2140 m auto",
+      "startApprox": "17:42"
+    }
+  },
+  "result": {
+    "status": "öppen",
+    "dd1Winner": null,
+    "dd2Winner": null,
+    "dd1Name": null,
+    "dd2Name": null,
+    "dd1Driver": null,
+    "dd2Driver": null,
+    "dd1WinOdds": null,
+    "dd2WinOdds": null,
+    "ddOdds": null,
+    "placed": {
+      "dd1": [],
+      "dd2": []
+    },
+    "updated": "2026-10-10 15:45",
+    "sources": [],
+    "pool": null
+  },
+  "tips": [
+    {
+      "person": "Lotta",
+      "status": "inlämnad",
+      "submitted": "2026-10-10 15:45",
+      "cost": 45,
+      "stake": 5,
+      "rows": 9,
+      "system": "3x3",
+      "dd1": [
+        1,
+        4,
+        11
+      ],
+      "dd2": [
+        1,
+        2,
+        9
+      ],
+      "names": {
+        "dd1": {
+          "1": "Po Tay Toes",
+          "4": "Kodiak Zet",
+          "11": "Mister Nabab"
+        },
+        "dd2": {
+          "1": "King Okay",
+          "2": "X.O.Kemp",
+          "9": "Killer Rain"
+        }
+      },
+      "scratch": null,
+      "coupon": null,
+      "note": "3x3 = 45 kr. Inlämnad innan start."
+    }
+  ],
+  "market": {
+    "source": "ATG / Travet / SverigeTravet",
+    "url": "https://www.travet.se/v85-startlista/v85-startlista-10-oktober-2026/",
+    "fetched": "2026-10-10 15:45",
+    "note": "Ögonblicksbild av streck och oddsproxy. Inte slutodds.",
+    "lowUnder": 5,
+    "highOver": 12,
+    "dd1": [
+      {"no": 1, "name": "Po Tay Toes", "odds": 13.63, "scratched": false},
+      {"no": 4, "name": "Kodiak Zet", "odds": 2.99, "scratched": false},
+      {"no": 11, "name": "Mister Nabab", "odds": 13.53, "scratched": false}
+    ],
+    "dd2": [
+      {"no": 1, "name": "King Okay", "odds": 11.25, "scratched": false},
+      {"no": 2, "name": "X.O.Kemp", "odds": 3.34, "scratched": false},
+      {"no": 9, "name": "Killer Rain", "odds": 3.93, "scratched": false}
+    ]
+  }
+}
