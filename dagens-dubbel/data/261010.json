@@ -4,7 +4,7 @@
   "weekday": "lördag",
   "track": "Solvalla",
   "start": "17:16",
-  "comment": "Superlördag Solvalla med Kriteriet och Oaks. DD = V85-7 och V85-8. Lotta inlämnad 1,4,11 / 1,2,9.",
+  "comment": "Superlördag Solvalla med Kriteriet och Oaks. DD = V85-7 och V85-8. Lotta: 1,4,11 / 1,2,9. Kent: 4,5,11 / 2,9,6.",
   "races": {
     "dd1": {
       "label": "V85-7 / DD-1",
@@ -32,7 +32,7 @@
       "dd1": [],
       "dd2": []
     },
-    "updated": "2026-10-10 15:45",
+    "updated": "2026-10-10 15:48",
     "sources": [],
     "pool": null
   },
@@ -70,6 +70,40 @@
       "scratch": null,
       "coupon": null,
       "note": "3x3 = 45 kr. Inlämnad innan start."
+    },
+    {
+      "person": "Kent",
+      "status": "inlämnad",
+      "submitted": "2026-10-10 15:48",
+      "cost": 45,
+      "stake": 5,
+      "rows": 9,
+      "system": "3x3",
+      "dd1": [
+        4,
+        5,
+        11
+      ],
+      "dd2": [
+        2,
+        9,
+        6
+      ],
+      "names": {
+        "dd1": {
+          "4": "Kodiak Zet",
+          "5": "Steady Spender",
+          "11": "Mister Nabab"
+        },
+        "dd2": {
+          "2": "X.O.Kemp",
+          "9": "Killer Rain",
+          "6": "Frank S.H."
+        }
+      },
+      "scratch": null,
+      "coupon": null,
+      "note": "3x3 = 45 kr. Skräll 11 Mister Nabab i DD-1. Inlämnad innan start."
     }
   ],
   "market": {
@@ -82,11 +116,13 @@
     "dd1": [
       {"no": 1, "name": "Po Tay Toes", "odds": 13.63, "scratched": false},
       {"no": 4, "name": "Kodiak Zet", "odds": 2.99, "scratched": false},
+      {"no": 5, "name": "Steady Spender", "odds": 6.75, "scratched": false},
       {"no": 11, "name": "Mister Nabab", "odds": 13.53, "scratched": false}
     ],
     "dd2": [
       {"no": 1, "name": "King Okay", "odds": 11.25, "scratched": false},
       {"no": 2, "name": "X.O.Kemp", "odds": 3.34, "scratched": false},
+      {"no": 6, "name": "Frank S.H.", "odds": 7.83, "scratched": false},
       {"no": 9, "name": "Killer Rain", "odds": 3.93, "scratched": false}
     ]
   }
