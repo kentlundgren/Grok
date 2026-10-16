@@ -37,16 +37,21 @@ Statusvärden:
 | 22 | Forskningen har traditionellt skilt på marknad och hierarki som styrprinciper, och tillit kan förstås som en tredje. | SOU 2018:47, kapitel 4 | Originaltext |
 | 23 | Verksamheten i en statlig myndighet ska bedrivas effektivt, enligt gällande rätt, med god hushållning med statens medel och med en tillförlitlig och rättvisande redovisning. | Polismyndigheten (2026), årsredovisning 2025, avsnitt 16 | Originaltext |
 | 24 | I en genomgång av 34 studier fick bara tre av 13 hypoteser stöd av en majoritet: offentliga organisationer mer byråkratiska, offentliga chefer mindre materialistiska och mindre bundna till organisationen. Underlaget bygger på smala mått och tar inte hänsyn till andra förklaringar. | Boyne (2002), sammanfattningen (RePEc) | Sammanfattning |
+| 25 | Kent licentierade 1998 (28 maj) vid IIIEE med en avhandling om förnyelsebara energibärares konkurrenskraft. Avhandlingen är klassad som miljöteknik (UKÄ). | Lundgren (1998), publikationsposten i Lunds universitets forskningsportal | Originaltext (posten, inte själva avhandlingen) |
+| 26 | IIIEE har till uppgift att bedriva forskning och utbildning inom miljöområdet, särskilt industriell miljöekonomi. | Förordning (1994:1173), 2 § | Originaltext |
+| 27 | IIIEE beskriver sig som ett internationellt och tvärvetenskapligt centrum vid Lunds universitet. | Lunds universitet (u.å.b), LUCAT | Originaltext |
+| 28 | Stiftelsen TEM finns i Lunds universitets register under Stiftelser och övriga anknutna verksamheter, med målsättningen att främja problemorienterad och tvärvetenskaplig forskning, utbildning och utveckling inom teknik, ekonomi och miljö. | Lunds universitet (u.å.a), LUCAT | Originaltext |
+| 29 | Ingen formell koppling mellan TEM och IIIEE hittades. | Genomsökt: de två LUCAT-sidorna, förordningen, IIIEE:s sidor om institutet och utbildningen, svenska och engelska Wikipedia om IIIEE och svenska Wikipedia om TEM, samt flera webbsökningar | Frånvaro av uppgift. Det bevisar inte att ingen koppling finns, bara att den inte hittades. |
 
 ## Tabell 2. Det sidan själv märker som min bedömning
 
 | Nr | Vad | Var på sidan |
 |---|---|---|
-| 25 | Jämförelsen mellan VEK, balanserat styrkort och TEM (Tabell 1 och Diagram 1). Ingen källa gör den. | Avsnitt 2 |
-| 26 | Uppdelningen i styrning, planering och uppföljning (Diagram 2). Det är inte Polisens modell. | Avsnitt 3 |
-| 27 | Urvalet i tidslinjen (Diagram 3). | Avsnitt 4 |
-| 28 | Slutsatsen att samma tankemodell fungerar i privat och offentlig verksamhet. | Avsnitt 5 |
-| 29 | De fyra frågorna. | Avsnitt 6 |
+| 30 | Jämförelsen mellan VEK, balanserat styrkort och TEM (Tabell 1 och Diagram 1). Ingen källa gör den. | Avsnitt 2 |
+| 31 | Uppdelningen i styrning, planering och uppföljning (Diagram 2). Det är inte Polisens modell. | Avsnitt 3 |
+| 32 | Urvalet i tidslinjen (Diagram 3). | Avsnitt 4 |
+| 33 | Slutsatsen att samma tankemodell fungerar i privat och offentlig verksamhet. | Avsnitt 5 |
+| 34 | De fyra frågorna. | Avsnitt 6 |
 
 ## Vad kontrollen hittade
 
@@ -57,6 +62,7 @@ Statusvärden:
 ## Vad som inte är kontrollerat
 
 - Boynes artikel och Kaplan och Nortons artikel från 1992 är inte lästa i sin helhet, bara sammanfattningarna.
-- TEM:s egen webbplats gick inte att öppna.
+- TEM:s egen webbplats gick inte att öppna. TEM:s målsättning bekräftas av Lunds universitets register, men årtalen 1981 och 1984 bygger fortfarande på Wikipedia.
+- Kopplingen mellan TEM och IIIEE: ingen formell koppling hittades. Sidan säger att kopplingen är Kents egen.
 - Siffrorna om kvalitetscirklar är Abrahamsons återgivning av andra studier. Studierna är inte lästa.
 - Management by objectives (Drucker) och OKR finns inte med, eftersom de inte kunde kontrolleras mot en primärkälla.
