@@ -1,4 +1,6 @@
-# VEK, TEM och balanserat styrkort: samma fråga, nya modeller
+# Samma fråga, nya modeller
+
+Undertitel: VEK, TEM och balanserat styrkort.
 
 Live-sida: [https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/)
 
