@@ -15,6 +15,7 @@ Statisk sida, relativa länkar, ingen build. Samma mapp kan ligga på GitHub Pag
 | `index.html` | Sidan, med hopp till avsnitt. |
 | `stil.css` | Utseende. |
 | `app.js` | Förklaringsrutor i Diagram 2, navigering och teknik-modal. |
+| `KONTROLL.md` | Uppgiftskontroll: varje faktauppgift på sidan mot källans text, med status. |
 | `Bilder/VEK_TEM_BalanseratStyrkort.jpg` | Diagram 1: VEK, TEM och balanserat styrkort (egen sammanställning). |
 | `Bilder/VEK_styrning_planering_uppfoljning.svg` | Diagram 2 som fristående bild, för att ladda ner eller göra om till PNG för inlägget. |
 

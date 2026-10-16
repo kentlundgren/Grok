@@ -37,7 +37,7 @@
 <text x="204" y="216" font-size="14" fill="#17283b">Strategisk verksamhetsplan</text>
 <text x="204" y="238" font-size="14" fill="#17283b">(SVP): mål och delmål</text>
 </g>
-<g class="dnode" tabindex="0" role="button" data-tip="Planeringsanvisningarna skickas ut i juni och innehåller bland annat ett metodstöd för VEK-planering. Nyckelaktiviteter ingår i SVP (Ekonomistyrningsverket, 2024, avsnitt 2.3.1 och 2.5)." aria-label="Verksamhet, Planering: Planeringsanvisningarna skickas ut i juni och innehåller bland annat ett metodstöd för VEK-planering. Nyckelaktiviteter ingår i SVP (Ekonomistyrningsverket, 2024, avsnitt 2.3.1 och 2.5).">
+<g class="dnode" tabindex="0" role="button" data-tip="Planeringsanvisningarna skickas ut i juni och innehåller bland annat ett metodstöd för VEK-planering. Nyckelaktiviteter ingår i SVP (Ekonomistyrningsverket, 2024, avsnitt 2.3.1, 2.3.2 och 2.5)." aria-label="Verksamhet, Planering: Planeringsanvisningarna skickas ut i juni och innehåller bland annat ett metodstöd för VEK-planering. Nyckelaktiviteter ingår i SVP (Ekonomistyrningsverket, 2024, avsnitt 2.3.1, 2.3.2 och 2.5).">
 <rect x="437" y="154" width="235" height="118" rx="12" fill="#e6f1fb" stroke="#1f6fd1" stroke-width="2"/>
 <text x="451" y="186" font-size="15" font-weight="700" fill="#1f6fd1">Aktiviteter inför året</text>
 <text x="451" y="216" font-size="14" fill="#17283b">Planeringsanvisningar i juni</text>
@@ -62,7 +62,7 @@
 <text x="204" y="344" font-size="14" fill="#17283b">Budgetramar för tre år</text>
 <text x="204" y="366" font-size="14" fill="#17283b">Styrning på nyckeltal</text>
 </g>
-<g class="dnode" tabindex="0" role="button" data-tip="Planeringsanvisningarna innehåller preliminära budgetramar för tre år och investeringsramar för året (Ekonomistyrningsverket, 2024, avsnitt 2.3.1). Prognoser och anslagsförbrukning ingår i tertialuppföljningen (avsnitt 2.5)." aria-label="Ekonomi, Planering: Planeringsanvisningarna innehåller preliminära budgetramar för tre år och investeringsramar för året (Ekonomistyrningsverket, 2024, avsnitt 2.3.1). Prognoser och anslagsförbrukning ingår i tertialuppföljningen (avsnitt 2.5).">
+<g class="dnode" tabindex="0" role="button" data-tip="Planeringsanvisningarna innehåller preliminära budgetramar för tre år och investeringsramar för året (Ekonomistyrningsverket, 2024, avsnitt 2.3.2). Prognoser och anslagsförbrukning ingår i tertialuppföljningen (avsnitt 2.5)." aria-label="Ekonomi, Planering: Planeringsanvisningarna innehåller preliminära budgetramar för tre år och investeringsramar för året (Ekonomistyrningsverket, 2024, avsnitt 2.3.2). Prognoser och anslagsförbrukning ingår i tertialuppföljningen (avsnitt 2.5).">
 <rect x="437" y="282" width="235" height="118" rx="12" fill="#e3f2ea" stroke="#2f7d5b" stroke-width="2"/>
 <text x="451" y="314" font-size="15" font-weight="700" fill="#2f7d5b">Budget och prognos</text>
 <text x="451" y="344" font-size="14" fill="#17283b">Budget, investeringsramar</text>
@@ -74,7 +74,7 @@
 <text x="698" y="344" font-size="14" fill="#17283b">Utfall, övertid och prognos,</text>
 <text x="698" y="366" font-size="14" fill="#17283b">uppföljning varje månad</text>
 </g>
-<g class="dnode" tabindex="0" role="button" data-tip="Kompetens: bemanning, rekrytering och kompetensutveckling. Ett av VEK:s tre perspektiv, och det som kom sist in i planeringen (Ekonomistyrningsverket, 2024, avsnitt 2.4 och 4.2.2)." aria-label="KOMPETENS: Kompetens: bemanning, rekrytering och kompetensutveckling. Ett av VEK:s tre perspektiv, och det som kom sist in i planeringen (Ekonomistyrningsverket, 2024, avsnitt 2.4 och 4.2.2).">
+<g class="dnode" tabindex="0" role="button" data-tip="Kompetens: bemanning, rekrytering och kompetensutveckling. Ett av VEK:s tre perspektiv, och det som kom sist in i planeringen (Ekonomistyrningsverket, 2024, avsnitt 2.6 och 4.2.2)." aria-label="KOMPETENS: Kompetens: bemanning, rekrytering och kompetensutveckling. Ett av VEK:s tre perspektiv, och det som kom sist in i planeringen (Ekonomistyrningsverket, 2024, avsnitt 2.6 och 4.2.2).">
 <rect x="20" y="410" width="160" height="118" rx="12" fill="#c4651a"/>
 <circle cx="52" cy="446" r="18" fill="#fff" fill-opacity="0.92"/>
 <text x="52" y="452" font-size="24" font-weight="700" text-anchor="middle" fill="#c4651a">K</text>
@@ -87,13 +87,13 @@
 <text x="204" y="472" font-size="14" fill="#17283b">Kompetensförsörjningsplan</text>
 <text x="204" y="494" font-size="14" fill="#17283b">och utvecklingsplan</text>
 </g>
-<g class="dnode" tabindex="0" role="button" data-tip="Polisregioner och avdelningar ska från och med 2024 ta fram rekryterings- och bemanningsplaner samt kompetensutvecklingsplaner (Ekonomistyrningsverket, 2024, avsnitt 2.5 och 4.2.2)." aria-label="Kompetens, Planering: Polisregioner och avdelningar ska från och med 2024 ta fram rekryterings- och bemanningsplaner samt kompetensutvecklingsplaner (Ekonomistyrningsverket, 2024, avsnitt 2.5 och 4.2.2).">
+<g class="dnode" tabindex="0" role="button" data-tip="Polisregioner och avdelningar ska från och med 2024 ta fram rekryterings- och bemanningsplaner samt kompetensutvecklingsplaner (Ekonomistyrningsverket, 2024, avsnitt 2.4.2 och 4.2.2)." aria-label="Kompetens, Planering: Polisregioner och avdelningar ska från och med 2024 ta fram rekryterings- och bemanningsplaner samt kompetensutvecklingsplaner (Ekonomistyrningsverket, 2024, avsnitt 2.4.2 och 4.2.2).">
 <rect x="437" y="410" width="235" height="118" rx="12" fill="#fbeee0" stroke="#c4651a" stroke-width="2"/>
 <text x="451" y="442" font-size="15" font-weight="700" fill="#c4651a">Bemanning och rekrytering</text>
 <text x="451" y="472" font-size="14" fill="#17283b">Rekryterings- och</text>
 <text x="451" y="494" font-size="14" fill="#17283b">bemanningsplaner (från 2024)</text>
 </g>
-<g class="dnode" tabindex="0" role="button" data-tip="Rekryterings- och bemanningsplaner följs upp månadsvis, med tertialvisa redovisningar (Ekonomistyrningsverket, 2024, avsnitt 2.5)." aria-label="Kompetens, Uppföljning: Rekryterings- och bemanningsplaner följs upp månadsvis, med tertialvisa redovisningar (Ekonomistyrningsverket, 2024, avsnitt 2.5).">
+<g class="dnode" tabindex="0" role="button" data-tip="Rekryterings- och bemanningsplaner följs upp månadsvis, med tertialvisa redovisningar (Ekonomistyrningsverket, 2024, avsnitt 2.4.2)." aria-label="Kompetens, Uppföljning: Rekryterings- och bemanningsplaner följs upp månadsvis, med tertialvisa redovisningar (Ekonomistyrningsverket, 2024, avsnitt 2.4.2).">
 <rect x="684" y="410" width="235" height="118" rx="12" fill="#fbeee0" stroke="#c4651a" stroke-width="2"/>
 <text x="698" y="442" font-size="15" font-weight="700" fill="#c4651a">Planerna följs upp</text>
 <text x="698" y="472" font-size="14" fill="#17283b">Bemanning varje månad,</text>
