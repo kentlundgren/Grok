@@ -1,0 +1,187 @@
+/* VEK, TEM och balanserat styrkort. Statisk sida, ingen build. */
+:root {
+  --navy: #1a3a5c;
+  --navy-soft: #2a5278;
+  --ink: #17283b;
+  --muted: #566f88;
+  --paper: #eef4f9;
+  --card: #ffffff;
+  --line: #d3e0ec;
+  --accent: #185fa5;
+  --accent-bg: #e6f1fb;
+  --v: #1f6fd1;
+  --v-bg: #e6f1fb;
+  --e: #2f7d5b;
+  --e-bg: #e3f2ea;
+  --k: #c4651a;
+  --k-bg: #fbeee0;
+  --radius: 14px;
+  --shadow: 0 2px 12px rgba(26, 58, 92, 0.09);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  font-size: 17px;
+}
+a { color: var(--accent); }
+img { max-width: 100%; height: auto; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #12304f 0%, #1f4a75 60%, #2a5f96 100%);
+  color: #fff;
+  padding: 56px 20px 40px;
+}
+.hero-in { max-width: 980px; margin: 0 auto; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; color: #b9d3ee; margin: 0 0 8px; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin: 0 0 14px; }
+.hero .lead { font-size: 1.15rem; max-width: 46rem; color: #e4eefa; margin: 0 0 18px; }
+.hero .meta { font-size: .88rem; color: #b9d3ee; max-width: 46rem; margin: 0; }
+.vek-dots { display: flex; gap: 10px; margin: 0 0 18px; }
+.vek-dots span { width: 14px; height: 14px; border-radius: 50%; display: block; }
+.vek-dots .d-v { background: #4d9bff; }
+.vek-dots .d-e { background: #4fc08d; }
+.vek-dots .d-k { background: #ff9a52; }
+
+/* Navigering */
+.topnav {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--navy);
+  display: flex; flex-wrap: wrap; gap: 4px 6px;
+  padding: 8px 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+}
+.topnav a {
+  color: #dbe8f6; text-decoration: none; font-size: .9rem;
+  padding: 5px 11px; border-radius: 999px;
+}
+.topnav a:hover, .topnav a.is-current { background: rgba(255, 255, 255, .16); color: #fff; }
+
+main { max-width: 980px; margin: 0 auto; padding: 8px 18px 80px; }
+section { margin: 40px 0; }
+h2 { font-size: 1.7rem; line-height: 1.2; margin: 0 0 12px; color: var(--navy); }
+h3 { font-size: 1.2rem; margin: 26px 0 8px; color: var(--navy); }
+h2 .num { display: inline-block; background: var(--navy); color: #fff; border-radius: 8px; padding: 0 9px; margin-right: 8px; font-size: 1.1rem; }
+.anchor { color: var(--line); text-decoration: none; margin-left: 6px; font-weight: 400; }
+h2:hover .anchor, h3:hover .anchor, .anchor:focus { color: var(--accent); }
+p { margin: 0 0 14px; }
+
+/* Poängkort */
+.poang { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 18px 0; }
+.poang article {
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 16px 16px 6px; box-shadow: var(--shadow); border-top: 5px solid var(--navy);
+}
+.poang article:nth-child(1) { border-top-color: var(--v); }
+.poang article:nth-child(2) { border-top-color: var(--k); }
+.poang article:nth-child(3) { border-top-color: var(--e); }
+.poang article:nth-child(4) { border-top-color: var(--navy-soft); }
+.poang h3 { margin: 0 0 6px; font-size: 1.08rem; }
+.poang p { font-size: .96rem; }
+
+/* Korten för de tre modellerna */
+.modeller { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; margin: 18px 0; }
+.modell { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); }
+.modell h3 { margin-top: 0; }
+.modell.vek { border-left: 6px solid var(--v); }
+.modell.tem { border-left: 6px solid var(--e); }
+.modell.bsc { border-left: 6px solid var(--k); }
+.modell p { font-size: .96rem; }
+.tag { display: inline-block; font-size: .78rem; background: var(--accent-bg); color: var(--navy); border-radius: 999px; padding: 2px 10px; margin: 0 6px 8px 0; }
+.min-bedomning { font-size: .9rem; color: var(--muted); border-left: 3px solid var(--line); padding-left: 10px; }
+
+/* Figurer och diagram */
+figure.diagram {
+  margin: 22px 0; padding: 14px; background: var(--card);
+  border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+figure.diagram figcaption { margin: 0 0 10px; font-size: .98rem; }
+figure.diagram img { display: block; width: 100%; border-radius: 8px; }
+.figkalla { font-size: .88rem; color: var(--muted); margin: 10px 0 0; }
+svg.diag { width: 100%; height: auto; display: block; font-family: "Segoe UI", Arial, sans-serif; }
+svg.diag .dnode { cursor: pointer; }
+svg.diag .dnode:hover rect, svg.diag .dnode:focus rect { filter: brightness(.96); }
+svg.diag .dnode:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* Tabeller */
+.table-wrap { overflow-x: auto; margin: 18px 0; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+table { border-collapse: collapse; width: 100%; font-size: .94rem; }
+caption { text-align: left; padding: 12px 14px 4px; font-size: .98rem; }
+th, td { text-align: left; vertical-align: top; padding: 9px 14px; border-top: 1px solid var(--line); }
+thead th { background: var(--navy); color: #fff; border-top: 0; }
+tbody th { background: #f4f8fc; font-weight: 600; min-width: 9em; }
+
+/* Tidslinje (Diagram 3) */
+.tidslinje { list-style: none; margin: 14px 0 0; padding: 0; position: relative; }
+.tidslinje::before { content: ""; position: absolute; left: 104px; top: 6px; bottom: 6px; width: 3px; background: var(--line); }
+.tidslinje li { display: grid; grid-template-columns: 92px 1fr; gap: 24px; margin: 0 0 16px; position: relative; }
+.tidslinje .ar { font-weight: 700; color: var(--navy); text-align: right; }
+.tidslinje .ruta { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; }
+.tidslinje .ruta::before { content: ""; position: absolute; left: -23px; top: 14px; width: 13px; height: 13px; border-radius: 50%; background: var(--accent); border: 3px solid var(--card); }
+.tidslinje .ruta strong { display: block; }
+.tidslinje .ruta p { margin: 4px 0 0; font-size: .93rem; }
+
+.callout { background: var(--accent-bg); border-left: 5px solid var(--accent); border-radius: 10px; padding: 12px 16px; margin: 18px 0; }
+.callout p:last-child { margin-bottom: 0; }
+.fyra { counter-reset: f; list-style: none; padding: 0; display: grid; gap: 10px; }
+.fyra li { counter-increment: f; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px 12px 54px; position: relative; box-shadow: var(--shadow); }
+.fyra li::before { content: counter(f); position: absolute; left: 14px; top: 10px; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; display: grid; place-items: center; }
+
+/* Länkar till grundkällor */
+a.begrepp-lank { text-decoration: underline dotted; text-underline-offset: 3px; color: inherit; }
+a.begrepp-lank:hover, a.begrepp-lank:focus-visible { text-decoration-style: solid; color: var(--accent); }
+
+/* Popover för rutor i diagram */
+.tip-pop {
+  position: absolute; z-index: 60; max-width: 340px;
+  background: var(--navy); color: #fff; font-size: .9rem; line-height: 1.45;
+  padding: 10px 12px; border-radius: 10px; box-shadow: 0 6px 22px rgba(0, 0, 0, .28);
+}
+.tip-pop[hidden] { display: none; }
+
+/* Källor */
+.kallor li { margin: 0 0 12px; font-size: .94rem; }
+.kallor .rel { color: var(--muted); font-style: italic; }
+.kallor { padding-left: 1.1rem; }
+.kallor li { overflow-wrap: anywhere; }
+
+/* Hörn och modal */
+.corner {
+  position: fixed; bottom: 14px; z-index: 40; opacity: .6;
+  background: rgba(26, 58, 92, .9); color: #fff; border: 0; border-radius: 8px;
+  padding: 6px 11px; font: inherit; font-size: .82rem; text-decoration: none; cursor: pointer;
+}
+.corner:hover, .corner:focus-visible { opacity: 1; }
+.corner-left { left: 14px; }
+.corner-right { right: 14px; }
+.modal-overlay { position: fixed; inset: 0; background: rgba(10, 25, 42, .55); display: none; align-items: center; justify-content: center; z-index: 80; padding: 16px; }
+.modal-overlay.show { display: flex; }
+.modal { background: var(--card); border-radius: var(--radius); max-width: 640px; width: 100%; max-height: 86vh; overflow-y: auto; padding: 22px 22px 14px; position: relative; }
+.modal h2 { font-size: 1.35rem; }
+.modal h3 { font-size: 1rem; margin: 16px 0 8px; }
+.modal-close { position: absolute; top: 8px; right: 12px; background: none; border: 0; font-size: 1.7rem; cursor: pointer; color: var(--muted); }
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.tech-card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.tech-card h4 { margin: 0 0 4px; font-size: .95rem; }
+.tech-card p { margin: 0; font-size: .88rem; }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .tidslinje::before { left: 14px; }
+  .tidslinje li { grid-template-columns: 1fr; gap: 4px; padding-left: 34px; }
+  .tidslinje .ar { text-align: left; }
+  .tidslinje .ruta::before { left: -27px; }
+  .tech-grid { grid-template-columns: 1fr; }
+}
+@media print {
+  .topnav, .corner, .modal-overlay, .tip-pop { display: none !important; }
+  .hero { background: #fff; color: #000; padding: 0; }
+  .hero .lead, .hero .meta, .eyebrow { color: #000; }
+  body { background: #fff; }
+}

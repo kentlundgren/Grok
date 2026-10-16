@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="1408" font-family="Segoe UI, Arial, sans-serif" viewBox="0 0 940 704" role="img" aria-labelledby="d1t d1d" xmlns="http://www.w3.org/2000/svg">
+<title id="d1t">VEK genom styrning, planering och uppföljning</title>
+<desc id="d1d">En tabell med tre rader (verksamhet, ekonomi, kompetens) och tre kolumner (styrning, planering, uppföljning). Under den en rad med min erfarenhet och en pil som visar att uppföljningen blir underlag för ny planering.</desc>
+<rect width="940" height="704" fill="#ffffff"/><defs><marker id="pil" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1a3a5c"/></marker></defs>
+<text x="20" y="34" font-size="22" font-weight="700" fill="#1a3a5c">VEK genom styrning, planering och uppföljning</text>
+<text x="20" y="58" font-size="15" fill="#5a738c">Verksamhet, ekonomi och kompetens är varandras förutsättningar i varje steg</text>
+<g class="dnode" tabindex="0" role="button" data-tip="Styrning: att sätta mål, ramar och nyckeltal. Uppdelningen i styrning, planering och uppföljning är min sammanställning, inte Polismyndighetens egen modell." aria-label="STYRNING: Styrning: att sätta mål, ramar och nyckeltal. Uppdelningen i styrning, planering och uppföljning är min sammanställning, inte Polismyndighetens egen modell.">
+<rect x="190" y="74" width="235" height="66" rx="12" fill="#1a3a5c"/>
+<text x="204" y="97" font-size="18" font-weight="700" fill="#fff">1  STYRNING</text>
+<text x="204" y="115" font-size="14" fill="#fff">Vart ska vi?</text>
+<text x="204" y="132" font-size="13" fill="#cfe0f0">Mål, ramar, nyckeltal</text>
+</g>
+<path d="M426 107 L436 107" stroke="#1a3a5c" stroke-width="3" marker-end="url(#pil)"/>
+<g class="dnode" tabindex="0" role="button" data-tip="Planering: att planera aktiviteter, budget, prognos och bemanning inför året. Uppdelningen är min sammanställning, inte Polismyndighetens egen modell." aria-label="PLANERING: Planering: att planera aktiviteter, budget, prognos och bemanning inför året. Uppdelningen är min sammanställning, inte Polismyndighetens egen modell.">
+<rect x="437" y="74" width="235" height="66" rx="12" fill="#1a3a5c"/>
+<text x="451" y="97" font-size="18" font-weight="700" fill="#fff">2  PLANERING</text>
+<text x="451" y="115" font-size="14" fill="#fff">Hur når vi dit?</text>
+<text x="451" y="132" font-size="13" fill="#cfe0f0">Budget, prognos, bemanning</text>
+</g>
+<path d="M673 107 L683 107" stroke="#1a3a5c" stroke-width="3" marker-end="url(#pil)"/>
+<g class="dnode" tabindex="0" role="button" data-tip="Uppföljning: att följa utfall och avvikelser och vidta åtgärder. Uppföljningen blir underlag för nästa planering. Uppdelningen är min sammanställning, inte Polismyndighetens egen modell." aria-label="UPPFÖLJNING: Uppföljning: att följa utfall och avvikelser och vidta åtgärder. Uppföljningen blir underlag för nästa planering. Uppdelningen är min sammanställning, inte Polismyndighetens egen modell.">
+<rect x="684" y="74" width="235" height="66" rx="12" fill="#1a3a5c"/>
+<text x="698" y="97" font-size="18" font-weight="700" fill="#fff">3  UPPFÖLJNING</text>
+<text x="698" y="115" font-size="14" fill="#fff">Hur går det?</text>
+<text x="698" y="132" font-size="13" fill="#cfe0f0">Utfall, avvikelser, åtgärder</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Verksamhet: vad myndigheten ska uppnå och vad som blir gjort. Ett av VEK:s tre perspektiv, som ses som varandras förutsättningar (Ekonomistyrningsverket, 2024, avsnitt 2.1)." aria-label="VERKSAMHET: Verksamhet: vad myndigheten ska uppnå och vad som blir gjort. Ett av VEK:s tre perspektiv, som ses som varandras förutsättningar (Ekonomistyrningsverket, 2024, avsnitt 2.1).">
+<rect x="20" y="154" width="160" height="118" rx="12" fill="#1f6fd1"/>
+<circle cx="52" cy="190" r="18" fill="#fff" fill-opacity="0.92"/>
+<text x="52" y="196" font-size="24" font-weight="700" text-anchor="middle" fill="#1f6fd1">V</text>
+<text x="28" y="232" font-size="15" font-weight="700" fill="#fff">VERKSAMHET</text>
+<text x="28" y="252" font-size="12.5" fill="#fff">Ändamål och resultat</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Polismyndigheten beslutar årligen om en strategisk verksamhetsplan (SVP), som tas fram tillsammans med budgetramar och kompetensförsörjningsplan (Ekonomistyrningsverket, 2024, avsnitt 2.1 och 2.3.1)." aria-label="Verksamhet, Styrning: Polismyndigheten beslutar årligen om en strategisk verksamhetsplan (SVP), som tas fram tillsammans med budgetramar och kompetensförsörjningsplan (Ekonomistyrningsverket, 2024, avsnitt 2.1 och 2.3.1).">
+<rect x="190" y="154" width="235" height="118" rx="12" fill="#e6f1fb" stroke="#1f6fd1" stroke-width="2"/>
+<text x="204" y="186" font-size="15" font-weight="700" fill="#1f6fd1">Mål och prioriteringar</text>
+<text x="204" y="216" font-size="14" fill="#17283b">Strategisk verksamhetsplan</text>
+<text x="204" y="238" font-size="14" fill="#17283b">(SVP): mål och delmål</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Planeringsanvisningarna skickas ut i juni och innehåller bland annat ett metodstöd för VEK-planering. Nyckelaktiviteter ingår i SVP (Ekonomistyrningsverket, 2024, avsnitt 2.3.1 och 2.5)." aria-label="Verksamhet, Planering: Planeringsanvisningarna skickas ut i juni och innehåller bland annat ett metodstöd för VEK-planering. Nyckelaktiviteter ingår i SVP (Ekonomistyrningsverket, 2024, avsnitt 2.3.1 och 2.5).">
+<rect x="437" y="154" width="235" height="118" rx="12" fill="#e6f1fb" stroke="#1f6fd1" stroke-width="2"/>
+<text x="451" y="186" font-size="15" font-weight="700" fill="#1f6fd1">Aktiviteter inför året</text>
+<text x="451" y="216" font-size="14" fill="#17283b">Planeringsanvisningar i juni</text>
+<text x="451" y="238" font-size="14" fill="#17283b">och nyckelaktiviteter</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Verksamheten följs upp på exempelvis antal ärenden, resehandlingar, effektiviseringsarbete och områden med nationell eller regional prioritering. Tertialuppföljningen utgår från SVP och använder indikatorer kopplade till delmålen (Ekonomistyrningsverket, 2024, avsnitt 2.5 och 4.2.2)." aria-label="Verksamhet, Uppföljning: Verksamheten följs upp på exempelvis antal ärenden, resehandlingar, effektiviseringsarbete och områden med nationell eller regional prioritering. Tertialuppföljningen utgår från SVP och använder indikatorer kopplade till delmålen (Ekonomistyrningsverket, 2024, avsnitt 2.5 och 4.2.2).">
+<rect x="684" y="154" width="235" height="118" rx="12" fill="#e6f1fb" stroke="#1f6fd1" stroke-width="2"/>
+<text x="698" y="186" font-size="15" font-weight="700" fill="#1f6fd1">Resultat och måluppfyllelse</text>
+<text x="698" y="216" font-size="14" fill="#17283b">Ärenden och prioriterade</text>
+<text x="698" y="238" font-size="14" fill="#17283b">områden mot delmålen</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Ekonomi: resurser och kostnader. Ett av VEK:s tre perspektiv (Ekonomistyrningsverket, 2024, avsnitt 2.1)." aria-label="EKONOMI: Ekonomi: resurser och kostnader. Ett av VEK:s tre perspektiv (Ekonomistyrningsverket, 2024, avsnitt 2.1).">
+<rect x="20" y="282" width="160" height="118" rx="12" fill="#2f7d5b"/>
+<circle cx="52" cy="318" r="18" fill="#fff" fill-opacity="0.92"/>
+<text x="52" y="324" font-size="24" font-weight="700" text-anchor="middle" fill="#2f7d5b">E</text>
+<text x="28" y="360" font-size="15" font-weight="700" fill="#fff">EKONOMI</text>
+<text x="28" y="380" font-size="12.5" fill="#fff">Resurser och kostnader</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Rikspolischefen beslutar oftast i december om budgetramar för kommande år och preliminära ramar för de två följande åren (Ekonomistyrningsverket, 2024, avsnitt 2.3.3). Nyckeltal och indikatorer används i uppföljningen (avsnitt 2.5)." aria-label="Ekonomi, Styrning: Rikspolischefen beslutar oftast i december om budgetramar för kommande år och preliminära ramar för de två följande åren (Ekonomistyrningsverket, 2024, avsnitt 2.3.3). Nyckeltal och indikatorer används i uppföljningen (avsnitt 2.5).">
+<rect x="190" y="282" width="235" height="118" rx="12" fill="#e3f2ea" stroke="#2f7d5b" stroke-width="2"/>
+<text x="204" y="314" font-size="15" font-weight="700" fill="#2f7d5b">Ramar och nyckeltal</text>
+<text x="204" y="344" font-size="14" fill="#17283b">Budgetramar för tre år</text>
+<text x="204" y="366" font-size="14" fill="#17283b">Styrning på nyckeltal</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Planeringsanvisningarna innehåller preliminära budgetramar för tre år och investeringsramar för året (Ekonomistyrningsverket, 2024, avsnitt 2.3.1). Prognoser och anslagsförbrukning ingår i tertialuppföljningen (avsnitt 2.5)." aria-label="Ekonomi, Planering: Planeringsanvisningarna innehåller preliminära budgetramar för tre år och investeringsramar för året (Ekonomistyrningsverket, 2024, avsnitt 2.3.1). Prognoser och anslagsförbrukning ingår i tertialuppföljningen (avsnitt 2.5).">
+<rect x="437" y="282" width="235" height="118" rx="12" fill="#e3f2ea" stroke="#2f7d5b" stroke-width="2"/>
+<text x="451" y="314" font-size="15" font-weight="700" fill="#2f7d5b">Budget och prognos</text>
+<text x="451" y="344" font-size="14" fill="#17283b">Budget, investeringsramar</text>
+<text x="451" y="366" font-size="14" fill="#17283b">och prognoser</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Ekonomi och bemanning följs upp på månadsbasis i polisregionerna, med exempel som utfall och övertid. Nationellt görs uppföljningen månads-, tertials- och årsvis (Ekonomistyrningsverket, 2024, avsnitt 2.5 och 4.2.2)." aria-label="Ekonomi, Uppföljning: Ekonomi och bemanning följs upp på månadsbasis i polisregionerna, med exempel som utfall och övertid. Nationellt görs uppföljningen månads-, tertials- och årsvis (Ekonomistyrningsverket, 2024, avsnitt 2.5 och 4.2.2).">
+<rect x="684" y="282" width="235" height="118" rx="12" fill="#e3f2ea" stroke="#2f7d5b" stroke-width="2"/>
+<text x="698" y="314" font-size="15" font-weight="700" fill="#2f7d5b">Månad, tertial och år</text>
+<text x="698" y="344" font-size="14" fill="#17283b">Utfall, övertid och prognos,</text>
+<text x="698" y="366" font-size="14" fill="#17283b">uppföljning varje månad</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Kompetens: bemanning, rekrytering och kompetensutveckling. Ett av VEK:s tre perspektiv, och det som kom sist in i planeringen (Ekonomistyrningsverket, 2024, avsnitt 2.4 och 4.2.2)." aria-label="KOMPETENS: Kompetens: bemanning, rekrytering och kompetensutveckling. Ett av VEK:s tre perspektiv, och det som kom sist in i planeringen (Ekonomistyrningsverket, 2024, avsnitt 2.4 och 4.2.2).">
+<rect x="20" y="410" width="160" height="118" rx="12" fill="#c4651a"/>
+<circle cx="52" cy="446" r="18" fill="#fff" fill-opacity="0.92"/>
+<text x="52" y="452" font-size="24" font-weight="700" text-anchor="middle" fill="#c4651a">K</text>
+<text x="28" y="488" font-size="15" font-weight="700" fill="#fff">KOMPETENS</text>
+<text x="28" y="508" font-size="12.5" fill="#fff">Kunskap och bemanning</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Kompetensutvecklingsplanen fastställs i december samtidigt som SVP och budgetramarna, och är en bilaga till SVP (Ekonomistyrningsverket, 2024, avsnitt 2.3.1)." aria-label="Kompetens, Styrning: Kompetensutvecklingsplanen fastställs i december samtidigt som SVP och budgetramarna, och är en bilaga till SVP (Ekonomistyrningsverket, 2024, avsnitt 2.3.1).">
+<rect x="190" y="410" width="235" height="118" rx="12" fill="#fbeee0" stroke="#c4651a" stroke-width="2"/>
+<text x="204" y="442" font-size="15" font-weight="700" fill="#c4651a">Kompetensförsörjning</text>
+<text x="204" y="472" font-size="14" fill="#17283b">Kompetensförsörjningsplan</text>
+<text x="204" y="494" font-size="14" fill="#17283b">och utvecklingsplan</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Polisregioner och avdelningar ska från och med 2024 ta fram rekryterings- och bemanningsplaner samt kompetensutvecklingsplaner (Ekonomistyrningsverket, 2024, avsnitt 2.5 och 4.2.2)." aria-label="Kompetens, Planering: Polisregioner och avdelningar ska från och med 2024 ta fram rekryterings- och bemanningsplaner samt kompetensutvecklingsplaner (Ekonomistyrningsverket, 2024, avsnitt 2.5 och 4.2.2).">
+<rect x="437" y="410" width="235" height="118" rx="12" fill="#fbeee0" stroke="#c4651a" stroke-width="2"/>
+<text x="451" y="442" font-size="15" font-weight="700" fill="#c4651a">Bemanning och rekrytering</text>
+<text x="451" y="472" font-size="14" fill="#17283b">Rekryterings- och</text>
+<text x="451" y="494" font-size="14" fill="#17283b">bemanningsplaner (från 2024)</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Rekryterings- och bemanningsplaner följs upp månadsvis, med tertialvisa redovisningar (Ekonomistyrningsverket, 2024, avsnitt 2.5)." aria-label="Kompetens, Uppföljning: Rekryterings- och bemanningsplaner följs upp månadsvis, med tertialvisa redovisningar (Ekonomistyrningsverket, 2024, avsnitt 2.5).">
+<rect x="684" y="410" width="235" height="118" rx="12" fill="#fbeee0" stroke="#c4651a" stroke-width="2"/>
+<text x="698" y="442" font-size="15" font-weight="700" fill="#c4651a">Planerna följs upp</text>
+<text x="698" y="472" font-size="14" fill="#17283b">Bemanning varje månad,</text>
+<text x="698" y="494" font-size="14" fill="#17283b">tertialredovisning</text>
+</g>
+<g class="dnode" tabindex="0" role="button" data-tip="Min erfarenhet: jag är van att arbeta med styrning (ekonomistyrning, styrning med mål och nyckeltal), planering (till exempel budget och prognoser) och uppföljning (till exempel månadsbokslut och uppföljning av nyckeltal)." aria-label="Min erfarenhet">
+<rect x="20" y="542" width="160" height="62" rx="12" fill="#17283b"/>
+<text x="28" y="568" font-size="15" font-weight="700" fill="#fff">Så har jag</text>
+<text x="28" y="588" font-size="15" font-weight="700" fill="#fff">arbetat</text>
+</g>
+<rect x="190" y="542" width="235" height="62" rx="12" fill="#eef4f9" stroke="#17283b" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="204" y="569" font-size="14" fill="#17283b">Ekonomistyrning, styrning</text>
+<text x="204" y="589" font-size="14" fill="#17283b">med mål och nyckeltal</text>
+<rect x="437" y="542" width="235" height="62" rx="12" fill="#eef4f9" stroke="#17283b" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="451" y="569" font-size="14" fill="#17283b">Budget och prognoser</text>
+<rect x="684" y="542" width="235" height="62" rx="12" fill="#eef4f9" stroke="#17283b" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="698" y="569" font-size="14" fill="#17283b">Månadsbokslut, uppföljning</text>
+<text x="698" y="589" font-size="14" fill="#17283b">av nyckeltal</text>
+<path d="M801 612 C 801 650, 307 650, 307 612" fill="none" stroke="#1a3a5c" stroke-width="3" marker-end="url(#pil)"/>
+<text x="554" y="668" font-size="15" font-weight="700" fill="#1a3a5c" text-anchor="middle">Årshjulet: uppföljningen under året blir underlag för ny planering</text>
+</svg>

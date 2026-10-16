@@ -16,6 +16,16 @@ Mall:
 
 ---
 
+## 2026-10-16 · Claude Code (Sonnet 5.5) · ny sida aktuellt/VEK_TEM: VEK, TEM och balanserat styrkort
+
+- **Gjort:** Ny mapp `aktuellt/VEK_TEM/` med `index.html`, `stil.css`, `app.js`, `README.md` och `Bilder/` (Kents bild `VEK_TEM_BalanseratStyrkort.jpg` och `VEK_styrning_planering_uppfoljning.svg`). Sidan jämför VEK, TEM och balanserat styrkort, förklarar managementmode (Abrahamson, 1996) och undersöker om samma tankemodell fungerar i privat och offentlig verksamhet. Tänkt som underlag för ett kort LinkedIn-inlägg. Inget annat i repot är ändrat.
+- **Verifierat (och hur):** Originaltext lästes för ESV 2024:49, Abrahamson (1996), Kaplan (2001, inledningen), SOU 2018:47 kapitel 4, Polismyndighetens årsredovisning 2025 (avsnitt 16, verksamhetskraven), Statskontorets sida om metodstödet och Wikipedia om TEM, samt sammanfattningarna hos Boyne (2002) via RePEc och Kaplan och Norton (1992, 2007) via HBR. Sidan testades lokalt i webbläsarpanelen: förklaringsrutor, teknik-modal, inga fel i konsolen, ingen horisontell rullning. Testservern är avstängd.
+- **Inte verifierat:** TEM:s egen webbplats (tem.se) gick inte att öppna, så TEM:s historia bygger på Wikipedia. Boynes och Kaplan och Nortons artiklar är inte lästa i sin helhet. Management by objectives (Drucker, 1954) och OKR är medvetet utelämnade, eftersom jag bara hittade sekundärkällor. Kopplingen mellan VEK, TEM och balanserat styrkort är Kents egen, och källorna om VEK gör den inte.
+- **Återstår / nästa steg:** Delningsbild (`og-bild.jpg`) och Open Graph-bildtaggar saknas. Kent bestämmer om sidan ska publiceras och om Polismyndigheten ska vara exemplet på en publik sida. Kent committar och pushar själv.
+- **Obs:** Diagram 2 bygger på ESV 2024:49. Raden "Så har jag arbetat" bygger på Kents egen uppgift och bör bekräftas av honom före publicering.
+
+---
+
 ## 2026-10-06 · Claude Code (Sonnet 5.5) · diagram över årsskiftet och förberedelse inför samtalet om interimsuppdraget
 
 - **Gjort:** Ny sida `aktuellt/Serviceforvaltningen/forandring/` (`index.html`, `stil.css`, `app.js`, `data.js`, `README.md`): diagram över servicenämnden och serviceförvaltningen före och efter 2027-01-01, med tre säkerhetsgrader på linjerna, tidslinje, öppna frågor i ekonomistrukturen och källor. Hörnknappar och teknik-modal ingår. Ny fil `intervjuforberedelse.md` (skapades här men **flyttades samma dag på ägarens begäran** till `ArbetenSokta/Intervju/LundsKommun_261008/`, privat, aldrig GitHub; finns inte längre i Grok-repot): svar på om objektmappningen blir densamma i Lund (tre scenarier), möjliga uppgifter i rollen, KOF-exemplet i STAR-form med luckor, frågor att ställa. `README.md` och `interimsuppdraget.md` är inte ändrade.
