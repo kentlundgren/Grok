@@ -1,9 +1,8 @@
 <svg font-family="Segoe UI, Arial, sans-serif" viewBox="0 0 820 820" role="img" aria-labelledby="vrTitle vrDesc" xmlns="http://www.w3.org/2000/svg">
 <title id="vrTitle">Verksamhetsringen – balanserat styrkort verksamhetsförst</title>
-<desc id="vrDesc">Fyra perspektiv i medurs ordning. I centrum verksamhetscontroller med mål, avvikelser och intern kontroll. Streckad båge = lärdom tillbaka.</desc>
+<desc id="vrDesc">Fyra perspektiv i medurs ordning. Etikett mellan steg 4 och 1: lärdom tillbaka och ny period.</desc>
 <defs>
   <marker id="vrPil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1a3a5c"/></marker>
-  <marker id="vrPilLjus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5a738c"/></marker>
   <linearGradient id="vrRing" x1="0%" y1="0%" x2="100%" y2="100%">
     <stop offset="0%" stop-color="#1f6fd1" stop-opacity="0.15"/>
     <stop offset="33%" stop-color="#c4651a" stop-opacity="0.12"/>
@@ -13,7 +12,7 @@
 </defs>
 <rect width="820" height="820" fill="#ffffff"/>
 <text x="410" y="36" font-size="22" font-weight="700" fill="#1a3a5c" text-anchor="middle">Verksamhetsringen</text>
-<text x="410" y="58" font-size="14" fill="#5a738c" text-anchor="middle">Heldragna pilar = medurs 1–4 · Streckad båge = lärdom tillbaka</text>
+<text x="410" y="58" font-size="14" fill="#5a738c" text-anchor="middle">Medurs 1–4 · mellan 4 och 1: lärdom tillbaka, ny period</text>
 <circle cx="410" cy="430" r="268" fill="url(#vrRing)" stroke="#d3e0ec" stroke-width="2"/>
 <circle cx="410" cy="430" r="245" fill="none" stroke="#c5d4e4" stroke-width="1.5" opacity="0.65"/>
 <circle cx="410" cy="430" r="112" fill="#17283b"/>
@@ -47,7 +46,8 @@
 <path d="M 295.0 646.3 A 245 245 0 0 1 182.8 521.8" marker-end="url(#vrPil)"/>
 <path d="M 193.7 315.0 A 245 245 0 0 1 318.2 202.8" marker-end="url(#vrPil)"/>
 </g>
-<path d="M 236.8 256.8 A 188 188 0 0 0 473.4 193.3" fill="none" stroke="#5a738c" stroke-width="2.5" stroke-dasharray="7 5" stroke-linecap="round" marker-end="url(#vrPilLjus)"/>
-<text x="318" y="218" font-size="12" font-weight="600" fill="#5a738c" transform="rotate(-58 318 218)">Lärdom tillbaka</text>
+<rect x="218" y="268" width="132" height="40" rx="8" fill="#ffffff" fill-opacity="0.95" stroke="#5a738c" stroke-width="1.2"/>
+<text x="284" y="286" font-size="12" font-weight="700" fill="#1a3a5c" text-anchor="middle">Lärdom tillbaka</text>
+<text x="284" y="300" font-size="10.5" fill="#5a738c" text-anchor="middle">ny period</text>
 <text x="410" y="800" font-size="11" fill="#5a738c" text-anchor="middle">Egen modell av Kent Lundgren.</text>
 </svg>
