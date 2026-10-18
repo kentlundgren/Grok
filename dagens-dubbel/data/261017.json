@@ -1,0 +1,88 @@
+{
+  "id": "261017",
+  "date": "2026-10-17",
+  "weekday": "lördag",
+  "track": "Gävle",
+  "start": "17:13",
+  "comment": "V85 Gävle. DD = V85-7 (volt) och V85-8 (auto). Kent: 6,7,11 / 2,4,10 (3×3, 45 kr). 12 Mr Spain och 6 Kopparmärra strukna i respektive DD-lopp.",
+  "races": {
+    "dd1": {
+      "label": "V85-7 / DD-1",
+      "distance": "2140 m volt",
+      "startApprox": "17:13"
+    },
+    "dd2": {
+      "label": "V85-8 / DD-2",
+      "distance": "2140 m auto",
+      "startApprox": "17:35"
+    }
+  },
+  "result": {
+    "status": "öppen",
+    "dd1Winner": null,
+    "dd2Winner": null,
+    "dd1Name": null,
+    "dd2Name": null,
+    "dd1Driver": null,
+    "dd2Driver": null,
+    "dd1WinOdds": null,
+    "dd2WinOdds": null,
+    "ddOdds": null,
+    "placed": {
+      "dd1": [],
+      "dd2": []
+    },
+    "updated": "2026-10-17 16:44",
+    "sources": [],
+    "pool": null
+  },
+  "tips": [
+    {
+      "person": "Kent",
+      "status": "inlämnad",
+      "submitted": "2026-10-17 16:42",
+      "cost": 45,
+      "stake": 5,
+      "rows": 9,
+      "system": "3x3",
+      "dd1": [6, 7, 11],
+      "dd2": [2, 4, 10],
+      "names": {
+        "dd1": {
+          "6": "Pineapple",
+          "7": "Great Old Dance",
+          "11": "Legligin"
+        },
+        "dd2": {
+          "2": "Justcantgetenough",
+          "4": "Griffin Kronos",
+          "10": "Monte Rei"
+        }
+      },
+      "scratch": "12 Mr Spain i DD-1, 6 Kopparmärra i DD-2 (ej i systemet)",
+      "coupon": "261017/kupong-kent.png",
+      "note": "3×3 = 45 kr. Skräll 11 Legligin i DD-1. Tips framtaget med Cursor (lordags-dagens-dubbel). Inlämnad 16:42."
+    }
+  ],
+  "market": {
+    "source": "ATG / Travet / SverigeTravet",
+    "url": "https://www.travet.se/v85-startlista/",
+    "fetched": "2026-10-17 16:40",
+    "note": "Ögonblicksbild av vinnarodds före DD-start. Inte slutodds.",
+    "lowUnder": 5,
+    "highOver": 12,
+    "dd1": [
+      {"no": 5, "name": "Ugalli", "odds": 8.2, "scratched": false},
+      {"no": 6, "name": "Pineapple", "odds": 7.0, "scratched": false},
+      {"no": 7, "name": "Great Old Dance", "odds": 2.13, "scratched": false},
+      {"no": 11, "name": "Legligin", "odds": 11.84, "scratched": false},
+      {"no": 12, "name": "Mr Spain", "odds": null, "scratched": true}
+    ],
+    "dd2": [
+      {"no": 2, "name": "Justcantgetenough", "odds": 6.0, "scratched": false},
+      {"no": 4, "name": "Griffin Kronos", "odds": 3.81, "scratched": false},
+      {"no": 6, "name": "Kopparmärra", "odds": null, "scratched": true},
+      {"no": 10, "name": "Monte Rei", "odds": 6.07, "scratched": false}
+    ]
+  }
+}

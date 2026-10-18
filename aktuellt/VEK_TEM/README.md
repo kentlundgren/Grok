@@ -22,6 +22,10 @@ Statisk sida, relativa länkar, ingen build. Samma mapp kan ligga på GitHub Pag
 | `Bilder/VEK_styrning_planering_uppfoljning.svg` | Diagram 2 som fristående bild. |
 | `Bilder/KVAB.jpg` | Kalmar Verkstads tidigare fabrikslokaler i augusti 2022, till blogginlägget. Foto: Johannes Scherman, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0), via [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Kalmar_Verkstad_augusti_2022.jpg). |
 | `Bilder/VEK_styrning_planering_uppfoljning.png` | Diagram 2 som PNG (1880 × 1408), för att ladda upp i blogginlägg och LinkedIn-inlägg. |
+| `Bilder/verksamhetsringen.svg` | Diagram 4: Verksamhetsringen (egen modell, verksamhetsförst). |
+| `Bilder/eget_balanserat_styrkort.jpg` | Handskiss som utgångspunkt för Verksamhetsringen. |
+
+**Direktlänk till modellen på live-sidan:** [https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#verksamhetsringen](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#verksamhetsringen)
 
 ## Status
 

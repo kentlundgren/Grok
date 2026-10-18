@@ -103,6 +103,18 @@ figure.diagram {
 }
 figure.diagram figcaption { margin: 0 0 10px; font-size: .98rem; }
 figure.diagram img { display: block; width: 100%; border-radius: 8px; }
+.deeplink-box {
+  font-size: .92rem; background: var(--card); border: 1px dashed var(--accent);
+  border-radius: 10px; padding: 10px 14px; margin: 0 0 14px;
+}
+.deeplink-box code { font-size: .88rem; word-break: break-all; }
+section.diagram-avsnitt:target {
+  animation: avsnittBlink 2.2s ease;
+}
+@keyframes avsnittBlink {
+  0%, 100% { background: transparent; }
+  15% { background: rgba(24, 95, 165, 0.08); border-radius: var(--radius); }
+}
 .figkalla { font-size: .88rem; color: var(--muted); margin: 10px 0 0; }
 svg.diag { width: 100%; height: auto; display: block; font-family: "Segoe UI", Arial, sans-serif; }
 svg.diag .dnode { cursor: pointer; }
