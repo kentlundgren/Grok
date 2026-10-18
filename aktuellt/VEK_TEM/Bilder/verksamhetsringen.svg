@@ -1,6 +1,6 @@
 <svg font-family="Segoe UI, Arial, sans-serif" viewBox="0 0 820 820" role="img" aria-labelledby="vrTitle vrDesc" xmlns="http://www.w3.org/2000/svg">
 <title id="vrTitle">Verksamhetsringen – balanserat styrkort verksamhetsförst</title>
-<desc id="vrDesc">Fyra perspektiv i medurs ordning från vad som händer i verksamheten via lärande och omvärld till finansiellt utfall. I centrum planering, uppföljning och intern kontroll.</desc>
+<desc id="vrDesc">Fyra perspektiv i medurs ordning. I centrum verksamhetscontroller med mål, avvikelser och intern kontroll. Streckad båge = lärdom tillbaka.</desc>
 <defs>
   <marker id="vrPil" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1a3a5c"/></marker>
   <marker id="vrPilLjus" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5a738c"/></marker>
@@ -13,23 +13,17 @@
 </defs>
 <rect width="820" height="820" fill="#ffffff"/>
 <text x="410" y="36" font-size="22" font-weight="700" fill="#1a3a5c" text-anchor="middle">Verksamhetsringen</text>
-<text x="410" y="58" font-size="14" fill="#5a738c" text-anchor="middle">Balanserat styrkort verksamhetsförst – medurs från det som händer här till finansiell historia</text>
+<text x="410" y="58" font-size="14" fill="#5a738c" text-anchor="middle">Heldragna pilar = medurs 1–4 · Streckad båge = lärdom tillbaka</text>
 <circle cx="410" cy="430" r="268" fill="url(#vrRing)" stroke="#d3e0ec" stroke-width="2"/>
 <circle cx="410" cy="430" r="245" fill="none" stroke="#c5d4e4" stroke-width="1.5" opacity="0.65"/>
-<line x1="410" y1="430" x2="410" y2="168" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
-<line x1="410" y1="430" x2="648" y2="430" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
-<line x1="410" y1="430" x2="410" y2="692" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
-<line x1="410" y1="430" x2="172" y2="430" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.45"/>
-<circle cx="410" cy="430" r="108" fill="#17283b"/>
-<text x="410" y="392" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">Verksamhets-</text>
-<text x="410" y="410" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">controller</text>
-<line x1="340" y1="422" x2="480" y2="422" stroke="#4a6278" stroke-width="1"/>
-<text x="410" y="438" font-size="11.5" fill="#b9d3ee" text-anchor="middle">Planera · styra · följa upp</text>
-<text x="410" y="454" font-size="11.5" fill="#b9d3ee" text-anchor="middle">Mål och indikatorer</text>
-<text x="410" y="472" font-size="11.5" fill="#ffcc99" text-anchor="middle">Intern kontroll och risk</text>
-<rect x="318" y="488" width="184" height="52" rx="10" fill="#2a3f55" stroke="#ffcc99" stroke-width="2"/>
-<text x="410" y="512" font-size="12" font-weight="600" fill="#ffcc99" text-anchor="middle">Risk och intern kontroll</text>
-<text x="410" y="528" font-size="11" fill="#dbe8f6" text-anchor="middle">Avvikelser · säkerhet · arbetsmiljö</text>
+<circle cx="410" cy="430" r="112" fill="#17283b"/>
+<text x="410" y="384" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">Verksamhets-</text>
+<text x="410" y="402" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">controller</text>
+<line x1="328" y1="414" x2="492" y2="414" stroke="#4a6278" stroke-width="1"/>
+<text x="410" y="430" font-size="11" fill="#b9d3ee" text-anchor="middle">Planera · styra · följa upp</text>
+<text x="410" y="446" font-size="11" fill="#b9d3ee" text-anchor="middle">Indikatorer: mål och avvikelser</text>
+<text x="410" y="462" font-size="11" fill="#ffcc99" text-anchor="middle">Intern kontroll och risk</text>
+<text x="410" y="478" font-size="10" fill="#9eb4cc" text-anchor="middle">Gäller alla fyra perspektiven</text>
 <rect x="278" y="78" width="264" height="118" rx="14" fill="#e6f1fb" stroke="#1f6fd1" stroke-width="2.5"/>
 <text x="410" y="108" font-size="16" font-weight="700" fill="#1f6fd1" text-anchor="middle">1  Vad händer här?</text>
 <text x="410" y="132" font-size="13" fill="#17283b" text-anchor="middle">Viktiga processer</text>
@@ -53,7 +47,7 @@
 <path d="M 295.0 646.3 A 245 245 0 0 1 182.8 521.8" marker-end="url(#vrPil)"/>
 <path d="M 193.7 315.0 A 245 245 0 0 1 318.2 202.8" marker-end="url(#vrPil)"/>
 </g>
-<path d="M 236.8 256.8 A 188 188 0 0 0 473.4 193.3" fill="none" stroke="#5a738c" stroke-width="2" stroke-dasharray="7 5" stroke-linecap="round" marker-end="url(#vrPilLjus)"/>
-<text x="318" y="218" font-size="12" fill="#5a738c" transform="rotate(-58 318 218)">Lärdom tillbaka</text>
-<text x="410" y="800" font-size="11" fill="#5a738c" text-anchor="middle">Egen modell av Kent Lundgren. Pilarna i hörnen visar orsakskedja medurs; streckad pil = uppföljning som underlag till nästa varv.</text>
+<path d="M 236.8 256.8 A 188 188 0 0 0 473.4 193.3" fill="none" stroke="#5a738c" stroke-width="2.5" stroke-dasharray="7 5" stroke-linecap="round" marker-end="url(#vrPilLjus)"/>
+<text x="318" y="218" font-size="12" font-weight="600" fill="#5a738c" transform="rotate(-58 318 218)">Lärdom tillbaka</text>
+<text x="410" y="800" font-size="11" fill="#5a738c" text-anchor="middle">Egen modell av Kent Lundgren.</text>
 </svg>
