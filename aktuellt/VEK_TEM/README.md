@@ -16,7 +16,7 @@ Länkarna går till avsnitten på live-sidan.
 | [Tre sätt](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#tre-satt) | VEK, TEM och balanserat styrkort – med tabell och Diagram 1. VEK beskrivs utifrån en statlig myndighet i källan (läsaren kan känna igen exemplet; sidan säger **myndigheten** där det räcker). |
 | [Verksamhetsringen](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#verksamhetsringen) | Egen variant av balanserat styrkort: verksamhetsförst, medurs till finansiellt utfall, controller i centrum. |
 | [Tre steg](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#hjulet) | Styrning, planering och uppföljning – egen uppdelning, Diagram 2 (VEK i praktiken). |
-| [Modeller och mode](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#moden) | Abrahamson, tidslinje, [balanserat styrkort idag](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#h-bsc-idag) (popularitet, kritik, andra ramverk). |
+| [Modeller och mode](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#moden) | Abrahamson, tidslinje, [balanserat styrkort idag](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#h-bsc-idag) (popularitet, kritik, andra ramverk), [ESG och integrerad rapportering](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#h-esg-styrkort). |
 | [Privat och offentligt](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#privat-offentligt) | Tabell 2 utifrån källor. |
 | [Fyra frågor](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#fyra-fragor) | Checklista inför nästa modell (egen). |
 | [Källor](https://kentlundgren.github.io/Grok/aktuellt/VEK_TEM/#kallor) | Harvardstil med hämtdatum; fakta jämförda mot original där det gått. |
