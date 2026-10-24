@@ -1,0 +1,86 @@
+{
+  "id": "261024",
+  "date": "2026-10-24",
+  "weekday": "lördag",
+  "track": "Jägersro",
+  "start": "17:17",
+  "comment": "V85 Jägersro. DD = V85-7 (C.L. Müllers Memorial, 2640 m) och V85-8 (1640 m). Kent: 3,5,12 / 4,5,6 (3×3, 45 kr). 8 Kaxig In struken i DD-1.",
+  "races": {
+    "dd1": {
+      "label": "V85-7 / DD-1 C.L. Müllers Memorial",
+      "distance": "2640 m",
+      "startApprox": "17:17"
+    },
+    "dd2": {
+      "label": "V85-8 / DD-2",
+      "distance": "1640 m",
+      "startApprox": "17:42"
+    }
+  },
+  "result": {
+    "status": "öppen",
+    "dd1Winner": null,
+    "dd2Winner": null,
+    "dd1Name": null,
+    "dd2Name": null,
+    "dd1Driver": null,
+    "dd2Driver": null,
+    "dd1WinOdds": null,
+    "dd2WinOdds": null,
+    "ddOdds": null,
+    "placed": {
+      "dd1": [],
+      "dd2": []
+    },
+    "updated": "2026-10-24",
+    "sources": [],
+    "pool": null
+  },
+  "tips": [
+    {
+      "person": "Kent",
+      "status": "inlämnad",
+      "submitted": null,
+      "cost": 45,
+      "stake": 5,
+      "rows": 9,
+      "system": "3x3",
+      "dd1": [3, 5, 12],
+      "dd2": [4, 5, 6],
+      "names": {
+        "dd1": {
+          "3": "Diva Ek",
+          "5": "Kentucky River",
+          "12": "A Fair Day"
+        },
+        "dd2": {
+          "4": "Blixt Lane",
+          "5": "Gustav Simoni",
+          "6": "Nickel Occagnes"
+        }
+      },
+      "scratch": "8 Kaxig In i DD-1 (ej i systemet)",
+      "coupon": null,
+      "note": "3×3 = 45 kr. Skräll 4 Blixt Lane i DD-2. Klockslag för inlämning ej angivet; kupongen läggs av Kent hos ATG före DD-start."
+    }
+  ],
+  "market": {
+    "source": "Gratistravtips (ABCD-ranking), Hurbra, Travcash, Guiden, Travstugan",
+    "url": "https://www.gratistravtips.se/jagersro-trav/2026-10-24/dd",
+    "fetched": "2026-10-24",
+    "note": "Värdena är sidans odds/streck före start, inte slutodds. Källorna är oeniga om startmetod i DD-loppen och om exakta starttider.",
+    "lowUnder": 5,
+    "highOver": 12,
+    "dd1": [
+      {"no": 3, "name": "Diva Ek", "odds": 2.3, "scratched": false},
+      {"no": 5, "name": "Kentucky River", "odds": 7.0, "scratched": false},
+      {"no": 8, "name": "Kaxig In", "odds": null, "scratched": true},
+      {"no": 12, "name": "A Fair Day", "odds": 3.7, "scratched": false}
+    ],
+    "dd2": [
+      {"no": 4, "name": "Blixt Lane", "odds": 8.8, "scratched": false},
+      {"no": 5, "name": "Gustav Simoni", "odds": 5.5, "scratched": false},
+      {"no": 6, "name": "Nickel Occagnes", "odds": 2.4, "scratched": false}
+    ]
+  }
+}
