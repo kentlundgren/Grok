@@ -1,5 +1,7 @@
 # Endimensionell analys
 
+- **Live:** [https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/](https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/)
+
 Interaktiv visualisering av tre satser från envariabelanalys:
 
 - medelvärdessatsen
