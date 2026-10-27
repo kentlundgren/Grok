@@ -16,6 +16,18 @@ Mall:
 
 ---
 
+## 2026-10-28 00:45 · Grok (xAI) · hörnknappar på Satserna, pekare till befintlig regel
+
+- **Gjort:** `aktuellt/endimensionell_analys/index.html` fick `{ } GitHub` nere till vänster och `</> teknik` nere till höger, med modalen Tekniken och Metoden. Ny pekare `.grok/skills/horn-lankar-github-teknik/SKILL.md` till originalet `.cursor/rules/horn-lankar-github-teknik.mdc`. `AGENTS.md` punkt 9 pekar dit och upprepar inte regeln.
+- **Verifierat (och hur):** På den lokala sidan, 390 px bred, låg GitHub-länken 14 px från vänster och teknik-knappen 14 px från höger. Modalen öppnades och stängdes med Escape. Inga sidfel. Texten i knapparna var `{ } GitHub` och `</> teknik`.
+- **Inte verifierat:** Att Grok Build i en ny webbchatt, utan att repot är öppet, laddar pekaren. GitHub Pages efter den här pushen är inte kontrollerad i den här posten.
+- **Återstår / nästa steg:** Inget, om Pages visar knapparna. Regeln gällde redan för Cursor. Den här pekaren är till för Grok i repot.
+- **Obs:** Ägaren bad att regeln skulle läggas in. Därför committades filerna, trots den vanliga regeln att ägaren committar.
+
+
+
+---
+
 ## 2026-10-16 · Claude Code (Sonnet 5.5) · ny sida aktuellt/VEK_TEM: VEK, TEM och balanserat styrkort
 
 - **Gjort:** Ny mapp `aktuellt/VEK_TEM/` med `index.html`, `stil.css`, `app.js`, `README.md` och `KONTROLL.md` (uppgiftskontroll) och `Bilder/` (Kents bild `VEK_TEM_BalanseratStyrkort.jpg` och `VEK_styrning_planering_uppfoljning.svg`). Sidan jämför VEK, TEM och balanserat styrkort, förklarar managementmode (Abrahamson, 1996) och undersöker om samma tankemodell fungerar i privat och offentlig verksamhet. Tänkt som underlag för ett kort LinkedIn-inlägg. Inget annat i repot är ändrat.

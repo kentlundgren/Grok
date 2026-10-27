@@ -5,21 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Satserna — endimensionell analys</title>
   <meta name="description" content="Interaktiv visualisering av medelvärdessatsen, satsen om mellanliggande värden och extremvärdessatsen." />
-  <!-- Här skedde en uppdatering 2026-10-28: länkförhandsvisning (Open Graph och Twitter Cards). -->
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="sv_SE" />
-  <meta property="og:url" content="https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/" />
-  <meta property="og:title" content="Satserna — endimensionell analys" />
-  <meta property="og:description" content="Dra i ändpunkterna a och b. Tre satser visualiserade: medelvärde, mellanliggande värden och extremvärde." />
-  <meta property="og:image" content="https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/og-bild.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Illustration: kurva med sekant mellan punkterna a och b och rubriken Satserna — endimensionell analys." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Satserna — endimensionell analys" />
-  <meta name="twitter:description" content="Dra i ändpunkterna a och b. Tre satser visualiserade: medelvärde, mellanliggande värden och extremvärde." />
-  <meta name="twitter:image" content="https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/og-bild.jpg" />
-  <meta name="twitter:image:alt" content="Illustration: kurva med sekant mellan punkterna a och b och rubriken Satserna — endimensionell analys." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
@@ -43,6 +28,7 @@
     }
     button, [role="tab"] { font: inherit; cursor: pointer; }
     button:disabled { cursor: default; opacity: 0.45; }
+    body { padding-bottom: 4.5rem; }
     :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
     .wrap { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
     .kicker {
@@ -178,6 +164,77 @@
     .swatch.sec { border-top-color: var(--primary); }
     .swatch.tan { border-top: 2px dashed var(--primary); }
     .hidden { display: none !important; }
+    .corner {
+      position: fixed;
+      bottom: 14px;
+      z-index: 40;
+      opacity: 0.55;
+      background: rgba(255, 253, 248, 0.9);
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 6px 11px;
+      font: inherit;
+      font-size: 0.78rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .corner:hover, .corner:focus-visible { opacity: 1; color: var(--ink); }
+    .corner-left { left: 14px; }
+    .corner-right { right: 14px; }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 25, 20, 0.5);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 80;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal {
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 14px;
+      max-width: 640px;
+      width: 100%;
+      max-height: 86vh;
+      overflow-y: auto;
+      padding: 22px 22px 16px;
+      position: relative;
+    }
+    .modal h2 { margin: 0 0 0.4rem; font-family: var(--serif); font-size: 1.35rem; }
+    .modal h3 { margin: 1rem 0 0.45rem; font-size: 1rem; }
+    .modal-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: none;
+      border: 0;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: var(--muted);
+      line-height: 1;
+    }
+    .modal-lead { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tech-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .tech-card h4 { margin: 0 0 4px; font-size: 0.95rem; }
+    .tech-card p { margin: 0; font-size: 0.88rem; line-height: 1.45; }
+    .modal-foot { margin: 1rem 0 0; font-size: 0.85rem; color: var(--muted); }
+    .modal-foot a { color: var(--primary); }
+    @media (max-width: 640px) {
+      .tech-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .corner, .modal-overlay { display: none !important; }
+    }
     @media (prefers-reduced-motion: reduce) {
       * { transition: none !important; }
     }
@@ -235,6 +292,28 @@
         <span class="pill" id="pill"></span>
         <dl class="readout" id="readout"></dl>
       </section>
+    </div>
+  </div>
+
+  <a class="corner corner-left" href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/endimensionell_analys" target="_blank" rel="noopener">{ } GitHub</a>
+  <button type="button" class="corner corner-right" id="techBtn" aria-label="Tekniköversikt">&lt;/&gt; teknik</button>
+  <div class="modal-overlay" id="techModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="techTitle">
+      <button type="button" class="modal-close" id="techClose" aria-label="Stäng">&times;</button>
+      <h2 id="techTitle">Hur den här sidan är byggd</h2>
+      <p class="modal-lead">En enda fil, utan byggsteg. Publicerad via GitHub Pages.</p>
+      <h3>Tekniken</h3>
+      <div class="tech-grid">
+        <div class="tech-card"><h4>En fil</h4><p><code>index.html</code> innehåller både stil och skript. Inget ramverk och inga andra bibliotek. Typsnitten Fraunces och Source Sans 3 hämtas från Google Fonts.</p></div>
+        <div class="tech-card"><h4>Figuren är SVG</h4><p>Kurvan, sekanten och tangenterna ritas om i webbläsaren när du drar i a och b. Inget skickas till en server.</p></div>
+        <div class="tech-card"><h4>Räkningen sker lokalt</h4><p>ξ, punkterna där höjden k antas, och min och max söks numeriskt i skriptet. Det finns ingen färdig tabell med svar.</p></div>
+      </div>
+      <h3>Metoden</h3>
+      <div class="tech-grid">
+        <div class="tech-card"><h4>Satserna</h4><p>Formuleringarna följer en vanlig envariabelkurs: medelvärdessatsen, satsen om mellanliggande värden och extremvärdessatsen.</p></div>
+        <div class="tech-card"><h4>När villkoret brister</h4><p>|x| saknar derivata i hörnet. Språnget och det öppna intervallet är motexempel, valda för att slutsatsen inte ska gälla.</p></div>
+      </div>
+      <p class="modal-foot">Källkoden: <a href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/endimensionell_analys" target="_blank" rel="noopener">github.com/kentlundgren/Grok</a></p>
     </div>
   </div>
 
@@ -765,6 +844,21 @@
     svg.addEventListener("pointercancel", () => { dragging = null; });
 
     render();
+
+    (function teknikModal() {
+      var btn = document.getElementById("techBtn");
+      var box = document.getElementById("techModal");
+      var close = document.getElementById("techClose");
+      if (!btn || !box || !close) return;
+      function open() { box.classList.add("show"); close.focus(); }
+      function shut() { box.classList.remove("show"); btn.focus(); }
+      btn.addEventListener("click", open);
+      close.addEventListener("click", shut);
+      box.addEventListener("click", function (e) { if (e.target === box) shut(); });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && box.classList.contains("show")) shut();
+      });
+    })();
   </script>
 </body>
 </html>
