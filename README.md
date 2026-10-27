@@ -95,6 +95,13 @@ Underhåll från bloggen Tankar i tiden från Lund, plus val av propylenglykol t
 - **Live:** [https://kentlundgren.github.io/Grok/Scampi/](https://kentlundgren.github.io/Grok/Scampi/)
 - **Skill:** [Scampi/SKILL.md](Scampi/SKILL.md)
 
+### Endimensionell analys — tre satser
+
+Interaktiv visualisering av medelvärdessatsen, satsen om mellanliggande värden och extremvärdessatsen. Dra i ändpunkterna, eller slå av ett villkor och se slutsatsen falla.
+
+- **Källkod:** [aktuellt/endimensionell_analys/](aktuellt/endimensionell_analys/)
+- **Live:** [https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/](https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/)
+
 ## Tekniker
 
 - HTML5 + Tailwind CSS (via CDN)
@@ -112,4 +119,4 @@ Underhåll från bloggen Tankar i tiden från Lund, plus val av propylenglykol t
 
 ---
 
-*Senast uppdaterat: 9 oktober 2026*
+*Senast uppdaterat: 27 oktober 2026*
