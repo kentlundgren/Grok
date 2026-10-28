@@ -37,6 +37,30 @@
           Du kan gå direkt till den interaktiva figuren — eller först göra ett kort quiz med omedelbar feedback och länkar till visualiseringen.
         </p>
       </header>
+
+      <!-- Här skedde en uppdatering 2026-10-28: växlande förhandsbilder för de tre satserna. -->
+      <div class="theorem-carousel card" data-active="0" aria-roledescription="karusell" aria-label="Förhandsvisning av de tre satserna">
+        <div class="theorem-slides">
+          <figure class="theorem-slide is-active">
+            <img src="bilder/intro-mvt.svg" width="640" height="360" alt="Kurva med sekant mellan a och b och en parallell tangent i punkten xi." />
+            <figcaption>Medelvärdessatsen — sekanten och en tangent med samma lutning.</figcaption>
+          </figure>
+          <figure class="theorem-slide" aria-hidden="true">
+            <img src="bilder/intro-ivt.svg" width="640" height="360" alt="Kurva som skärs av en horisontell linje på höjden k i minst en punkt c." />
+            <figcaption>Mellanliggande värden — varje höjd mellan f(a) och f(b) antas.</figcaption>
+          </figure>
+          <figure class="theorem-slide" aria-hidden="true">
+            <img src="bilder/intro-evt.svg" width="640" height="360" alt="Kurva på ett slutet intervall med markerat maximum och minimum." />
+            <figcaption>Extremvärdessatsen — minsta och största värdet antas på intervallet.</figcaption>
+          </figure>
+        </div>
+        <div class="theorem-dots" role="tablist" aria-label="Välj satsbild">
+          <button type="button" class="theorem-dot is-active" role="tab" data-index="0" aria-selected="true" aria-label="Medelvärde, bild 1 av 3"></button>
+          <button type="button" class="theorem-dot" role="tab" data-index="1" aria-selected="false" aria-label="Mellanvärde, bild 2 av 3"></button>
+          <button type="button" class="theorem-dot" role="tab" data-index="2" aria-selected="false" aria-label="Extremvärde, bild 3 av 3"></button>
+        </div>
+      </div>
+
       <div class="actions row-split">
         <button type="button" class="btn btn-primary" id="btn-start-quiz">Gör quiz (3 frågor)</button>
         <a class="btn" href="app.html" id="btn-to-app">Öppna visualiseringen</a>
@@ -133,6 +157,7 @@
   </div>
 
   <script src="quiz.js" defer></script>
+  <script src="intro-carousel.js" defer></script>
   <script>
     (function teknikModal() {
       var btn = document.getElementById("techBtn");

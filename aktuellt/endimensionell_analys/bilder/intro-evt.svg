@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t">
+  <title id="t">Extremvärde: min och max på intervallet</title>
+  <rect width="640" height="360" fill="#fffdf8"/>
+  <line x1="56" y1="300" x2="584" y2="300" stroke="#e0d5c4" stroke-width="2"/>
+  <line x1="56" y1="300" x2="56" y2="48" stroke="#e0d5c4" stroke-width="2"/>
+  <path d="M 88 220 C 160 60, 260 280, 360 100 S 460 240, 552 160" fill="none" stroke="#1c1914" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="200" cy="92" r="8" fill="#9a431f" stroke="#9a431f"/>
+  <circle cx="400" cy="248" r="8" fill="#9a431f" stroke="#9a431f"/>
+  <circle cx="88" cy="220" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+  <circle cx="552" cy="160" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+  <text x="76" y="242" font-family="Georgia, serif" font-size="18" fill="#1c1914">a</text>
+  <text x="560" y="168" font-family="Georgia, serif" font-size="18" fill="#1c1914">b</text>
+  <text x="188" y="78" font-family="Georgia, serif" font-size="16" fill="#9a431f">max</text>
+  <text x="388" y="272" font-family="Georgia, serif" font-size="16" fill="#9a431f">min</text>
+  <text x="56" y="36" font-family="Georgia, serif" font-size="22" fill="#9a431f">Extremvärde</text>
+</svg>

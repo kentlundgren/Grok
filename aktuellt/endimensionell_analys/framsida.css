@@ -45,6 +45,62 @@ h1 {
 }
 .lead { margin: 0.65rem 0 0; color: var(--muted); max-width: 36rem; }
 
+/* Karusell på startsidan — uppdatering 2026-10-28 */
+.theorem-carousel {
+  margin-top: 1.15rem;
+  padding: 0.65rem 0.65rem 0.75rem;
+  overflow: hidden;
+}
+.theorem-slides {
+  display: grid;
+  border-radius: 10px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.theorem-slide {
+  grid-area: 1 / 1;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.55s ease;
+  pointer-events: none;
+}
+.theorem-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+.theorem-slide img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+.theorem-slide figcaption {
+  margin: 0.45rem 0.35rem 0;
+  font-size: 0.88rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.35;
+}
+.theorem-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-top: 0.55rem;
+}
+.theorem-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--line);
+}
+.theorem-dot.is-active {
+  background: var(--primary);
+  transform: scale(1.15);
+}
+
 .card {
   margin-top: 1.25rem;
   padding: 1.1rem 1.15rem;
@@ -285,4 +341,5 @@ h1 {
 }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
+  .theorem-slide { transition: none !important; }
 }

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="t">
+  <title id="t">Medelvärdessatsen: sekant och tangent</title>
+  <rect width="640" height="360" fill="#fffdf8"/>
+  <line x1="56" y1="300" x2="584" y2="300" stroke="#e0d5c4" stroke-width="2"/>
+  <line x1="56" y1="300" x2="56" y2="48" stroke="#e0d5c4" stroke-width="2"/>
+  <path d="M 72 248 C 140 88, 220 320, 320 120 S 480 40, 568 200" fill="none" stroke="#1c1914" stroke-width="3" stroke-linecap="round"/>
+  <line x1="120" y1="220" x2="500" y2="140" stroke="#9a431f" stroke-width="2.5"/>
+  <line x1="300" y1="200" x2="420" y2="80" stroke="#9a431f" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="120" cy="220" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+  <circle cx="500" cy="140" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+  <circle cx="348" cy="128" r="7" fill="#9a431f" stroke="#9a431f"/>
+  <text x="108" y="244" font-family="Georgia, serif" font-size="18" fill="#1c1914">a</text>
+  <text x="508" y="132" font-family="Georgia, serif" font-size="18" fill="#1c1914">b</text>
+  <text x="358" y="118" font-family="Georgia, serif" font-size="18" fill="#9a431f">¾</text>
+  <text x="56" y="36" font-family="Georgia, serif" font-size="22" fill="#9a431f">Medelvärde</text>
+</svg>

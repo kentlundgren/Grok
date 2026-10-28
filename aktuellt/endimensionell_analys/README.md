@@ -17,6 +17,7 @@ Filer:
 | Fil | Roll |
 | --- | --- |
 | `index.html` | Intro, quiz, Open Graph |
-| `framsida.css`, `quiz.js` | Stil och quizlogik |
+| `framsida.css`, `quiz.js`, `intro-carousel.js` | Stil, quiz och växlande satsbilder på startsidan |
+| `bilder/intro-*.svg` | Tre förhandsbilder (medelvärde, mellanvärde, extremvärde) |
 | `app.html` | SVG-visualisering (tidigare enda `index.html`) |
 | `og-bild.jpg` | Förhandsvisning vid delning av länk |
