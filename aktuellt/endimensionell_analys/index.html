@@ -41,16 +41,61 @@
       <!-- Här skedde en uppdatering 2026-10-28: växlande förhandsbilder för de tre satserna. -->
       <div class="theorem-carousel card" data-active="0" aria-roledescription="karusell" aria-label="Förhandsvisning av de tre satserna">
         <div class="theorem-slides">
+          <!-- Inbäddade SVG (inga externa bildfiler) — fungerar på GitHub Pages även om bilder/ saknas. -->
           <figure class="theorem-slide is-active">
-            <img src="bilder/intro-mvt.svg" width="640" height="360" alt="Kurva med sekant mellan a och b och en parallell tangent i punkten xi." />
+            <svg class="theorem-visual" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" aria-hidden="true" focusable="false">
+              <rect width="640" height="360" fill="#fffdf8"/>
+              <line x1="56" y1="300" x2="584" y2="300" stroke="#e0d5c4" stroke-width="2"/>
+              <line x1="56" y1="300" x2="56" y2="48" stroke="#e0d5c4" stroke-width="2"/>
+              <path d="M 72 248 C 140 88, 220 320, 320 120 S 480 40, 568 200" fill="none" stroke="#1c1914" stroke-width="3" stroke-linecap="round"/>
+              <line x1="120" y1="220" x2="500" y2="140" stroke="#9a431f" stroke-width="2.5"/>
+              <line x1="300" y1="200" x2="420" y2="80" stroke="#9a431f" stroke-width="2" stroke-dasharray="8 6"/>
+              <circle cx="120" cy="220" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+              <circle cx="500" cy="140" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+              <circle cx="348" cy="128" r="7" fill="#9a431f" stroke="#9a431f"/>
+              <text x="108" y="244" font-family="Georgia, serif" font-size="18" fill="#1c1914">a</text>
+              <text x="508" y="132" font-family="Georgia, serif" font-size="18" fill="#1c1914">b</text>
+              <text x="358" y="118" font-family="Georgia, serif" font-size="18" fill="#9a431f">ξ</text>
+              <text x="56" y="36" font-family="Georgia, serif" font-size="22" fill="#9a431f">Medelvärde</text>
+            </svg>
             <figcaption>Medelvärdessatsen — sekanten och en tangent med samma lutning.</figcaption>
           </figure>
           <figure class="theorem-slide" aria-hidden="true">
-            <img src="bilder/intro-ivt.svg" width="640" height="360" alt="Kurva som skärs av en horisontell linje på höjden k i minst en punkt c." />
+            <svg class="theorem-visual" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" aria-hidden="true" focusable="false">
+              <rect width="640" height="360" fill="#fffdf8"/>
+              <line x1="56" y1="300" x2="584" y2="300" stroke="#e0d5c4" stroke-width="2"/>
+              <line x1="56" y1="300" x2="56" y2="48" stroke="#e0d5c4" stroke-width="2"/>
+              <path d="M 80 260 Q 200 80, 320 200 T 560 120" fill="none" stroke="#1c1914" stroke-width="3" stroke-linecap="round"/>
+              <line x1="56" y1="188" x2="584" y2="188" stroke="#9a431f" stroke-width="2" stroke-dasharray="10 7"/>
+              <circle cx="168" cy="188" r="7" fill="#9a431f"/>
+              <circle cx="392" cy="188" r="7" fill="#9a431f"/>
+              <circle cx="96" cy="260" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+              <circle cx="520" cy="148" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+              <text x="84" y="278" font-family="Georgia, serif" font-size="18" fill="#1c1914">a</text>
+              <text x="528" y="164" font-family="Georgia, serif" font-size="18" fill="#1c1914">b</text>
+              <text x="28" y="192" font-family="Georgia, serif" font-size="18" fill="#9a431f">k</text>
+              <text x="160" y="176" font-family="Georgia, serif" font-size="16" fill="#9a431f">c</text>
+              <text x="400" y="176" font-family="Georgia, serif" font-size="16" fill="#9a431f">c</text>
+              <text x="56" y="36" font-family="Georgia, serif" font-size="22" fill="#9a431f">Mellanvärde</text>
+            </svg>
             <figcaption>Mellanliggande värden — varje höjd mellan f(a) och f(b) antas.</figcaption>
           </figure>
           <figure class="theorem-slide" aria-hidden="true">
-            <img src="bilder/intro-evt.svg" width="640" height="360" alt="Kurva på ett slutet intervall med markerat maximum och minimum." />
+            <svg class="theorem-visual" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" aria-hidden="true" focusable="false">
+              <rect width="640" height="360" fill="#fffdf8"/>
+              <line x1="56" y1="300" x2="584" y2="300" stroke="#e0d5c4" stroke-width="2"/>
+              <line x1="56" y1="300" x2="56" y2="48" stroke="#e0d5c4" stroke-width="2"/>
+              <path d="M 88 220 C 160 60, 260 280, 360 100 S 460 240, 552 160" fill="none" stroke="#1c1914" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="200" cy="92" r="8" fill="#9a431f" stroke="#9a431f"/>
+              <circle cx="400" cy="248" r="8" fill="#9a431f" stroke="#9a431f"/>
+              <circle cx="88" cy="220" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+              <circle cx="552" cy="160" r="7" fill="#fffdf8" stroke="#1c1914" stroke-width="2"/>
+              <text x="76" y="242" font-family="Georgia, serif" font-size="18" fill="#1c1914">a</text>
+              <text x="560" y="168" font-family="Georgia, serif" font-size="18" fill="#1c1914">b</text>
+              <text x="188" y="78" font-family="Georgia, serif" font-size="16" fill="#9a431f">max</text>
+              <text x="388" y="272" font-family="Georgia, serif" font-size="16" fill="#9a431f">min</text>
+              <text x="56" y="36" font-family="Georgia, serif" font-size="22" fill="#9a431f">Extremvärde</text>
+            </svg>
             <figcaption>Extremvärdessatsen — minsta och största värdet antas på intervallet.</figcaption>
           </figure>
         </div>

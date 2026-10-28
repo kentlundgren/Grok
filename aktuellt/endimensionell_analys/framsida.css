@@ -61,19 +61,21 @@ h1 {
   grid-area: 1 / 1;
   margin: 0;
   opacity: 0;
-  transition: opacity 0.55s ease;
+  visibility: hidden;
+  transition: opacity 0.55s ease, visibility 0.55s;
   pointer-events: none;
 }
 .theorem-slide.is-active {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
   z-index: 1;
 }
-.theorem-slide img {
+.theorem-visual {
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 9;
-  object-fit: contain;
 }
 .theorem-slide figcaption {
   margin: 0.45rem 0.35rem 0;

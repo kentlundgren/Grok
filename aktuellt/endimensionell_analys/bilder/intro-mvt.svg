@@ -11,6 +11,6 @@
   <circle cx="348" cy="128" r="7" fill="#9a431f" stroke="#9a431f"/>
   <text x="108" y="244" font-family="Georgia, serif" font-size="18" fill="#1c1914">a</text>
   <text x="508" y="132" font-family="Georgia, serif" font-size="18" fill="#1c1914">b</text>
-  <text x="358" y="118" font-family="Georgia, serif" font-size="18" fill="#9a431f">¾</text>
+  <text x="358" y="118" font-family="Georgia, serif" font-size="18" fill="#9a431f">?</text>
   <text x="56" y="36" font-family="Georgia, serif" font-size="22" fill="#9a431f">Medelvärde</text>
 </svg>
