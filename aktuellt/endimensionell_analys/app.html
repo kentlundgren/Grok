@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Visualisering — Satserna (endimensionell analys)</title>
+  <meta name="description" content="Interaktiv visualisering av medelvärdessatsen, satsen om mellanliggande värden och extremvärdessatsen." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f3efe6;
+      --surface: #fffdf8;
+      --ink: #1c1914;
+      --muted: #5c564e;
+      --line: #e0d5c4;
+      --primary: #9a431f;
+      --serif: "Fraunces", "Iowan Old Style", Palatino, serif;
+      --sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--paper); color: var(--ink); }
+    body {
+      font-family: var(--sans);
+      line-height: 1.5;
+      text-rendering: optimizeLegibility;
+      padding-bottom: 3.25rem;
+    }
+    .back-link {
+      margin: 0.5rem 0 0;
+      font-size: 0.92rem;
+    }
+    .back-link a { color: var(--primary); text-decoration: none; font-weight: 600; }
+    .back-link a:hover { text-decoration: underline; }
+    button, [role="tab"] { font: inherit; cursor: pointer; }
+    button:disabled { cursor: default; opacity: 0.45; }
+    body { padding-bottom: 4.5rem; }
+    :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+    .wrap { max-width: 64rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; }
+    .kicker {
+      margin: 0;
+      color: var(--primary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0.25rem 0 0;
+      font-family: var(--serif);
+      font-size: 2.4rem;
+      font-weight: 640;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .lead { margin: 0.6rem 0 0; max-width: 38rem; color: var(--muted); }
+    .tabs {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.25rem;
+      margin-top: 1.25rem;
+      padding: 0.25rem;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+    }
+    .tabs button {
+      min-height: 2.75rem;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ink);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .tabs button[aria-selected="true"] { background: var(--primary); color: var(--surface); }
+    .layout {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    @media (min-width: 900px) {
+      .layout { grid-template-columns: minmax(0, 3fr) minmax(16rem, 2fr); align-items: start; }
+      .statement { position: sticky; top: 1rem; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+    }
+    .statement { padding: 1.15rem 1.2rem 1.25rem; }
+    .statement h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 640;
+      line-height: 1.2;
+    }
+    .formal {
+      margin: 0.8rem 0 0;
+      font-family: var(--serif);
+      font-size: 1.12rem;
+      line-height: 1.45;
+    }
+    .plain { margin: 0.7rem 0 0; color: var(--muted); }
+    .use { margin: 0.7rem 0 0; font-size: 0.95rem; }
+    .pill {
+      display: inline-block;
+      margin-top: 0.9rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .pill.ok { color: var(--primary); border-color: var(--primary); }
+    .pill.no { color: var(--ink); }
+    .readout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem 1rem;
+      margin: 0.9rem 0 0;
+      padding: 0.85rem 0.9rem;
+      background: var(--paper);
+      border-radius: 0.75rem;
+    }
+    .readout dt { color: var(--muted); font-size: 0.8rem; }
+    .readout dd { margin: 0.1rem 0 0; font-variant-numeric: tabular-nums; font-weight: 600; }
+    svg { display: block; width: 100%; height: auto; touch-action: none; }
+    .caption { margin: 0; padding: 0.7rem 1rem 0.2rem; color: var(--muted); font-size: 0.95rem; }
+    .controls { padding: 0.4rem 1rem 1rem; display: grid; gap: 0.85rem; }
+    .row label, .slider-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+    .slider-label span:last-child { font-variant-numeric: tabular-nums; font-weight: 500; color: var(--muted); }
+    input[type="range"] { width: 100%; height: 2.75rem; accent-color: var(--primary); margin: 0; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .chips button, .ghost {
+      min-height: 2.75rem;
+      padding: 0 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--ink);
+      font-weight: 600;
+    }
+    .chips button[aria-pressed="true"] {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--surface);
+    }
+    .formula {
+      margin: 0.15rem 0 0;
+      font-family: var(--serif);
+      font-style: italic;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem 1rem;
+      padding: 0 1rem 0.2rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .swatch { display: inline-block; width: 1.4rem; height: 0; border-top: 2px solid var(--ink); vertical-align: middle; margin-right: 0.35rem; }
+    .swatch.sec { border-top-color: var(--primary); }
+    .swatch.tan { border-top: 2px dashed var(--primary); }
+    .hidden { display: none !important; }
+    .corner {
+      position: fixed;
+      bottom: 14px;
+      z-index: 40;
+      opacity: 0.55;
+      background: rgba(255, 253, 248, 0.9);
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 6px 11px;
+      font: inherit;
+      font-size: 0.78rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .corner:hover, .corner:focus-visible { opacity: 1; color: var(--ink); }
+    .corner-left { left: 14px; }
+    .corner-right { right: 14px; }
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28, 25, 20, 0.5);
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 80;
+    }
+    .modal-overlay.show { display: flex; }
+    .modal {
+      background: var(--surface);
+      color: var(--ink);
+      border-radius: 14px;
+      max-width: 640px;
+      width: 100%;
+      max-height: 86vh;
+      overflow-y: auto;
+      padding: 22px 22px 16px;
+      position: relative;
+    }
+    .modal h2 { margin: 0 0 0.4rem; font-family: var(--serif); font-size: 1.35rem; }
+    .modal h3 { margin: 1rem 0 0.45rem; font-size: 1rem; }
+    .modal-close {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background: none;
+      border: 0;
+      font-size: 1.7rem;
+      cursor: pointer;
+      color: var(--muted);
+      line-height: 1;
+    }
+    .modal-lead { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .tech-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+    .tech-card h4 { margin: 0 0 4px; font-size: 0.95rem; }
+    .tech-card p { margin: 0; font-size: 0.88rem; line-height: 1.45; }
+    .modal-foot { margin: 1rem 0 0; font-size: 0.85rem; color: var(--muted); }
+    .modal-foot a { color: var(--primary); }
+    @media (max-width: 640px) {
+      .tech-grid { grid-template-columns: 1fr; }
+    }
+    @media print {
+      .corner, .modal-overlay { display: none !important; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="kicker">Envariabelanalys</p>
+      <h1>Satserna</h1>
+      <p class="lead">Medelvärdessatsen, satsen om mellanliggande värden och extremvärdessatsen. Dra i a och b, eller välj ett motexempel.</p>
+      <p class="back-link"><a href="./">← Startsidan och quiz</a></p>
+    </header>
+
+    <div class="tabs" role="tablist" aria-label="Satser">
+      <button type="button" role="tab" id="tab-mvt" aria-selected="true" aria-controls="panel">Medelvärde</button>
+      <button type="button" role="tab" id="tab-ivt" aria-selected="false" aria-controls="panel">Mellanvärde</button>
+      <button type="button" role="tab" id="tab-evt" aria-selected="false" aria-controls="panel">Extremvärde</button>
+    </div>
+
+    <div class="layout" id="panel">
+      <section class="card stage">
+        <svg id="plot" viewBox="0 0 390 252" role="img" aria-labelledby="caption"></svg>
+        <p class="caption" id="caption"></p>
+        <div class="legend" id="legend"></div>
+        <div class="controls">
+          <div id="curve-block">
+            <div class="chips" id="curves"></div>
+            <p class="formula" id="curve-formula"></p>
+          </div>
+          <div id="ab-block">
+            <div class="row">
+              <div class="slider-label"><span>a</span><span id="a-val"></span></div>
+              <input id="a-range" type="range" aria-label="Vänster ändpunkt a" step="0.01" />
+            </div>
+            <div class="row">
+              <div class="slider-label"><span>b</span><span id="b-val"></span></div>
+              <input id="b-range" type="range" aria-label="Höger ändpunkt b" step="0.01" />
+            </div>
+          </div>
+          <div id="k-block" class="hidden">
+            <div class="slider-label"><span>Höjd k</span><span id="k-val"></span></div>
+            <input id="k-range" type="range" min="0" max="1" step="0.005" value="0.35" aria-label="Värde k mellan funktionsvärdena i ändpunkterna" />
+          </div>
+          <div id="ivt-modes" class="chips hidden"></div>
+          <div id="evt-modes" class="chips hidden"></div>
+          <button type="button" class="ghost hidden" id="zero-btn">Sök nollställe</button>
+        </div>
+      </section>
+
+      <section class="card statement" aria-live="polite">
+        <h2 id="name"></h2>
+        <p class="formal" id="formal"></p>
+        <p class="plain" id="plain"></p>
+        <p class="use" id="use"></p>
+        <span class="pill" id="pill"></span>
+        <dl class="readout" id="readout"></dl>
+      </section>
+    </div>
+  </div>
+
+  <a class="corner corner-left" href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/endimensionell_analys" target="_blank" rel="noopener">{ } GitHub</a>
+  <button type="button" class="corner corner-right" id="techBtn" aria-label="Tekniköversikt">&lt;/&gt; teknik</button>
+  <div class="modal-overlay" id="techModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="techTitle">
+      <button type="button" class="modal-close" id="techClose" aria-label="Stäng">&times;</button>
+      <h2 id="techTitle">Hur den här sidan är byggd</h2>
+      <p class="modal-lead"><code>app.html</code> är visualiseringen. Startsidan med quiz ligger i <code>index.html</code>. Inget byggsteg; publicerat via GitHub Pages.</p>
+      <h3>Tekniken</h3>
+      <div class="tech-grid">
+        <div class="tech-card"><h4>En fil för figuren</h4><p><code>app.html</code> innehåller stil och skript för SVG-figuren. Inget ramverk. Typsnitten Fraunces och Source Sans 3 hämtas från Google Fonts.</p></div>
+        <div class="tech-card"><h4>Figuren är SVG</h4><p>Kurvan, sekanten och tangenterna ritas om i webbläsaren när du drar i a och b. Inget skickas till en server.</p></div>
+        <div class="tech-card"><h4>Räkningen sker lokalt</h4><p>ξ, punkterna där höjden k antas, och min och max söks numeriskt i skriptet. Det finns ingen färdig tabell med svar.</p></div>
+      </div>
+      <h3>Metoden</h3>
+      <div class="tech-grid">
+        <div class="tech-card"><h4>Satserna</h4><p>Formuleringarna följer kursen endimensionell analys (LTH): medelvärdessatsen, satsen om mellanliggande värden och extremvärdessatsen.</p></div>
+        <div class="tech-card"><h4>När villkoret brister</h4><p>|x| saknar derivata i hörnet. Språnget och det öppna intervallet är motexempel, valda för att slutsatsen inte ska gälla.</p></div>
+      </div>
+      <p class="modal-foot">Källkoden: <a href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/endimensionell_analys" target="_blank" rel="noopener">github.com/kentlundgren/Grok</a></p>
+    </div>
+  </div>
+
+  <script>
+    const CURVES = [
+      { id: "cubic", label: "x³ − x", formula: "f(x) = x³ − x", f: (x) => x ** 3 - x, df: (x) => 3 * x * x - 1, domain: [-1.8, 1.8], interval: [-1.4, 1.5] },
+      { id: "quad", label: "x² − 1", formula: "f(x) = x² − 1", f: (x) => x * x - 1, df: (x) => 2 * x, domain: [-2.2, 2.2], interval: [-1.2, 1.8] },
+      { id: "sine", label: "sin x", formula: "f(x) = sin x", f: Math.sin, df: Math.cos, domain: [0, 2 * Math.PI], interval: [0.4, 5.8] },
+      { id: "abs", label: "|x|", formula: "f(x) = |x|", f: Math.abs, df: (x) => (x > 0 ? 1 : x < 0 ? -1 : NaN), domain: [-2, 2], interval: [-1.4, 1.2], corner: 0 }
+    ];
+
+    const state = { tab: "mvt", curveId: "cubic", a: -1.4, b: 1.5, t: 0.35, ivtMode: "smooth", evtMode: "holds" };
+    const SUB = "₀₁₂₃₄₅₆₇₈₉";
+    const svg = document.getElementById("plot");
+    let dragging = null;
+
+    function curve() { return CURVES.find((c) => c.id === state.curveId); }
+    function fmt(n) {
+      if (!Number.isFinite(n)) return "—";
+      const digits = Math.abs(n) >= 10 ? 2 : 3;
+      return new Intl.NumberFormat("sv-SE", { maximumFractionDigits: digits }).format(n);
+    }
+    function clamp(x, lo, hi) { return Math.min(hi, Math.max(lo, x)); }
+    function snap(x) { return Math.round(x * 100) / 100; }
+    function gapOf(c) { return Math.min(0.12, (c.domain[1] - c.domain[0]) * 0.035); }
+    function dedupe(xs, tol) {
+      const s = xs.filter(Number.isFinite).sort((p, q) => p - q);
+      const out = [];
+      for (const x of s) if (!out.length || Math.abs(x - out[out.length - 1]) > tol) out.push(x);
+      return out;
+    }
+    function bisect(g, lo, hi) {
+      let a = lo, b = hi, ga = g(a);
+      for (let i = 0; i < 56; i++) {
+        const m = (a + b) / 2, gm = g(m);
+        if (!Number.isFinite(gm) || Math.abs(gm) < 1e-12 || b - a < 1e-12) return m;
+        if (Number.isFinite(ga) && ga * gm <= 0) b = m;
+        else { a = m; ga = gm; }
+      }
+      return (a + b) / 2;
+    }
+    function refine(g, lo, hi) {
+      let a = lo, b = hi;
+      const phi = (Math.sqrt(5) - 1) / 2;
+      for (let i = 0; i < 40; i++) {
+        const x1 = b - phi * (b - a), x2 = a + phi * (b - a);
+        if (Math.abs(g(x1)) < Math.abs(g(x2))) b = x2; else a = x1;
+      }
+      return (a + b) / 2;
+    }
+    function roots(g, a, b) {
+      const width = b - a;
+      if (!(width > 1e-6)) return { xs: [], everywhere: false };
+      const n = 160, xs = [], gs = [];
+      for (let i = 0; i < n; i++) {
+        const x = a + width * ((i + 0.5) / n);
+        xs.push(x); gs.push(g(x));
+      }
+      let allSmall = true, seen = 0;
+      for (const v of gs) {
+        if (!Number.isFinite(v)) { allSmall = false; continue; }
+        seen++; if (Math.abs(v) > 1e-4) allSmall = false;
+      }
+      if (seen && allSmall) return { xs: [(a + b) / 2], everywhere: true };
+      const found = [];
+      for (let i = 0; i < n - 1; i++) {
+        const g0 = gs[i], g1 = gs[i + 1];
+        if (!Number.isFinite(g0) || !Number.isFinite(g1)) continue;
+        if (g0 === 0) found.push(xs[i]);
+        else if (g0 * g1 < 0) {
+          const r = bisect(g, xs[i], xs[i + 1]);
+          if (r > a && r < b && Math.abs(g(r)) < 1e-3) found.push(r);
+        }
+      }
+      for (let i = 1; i < n - 1; i++) {
+        if (![gs[i - 1], gs[i], gs[i + 1]].every(Number.isFinite)) continue;
+        const a1 = Math.abs(gs[i]);
+        if (a1 <= Math.abs(gs[i - 1]) && a1 <= Math.abs(gs[i + 1]) && a1 < 0.05) {
+          const r = refine(g, xs[i - 1], xs[i + 1]);
+          if (r > a && r < b && Math.abs(g(r)) < 1e-4) found.push(r);
+        }
+      }
+      return { xs: dedupe(found, Math.max(width * 0.012, 1e-3)), everywhere: false };
+    }
+    function pieces(a, b, corner) {
+      if (corner == null || !(corner > a && corner < b)) return [[a, b]];
+      return [[a, corner], [corner, b]];
+    }
+    function meanValue(c, a, b) {
+      const slope = (c.f(b) - c.f(a)) / (b - a);
+      const differentiable = !(c.corner != null && c.corner > a && c.corner < b);
+      const xi = [];
+      let everywhere = false;
+      for (const [lo, hi] of pieces(a, b, c.corner)) {
+        const piece = roots((x) => c.df(x) - slope, lo, hi);
+        xi.push(...piece.xs);
+        everywhere = everywhere || piece.everywhere;
+      }
+      return { slope, xi: dedupe(xi, Math.max((b - a) * 0.012, 1e-3)), everywhere, differentiable };
+    }
+    function levelSet(f, a, b, k) {
+      const tol = 1e-3 * (1 + Math.abs(k));
+      const found = [];
+      if (Math.abs(f(a) - k) <= tol) found.push(a);
+      if (Math.abs(f(b) - k) <= tol) found.push(b);
+      const piece = roots((x) => f(x) - k, a, b);
+      for (const x of piece.xs) if (Math.abs(f(x) - k) <= Math.max(tol, 1e-3)) found.push(x);
+      if (piece.everywhere) found.push((a + b) / 2);
+      return dedupe(found, Math.max((b - a) * 0.015, 1e-3));
+    }
+    function extrema(c, a, b) {
+      const structural = [a, b];
+      if (c.corner != null && c.corner >= a && c.corner <= b) structural.push(c.corner);
+      for (const [lo, hi] of pieces(a, b, c.corner)) structural.push(...roots(c.df, lo, hi).xs);
+      let minY = Infinity, maxY = -Infinity, minX = a, maxX = a;
+      for (let i = 0; i <= 360; i++) {
+        const x = a + (b - a) * i / 360, y = c.f(x);
+        if (!Number.isFinite(y)) continue;
+        if (y < minY) { minY = y; minX = x; }
+        if (y > maxY) { maxY = y; maxX = x; }
+      }
+      const scale = Math.max(1, Math.abs(minY), Math.abs(maxY));
+      const tol = 1e-3 * scale;
+      const mins = [], maxs = [];
+      for (const x of structural) {
+        const y = c.f(x);
+        if (!Number.isFinite(y)) continue;
+        if (Math.abs(y - minY) <= tol) mins.push(x);
+        else if (Math.abs(y - maxY) <= tol) maxs.push(x);
+      }
+      if (!mins.length) mins.push(minX);
+      if (!maxs.length) maxs.push(maxX);
+      const g = Math.max((b - a) * 0.03, 0.02);
+      return { minY, maxY, mins: dedupe(mins, g), maxs: dedupe(maxs, g) };
+    }
+    function sample(f, a, b, n, extra) {
+      const xs = [];
+      for (let i = 0; i <= n; i++) xs.push(a + (b - a) * i / n);
+      for (const x of extra || []) if (x > a && x < b) xs.push(x);
+      xs.sort((p, q) => p - q);
+      return xs.map((x) => ({ x, y: f(x) })).filter((p) => Number.isFinite(p.y));
+    }
+    function idxName(symbol, i, many) {
+      if (!many) return symbol;
+      return symbol + String(i + 1).replace(/\d/g, (d) => SUB[d]);
+    }
+
+    function special() {
+      if (state.tab === "ivt" && state.ivtMode === "jump") return "ivt-jump";
+      if (state.tab === "evt" && state.evtMode === "open") return "evt-open";
+      if (state.tab === "evt" && state.evtMode === "jump") return "evt-jump";
+      return null;
+    }
+
+    function scene() {
+      const c = curve();
+      const mode = special();
+      if (mode === "ivt-jump") {
+        const k = -1 + state.t * 2;
+        const cs = [];
+        if (Math.abs(k + 1) < 0.015) cs.push(-1);
+        if (Math.abs(k - 1) < 0.015) cs.push(0);
+        return {
+          xMin: -1.2, xMax: 1.2, k,
+          polys: [sample(() => -1, -1, -0.02, 8), sample(() => 1, 0, 1, 8)],
+          markers: [
+            { x: -1, y: -1, label: cs.includes(-1) ? "c" : "", tone: "ink" },
+            { x: 0, y: -1, open: true, tone: "muted" },
+            { x: 0, y: 1, label: cs.includes(0) ? "c" : "", tone: "ink" },
+            { x: 1, y: 1, tone: "ink" }
+          ],
+          guide: k,
+          holds: cs.length > 0,
+          caption: cs.length
+            ? "k träffar ett av språngvärdena. Varje höjd strikt mellan −1 och 1 missas."
+            : "Inget c. Funktionen hoppar över alla värden mellan −1 och 1."
+        };
+      }
+      if (mode === "evt-open") {
+        return {
+          xMin: -0.25, xMax: 1.25,
+          polys: [sample((x) => x, 0.025, 0.975, 40)],
+          markers: [
+            { x: 0, y: 0, open: true, label: "min saknas", tone: "muted" },
+            { x: 1, y: 1, open: true, label: "max saknas", tone: "muted" }
+          ],
+          holds: false,
+          caption: "f(x) = x på (0, 1). Kontinuerlig och begränsad, men 0 och 1 antas inte."
+        };
+      }
+      if (mode === "evt-jump") {
+        return {
+          xMin: -0.15, xMax: 1.25,
+          polys: [sample((x) => x, 0, 0.985, 40)],
+          markers: [
+            { x: 0, y: 0, label: "min", tone: "primary" },
+            { x: 1, y: 0, label: "f(1)", tone: "ink" },
+            { x: 1, y: 1, open: true, label: "sup 1", tone: "muted" }
+          ],
+          holds: false,
+          caption: "Supremum 1 antas inte. Intervallet är kompakt, men f är inte kontinuerlig i 1."
+        };
+      }
+
+      const a = state.a, b = state.b;
+      const polys = [sample(c.f, c.domain[0], c.domain[1], 240, [a, b, c.corner].filter((x) => x != null))];
+      const fa = c.f(a), fb = c.f(b);
+      const base = { xMin: c.domain[0], xMax: c.domain[1], polys, a, b, fa, fb, span: true };
+
+      if (state.tab === "mvt") {
+        const mv = meanValue(c, a, b);
+        const markers = [
+          { x: a, y: fa, label: "a", tone: "ink", drag: "a" },
+          { x: b, y: fb, label: "b", tone: "ink", drag: "b" }
+        ];
+        const lines = [{ x1: a, y1: fa, x2: b, y2: fb }];
+        mv.xi.forEach((x, i) => {
+          const y = c.f(x);
+          markers.push({ x, y, label: idxName("ξ", i, mv.xi.length > 1), tone: "primary" });
+          const half = (c.domain[1] - c.domain[0]) * 0.2;
+          const x1 = Math.max(c.domain[0], x - half), x2 = Math.min(c.domain[1], x + half);
+          lines.push({ x1, y1: y + mv.slope * (x1 - x), x2, y2: y + mv.slope * (x2 - x), dashed: true });
+        });
+        const holds = mv.differentiable && (mv.xi.length > 0 || mv.everywhere);
+        let caption;
+        if (!mv.differentiable && !mv.xi.length) caption = "Inget ξ. f är inte deriverbar i hörnet, och ingen tangent har sekantens lutning.";
+        else if (!mv.differentiable) caption = "Likheten råkar stämma i en punkt, men villkoret deriverbar på (a, b) är inte uppfyllt.";
+        else if (mv.everywhere) caption = "Derivatan är konstant, så varje punkt i (a, b) duger som ξ. Mittpunkten är markerad.";
+        else if (mv.xi.length > 1) caption = "Sekanten är parallell med tangenten i " + mv.xi.length + " punkter.";
+        else caption = "Tangenten i ξ har samma lutning som sekanten mellan a och b.";
+        return { ...base, markers, lines, holds, mv, caption };
+      }
+
+      if (state.tab === "ivt") {
+        const k = fa + state.t * (fb - fa);
+        const cs = levelSet(c.f, a, b, k);
+        const markers = [
+          { x: a, y: fa, label: cs.some((x) => Math.abs(x - a) < 1e-6) ? "a · c" : "a", tone: "ink", drag: "a" },
+          { x: b, y: fb, label: cs.some((x) => Math.abs(x - b) < 1e-6) ? "b · c" : "b", tone: "ink", drag: "b" }
+        ];
+        cs.forEach((x, i) => {
+          if (Math.abs(x - a) < 1e-6 || Math.abs(x - b) < 1e-6) return;
+          markers.push({ x, y: c.f(x), label: idxName("c", i, cs.length > 1), tone: "primary" });
+        });
+        const names = cs.map((x, i) => idxName("c", i, cs.length > 1) + " = " + fmt(x)).join(", ");
+        return {
+          ...base, markers, guide: k, k, cs, holds: cs.length > 0,
+          caption: cs.length ? "Höjden k antas i " + names + "." : "Inget c hittades för det här k."
+        };
+      }
+
+      const ex = extrema(c, a, b);
+      const markers = [
+        { x: a, y: fa, label: "a", tone: "ink", drag: "a" },
+        { x: b, y: fb, label: "b", tone: "ink", drag: "b" }
+      ];
+      function tag(x, kind) {
+        const hitA = Math.abs(x - a) < 0.02, hitB = Math.abs(x - b) < 0.02;
+        if (hitA) markers[0].label = "a · " + kind;
+        else if (hitB) markers[1].label = "b · " + kind;
+        else markers.push({ x, y: c.f(x), label: kind, tone: "primary" });
+      }
+      ex.mins.forEach((x) => tag(x, ex.mins.length > 1 ? "min" : "min"));
+      ex.maxs.forEach((x) => tag(x, "max"));
+      return {
+        ...base, markers, ex, holds: true,
+        caption: "Minsta värde " + fmt(ex.minY) + " och största " + fmt(ex.maxY) + " antas båda på [a, b]."
+      };
+    }
+
+    const VB_W = 390, VB_H = 252, PAD = { l: 36, r: 14, t: 16, b: 30 };
+    function niceStep(span) {
+      const raw = span / 4;
+      const pow = 10 ** Math.floor(Math.log10(raw));
+      const n = raw / pow;
+      return (n < 1.5 ? 1 : n < 3.2 ? 2 : n < 7.5 ? 5 : 10) * pow;
+    }
+    function ticks(min, max, step) {
+      const out = [];
+      if (!(step > 0)) return out;
+      for (let v = Math.ceil(min / step) * step; v <= max + step * 0.01 && out.length < 7; v += step) {
+        if (v >= min - 1e-8 && v <= max + 1e-8) out.push(Number(v.toFixed(6)));
+      }
+      return out;
+    }
+
+    function draw() {
+      const s = scene();
+      const ys = [];
+      s.polys.forEach((p) => p.forEach((q) => ys.push(q.y)));
+      (s.markers || []).forEach((m) => ys.push(m.y));
+      if (s.guide != null) ys.push(s.guide);
+      let lo = Math.min(...ys), hi = Math.max(...ys);
+      if (!Number.isFinite(lo)) { lo = -1; hi = 1; }
+      if (hi - lo < 1e-6) { lo -= 1; hi += 1; }
+      const spanY = hi - lo;
+      if (lo > 0 && lo < spanY * 0.45) lo = -spanY * 0.08;
+      if (hi < 0 && -hi < spanY * 0.45) hi = spanY * 0.08;
+      const padY = (hi - lo) * 0.16;
+      const yMin = lo - padY, yMax = hi + padY;
+      const xSpan = s.xMax - s.xMin || 1;
+      const innerW = VB_W - PAD.l - PAD.r, innerH = VB_H - PAD.t - PAD.b;
+      const X = (x) => PAD.l + ((x - s.xMin) / xSpan) * innerW;
+      const Y = (y) => PAD.t + ((yMax - y) / (yMax - yMin)) * innerH;
+      const parts = [];
+      parts.push(`<rect width="${VB_W}" height="${VB_H}" fill="var(--surface)"/>`);
+      if (s.span && s.b > s.a) {
+        parts.push(`<rect x="${X(s.a)}" y="${PAD.t}" width="${Math.max(0, X(s.b) - X(s.a))}" height="${innerH}" fill="var(--primary)" opacity="0.08"/>`);
+      }
+      const xt = ticks(s.xMin, s.xMax, niceStep(xSpan));
+      const yt = ticks(yMin + padY * 0.15, yMax - padY * 0.15, niceStep(yMax - yMin));
+      for (const v of xt) parts.push(`<line x1="${X(v)}" x2="${X(v)}" y1="${PAD.t}" y2="${PAD.t + innerH}" stroke="var(--line)"/>`);
+      for (const v of yt) parts.push(`<line y1="${Y(v)}" y2="${Y(v)}" x1="${PAD.l}" x2="${PAD.l + innerW}" stroke="var(--line)"/>`);
+      if (s.xMin <= 0 && s.xMax >= 0) parts.push(`<line x1="${X(0)}" x2="${X(0)}" y1="${PAD.t}" y2="${PAD.t + innerH}" stroke="var(--muted)" opacity="0.4"/>`);
+      if (yMin <= 0 && yMax >= 0) parts.push(`<line y1="${Y(0)}" y2="${Y(0)}" x1="${PAD.l}" x2="${PAD.l + innerW}" stroke="var(--muted)" opacity="0.4"/>`);
+      if (s.guide != null) {
+        parts.push(`<line x1="${PAD.l}" x2="${PAD.l + innerW}" y1="${Y(s.guide)}" y2="${Y(s.guide)}" stroke="var(--primary)" stroke-dasharray="4 3"/>`);
+        parts.push(`<text x="${PAD.l + innerW - 2}" y="${Y(s.guide) - 6}" text-anchor="end" fill="var(--primary)" font-size="12" font-family="Source Sans 3, sans-serif">k = ${fmt(s.guide)}</text>`);
+      }
+      for (const ln of s.lines || []) {
+        parts.push(`<line x1="${X(ln.x1)}" y1="${Y(ln.y1)}" x2="${X(ln.x2)}" y2="${Y(ln.y2)}" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" ${ln.dashed ? 'stroke-dasharray="6 4"' : ""}/>`);
+      }
+      for (const poly of s.polys) {
+        const d = poly.map((p, i) => `${i ? "L" : "M"}${X(p.x).toFixed(2)} ${Y(p.y).toFixed(2)}`).join(" ");
+        parts.push(`<path d="${d}" fill="none" stroke="var(--ink)" stroke-width="2.25" stroke-linejoin="round" stroke-linecap="round"/>`);
+      }
+      for (const v of xt) parts.push(`<text x="${X(v)}" y="${VB_H - 8}" text-anchor="middle" fill="var(--muted)" font-size="11" font-family="Source Sans 3, sans-serif">${fmt(v)}</text>`);
+      for (const v of yt) parts.push(`<text x="${PAD.l - 5}" y="${Y(v) + 3}" text-anchor="end" fill="var(--muted)" font-size="11" font-family="Source Sans 3, sans-serif">${fmt(v)}</text>`);
+      const spots = [];
+      (s.markers || []).forEach((m) => {
+        const tone = m.tone === "muted" ? "var(--muted)" : m.tone === "ink" ? "var(--ink)" : "var(--primary)";
+        if (m.drag) parts.push(`<circle data-drag="${m.drag}" cx="${X(m.x)}" cy="${Y(m.y)}" r="16" fill="transparent"/>`);
+        parts.push(`<circle cx="${X(m.x)}" cy="${Y(m.y)}" r="5.5" fill="${m.open ? "var(--surface)" : tone}" stroke="${tone}" stroke-width="2" pointer-events="none"/>`);
+        if (m.label) {
+          let px = clamp(X(m.x), PAD.l + 18, VB_W - PAD.r - 18);
+          let py = Y(m.y) - 12;
+          if (py < PAD.t + 11) py = Y(m.y) + 16;
+          for (const spot of spots) if (Math.abs(spot.x - px) < 28 && Math.abs(spot.y - py) < 13) py -= 13;
+          spots.push({ x: px, y: py });
+          parts.push(`<text x="${px}" y="${py}" text-anchor="middle" fill="${tone}" font-size="13" font-family="Fraunces, Palatino, serif" pointer-events="none">${m.label}</text>`);
+        }
+      });
+      svg.innerHTML = parts.join("");
+      svg.setAttribute("aria-label", s.caption || "");
+      document.getElementById("caption").textContent = s.caption || "";
+      return s;
+    }
+
+    function clientToX(clientX, s) {
+      const pt = svg.createSVGPoint();
+      pt.x = clientX; pt.y = 0;
+      const ctm = svg.getScreenCTM();
+      if (!ctm) return null;
+      const loc = pt.matrixTransform(ctm.inverse());
+      const innerW = VB_W - PAD.l - PAD.r;
+      return s.xMin + ((loc.x - PAD.l) / innerW) * (s.xMax - s.xMin);
+    }
+
+    const COPY = {
+      mvt: {
+        name: "Medelvärdessatsen",
+        formal: "Om f är kontinuerlig på [a, b] och deriverbar på (a, b), så finns ett ξ ∈ (a, b) sådant att f(b) − f(a) = f′(ξ)(b − a).",
+        plain: "Sekanten mellan ändpunkterna är parallell med tangenten i minst en inre punkt.",
+        use: "Används för att studera monotoni, extremvärden och kurvritning. När f(a) = f(b) är det Rolles sats."
+      },
+      ivt: {
+        name: "Satsen om mellanliggande värden",
+        formal: "En kontinuerlig funktion på ett intervall antar alla värden mellan sina funktionsvärden i ändpunkterna.",
+        plain: "Grafen måste passera varje höjd mellan f(a) och f(b). Den kan dessutom anta värden utanför det intervallet.",
+        use: "Används till exempel för att visa att en funktion har ett nollställe."
+      },
+      evt: {
+        name: "Extremvärdessatsen",
+        formal: "En kontinuerlig funktion på ett kompakt intervall [a, b] antar både ett största och ett minsta värde.",
+        plain: "På ett slutet och begränsat intervall får en kontinuerlig graf både en högsta och en lägsta punkt.",
+        use: "Kompakt betyder här slutet och begränsat. Deriverbarhet krävs inte."
+      }
+    };
+
+    function readout(items) {
+      document.getElementById("readout").innerHTML = items.map(([dt, dd]) => `<div><dt>${dt}</dt><dd>${dd}</dd></div>`).join("");
+    }
+
+    function render() {
+      const c = curve();
+      const s = draw();
+      const copy = COPY[state.tab];
+      document.getElementById("name").textContent = copy.name;
+      document.getElementById("formal").textContent = copy.formal;
+      document.getElementById("plain").textContent = copy.plain;
+      document.getElementById("use").textContent = copy.use;
+      const pill = document.getElementById("pill");
+      pill.textContent = s.holds ? "Slutsatsen håller" : "Slutsatsen håller inte";
+      pill.className = "pill " + (s.holds ? "ok" : "no");
+
+      const showCurve = !special();
+      document.getElementById("curve-block").classList.toggle("hidden", !showCurve);
+      document.getElementById("ab-block").classList.toggle("hidden", !showCurve);
+      document.getElementById("k-block").classList.toggle("hidden", state.tab !== "ivt");
+      document.getElementById("ivt-modes").classList.toggle("hidden", state.tab !== "ivt");
+      document.getElementById("evt-modes").classList.toggle("hidden", state.tab !== "evt");
+      document.getElementById("zero-btn").classList.toggle("hidden", !(state.tab === "ivt" && state.ivtMode === "smooth"));
+      document.getElementById("curve-formula").textContent = c.formula;
+
+      const aRange = document.getElementById("a-range");
+      const bRange = document.getElementById("b-range");
+      aRange.min = c.domain[0]; aRange.max = c.domain[1]; aRange.value = state.a;
+      bRange.min = c.domain[0]; bRange.max = c.domain[1]; bRange.value = state.b;
+      document.getElementById("a-val").textContent = fmt(state.a);
+      document.getElementById("b-val").textContent = fmt(state.b);
+      document.getElementById("k-range").value = state.t;
+
+      if (state.tab === "mvt" && s.mv) {
+        const xi = s.mv.xi.length ? s.mv.xi.map((x) => fmt(x)).join(", ") : "finns inte";
+        const fp = s.mv.xi.length ? fmt(c.df(s.mv.xi[0])) : "—";
+        readout([
+          ["a , b", fmt(state.a) + " , " + fmt(state.b)],
+          ["sekantens lutning", fmt(s.mv.slope)],
+          ["ξ", xi],
+          ["f′(ξ)", s.mv.everywhere ? fmt(s.mv.slope) + " (hela intervallet)" : fp]
+        ]);
+        document.getElementById("k-val").textContent = "";
+      } else if (state.tab === "ivt") {
+        const k = s.k != null ? s.k : c.f(state.a) + state.t * (c.f(state.b) - c.f(state.a));
+        document.getElementById("k-val").textContent = fmt(k);
+        const where = s.cs && s.cs.length ? s.cs.map((x) => fmt(x)).join(", ") : "inget c";
+        readout([
+          ["k", fmt(k)],
+          ["f(a)", state.ivtMode === "jump" ? "−1" : fmt(c.f(state.a))],
+          ["f(b)", state.ivtMode === "jump" ? "1" : fmt(c.f(state.b))],
+          ["c", where]
+        ]);
+        const zeroOk = state.ivtMode === "smooth" && ((c.f(state.a) <= 0 && 0 <= c.f(state.b)) || (c.f(state.b) <= 0 && 0 <= c.f(state.a)));
+        document.getElementById("zero-btn").disabled = !zeroOk;
+      } else if (s.ex) {
+        readout([
+          ["minsta värdet", fmt(s.ex.minY)],
+          ["i x", s.ex.mins.map(fmt).join(", ")],
+          ["största värdet", fmt(s.ex.maxY)],
+          ["i x", s.ex.maxs.map(fmt).join(", ")]
+        ]);
+      } else if (state.evtMode === "open") {
+        readout([["infimum", "0"], ["antas", "nej"], ["supremum", "1"], ["antas", "nej"]]);
+      } else {
+        readout([["minsta värdet", "0"], ["antas", "ja, i 0 och 1"], ["supremum", "1"], ["antas", "nej"]]);
+      }
+
+      document.querySelectorAll("#curves button").forEach((btn) => btn.setAttribute("aria-pressed", String(btn.dataset.id === state.curveId)));
+      document.querySelectorAll("#ivt-modes button").forEach((btn) => btn.setAttribute("aria-pressed", String(btn.dataset.mode === state.ivtMode)));
+      document.querySelectorAll("#evt-modes button").forEach((btn) => btn.setAttribute("aria-pressed", String(btn.dataset.mode === state.evtMode)));
+      document.querySelectorAll(".tabs button").forEach((btn) => btn.setAttribute("aria-selected", String(btn.id === "tab-" + state.tab)));
+
+      const legend = document.getElementById("legend");
+      if (state.tab === "mvt" && !special()) legend.innerHTML = '<span><i class="swatch"></i>kurva</span><span><i class="swatch sec"></i>sekant</span><span><i class="swatch tan"></i>tangent</span>';
+      else if (state.tab === "ivt") legend.innerHTML = '<span><i class="swatch"></i>kurva</span><span><i class="swatch tan"></i>höjden k</span>';
+      else legend.innerHTML = '<span><i class="swatch"></i>kurva</span><span><i class="swatch sec"></i>antaget extremvärde</span>';
+    }
+
+    function setA(x) {
+      const c = curve();
+      state.a = snap(clamp(x, c.domain[0], state.b - gapOf(c)));
+    }
+    function setB(x) {
+      const c = curve();
+      state.b = snap(clamp(x, state.a + gapOf(c), c.domain[1]));
+    }
+
+    document.getElementById("curves").innerHTML = CURVES.map((c) => `<button type="button" data-id="${c.id}" aria-pressed="false">${c.label}</button>`).join("");
+    document.getElementById("ivt-modes").innerHTML = `<button type="button" data-mode="smooth">Kontinuerlig</button><button type="button" data-mode="jump">Med språng</button>`;
+    document.getElementById("evt-modes").innerHTML = `<button type="button" data-mode="holds">Kompakt intervall</button><button type="button" data-mode="open">Öppet intervall</button><button type="button" data-mode="jump">Språng</button>`;
+
+    document.getElementById("curves").addEventListener("click", (e) => {
+      const id = e.target.closest("button")?.dataset.id;
+      if (!id) return;
+      const c = CURVES.find((x) => x.id === id);
+      state.curveId = id;
+      state.a = c.interval[0];
+      state.b = c.interval[1];
+      state.t = 0.35;
+      render();
+    });
+    document.getElementById("ivt-modes").addEventListener("click", (e) => {
+      const mode = e.target.closest("button")?.dataset.mode;
+      if (!mode) return;
+      state.ivtMode = mode;
+      state.t = mode === "jump" ? 0.5 : 0.35;
+      render();
+    });
+    document.getElementById("evt-modes").addEventListener("click", (e) => {
+      const mode = e.target.closest("button")?.dataset.mode;
+      if (!mode) return;
+      state.evtMode = mode;
+      render();
+    });
+    document.querySelectorAll(".tabs button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        state.tab = btn.id.slice(4);
+        render();
+      });
+    });
+    document.getElementById("a-range").addEventListener("input", (e) => { setA(Number(e.target.value)); render(); });
+    document.getElementById("b-range").addEventListener("input", (e) => { setB(Number(e.target.value)); render(); });
+    document.getElementById("k-range").addEventListener("input", (e) => { state.t = Number(e.target.value); render(); });
+    document.getElementById("zero-btn").addEventListener("click", () => {
+      const c = curve();
+      const fa = c.f(state.a), fb = c.f(state.b);
+      if (fb === fa) return;
+      state.t = clamp((0 - fa) / (fb - fa), 0, 1);
+      render();
+    });
+
+    svg.addEventListener("pointerdown", (e) => {
+      const which = e.target.dataset && e.target.dataset.drag;
+      if (!which || special()) return;
+      dragging = which;
+      svg.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    svg.addEventListener("pointermove", (e) => {
+      if (!dragging || !svg.hasPointerCapture(e.pointerId)) return;
+      const s = scene();
+      const x = clientToX(e.clientX, s);
+      if (x == null) return;
+      if (dragging === "a") setA(x); else setB(x);
+      render();
+    });
+    svg.addEventListener("pointerup", () => { dragging = null; });
+    svg.addEventListener("pointercancel", () => { dragging = null; });
+
+    (function applyQuery() {
+      const q = new URLSearchParams(location.search);
+      const tab = q.get("tab");
+      if (tab === "mvt" || tab === "ivt" || tab === "evt") state.tab = tab;
+      const mode = q.get("mode");
+      if (state.tab === "ivt" && (mode === "smooth" || mode === "jump")) state.ivtMode = mode;
+      if (state.tab === "evt" && (mode === "holds" || mode === "open" || mode === "jump")) state.evtMode = mode;
+    })();
+
+    render();
+
+    (function teknikModal() {
+      var btn = document.getElementById("techBtn");
+      var box = document.getElementById("techModal");
+      var close = document.getElementById("techClose");
+      if (!btn || !box || !close) return;
+      function open() { box.classList.add("show"); close.focus(); }
+      function shut() { box.classList.remove("show"); btn.focus(); }
+      btn.addEventListener("click", open);
+      close.addEventListener("click", shut);
+      box.addEventListener("click", function (e) { if (e.target === box) shut(); });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && box.classList.contains("show")) shut();
+      });
+    })();
+  </script>
+</body>
+</html>

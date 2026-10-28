@@ -16,6 +16,14 @@ Mall:
 
 ---
 
+## 2026-10-28 01:05 · Cursor (Composer) · framsida och quiz för endimensionell_analys
+
+- **Gjort:** Ny `index.html` (intro, svårighetsval, quiz med direktfeedback, resultat). `quiz.js` med 9 frågor (lätt/medel/svår × tre satser). `framsida.css`. Visualiseringen flyttad till `app.html` med länk tillbaka, URL-parametrar `tab` och `mode`, uppdaterad teknik-modal. `README.md` uppdaterad. Open Graph på startsidan.
+- **Verifierat (och hur):** Filstruktur och länkar granskade lokalt; quizlogik och feedback per svarsalternativ i kod. Ingen manuell körning i webbläsare i det här passet.
+- **Inte verifierat:** GitHub Pages efter push; alla nio frågors pedagogik med ägaren.
+- **Återstår / nästa steg:** Ägaren committar och pushar; ev. justera frågetexter efter genomläsning.
+- **Obs:** `og-bild.jpg` fanns redan i mappen.
+
 ## 2026-10-28 00:45 · Grok (xAI) · hörnknappar på Satserna, pekare till befintlig regel
 
 - **Gjort:** `aktuellt/endimensionell_analys/index.html` fick `{ } GitHub` nere till vänster och `</> teknik` nere till höger, med modalen Tekniken och Metoden. Ny pekare `.grok/skills/horn-lankar-github-teknik/SKILL.md` till originalet `.cursor/rules/horn-lankar-github-teknik.mdc`. `AGENTS.md` punkt 9 pekar dit och upprepar inte regeln.
