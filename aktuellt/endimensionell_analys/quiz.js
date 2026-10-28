@@ -1,11 +1,60 @@
 /**
  * Quiz för startsidan — tre svårighetsgrader × tre satser.
  * Här skedde en uppdatering 2026-10-28: frågor, svarsfeedback och koppling till app.html.
+ * Här skedde en uppdatering 2026-10-28: svarsalternativ blandas om vid varje fråga (och ny omgång).
  */
 (function () {
   "use strict";
 
   const LETTERS = ["A", "B", "C", "D"];
+
+  /** Fisher–Yates — ES2023: Array.prototype.toSorted används inte; vanlig loop. */
+  function shuffleIndices(length) {
+    const order = Array.from({ length: length }, (_, i) => i);
+    for (let i = length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = order[i];
+      order[i] = order[j];
+      order[j] = tmp;
+    }
+    return order;
+  }
+
+  function sameChoiceOrder(a, b) {
+    if (!a || !b || a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false;
+    return true;
+  }
+
+  /** Kopiera frågan med omkastade alternativ; facit-index och feedback följer med. */
+  function withShuffledChoices(q, avoidChoices) {
+    let order = shuffleIndices(q.choices.length);
+    let attempt = 0;
+    while (
+      avoidChoices &&
+      sameChoiceOrder(
+        order.map((i) => q.choices[i]),
+        avoidChoices
+      ) &&
+      attempt < 12
+    ) {
+      order = shuffleIndices(q.choices.length);
+      attempt++;
+    }
+    const choices = order.map((i) => q.choices[i]);
+    const feedback = order.map((i) => q.feedback[i]);
+    const correct = order.indexOf(q.correct);
+    return {
+      theorem: q.theorem,
+      theoremLabel: q.theoremLabel,
+      prompt: q.prompt,
+      choices,
+      feedback,
+      correct,
+      appLink: q.appLink,
+      appHint: q.appHint,
+    };
+  }
 
   /** @type {Record<string, Array<QuizItem>>} */
   const BANK = {
@@ -212,6 +261,12 @@
     index: 0,
     score: 0,
     answered: false,
+    /** Aktuell fråga med omkastade svarsalternativ */
+    activeQuestion: null,
+    /** Senaste alternativordning per frågeindex (för omstart) */
+    lastChoiceOrder: [],
+    /** Facit som användaren såg under omgången */
+    runFacit: [],
   };
 
   const root = document.getElementById("quiz-root");
@@ -238,9 +293,12 @@
   }
 
   function renderQuizQuestion() {
-    const q = currentQuestion();
-    if (!q) return;
+    const base = currentQuestion();
+    if (!base) return;
     state.answered = false;
+    state.activeQuestion = withShuffledChoices(base, state.lastChoiceOrder[state.index]);
+
+    const q = state.activeQuestion;
 
     document.getElementById("quiz-progress").textContent =
       "Fråga " + (state.index + 1) + " av 3 · " + labelDifficulty(state.difficulty);
@@ -270,9 +328,18 @@
   function pickAnswer(choiceIndex, btn) {
     if (state.answered) return;
     state.answered = true;
-    const q = currentQuestion();
+    const q = state.activeQuestion;
+    if (!q) return;
     const correct = q.correct === choiceIndex;
     if (correct) state.score += 1;
+
+    state.lastChoiceOrder[state.index] = q.choices.slice();
+    state.runFacit[state.index] = {
+      theoremLabel: q.theoremLabel,
+      letter: LETTERS[q.correct],
+      text: q.choices[q.correct],
+      appLink: q.appLink,
+    };
 
     document.querySelectorAll(".choice-btn").forEach((b) => {
       b.disabled = true;
@@ -313,19 +380,20 @@
     summary.textContent = msg;
 
     const recap = document.getElementById("results-recap");
-    recap.innerHTML = currentSet()
-      .map((q, i) => {
+    recap.innerHTML = state.runFacit
+      .map((row, i) => {
+        if (!row) return "";
         return (
           "<article class=\"recap-card\"><h3>" +
           (i + 1) +
           ". " +
-          q.theoremLabel +
+          row.theoremLabel +
           "</h3><p><strong>Facit:</strong> " +
-          LETTERS[q.correct] +
+          row.letter +
           ". " +
-          q.choices[q.correct] +
+          row.text +
           "</p><p><a href=\"" +
-          q.appLink +
+          row.appLink +
           "\">Visa i programmet</a></p></article>"
         );
       })
@@ -343,6 +411,9 @@
     state.difficulty = difficulty;
     state.index = 0;
     state.score = 0;
+    state.activeQuestion = null;
+    state.lastChoiceOrder = [];
+    state.runFacit = [];
     show("quiz");
     renderQuizQuestion();
   }
