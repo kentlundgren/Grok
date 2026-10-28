@@ -19,5 +19,6 @@ Filer:
 | `index.html` | Intro, quiz, Open Graph |
 | `framsida.css`, `quiz.js`, `intro-carousel.js` | Stil, quiz och växlande satsbilder på startsidan |
 | `bilder/intro-*.svg` | Tre förhandsbilder (medelvärde, mellanvärde, extremvärde) |
+| `linkedin.html` | Två LinkedIn-utkast (kort och längre), med kopieringsknapp |
 | `app.html` | SVG-visualisering (tidigare enda `index.html`) |
 | `og-bild.jpg` | Förhandsvisning vid delning av länk |

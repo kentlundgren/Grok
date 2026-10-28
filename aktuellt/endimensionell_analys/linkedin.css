@@ -1,0 +1,167 @@
+/* LinkedIn-utkast för Satserna. Uppdatering 2026-10-28. */
+:root {
+  --paper: #f3efe6;
+  --surface: #fffdf8;
+  --ink: #1c1914;
+  --muted: #5c564e;
+  --line: #e0d5c4;
+  --primary: #9a431f;
+  --serif: "Fraunces", "Iowan Old Style", Palatino, serif;
+  --sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--paper); color: var(--ink); }
+body {
+  font-family: var(--sans);
+  line-height: 1.55;
+  padding-bottom: 3.5rem;
+}
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+.wrap { max-width: 40rem; margin: 0 auto; padding: 1.5rem 1rem 2.5rem; }
+
+.kicker {
+  margin: 0;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+h1 {
+  margin: 0.25rem 0 0;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 2.3rem);
+  font-weight: 640;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+.lead { margin: 0.6rem 0 0; color: var(--muted); }
+.lead a { color: var(--primary); font-weight: 600; text-decoration: none; }
+.lead a:hover { text-decoration: underline; }
+
+.post {
+  margin-top: 1.35rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem 1.15rem 1.15rem;
+}
+.post-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.4rem 1rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 1px solid var(--line);
+}
+.post-head h2 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 640;
+}
+.meta { margin: 0; color: var(--muted); font-size: 0.85rem; }
+
+.post-body p { margin: 0 0 0.85rem; }
+.post-body p:last-child { margin-bottom: 0; }
+.post-url {
+  margin: 0.2rem 0 0.85rem;
+  padding: 0.45rem 0.65rem;
+  background: var(--paper);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  word-break: break-all;
+}
+.post-url a { color: var(--primary); }
+
+.tags {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.copy-row { margin-top: 0.85rem; }
+.copy-btn {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+}
+.copy-btn:hover { border-color: var(--primary); color: var(--primary); }
+.copy-btn.is-done { border-color: #2d5a3d; color: #2d5a3d; }
+
+.corner {
+  position: fixed;
+  bottom: 14px;
+  z-index: 40;
+  opacity: 0.55;
+  background: rgba(255, 253, 248, 0.9);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 11px;
+  font: inherit;
+  font-size: 0.78rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.corner:hover, .corner:focus-visible { opacity: 1; color: var(--ink); }
+.corner-left { left: 14px; }
+.corner-right { right: 14px; }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(28, 25, 20, 0.45);
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+}
+.modal-overlay.show { display: flex; }
+.modal {
+  width: min(36rem, 100%);
+  max-height: min(80vh, 32rem);
+  overflow: auto;
+  background: var(--surface);
+  border-radius: 14px 14px 0 0;
+  padding: 1.1rem 1.15rem 1.3rem;
+  border: 1px solid var(--line);
+}
+@media (min-width: 640px) {
+  .modal-overlay { align-items: center; }
+  .modal { border-radius: 14px; }
+}
+.modal h2 { margin: 0 0 0.35rem; font-family: var(--serif); font-size: 1.3rem; }
+.modal h3 { margin: 1rem 0 0.35rem; font-size: 1rem; }
+.modal p { margin: 0.35rem 0; }
+.modal-close {
+  float: right;
+  border: 0;
+  background: transparent;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+}
+.tech-grid { display: grid; gap: 0.6rem; }
+@media (min-width: 640px) { .tech-grid { grid-template-columns: 1fr 1fr; } }
+.tech-card {
+  background: var(--paper);
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+}
+.tech-card h4 { margin: 0 0 0.2rem; font-size: 0.92rem; }
+.tech-card p { margin: 0; font-size: 0.88rem; color: var(--muted); }
+.modal-foot { margin-top: 0.9rem; font-size: 0.88rem; }
+.modal-foot a { color: var(--primary); }

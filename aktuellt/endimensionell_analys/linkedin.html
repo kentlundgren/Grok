@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LinkedIn-utkast — Satserna</title>
+  <meta name="description" content="Två LinkedIn-utkast om tre satser från endimensionell analys: ett kort och ett längre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="linkedin.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p class="kicker">Utkast · LinkedIn</p>
+      <h1>Satserna, i två längder</h1>
+      <p class="lead">Vardaglig ton, utan att AI står i fokus. Klistra in i flödet. Länken ligger på egen rad så LinkedIn gör den klickbar. <a href="./">Tillbaka till sidan</a></p>
+    </header>
+
+    <article class="post">
+      <div class="post-head">
+        <h2>Kort</h2>
+        <p class="meta" data-count-for="post-kort">ord räknas…</p>
+      </div>
+      <div class="post-body" id="post-kort">
+        <p>Tre satser från endimensionell analys på LTH blev plötsligt begripliga när jag såg kurvan.</p>
+        <p>Medelvärdessatsen, satsen om mellanliggande värden och extremvärdessatsen. På pappret är de strikta. I bilden blir de nästan vardagliga. Någonstans lutar kurvan som linjen mellan start och mål. Den måste passera varje höjd på vägen. På ett slutet intervall finns både en topp och en botten.</p>
+        <p>Det är därför de är värda att kunna. De ger ett lugn i hur saker förändras: en resa, en temperatur, en mätserie över veckan. Man behöver inte ha kursen färsk i minnet. Det räcker med nyfikenhet på vad en kurva faktiskt måste göra.</p>
+        <p>Jag har lagt dem på en sida. Man kan titta, dra i ändpunkterna och, om man vill, prova några korta frågor.</p>
+        <p class="post-url"><a href="https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/">https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/</a></p>
+        <p>Om du också tycker att matematik blir rolig när den går att se, kika gärna.</p>
+      </div>
+      <p class="tags">Hashtaggar, om du vill ha dem under: #matematik #lärande #analys</p>
+      <div class="copy-row">
+        <button type="button" class="copy-btn" data-copy="post-kort">Kopiera inlägget</button>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="post-head">
+        <h2>Längre</h2>
+        <p class="meta" data-count-for="post-lang">ord räknas…</p>
+      </div>
+      <div class="post-body" id="post-lang">
+        <p>Tre satser från endimensionell analys på LTH blev plötsligt begripliga när jag såg kurvan.</p>
+        <p>Jag har mött dem förut, som formler. Medelvärdessatsen, satsen om mellanliggande värden och extremvärdessatsen. De är strikta på pappret. De blir vänliga när grafen syns.</p>
+        <p>Medelvärdessatsen säger något enkelt om en resa. Kör du en sträcka på en viss tid har du en medelhastighet. Någonstans under resan har hastigheten varit just den. På kurvan syns det som linjen mellan start och mål, och en tangent som lutar likadant.</p>
+        <p>Satsen om mellanliggande värden handlar om höjder man måste passera. Är det minusgrader på morgonen och plusgrader på kvällen, och temperaturen ändras utan språng, så har den varit noll någon gång. Grafen går igenom den höjden.</p>
+        <p>Extremvärdessatsen är den lugnaste av de tre. På ett slutet intervall, en vecka, en sträcka, ett mätfönster, antar en sammanhängande kurva både ett största och ett minsta värde. Toppen och botten finns där, som punkter man kan peka på.</p>
+        <p>Det är därför jag tycker att de är värda att kunna. De ger ett stadigt sätt att tänka på förändring. Man behöver inte ha kursen färsk. Det räcker att vara nyfiken på vad en kurva måste göra.</p>
+        <p>Jag har lagt de tre satserna på en sida. Där kan man se kurvan, dra i ändpunkterna och byta exempel. Om man vill kan man också svara på några korta frågor och få en kommentar direkt.</p>
+        <p class="post-url"><a href="https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/">https://kentlundgren.github.io/Grok/aktuellt/endimensionell_analys/</a></p>
+        <p>Om du också tycker att matematik blir rolig när den går att se, kika gärna.</p>
+      </div>
+      <p class="tags">Hashtaggar, om du vill ha dem under: #matematik #lärande #analys</p>
+      <div class="copy-row">
+        <button type="button" class="copy-btn" data-copy="post-lang">Kopiera inlägget</button>
+      </div>
+    </article>
+  </div>
+
+  <a class="corner corner-left" href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/endimensionell_analys" target="_blank" rel="noopener">{ } GitHub</a>
+  <button type="button" class="corner corner-right" id="techBtn" aria-label="Tekniköversikt">&lt;/&gt; teknik</button>
+  <div class="modal-overlay" id="techModal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="techTitle">
+      <button type="button" class="modal-close" id="techClose" aria-label="Stäng">&times;</button>
+      <h2 id="techTitle">Hur den här sidan är byggd</h2>
+      <p>Utkast att klistra in på LinkedIn. Själva satserna ligger på startsidan.</p>
+      <h3>Tekniken</h3>
+      <div class="tech-grid">
+        <div class="tech-card"><h4>Filer</h4><p><code>linkedin.html</code>, <code>linkedin.css</code> och <code>linkedin.js</code>. Ingen byggkedja.</p></div>
+        <div class="tech-card"><h4>Kopiera</h4><p>Knappen samlar styckena med tom rad emellan och lägger länken som vanlig text.</p></div>
+      </div>
+      <h3>Metoden</h3>
+      <div class="tech-grid">
+        <div class="tech-card"><h4>Ton</h4><p>Vardaglig och varm. Satserna från endimensionell analys på LTH, för den som ser värdet av matematik.</p></div>
+        <div class="tech-card"><h4>Längd</h4><p>Ett kort utkast och ett längre. Ordantalet räknas i webbläsaren, utan URL och hashtaggar.</p></div>
+      </div>
+      <p class="modal-foot"><a href="https://github.com/kentlundgren/Grok/tree/main/aktuellt/endimensionell_analys" target="_blank" rel="noopener">Källkoden på GitHub</a></p>
+    </div>
+  </div>
+  <script src="linkedin.js"></script>
+</body>
+</html>
